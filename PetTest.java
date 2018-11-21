@@ -6,8 +6,8 @@ import org.junit.Test;
 /**
  * The test class PetTest.
  *
- * @author  (your name)
- * @version (a version number or a date)
+ * @author  (Romain)
+ * @version (21/11/2018)
  */
 public class PetTest
 {
@@ -26,7 +26,8 @@ public class PetTest
     /**
      * Sets up the test fixture.
      *
-     * Called before every test case method.
+     * Called before every test case method. Creation of a pet, player, planet
+     * and a room for the different tests
      */
     @Before
     public void setUp()
@@ -39,7 +40,8 @@ public class PetTest
     }
 
     /**
-     * Test the good creation of a new pet
+     * This test verify if the pet is well created and have all the good values
+     *  for the different attributes given in the constructor
      */
     @Test
     public void testNewPet()
@@ -51,8 +53,8 @@ public class PetTest
     }
     
     /**
-     * Test if the pet give of the description of the planet where it is when
-     * a player speak to him
+     * Test if the pet give the description of the planet when a player speak 
+     * to it
      */
     @Test
     public void testSpeak()
