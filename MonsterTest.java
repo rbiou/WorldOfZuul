@@ -6,8 +6,8 @@ import org.junit.Test;
 /**
  * The test class MonsterTest.
  *
- * @author  (your name)
- * @version (a version number or a date)
+ * @author  (Romain)
+ * @version (21/11/2018)
  */
 public class MonsterTest
 {
