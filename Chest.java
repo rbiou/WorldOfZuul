@@ -7,7 +7,7 @@ import java.util.*;
  **/
 public class Chest extends Item
 {
-    private List<Item> rewarding; // list of items in the chest
+    private ArrayList<Item> rewarding; // list of items in the chest
     private boolean isTrap; // true if the chest is trapped ; false if the chest is not trapped
     private int money; // Money in the chest
     /**
@@ -38,13 +38,34 @@ public class Chest extends Item
     }
     
      /**
-     *An item is added to the chest
+      * Adds an item to the rewarding of the chest
+      * @param item the item to add to the chest
+      * @return true if operation is successful
      */
     public boolean addItemChest(Item item)
     {
         return false;
     }
+
+
+    /**
+     * Returns the list of items in the chest
+     *
+     * @return     The item list.
+     */
+    public ArrayList<Item> getListItems()
+    {
+        return rewarding;
+    }
+
+    /**
+     * Returns the amount of money inside the chest
+     *
+     * @return     The amount of money
+     */
+    public int getMoney()
+    {
+        return money;
+    }
      
 }
-
-

@@ -12,11 +12,11 @@ public class Planet
     private String name; // name of the planet
     private String description; // Description of the planet
     private int temperature; // Temperature of the planet 
-    private int time; // Limit of time (in second) available for the player in one planet
-    private List<Room> listRoom; // Rooms that are in the planet
+    private int time; // Limit of time (in seconds) available for the player in one planet
+    private ArrayList<Room> listRoom; // Rooms that are in the planet
 
     /**
-     * Constructor of planet class
+     * Constructor of Planet class
      */
     public Planet(String newName, String newDescription, int newTemp, int newTime)
     {
@@ -54,7 +54,9 @@ public class Planet
     /**
      * Add a new room in the planet
      *
-     * @param  y   le paramètre de la méthode
+     * @param        a room
+     * @return       a boolean : true when the room is added to the planet
+     *                           false when the room is not added to the planet
      */
     public boolean addRoom(Room newRoom)
     {
