@@ -40,6 +40,10 @@ public class KeysTest
     @After
     public void tearDown()
     {
-        assertEquals("Key1", 
+        assertEquals("Key1", testKey.getName());
+        assertEquals(5,testKey.getValue());
+        assertEquals(2,testKey.getWeight());
+        assertEquals("key for room 14",testKey.getDescription());
+        assertEquals("circle",testKey.getShape());
     }
 }
