@@ -73,7 +73,7 @@ public class PlayerTest
         player.pet(petCat); 
         assertEquals(1,player.getMoney());
         assertEquals(999,petCat.getMoney());
-    }
+    }    
 
 }
 
