@@ -1,6 +1,8 @@
 import java.util.*;
 /**
  * The Planet class: this class defines the different Planet in the game World of Zuul
+ * In the game there are 4 planets. 
+ * They contain rooms (different number according to the planet)
  *
  * @author (Groupe7)
  * @version (13/11/2018)
