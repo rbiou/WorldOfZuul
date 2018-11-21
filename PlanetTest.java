@@ -4,10 +4,15 @@ import org.junit.Before;
 import org.junit.Test;
 
 /**
- * Classe-test PlanetTest.
+ * PlanetTest class
+ * In the game there are 4 planets. 
+ * They contain rooms (different number according to the planet)
+ * The player can stay on the planet during a specific time. 
+ * The time depends on the planet (specific for each planet)
+ * When the time is over, the player is dead (he loses his LP and he returns to the beginnig og the game).
  *
  * @author  (Groupe 7)
- * @version (v1)
+ * @version (21/11/2018)
  *
  */
 public class PlanetTest
@@ -17,19 +22,18 @@ public class PlanetTest
     private Room room1;
     
     /**
-     * Constructeur de la classe-test PlanetTest
+     * Constructor of the PlanetTest class
      */
     public PlanetTest()
     {
     }
 
     /**
-     * Met en place les engagements.
-     *
-     * Méthode appelée avant chaque appel de méthode de test.
+     * Creation of one planet, one room and one character.
+     * They are used in all the methods described in this class
      */
     @Before
-    public void setUp() // throws java.lang.Exception
+    public void setUp()
     {
         Planet planet1 = new Planet("Alpha","Welcome on the planet alpha",10,10);
         room1 = new Room("Room1");

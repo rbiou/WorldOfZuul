@@ -7,26 +7,22 @@ import java.util.*;
  * 
  *
  * A "Room" represents one location in the scenery of our game. Planet contains different rooms. 
- * There is not the same numberof rooms on each planet. 
- * It is connected to other rooms via exits.  The exits are labelled north, 
- * east, south, west.  For each direction, the room stores a reference
- * to the neighboring room, or null if there is no exit in that direction.
+ * There is not the same number of rooms on each planet. 
+ * It is connected to other rooms via exits. 
+ * The number of exits (doors) is different for each room.
  * 
- * 
- *
  * @author (Groupe 7)
  * @version (14/11/2018)
  */
 public class Room 
 {
-    // variables d'instance - remplacez l'exemple qui suit par le vôtre
-    private String name;// Name of the Room
-    private HashMap<String,Door>lockExit; // Each exit is associated to this room
+    private String name; // Name of the room
+    private HashMap<String, Door>lockExit; // Each exit is associated to this room
     private ArrayList<Character> listCharacters;  // List of all the Characters present in this room
-    private ArrayList<Chest> listChest; // List of all the Chest present in this room
+    private ArrayList<Chest> listChest; // List of all the chest present in this room
 
     /**
-     * Constructeur d'objets de classe Room
+     * Constructor of the Room class
      */
     public Room(String newName)
     {
@@ -36,11 +32,10 @@ public class Room
         listChest = new ArrayList<Chest>();
     }
 
-        /**
-     * Add a new character in the room
-     *
-     * @param  y   le paramètre de la méthode
-     * @return     la somme de x et de y
+     /**
+     * Getter to return the name of the room
+     * 
+     * @return      String
      */
     public String getName()
     {
@@ -48,15 +43,20 @@ public class Room
     }
     
     /**
-     * Add an item to the list of items
-     * @param  item
-     * @return boolean
+     * Getter to return the list of the character
+     * 
+     * @return      ArrayList<Character>
     **/
     public ArrayList<Character> getListCharacter()
     {
         return listCharacters;
     }
     
+    /**
+     * Getter to return the list of the chest
+     * 
+     * @return       ArrayList<Chest>
+    **/
     public ArrayList<Chest> getListChest()
     {
         return listChest;
@@ -65,8 +65,10 @@ public class Room
     /**
      * Add a new character in the room
      *
-     * @param  y   le paramètre de la méthode
-     * @return     la somme de x et de y
+     * @param      a character
+     * 
+     * @return     boolean : true when we add the character
+     *                       false when the character is not added 
      */
     public boolean addCharacter(Character newChar)
     {
@@ -76,8 +78,9 @@ public class Room
     /**
      * Add a chest in the room
      *
-     * @param  y   le paramètre de la méthode
-     * @return     la somme de x et de y
+     * @param       a chest
+     * @return      boolean : true when we add the chest
+     *                       false when the chest is not added
      */
     public boolean addChest(Chest newChest)
     {
@@ -85,22 +88,23 @@ public class Room
     }
    
     /**
-     * Remove a Character of the room
+     * Remove a character from the room
      *
-     * @param  y   le paramètre de la méthode
-     * @return     la somme de x et de y
+     * @param      a character
+     * @return     boolean : true when we remove the character
+     *                       false when the character is not removed
      */
     public boolean removeCharacter(Character oldChar)
     {
          return false;
-        
     }
     
     /**
-     * Remove a Chest of the room
+     * Remove a chest from the room
      *
-     * @param  y   le paramètre de la méthode
-     * @return the sum of x and y
+     * @param      a chest
+     * @return     boolean : true when we remove the chest
+     *                       false when the chest is not removed
      */
     public boolean removeChest (Chest oldChest)
     {
@@ -108,11 +112,11 @@ public class Room
     }
     
     /**
-     * Define the exit of this room. Every direction either leads
-     * to another door. 
+     * Define the exit of this room. 
+     * Each door leads to another room. 
      *
-     * @param exitName. 
-     * @param arrivalDoor.
+     * @param       exitName. 
+     * @param       arrivalDoor (Door).
      * 
      */
     public void setExit(String exitName, Door arrivalDoor)
@@ -121,11 +125,11 @@ public class Room
     }
     
      /**
-     * Define the exit of this room. Every direction either leads
-     * to a locked door. 
+     * Define the exits of this room. 
+     * Each locked door leads to another room.  
      *
-     * @param exitName. 
-     * @param arrivalDoor.
+     * @param       exitName. 
+     * @param       arrivalDoor (LockedDoor).
      * 
      */
     public void setExitLocked(String exitName, LockedDoor arrivalDoor)
