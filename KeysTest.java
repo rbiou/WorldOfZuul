@@ -33,8 +33,8 @@ public class KeysTest
     }
 
     /**
-     *  This test very if the key is well created and have all the good values
-     *  for the different attributes give in the constructor
+     *  This test verify if the key is well created and have all the good values
+     *  for the different attributes given in the constructor
      */
     @Test
     public void testCreationKey()

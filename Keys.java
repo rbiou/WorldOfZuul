@@ -1,7 +1,8 @@
 
 /**
  * The Keys class : this is a specific item that enable the player
- * to open a locked door. 
+ * to open a locked door. The key have a specific shape that can only interact
+ * with the door that have the excat same shape
  *
  * @author Group 7 (Leyla)
  * @version 14/11/2018
