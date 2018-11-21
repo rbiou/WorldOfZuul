@@ -17,7 +17,7 @@ import java.util.*;
 public class Room 
 {
     private String name; // Name of the room
-    private HashMap<String, Door>lockExit; // Each exit is associated to this room
+    private HashMap<String, Door>exit; // Each exit is associated to this room
     private ArrayList<Character> listCharacters;  // List of all the Characters present in this room
     private ArrayList<Chest> listChest; // List of all the chest present in this room
 
@@ -27,7 +27,7 @@ public class Room
     public Room(String newName)
     {
         name = newName;
-        lockExit = new HashMap <String,Door>();
+        exit = new HashMap <String,Door>();
         listCharacters = new ArrayList<Character>();
         listChest = new ArrayList<Chest>();
     }
@@ -121,20 +121,12 @@ public class Room
      */
     public void setExit(String exitName, Door arrivalDoor)
     {
-        
+        exit.put(exitName, arrivalDoor);
     }
     
-     /**
-     * Define the exits of this room. 
-     * Each locked door leads to another room.  
-     *
-     * @param       exitName. 
-     * @param       arrivalDoor (LockedDoor).
-     * 
-     */
-    public void setExitLocked(String exitName, LockedDoor arrivalDoor)
-    {
-    }
+
+    
+    
     
 }
 

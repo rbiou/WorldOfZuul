@@ -14,10 +14,13 @@ public class PlayerTest
 {
     private Player player;
     private Item item;
-    private Chest chest;
+    private Chest chest, trappedChest;
     private Character character;
     private Pet petCat; 
     private Monster monster;
+    private Room room1, room2;
+    private Door door;
+    private LockedDoor unlokedDoor; 
     
     /**
     * Constructeur de la classe-test PlayerTest
@@ -32,15 +35,18 @@ public class PlayerTest
     * Méthode appelée avant chaque appel de méthode de test.
     */
     @Before
-    public void setUp() // throws java.lang.Exception
+    public void setUp() 
     {
-        // Initialisez ici vos engagements
         player = new Player("Joe",40);
         chest = new Chest("Chest1", 360, 1000, "I am the Chest1", 100, false);
+        trappedChest = new Chest("Chest2", 360, 1000, "I am the Chest2", 100, true);
         item = new Item("banana",1,1,"I'm a banana");
         character = new Character("Joe", 50, 40);
         petCat = new Pet("Minou",1000, 50,"Cat");
         monster = new Monster("Bowser",50, 100);
+        room1 = new Room("Room1"); 
+        room2 = new Room("Room2");
+        door = new Door(room1, room2); 
     }
 
     /**
@@ -48,35 +54,34 @@ public class PlayerTest
     */
     
     @Test
-    public void CheckplayerHP()
+    public void testCheckplayerHP()
     {
-        
         assertEquals(100,player.getLP());
-    
     }
         
-        /**
-        * 
-        */
-        @Test
-        public void grabcontent()
-        {
-            
-        assertEquals(75,player.getLP());
-            
+    /**
+    * The test checks if the player loses 25 LP when he opens a trapped chest
+    * @result : He must lose 25 LP
+    * @error : It can be the grabContent method
+    */
+    @Test
+    public void testGrabcontent()
+    {   
+        chest.addItemChest(item);
+        player.grabContent(trappedChest);
+        assertEquals(75,player.getLP());   
     }
     
-         /**
-    	* This test checks if when the player dies, he has no money
-    	*
-    	*/
-    	@Test
-    	public void testCharacterisDead()
+    /**
+     * This test checks if when the player dies, he has no money
+     *
+    */
+   	@Test
+    	public void testCharacterIsDead()
     	{
-        	player.looseHP(100000000);
-        	assertEquals(0,player.getMoney());	
-    	
-    }
+    	    player.looseHP(100000000);
+    	    assertEquals(0,player.getMoney());		
+        }
     
     @Test
     /**
@@ -114,16 +119,17 @@ public class PlayerTest
 	assertEquals(50,player.getLP());
     }
         
-        /**
-           * this test Monster Speak Wrong Anwer, allows to reduce the points of a player's life proscription
-             * @return: 
-               * @correction:
-         */   
-    
-        @Test
-        public void testMonsterSpeakWrongAnwer()
-    {
-        player.interractWith(monster);
-        assertEquals(50,player.getLP());
+    /**
+     * This test checks if the player can move in another room
+     * @result : The player should be in the room2 (next room) by using the door. 
+     * @error : It may be an issue in the method moveRoom()
+     */
+    @Test
+    public void testMovePlayer(){
+        room1.setExit("Sortie1", door);
+        room2.setExit("Sortie1", door); 
+        room1.addCharacter(player);
+        player.moveRoom(door);
+        assertEquals(room2,player.getCurrentRoom());
     }
 }
