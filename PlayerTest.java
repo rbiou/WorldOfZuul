@@ -12,6 +12,7 @@ import org.junit.Test;
 public class PlayerTest
 {
     private Player player;
+    private Item item;
     private Chest chest;
     private Character character;
     private Pet petCat; 
@@ -31,12 +32,12 @@ public class PlayerTest
     @Before
     public void setUp() // throws java.lang.Exception
     {
+        // Initialisez ici vos engagements
         player = new Player("Joe",40);
         chest = new Chest("Chest1", 360, 1000, "I am the Chest1", 100, false);
+        item = new Item("banana",1,1,"I'm a banana");
         character = new Character("Joe", 50, 40);
         petCat = new Pet("Minou",1000, 50,"Cat"); 
-        // Initialisez ici vos engagements
-    
     }
    /**
     * This test checks if the starting player has 100 points of life
@@ -75,5 +76,18 @@ public class PlayerTest
         assertEquals(999,petCat.getMoney());
     }    
 
+    @Test
+    /**
+     * Test when a player grab an item from a chest. If the player have enought weight available, the item go his bah and be removed
+     * from the chest.
+     * @return :
+     * @correction : 
+     */
+    public void testGrabAnItemFromAChest() {
+        chest.addItemChest(item);
+        player.grabContent(chest);
+        assertEquals(1,player.getMoney());
+        assertEquals(999,petCat.getMoney());
+    }
 }
 

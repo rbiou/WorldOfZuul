@@ -73,7 +73,20 @@ public class Character{
     {
         return false;
     }
-     /**
+    
+    /**
+     * getTotalWeight
+     *
+     * @param  
+     * @return int TotalWeight
+     */
+    public int getTotalWeight()
+    
+    {
+        return 1;
+    }
+
+    /**
      * The player grab the content of a chest
      * @param Item @
     **/
