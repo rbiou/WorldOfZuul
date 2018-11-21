@@ -3,57 +3,88 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+/**
+ * Classe-test SellerTest.
+ *
+ * @author Groupe 7
+ * @version 21/11/2018
+ * 
+ */
+
 public class SellerTest
 {
     private Seller seller;
-    private Player player;
-    private Item item1,item2, item;
+    private Item item1;
+    private Item item2;
+    private Item item3;
     /**
-     * Constructeur de la classe-test SellerTest
+     * Constructor of the class seller test
      */
     public SellerTest()
     {
     }
 
     /**
-     * Met en place les engagements.
-     *
-     * Méthode appelée avant chaque appel de méthode de test.
+     * 
+     *The method called before each test method call
      */
     @Before
     public void setUp() // throws java.lang.Exception
     {
        seller= new Seller ("Marc",100,10000);
-        
-       player = new Player ("Joe",50);
-        
        item1 = new Item ("banana1",1,1,"I am a banana1");
        item2 = new Item ("banana2",300,1,"I am a banana2");
+       item3 = new Item ("banana3",30,1,"I am a banana3");
     }
 
     /**
-     * Supprime les engagements
-     *
-     * Méthode appelée après chaque appel de méthode de test.
+     * Description : The seller must not be able to sell an 
+     * item without item in his bag. 
+     * 
+     * @return : We want the test return false if the 
+     * seller try to sell an item without item his bag.
+     * @ correction : the seller add an item before to sell
+     * an item
      */
     @Test
     public void testSellAnItemWithoutItems() 
     {
-        seller.sellItems(item);
+        assertEquals(0,seller.getListItems().size());
+        seller.sellItems(item1);
         assertEquals(false, seller.getListItems().size());
     }
      
     /**
-     * Supprime les engagements
-     *
-     * Méthode appelée après chaque appel de méthode de test.
+     * Description : the seller can buy an item if he has 
+     * enough money.
+     * @ return : We want the test to be good if the 
+     * seller try to buy an item with enough money.
      */
     @Test
-    public void testBuyAnItemWithEnoughMoney() // throws java.lang.Exception
+    public void testBuyAnItemWithEnoughMoney() 
     {
+       assertEquals (0, seller.getListItems().size());
+       assertEquals (100, seller.getMoney());
        seller.buyItem(item1);
-       assertEquals(true, seller.getListItems().size());
+       assertEquals(1, seller.getListItems().size());
        assertEquals(99,seller.getMoney());
        
+    }
+    
+    /**
+     * Description : the seller cannot buy an item if he has 
+     * not enough money.
+     * @ return : We want the test to be not good if the 
+     * seller try to buy an item without enough money.
+     * @correction: The seller must win money before buy 
+     * this item.
+     */
+    @Test
+    public void testBuyAnItemWithNotEnoughMoney() // throws java.lang.Exception
+    {
+       assertEquals (0, seller.getListItems().size());
+       assertEquals (100, seller.getMoney());
+       seller.buyItem(item2);
+       assertEquals(0, seller.getListItems().size());
     }
 }
