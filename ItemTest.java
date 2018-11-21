@@ -11,6 +11,7 @@ import org.junit.Test;
  */
 public class ItemTest
 {
+<<<<<<< HEAD
 private Item item;
 private Character character;    
 /**
@@ -19,7 +20,19 @@ private Character character;
 public ItemTest()
 {
 }
+=======
+    private Item item;
+    private Item bigItem;
+    private Character character;    
+    /**
+    * Default constructor for test class ItemTest
+    */
+    public ItemTest()
+    {
+    }
+>>>>>>> 33be4c828dfda232c05ea36ce1b7ed70d27ff743
 
+<<<<<<< HEAD
 /**
 * Sets up the test.
 *
@@ -36,7 +49,27 @@ public void setUp()
     item = new Item("banana",1,1,"I'm a banana");
     character= new Character("Joe", 50, 40);
 }
+=======
+    /**
+    * Sets up the test.
+    *
+    * Called before every test case method.
+    * create an item :
+    *  name ="banana"
+    *  weight = 1
+    *  price = 1
+    *  description "I'm a banana"
+    */
+    @Before
+    public void setUp()
+    {
+        item = new Item("banana",1,1,"I'm a banana");
+        bigItem = new Item("apple",1,40,"I'm a big apple");
+        character= new Character("Joe", 50, 40);
+    }
+>>>>>>> 33be4c828dfda232c05ea36ce1b7ed70d27ff743
     
+<<<<<<< HEAD
 /**
 * Tears down the test fixture.
 *
@@ -46,7 +79,19 @@ public void setUp()
 public void tearDown()
 {
 }
+=======
+    /**
+    * Tears down the test fixture.
+    *
+    * Called after every test case method.
+    */
+    @After
+    public void tearDown()
+    {
+    }
+>>>>>>> 33be4c828dfda232c05ea36ce1b7ed70d27ff743
 
+<<<<<<< HEAD
 /**
 * Method testItemDescription : test if the item description is available for the player
 *
@@ -58,7 +103,21 @@ public void testItemDescription()
 {
     assertEquals("I'm a banana",item.descriptionDisplayItem());
 }
+=======
+    /**
+    * Method testItemDescription : test if the item description is available for the player
+    *
+    *expected value : item.getDescription()="I'm a banana"
+    *
+    */
+    @Test
+    public void testItemDescription()
+    {
+        assertEquals("I'm a banana",item.descriptionDisplayItem());
+    }
+>>>>>>> 33be4c828dfda232c05ea36ce1b7ed70d27ff743
     
+<<<<<<< HEAD
 /**
 * method testRemoveNonExixtingItem : test if it is not possible to remove a non existing item in the chacter bag
 *
@@ -71,7 +130,22 @@ public void testRemoveNonExistingItem ()
     assertEquals(false,character.getListItems().contains(item));
     assertEquals(false, character.removeItem(item));
 }
+=======
+    /**
+    * method testRemoveNonExixtingItem : test if it is not possible to remove a non existing item in the chacter bag
+    *
+    * expected value : Character.removeItem(Item)= false;
+    */
+    @Test
+    public void testRemoveNonExistingItem ()
+    {
+        character.removeItem(item);
+        assertEquals(false,character.getListItems().contains(item));
+        assertEquals(false, character.removeItem(item));
+    }
+>>>>>>> 33be4c828dfda232c05ea36ce1b7ed70d27ff743
     
+<<<<<<< HEAD
 /**
 * method testRemoveExixtingItem : test if it is possible to remove an existing item in the chacter bag
 *
@@ -88,7 +162,26 @@ public void testRemoveExistingItem ()
     assertEquals(false,character.getListItems().contains(item));
     assertEquals(true, character.removeItem(item));
 }
+=======
+    /**
+    * method testRemoveExixtingItem : test if it is possible to remove an existing item in the chacter bag
+    *
+    * expected value : Character.removeItem(Item) =true ;
+    */
+    @Test
+    public void testRemoveExistingItem ()
+    {
+        character.addItem(item); // add an item into a character bag
+        assertEquals(true,character.getListItems().contains(item)); // test if the item is in the list of items
+        assertEquals(1,character.getListItems().size());// test if the size of the list is 1
+        character.removeItem(item);
+        assertEquals(0,character.getListItems().size());
+        assertEquals(false,character.getListItems().contains(item));
+        assertEquals(true, character.removeItem(item));
+    }
+>>>>>>> 33be4c828dfda232c05ea36ce1b7ed70d27ff743
     
+<<<<<<< HEAD
 /**
 * Method addItemEnoughPlace : test if an item is added in a bag with enough place
 *
@@ -102,6 +195,33 @@ public void testaddItemEnoughPlace()
       assertEquals(true,character.getListItems().contains(item));
     }
 }
+=======
+    /**
+    * Method testAddItemNotEnoughPlace : test if an item is added in a bag with not enough place
+    *
+    */
+    @Test
+    public void testAddItemNotEnoughPlace()
+    {
+     character.addItem(bigItem);
+     assertEquals(true,character.getTotalWeight()==character.getMaxWeight());
+     character.addItem(item);
+     assertEquals(false,character.getListItems().contains(item));
+    }
+
+    /**
+        * Method addItemEnoughPlace : test if an item is added in a bag with enough place
+    *
+    */
+    @Test
+    public void addItemEnoughPlace()
+    {
+     
+    }
+
+
+
+>>>>>>> 33be4c828dfda232c05ea36ce1b7ed70d27ff743
 }
 
 
