@@ -5,7 +5,7 @@ Au minimum, remplissez cette description :
 ------------------------------------------------------------------------
 
 TITRE DU PROJET : Space World of Zull
-BUT POURSUIVI : Game where a player have to 
+BUT POURSUIVI : Game where a player have to find the different parts of his spaceship in order to get back home
 VERSION ou DATE :
 COMMENT INVOQUER CE PROJET :
 AUTEURS :
