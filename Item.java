@@ -14,7 +14,7 @@ public class Item
     
     /**
      *Constructor of the object Item.
-     *Initially, each item has its own price, weight and decription.
+     *Initially, each item has its own value, weight and decription.
      *
      *@param description : the description of the item.
      *@parm price : the price of the item.
