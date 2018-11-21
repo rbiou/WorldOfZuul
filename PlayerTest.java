@@ -41,7 +41,8 @@ public class PlayerTest
         petCat = new Pet("Minou",1000, 50,"Cat");
         monster = new Monster("Bowser",50, 100);
     }
-   /**
+
+    /**
     * This test checks if the starting player has 100 points of life
     */
     
@@ -52,29 +53,30 @@ public class PlayerTest
         assertEquals(100,player.getLP());
     
     }
+        
+        /**
+        * 
+        */
+        @Test
+        public void grabcontent()
+        {
+            
+        assertEquals(75,player.getLP());
+            
+    }
     
-    /**
-    * 
-    */
-    @Test
-    public void grabcontent()
-    {
-        
-    assertEquals(75,player.getLP());
-        
-}
-     /**
-	* This test checks if when the player dies, he has no money
-	*
-	*/
-	@Test
-	public void testCharacterisDead()
-	{
-    	player.looseHP(100000000);
-    	assertEquals(0,player.getMoney());	
-	
-}
-
+         /**
+    	* This test checks if when the player dies, he has no money
+    	*
+    	*/
+    	@Test
+    	public void testCharacterisDead()
+    	{
+        	player.looseHP(100000000);
+        	assertEquals(0,player.getMoney());	
+    	
+    }
+    
     @Test
     /**
      * Test when a player pets a pet. He must earn money (1 piece) and the cat must lose 1 piece. 
@@ -110,17 +112,17 @@ public class PlayerTest
 	player.interractWith(monster);
 	assertEquals(50,player.getLP());
     }
+        
+        /**
+           * this test Monster Speak Wrong Anwer, allows to reduce the points of a player's life proscription
+             * @return: 
+               * @correction:
+         */   
     
-    /**
-       * this test Monster Speak Wrong Anwer, allows to reduce the points of a player's life proscription
-         * @return: 
-           * @correction:
-     */   
-
-    @Test
-    public void testMonsterSpeakWrongAnwer()
-{
-    player.interractWith(monster);
-    assertEquals(50,player.getLP());
-}
+        @Test
+        public void testMonsterSpeakWrongAnwer()
+    {
+        player.interractWith(monster);
+        assertEquals(50,player.getLP());
+    }
 }

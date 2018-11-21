@@ -28,15 +28,6 @@ public class Item
         description = newDescription; 
     }
 
-    /**
-     * this method allows the player to show the description of the item
-     *
-     * @return the description of the item
-     */
-    public String descriptionDisplayItem()
-    {
-        return (description);
-    }
     
     /**
      * getter to get the weight of the object

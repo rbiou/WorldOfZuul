@@ -60,7 +60,7 @@ public class ItemTest
     public void tearDown()
     {
     }
-    
+
     /**
     * Method testItemDescription : test if the item description is available for the player
     *
@@ -70,7 +70,7 @@ public class ItemTest
     @Test
     public void testItemDescription()
     {
-        assertEquals("I'm a banana",item.descriptionDisplayItem());
+        assertEquals("I'm a banana",item.getDescription());
     }
     
     /**
@@ -142,6 +142,7 @@ public class ItemTest
     @Test
     public void testNegativePrice()
     {
+        character.addItem(negItem);
         assertEquals(-4,negItem.getValue());
         assertEquals(false,character.addItem(negItem));
         assertEquals(0,character.getListItems().size());
@@ -156,6 +157,7 @@ public class ItemTest
      */
     public void testNegativeWeight()
     {
+        character.addItem(negWeightItem);
         assertEquals(-4,negWeightItem.getWeight());
         assertEquals(false,character.addItem(negWeightItem));
         assertEquals(0,character.getListItems().size());
