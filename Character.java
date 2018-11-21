@@ -21,14 +21,29 @@ public class Character{
         return items; 
     }
     
+    /**
+     * Returns the character's name
+     *
+     * @return     The character's name.
+     */
     public String getName(){
         return name; 
     }
     
+    /**
+     * Returns the amount of money owned by character
+     *
+     * @return     The money.
+     */
     public int getMoney(){
         return money; 
     }
     
+    /**
+     * Returns the maximum weight a character can handle in its items
+     *
+     * @return     The maximum weight.
+     */
     public int getMaxWeight(){
         return maxWeight; 
     }
@@ -75,7 +90,7 @@ public class Character{
     }
     
     /**
-     * getTotalWeight
+     * Return the total weight of items owned by character
      *
      * @param  
      * @return int TotalWeight
