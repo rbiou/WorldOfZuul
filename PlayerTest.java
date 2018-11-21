@@ -16,7 +16,7 @@ public class PlayerTest
     private Chest chest;
     private Character character;
     private Pet petCat; 
-    
+    private Monster monster;
     /**
     * Constructeur de la classe-test PlayerTest
     */
@@ -37,7 +37,8 @@ public class PlayerTest
         chest = new Chest("Chest1", 360, 1000, "I am the Chest1", 100, false);
         item = new Item("banana",1,1,"I'm a banana");
         character = new Character("Joe", 50, 40);
-        petCat = new Pet("Minou",1000, 50,"Cat"); 
+        petCat = new Pet("Minou",1000, 50,"Cat");
+        monster = new Monster("Bowser",50, 100); 
     }
    /**
     * This test checks if the starting player has 100 points of life
@@ -89,5 +90,18 @@ public class PlayerTest
         assertEquals(1,player.getMoney());
         assertEquals(999,petCat.getMoney());
     }
+    
+    /**
+       * this test Monster Speak Wrong Anwer, allows to reduce the points of a player's life proscription
+         * @return: 
+           * @correction:
+     */   
+
+    @Test
+    public void testMonsterSpeakWrongAnwer()
+{
+    player.interractWith(monster);
+    assertEquals(50,player.getLP());
+}
 }
 

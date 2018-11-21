@@ -61,6 +61,16 @@ public class Player extends Character
     {
         return lifePoints;
     }
+    
+    /**
+     * Interract with the no player character
+     * @param 
+     */
+    public void interractWith(NonPlayerCharacter character)
+    {
+        character.speak(this);
+    }
+
 
 }
 
