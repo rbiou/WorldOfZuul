@@ -85,13 +85,4 @@ public class Character{
     {
         return 1;
     }
-
-    /**
-     * The player grab the content of a chest
-     * @param Item @
-    **/
-   
 }
-
-
-
