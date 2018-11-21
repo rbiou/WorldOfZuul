@@ -40,7 +40,7 @@ public class Chest extends Item
      /**
      *An item is added to the chest
      */
-    public boolean addItemChest()
+    public boolean addItemChest(Item item)
     {
         return false;
     }
