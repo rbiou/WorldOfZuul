@@ -1,0 +1,19 @@
+#BlueJ class context
+comment0.target=Planet
+comment0.text=\r\n\ The\ Planet\ class\:\ this\ class\ defines\ the\ different\ Planet\ in\ the\ game\ World\ of\ Zuul\r\n\r\n\ @author\ (Groupe7)\r\n\ @version\ (13/11/2018)\r\n
+comment1.params=newName\ newDescription\ newTemp\ newTime
+comment1.target=Planet(java.lang.String,\ java.lang.String,\ int,\ int)
+comment1.text=\r\n\ Constructor\ of\ planet\ class\r\n
+comment2.params=
+comment2.target=java.util.List\ getListRoom()
+comment2.text=\r\n\ Get\ the\ room\ list\ of\ the\ planet\r\n\r\n\ @return\ \ \ \ \ listRoom\ of\ the\ planet\r\n
+comment3.params=
+comment3.target=int\ getTime()
+comment3.text=\r\n\ Get\ the\ time\ limit\ of\ the\ planet\r\n\r\n\ @return\ \ \ \ \ time\ of\ the\ planet\r\n
+comment4.params=
+comment4.target=java.lang.String\ descriptionDisplayPlanet()
+comment4.text=\r\n\ This\ method\ allows\ you\ to\ display\ the\ description\ of\ the\ planet\r\n
+comment5.params=newRoom
+comment5.target=boolean\ addRoom(Room)
+comment5.text=\r\n\ Add\ a\ new\ room\ in\ the\ planet\r\n\r\n\ @param\ \ y\ \ \ le\ param\u00E8tre\ de\ la\ m\u00E9thode\r\n
+numComments=6

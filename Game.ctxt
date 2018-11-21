@@ -1,0 +1,22 @@
+#BlueJ class context
+comment0.target=Game
+comment0.text=\r\n\ \r\n
+comment1.params=
+comment1.target=Game()
+comment1.text=\r\n\ Constructeur\ d'objets\ de\ classe\ Game\r\n
+comment2.params=
+comment2.target=void\ quit()
+comment2.text=\r\n\ this\ method\ allows\ you\ to\ quit\ the\ game\r\n
+comment3.params=
+comment3.target=void\ openGame()
+comment3.text=\r\n\ this\ method\ allows\ you\ to\ open\ the\ game\r\n
+comment4.params=
+comment4.target=void\ save()
+comment4.text=\r\n\ this\ method\ allows\ you\ to\ save\ the\ game\r\n
+comment5.params=
+comment5.target=void\ createRoom()
+comment5.text=\r\n\ the\ method\ allows\ you\ to\ create\ a\ Room\r\n
+comment6.params=
+comment6.target=void\ createWolrd()
+comment6.text=\r\n\ the\ method\ allows\ you\ to\ create\ the\ World\ of\ our\ game\r\n
+numComments=7

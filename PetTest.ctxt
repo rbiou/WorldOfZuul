@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.target=PetTest
+comment0.text=\r\n\ The\ test\ class\ PetTest.\r\n\r\n\ @author\ \ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=
+comment1.target=PetTest()
+comment1.text=\r\n\ Default\ constructor\ for\ test\ class\ PetTest\r\n
+comment2.params=
+comment2.target=void\ setUp()
+comment2.text=\r\n\ Sets\ up\ the\ test\ fixture.\r\n\r\n\ Called\ before\ every\ test\ case\ method.\r\n
+comment3.params=
+comment3.target=void\ testNewPet()
+comment3.text=\r\n\ Test\ the\ good\ creation\ of\ a\ new\ pet\r\n
+comment4.params=
+comment4.target=void\ testSpeak()
+comment4.text=\r\n\ Test\ if\ the\ pet\ give\ of\ the\ description\ of\ the\ planet\ where\ it\ is\ when\r\n\ a\ player\ speak\ to\ him\r\n
+numComments=5

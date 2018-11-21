@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=Pet
+comment0.text=\r\n\ This\ class\ describe\ the\ pets\ in\ the\ game,\ pets\ are\ placed\ in\ the\r\n\ different\ rooms.\r\n\r\n\ @author\ Group\ 7\r\n\ @version\ 14/11/2018\r\n
+comment1.params=newName\ newMoney\ newWeight\ newSpecies
+comment1.target=Pet(java.lang.String,\ int,\ int,\ java.lang.String)
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Pets\r\n
+comment2.params=
+comment2.target=java.lang.String\ getSpecies()
+comment2.text=\r\n\ Getter\ for\ species\ of\ the\ pet\r\n
+numComments=3

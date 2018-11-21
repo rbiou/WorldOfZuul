@@ -1,0 +1,24 @@
+#BlueJ class context
+comment0.target=Player
+comment0.text=\r\n\ The\ sub-class\ Player\ \:\ this\ is\ a\ class\ that\ define\ the\ characteristics\ \ \ \ \ \r\n\ of\ the\ player\r\n\ @author\ Group\ 7\r\n\ @version\ 13/11/2018\r\n
+comment1.params=newName\ newWeight
+comment1.target=Player(java.lang.String,\ int)
+comment1.text=\r\n\ Constructor\r\n
+comment2.params=chest
+comment2.target=void\ grabContent(Chest)
+comment2.text=\r\n\ the\ player\ grab\ the\ content\ of\ the\ chest\r\n\ @param\ door\r\n
+comment3.params=HP
+comment3.target=void\ looseHP(int)
+comment4.params=
+comment4.target=boolean\ checkTime()
+comment5.params=
+comment5.target=boolean\ isDead()
+comment6.params=pet
+comment6.target=void\ pet(Pet)
+comment7.params=door
+comment7.target=void\ moveRoom(Door)
+comment7.text=\r\n\ Go\ to\ the\ room\ to\ which\ specified\ door\ leads\ to\r\n\ @param\ \ door\ \ \ \ The\ door\ to\ where\ player\ has\ to\ go\r\n
+comment8.params=
+comment8.target=int\ getLP()
+comment8.text=\r\n\ getter\ to\ get\ the\ LP\ of\ the\ player\r\n
+numComments=9

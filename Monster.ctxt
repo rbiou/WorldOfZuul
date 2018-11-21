@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=Monster
+comment0.text=\r\n\ The\ class\ monster\ is\ the\ principal\ opponent\ of\ the\ player,\ the\ monster\r\n\ ask\ a\ riddle\ to\ the\ player\ if\ the\ player\ answer\ correctly\ the\ monster\r\n\ give\ money\ to\ him\ otherwise\ the\ monster\ attack\ the\ player.\r\n\r\n\ @author\ Group\ 7\r\n\ @version\ 14/11/2018\r\n
+comment1.params=newName\ newMoney\ newWeight
+comment1.target=Monster(java.lang.String,\ int,\ int)
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Monster\r\n
+comment2.params=player
+comment2.target=void\ attack(Player)
+comment2.text=\r\n\ this\ method\ allows\ the\ monster\ to\ attack\ the\ player\r\n\r\n\ @return\ the\ number\ of\ HP\ that\ the\ player\ lost\ after\ the\ monster\r\n\ attack\r\n
+numComments=3

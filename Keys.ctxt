@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=Keys
+comment0.text=\r\n\ The\ Keys\ class\ \:\ this\ is\ a\ specific\ item\ that\ enable\ the\ player\r\n\ to\ open\ a\ locked\ door\r\n\r\n\ @author\ Group\ 7\ (Leyla)\r\n\ @version\ 14/11/2018\r\n
+comment1.params=newName\ newValue\ newWeight\ newDescription\ newShape
+comment1.target=Keys(java.lang.String,\ int,\ int,\ java.lang.String,\ java.lang.String)
+comment1.text=\r\n\ Constructeur\ d'objets\ de\ classe\ Keys\r\n
+numComments=2

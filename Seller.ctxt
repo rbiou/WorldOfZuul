@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.target=Seller
+comment0.text=\r\n\ The\ seller\ is\ the\ subclass\ of\ the\ non\ player\ character\ the\ seller\r\n\ class\ allows\ the\ player\ to\ buy\ or\ to\ sell\ the\ items.\r\n\r\n\ @author\ Group\ 7\r\n\ @version\ 14/11/2018\r\n
+comment1.params=newName\ newMoney\ newWeight
+comment1.target=Seller(java.lang.String,\ int,\ int)
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Seller\r\n
+comment2.params=item
+comment2.target=void\ sellItems(Item)
+comment2.text=\r\n\ this\ method\ allows\ the\ player\ to\ sell\ an\ item\ to\ the\ seller\r\n\r\n\ @param\ item\r\n\ @return\ return\ the\ amount\ of\ money\ owned\ by\ the\ player\r\n
+comment3.params=item
+comment3.target=void\ buyItem(Item)
+comment3.text=\r\n\ this\ method\ allows\ the\ player\ to\ buy\ an\ item\ from\ the\ seller\r\n\r\n\ @param\ amount\ of\ money\r\n\ @return\ return\ the\ new\ item\ get\ by\ the\ player\r\n
+comment4.params=
+comment4.target=void\ displayShop()
+comment4.text=\r\n\ this\ method\ allows\ the\ player\ to\ display\ the\ different\ items\ in\r\n\ the\ shop\r\n\r\n\ @param\ \ \r\n\ @return\ all\ the\ items\ in\ the\ shop\r\n
+numComments=5

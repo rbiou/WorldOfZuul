@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.target=Chest
+comment0.text=\r\nThe\ Chest\ class\ \:\ this\ is\ class\ defines\ what\ is\ contained\ in\ the\ chests.\ \r\n\ @Groupe\ 7\r\n\ @14/11/2018\r\n
+comment1.params=newName\ newValue\ newWeight\ newDescription\ newMoney\ isTrapped
+comment1.target=Chest(java.lang.String,\ int,\ int,\ java.lang.String,\ int,\ boolean)
+comment1.text=\r\n\ Constructeur\ d'objets\ de\ classe\ Chest\r\n
+comment2.params=
+comment2.target=boolean\ removeMoneyChest()
+comment2.text=\r\nThe\ player\ removes\ the\ money\ from\ the\ chest\r\n
+comment3.params=
+comment3.target=boolean\ removeItemChest()
+comment3.text=\r\nThe\ player\ removes\ the\ item\ from\ the\ chest\r\n
+comment4.params=
+comment4.target=boolean\ addItemChest()
+comment4.text=\r\nAn\ item\ is\ added\ to\ the\ chest\r\n
+numComments=5

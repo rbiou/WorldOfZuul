@@ -1,0 +1,13 @@
+#BlueJ class context
+comment0.target=LockedDoor
+comment0.text=\r\n\ Same\ as\ door,\ but\ are\ locked\ and\ need\ to\ be\ opened\ to\ move\ in\ another\ room.\r\n\r\n\ @author\ (Groupe\ 7)\r\n\ @version\ (13/11/2018)\r\n
+comment1.params=newPresentRoom\ newNextRoom\ newShapeKey
+comment1.target=LockedDoor(Room,\ Room,\ java.lang.String)
+comment1.text=\r\n\ \ \ \ LockedDoor\ constructor\r\n
+comment2.params=key
+comment2.target=boolean\ unlock(Keys)
+comment2.text=\r\n\ Open\ a\ LockedDoor\ -\ The\ shape\ of\ the\ lock\ must\ correspond\ to\ the\ shape\ of\ the\ key\r\n\ If\ it\ corresponds,\ the\ door\ is\ opened\r\n\ If\ it\ not\ corresponds,\ the\ door\ stay\ locked\r\n
+comment3.params=
+comment3.target=java.lang.String\ ShapeKeyDescription()
+comment3.text=\r\n\ Description\ of\ the\ shape\ of\ the\ key\r\n
+numComments=4
