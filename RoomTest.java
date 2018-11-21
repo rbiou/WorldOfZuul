@@ -14,7 +14,7 @@ public class RoomTest
 {
     private Player player; 
     private Chest chest; 
-    private Room room1;
+    private Room room1, room2;
     /**
      * Constructeur de la classe-test RoomTest
      */
@@ -32,7 +32,8 @@ public class RoomTest
     {   
         player = new Player("Joe", 50);
         chest = new Chest("Chest1", 360, 1000, "I am the Chest1", 100, false);
-        room1 = new Room("Room1"); 
+        room1 = new Room("Room1");
+        room2 = new Room("Room2"); 
     }
 
     @Test
@@ -149,7 +150,7 @@ public class RoomTest
     }
     
     /**
-    * This test check if we can remove a chest in a room.
+    * This test check if we can remove an unknown chest in a room.
     */
     @Test
     public void testRemoveChestUnknownInTheRoom()
@@ -161,6 +162,4 @@ public class RoomTest
             }
         assertEquals(false, trouve);
     }
-   
 }
-
