@@ -17,4 +17,10 @@ public class Keys extends Item
         super(newName, newValue, newWeight, newDescription);
         shape = newShape; 
     }
+    
+    public String getShape()
+    {
+        return shape;
+    }
 }
+

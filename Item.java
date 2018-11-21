@@ -37,8 +37,37 @@ public class Item
     {
         return (description);
     }
-   
+    
+    /**
+     * getter to get the weight of the object
+    **/
+    public int getWeight()
+    {
+        return weight;
+    }
 
-
+    /**
+     * getter to get the name of the object
+    **/
+    public String getName()
+    {
+        return name;
+    }
+    
+    /**
+     * getter to get the value of the object
+    **/
+    public int getValue()
+    {
+        return value;
+    }
+    
+    /**
+     * getter to get the description of the object
+    **/
+    public String getDescription()
+    {
+        return description;
+    }
 
 }
