@@ -80,9 +80,10 @@ public class Character{
      * @param  
      * @return int TotalWeight
      */
-    public boolean getTotalWeight()
+    public int getTotalWeight()
+    
     {
-        return false
+        return 1;
     }
 
     /**
