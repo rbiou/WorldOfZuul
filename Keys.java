@@ -1,14 +1,15 @@
 
 /**
  * The Keys class : this is a specific item that enable the player
- * to open a locked door
+ * to open a locked door. 
  *
  * @author Group 7 (Leyla)
  * @version 14/11/2018
  */
 public class Keys extends Item
 {
-    private String shape; //The shape of the key
+    private String shape; //The shape of the key, string that can take any word
+    
     /**
      * Constructeur d'objets de classe Keys
      */
@@ -18,6 +19,9 @@ public class Keys extends Item
         shape = newShape; 
     }
     
+    /**
+     * Getter for the attribute shape
+     */
     public String getShape()
     {
         return shape;
