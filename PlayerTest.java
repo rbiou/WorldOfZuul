@@ -99,16 +99,15 @@ public class PlayerTest
         assertEquals(false,chest.getListItems().contains(item));
     }
 
-/**
-   	* this test Monster Speak Wrong Answer, allows to reduce the points of a player's life proscription
-     	* @return:
-       	* @correction:
- 	*/   
+    /**
+     * this test Monster Speak Wrong Answer, allows to reduce the points of a player's life proscription
+     * @return:
+     * @correction:
+     */   
 
-	@Test
-	public void testMonsterSpeakWrongAnswer()
-{
+    @Test
+    public void testMonsterSpeakWrongAnswer(){
 	player.interractWith(monster);
 	assertEquals(50,player.getLP());
-}
+    }
 }
