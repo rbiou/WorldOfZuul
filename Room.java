@@ -134,7 +134,6 @@ public class Room
      */
     public void setExitLocked(String exitName, LockedDoor arrivalDoor)
     {
-        
     }
     
 }
