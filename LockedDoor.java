@@ -35,5 +35,19 @@ public class LockedDoor extends Door{
     {
         return shapeLocked; 
     }
- 
+    
+    /**
+     * Return if the locked door has been opened or not.
+    **/
+    public boolean getIfLocked()
+    {
+        return locked; 
+    }
+    
+    /**
+     * Test if the shape of the given key correspond to the shape of the door and open it if they correspond.
+    **/
+    public void open(Keys testedKey)
+    { 
+    }
 }
