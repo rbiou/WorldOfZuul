@@ -49,7 +49,7 @@ public class PlayerTest
     @Test
     public void CheckplayerHP()
     {
-    
+        
         assertEquals(100,player.getLP());
     
     }
