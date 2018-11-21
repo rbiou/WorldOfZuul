@@ -23,7 +23,7 @@ public class NonPlayerCharacter extends Character
      * @param
      * @return  return the message of the character
      */
-    public String speak()
+    public String speak(Player player)
     {
         return (""); 
     }

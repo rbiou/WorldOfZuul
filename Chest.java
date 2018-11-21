@@ -53,7 +53,7 @@ public class Chest extends Item
      *
      * @return     The item list.
      */
-    public ArrayList<Item> getItemList()
+    public ArrayList<Item> getListItems()
     {
         return rewarding;
     }
