@@ -8,7 +8,7 @@ import org.junit.Test;
  * The test class KeysTest.
  *
  * @author (Romain)
- * @version (a version number or a date)
+ * @version (21/11/2018)
  */
 public class KeysTest
 {
@@ -33,12 +33,11 @@ public class KeysTest
     }
 
     /**
-     * Tears down the test fixture.
-     *
-     * Called after every test case method.
+     *  This test very if the key is well created and have all the good values
+     *  for the different attributes give in the constructor
      */
-    @After
-    public void tearDown()
+    @Test
+    public void testCreationKey()
     {
         assertEquals("Key1", testKey.getName());
         assertEquals(5,testKey.getValue());
