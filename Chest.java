@@ -32,7 +32,7 @@ public class Chest extends Item
      /**
      *The player removes the item from the chest
      */
-    public boolean removeItemChest()
+    public boolean removeItemChest(Item item)
     {
         return false;
     }
