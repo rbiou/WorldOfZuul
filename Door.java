@@ -6,16 +6,13 @@
  */
 public class Door
 {
-    // instance variables -
-    private Room presentRoom; // the room where you are from
+    // instance variables
     private Room nextRoom; // the room where you going to
     /**
      * Constructor for objects of class Door
      */
-    public Door(Room newPresentRoom, Room newNextRoom)
+    public Door(Room newNextRoom)
     {
-        presentRoom = newPresentRoom; 
         nextRoom = newNextRoom;
     }
 }
-

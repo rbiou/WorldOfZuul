@@ -11,9 +11,9 @@ public class LockedDoor extends Door{
     /**
     LockedDoor constructor
     */
-    public LockedDoor(Room newPresentRoom, Room newNextRoom, String newShapeKey)
+    public LockedDoor(Room newNextRoom, String newShapeKey)
     {
-        super(newPresentRoom, newNextRoom); 
+        super(newNextRoom);
         locked = true;
         shapeLocked = newShapeKey; 
     }

@@ -19,7 +19,7 @@ public class PlayerTest
     private Pet petCat; 
     private Monster monster;
     private Room room1, room2;
-    private Door door;
+    private Door door1, door2;
     private LockedDoor unlokedDoor; 
     
     /**
@@ -37,16 +37,17 @@ public class PlayerTest
     @Before
     public void setUp() 
     {
-        player = new Player("Joe",40);
-        chest = new Chest("Chest1", 360, 1000, "I am the Chest1", 100, false);
+        player       = new Player("Joe",40);
+        chest        = new Chest("Chest1", 360, 1000, "I am the Chest1", 100, false);
         trappedChest = new Chest("Chest2", 360, 1000, "I am the Chest2", 100, true);
-        item = new Item("banana",1,1,"I'm a banana");
-        character = new Character("Joe", 50, 40);
-        petCat = new Pet("Minou",1000, 50,"Cat");
-        monster = new Monster("Bowser",50, 100);
-        room1 = new Room("Room1"); 
-        room2 = new Room("Room2");
-        door = new Door(room1, room2); 
+        item         = new Item("banana",1,1,"I'm a banana");
+        character    = new Character("Joe", 50, 40);
+        petCat       = new Pet("Minou",1000, 50,"Cat");
+        monster      = new Monster("Bowser",50, 100);
+        room1        = new Room("Room1");
+        room2        = new Room("Room2");
+        door1        = new Door(room1);
+        door2        = new Door(room2);
     }
 
     /**
@@ -67,7 +68,7 @@ public class PlayerTest
     @Test
     public void testGrabcontent()
     {   
-        chest.addItemChest(item);
+        chest.addItem(item);
         player.grabContent(trappedChest);
         assertEquals(75,player.getLP());   
     }
@@ -101,7 +102,7 @@ public class PlayerTest
      * @correction : 
      */
     public void testGrabAnItemFromAChest() {
-        chest.addItemChest(item);
+        chest.addItem(item);
         player.grabContent(chest);
         assertEquals(true,player.getListItems().contains(item));
         assertEquals(false,chest.getListItems().contains(item));
@@ -126,10 +127,10 @@ public class PlayerTest
      */
     @Test
     public void testMovePlayer(){
-        room1.setExit("Sortie1", door);
-        room2.setExit("Sortie1", door); 
+        room1.setExit("Sortie1", door2);
+        room2.setExit("Sortie1", door1);
         room1.addCharacter(player);
-        player.moveRoom(door);
-        assertEquals(room2,player.getCurrentRoom());
+        player.moveRoom(door1);
+        assertEquals(room2, player.getCurrentRoom());
     }
 }

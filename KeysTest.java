@@ -37,7 +37,7 @@ public class KeysTest
         testBadKey = new Keys("Key1",5, 2, "key for room 14", "square");
         room1 = new Room("Room1");
         room2 = new Room("Room2");
-        lockedDoor = new LockedDoor(room1,room2,"circle");
+        lockedDoor = new LockedDoor(room2,"circle");
     }
 
     /**

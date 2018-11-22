@@ -51,7 +51,7 @@ public class Game
     {
         //creation of the planets
         Planet alpha = new Planet("Alpha", "Welcome on the planet alpha", 10, 10); 
-        Planet beta = new Planet("Beta", "Welcome on the planet beta", 10, 10); 
+        Planet beta  = new Planet("Beta", "Welcome on the planet beta", 10, 10); 
         Planet gamma = new Planet("Gamma", "Welcome on the planet gamma", 10, 10); 
         Planet delta = new Planet("Delta", "Welcome on the planet alpha", 10, 10);
 

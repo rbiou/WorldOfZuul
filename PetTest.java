@@ -63,6 +63,4 @@ public class PetTest
         planet1.addRoom(room1);
         assertEquals("Welcome on the planet alpha", petTest.speak());
     }
-    
-    
 }

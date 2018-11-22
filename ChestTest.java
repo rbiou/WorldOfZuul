@@ -60,7 +60,7 @@ public class ChestTest
     @Test
     public void testAddItemChest()
     {
-        testChest.addItemChest(testItem); // add an item into the chest
+        testChest.addItem(testItem); // add an item into the chest
         assertEquals(true,testChest.getListItems().contains(testItem)); // test if the item is in the list of items
     }
     
@@ -71,8 +71,8 @@ public class ChestTest
     @Test
     public void testRemoveItemChest()
     {
-        testChest.addItemChest(testItem); // add an item into the chest
-        testChest.removeItemChest(testItem); // remove an item into the chest
+        testChest.addItem(testItem); // add an item into the chest
+        testChest.removeItem(testItem); // remove an item into the chest
         assertEquals(false,testChest.getListItems().contains(testItem)); // test if the item is in the list of items
     }
     
