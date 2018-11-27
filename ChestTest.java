@@ -55,7 +55,6 @@ public class ChestTest
         assertEquals("I am the Chest1",testChest.getDescription());
         assertEquals(100,testChest.getMoney());
         assertEquals(0,testChest.getListItems().size());
-        
     }
     
     /**
@@ -67,6 +66,23 @@ public class ChestTest
     {
         testChest.addItem(testItem); // add an item into the chest
         assertEquals(true,testChest.getListItems().contains(testItem)); // test if the item is in the list of items
+    }
+    
+        /**
+     * This test verify if when we put an item in the chest, it is very inside
+     * it. That means that when we look inside the chest, we must find it.
+     */
+    @Test
+    public void testAddItemChestTwice()
+    {
+        boolean trouve = false; 
+        int nbItems = 0;
+        testChest.addItem(testItem); // add an item into the chest
+        testChest.addItem(testItem); // add an the item a second time
+        for(int i = 0; i < testChest.getListItems().size(); i++){
+            nbItems++;
+        }
+        assertEquals(1, nbItems); // test if the number of item is equal to 1 and not 2
     }
     
     /**

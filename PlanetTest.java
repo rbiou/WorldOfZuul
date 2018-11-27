@@ -36,7 +36,6 @@ public class PlanetTest
     public void setUp()
     {
         planet1 = new Planet("Alpha","Welcome on the planet alpha",10,10);
-        planet1.addRoom(room1);
         room1 = new Room("Room1", planet1);
         character= new Character("Joe", 50, 40, room1);
     }
@@ -55,15 +54,49 @@ public class PlanetTest
         }
         assertEquals(0, planet1.getListRoom().get(0).getListCharacter().size());
     }
+    
     /**
      * Supprime les engagements
      *
      * Méthode appelée après chaque appel de méthode de test.
      */
-    @After
+    @Test
     public void tearDown() // throws java.lang.Exception
     {
         //Libérez ici les ressources engagées par setUp()
+    }
+    
+     /**
+     * Test to add a room to the planet
+     * We can not add the same room twice
+     */
+    @Test
+    public void testAddRoom() 
+    {
+        boolean trouve = false; 
+        planet1.addRoom(room1);
+        if (planet1.getListRoom().contains(room1)){
+            trouve = true; 
+        }
+        assertEquals(true, trouve);
+    }
+    
+     /**
+     * Test to add a room in the planet
+     * This room is already in the planet
+     * @expected result : The room should not be added to the planet
+     */
+    @Test
+    public void testAddRoomTwice() 
+    {
+        boolean trouve = false; 
+        int nbRoom = 0; 
+        planet1.addRoom(room1);
+        planet1.addRoom(room1);
+        for(int i = 0; i < planet1.getListRoom().size(); i++){
+            nbRoom++;
+        }
+        assertEquals(1, nbRoom);
     }
 }
 

@@ -64,6 +64,7 @@ public class RoomTest
     public void testAddACharacterInTheRoom()
     {
         boolean test = false; 
+        room1.addCharacter(player);
         for(int i = 0; i < room1.getListCharacter().size(); i++){
             if (room1.getListCharacter().get(i)==player) {
                 test = true;}
@@ -98,8 +99,8 @@ public class RoomTest
     public void testRemoveCharacterInTheRoom()
     {
         boolean trouve = false; // true = the character was found in the list - false = the character was not found in the list
+        room1.addCharacter(player);
         room1.removeCharacter(player);
-        //assertEquals(1, room1.getListCharacter().size());
         for(int i = 0; i < room1.getListCharacter().size(); i++){
             if (room1.getListCharacter().get(i)==player) {
                 trouve = true;}
@@ -118,7 +119,6 @@ public class RoomTest
         boolean trouve = false; // true = the chest was found in the list - false = the chest was not found in the list
         room1.addChest(chest);
         room1.removeChest(chest);
-        //assertEquals(1, room1.getListCharacter().size());
         for(int i = 0; i < room1.getListChest().size(); i++){
             if (room1.getListChest().get(i)==chest) {
                 trouve = true;}
@@ -126,5 +126,39 @@ public class RoomTest
         assertEquals(false, trouve);
     }
     
+    /**
+     * This test checks if we can add a chest twice in a room
+     * @result : The chest should be not added to the room (the second time)
+     * @error : It may be an issue in the method addChest()
+    */
+    @Test
+    public void testaddChestTwice()
+    {
+        boolean trouve = false; 
+        int nbChest = 0; 
+        room1.addChest(chest);
+        room1.addChest(chest);
+        for(int i = 0; i < room1.getListChest().size(); i++){
+            nbChest++;
+        }
+        assertEquals(1, nbChest);
+    }
     
+    /**
+     * This test checks if we can add a character twice in a room
+     * @result : The character should be not added to the room (the second time)
+     * @error : It may be an issue in the method addCharacter()
+    */
+    @Test
+    public void testaddCharacterTwice()
+    {
+        boolean trouve = false; 
+        int nbChar = 0; 
+        room1.addCharacter(player);
+        room1.addCharacter(player);
+        for(int i = 0; i < room1.getListCharacter().size(); i++){
+            nbChar++;
+        }
+        assertEquals(1, nbChar);
+    }
 }
