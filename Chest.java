@@ -48,7 +48,8 @@ public class Chest extends Item
      */
     public boolean addItem(Item item)
     {
-        return false;
+        rewarding.add(item);
+        return true;
     }
 
 
