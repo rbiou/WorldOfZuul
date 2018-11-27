@@ -31,6 +31,7 @@ public class LockedDoor extends Door{
     /**
      * Description of the shape of the key
     **/
+    @Override
     public String ShapeKeyDescription()
     {
         return shapeLocked; 
@@ -39,6 +40,7 @@ public class LockedDoor extends Door{
     /**
      * Return if the locked door has been opened or not.
     **/
+    @Override
     public boolean getIfLocked()
     {
         return locked; 

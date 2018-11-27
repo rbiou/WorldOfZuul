@@ -20,5 +20,21 @@ public class Door
     {
         return nextRoom;
     }
+    
+      /**
+     * Return if the locked door has been opened or not.
+    **/
+    public boolean getIfLocked()
+    {
+        return true;
+    }
+    
+    /**
+     * Description of the shape of the key
+    **/
+    public String ShapeKeyDescription()
+    {
+        return ""; 
+    }
 }
 

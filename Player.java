@@ -78,7 +78,16 @@ public class Player extends Character
             {
                 test=true;
                 Door doorExit = getCurrentRoom().getSpecificExit(nameDoor);
-                moveRoom(doorExit);
+           
+                if (doorExit.getIfLocked())
+                {
+                    ArrayList<Item> bag = getListItems();
+                    
+                }
+                else
+                {
+                    moveRoom(doorExit);
+                }
             }
             if (nameDoor == "stop")
             {
