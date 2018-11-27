@@ -34,8 +34,8 @@ public class Pet extends NonPlayerCharacter
      * When a player speak to a pet, it give the description of the planet
      * he is standing in.
      */
-    public String speak()
+    public void speak()
     {
-        return ("You are in the "+this.getCurrentRoom()+" of the planet "+this.getCurrentRoom().getPlanet()+".");
+        System.out.println("You are in the "+this.getCurrentRoom()+" of the planet "+this.getCurrentRoom().getPlanet()+".");
     }
 }
