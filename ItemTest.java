@@ -22,7 +22,8 @@ public class ItemTest
     private Item bigItem;
     private Item negItem;
     private Item negWeightItem;
-    private Character character;    
+    private Character character;
+    private Room room1;
     /**
     * Default constructor for test class ItemTest
     */
@@ -44,11 +45,12 @@ public class ItemTest
     @Before
     public void setUp()
     {
+        room1 = new Room("Room1");
         item = new Item("banana",1,1,"I'm a banana");
         bigItem = new Item("apple",1,40,"I'm a big apple");
         negItem = new Item("orange",-4,1,"I have a negative price");
         negWeightItem = new Item("papaye",1,-4,"I have a negative weight");
-        character= new Character("Joe", 50, 40);
+        character= new Character("Joe", 50, 40, room1);
     }
     
     /**

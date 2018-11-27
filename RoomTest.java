@@ -35,7 +35,7 @@ public class RoomTest
     @Before
     public void setUp()
     {   
-        player = new Player("Joe", 50);
+        player = new Player("Joe", 50, room1);
         chest = new Chest("Chest1", 360, 1000, "I am the Chest1", 100, false);
         room1 = new Room("Room1");
         room2 = new Room("Room2"); 
@@ -60,7 +60,6 @@ public class RoomTest
     public void testAddACharacterInTheRoom()
     {
         boolean test = false; 
-        room1.addCharacter(player);
         for(int i = 0; i < room1.getListCharacter().size(); i++){
             if (room1.getListCharacter().get(i)==player) {
                 test = true;}
@@ -95,7 +94,6 @@ public class RoomTest
     public void testRemoveCharacterInTheRoom()
     {
         boolean trouve = false; // true = the character was found in the list - false = the character was not found in the list
-        room1.addCharacter(player);
         room1.removeCharacter(player);
         //assertEquals(1, room1.getListCharacter().size());
         for(int i = 0; i < room1.getListCharacter().size(); i++){
