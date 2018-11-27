@@ -29,5 +29,7 @@ public class Monster extends NonPlayerCharacter
      */
     public void attack(Player player)
     {
+        System.out.println("ATTACK !!!!!!!");
+        player.looseHP(50);
     }
 }

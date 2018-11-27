@@ -65,5 +65,6 @@ public class MonsterTest
     {
         testMonster.attack(testPlayer);
         assertEquals(50, testPlayer.getLP());
+        
     }
 }
