@@ -54,7 +54,6 @@ public class Player extends Character
     
     public void pet(Pet pet)
     {
-        addMoney(1);
     }
 
     /**
@@ -66,8 +65,9 @@ public class Player extends Character
         System.out.println("Voici la liste des différentes sorties possibles");
         getCurrentRoom().displayExit();
         System.out.println("Choisissez votre porte");
-        Scanner reader = new Scanner (System.in);
-        String porte = reader.next();
+        while (
+            Scanner reader = new Scanner (System.in);
+            String porte = reader.next();
         
         
     }
