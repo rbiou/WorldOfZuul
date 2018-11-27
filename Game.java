@@ -50,6 +50,7 @@ public class Game
     {
 
         //creation of the planets
+        Planet startP = new Planet("Start", "Welcome on the planet start", 10, 10); 
         Planet alpha = new Planet("Alpha", "Welcome on the planet alpha", 10, 10); 
         Planet beta = new Planet("Beta", "Welcome on the planet beta", 10, 10); 
         Planet gamma = new Planet("Gamma", "Welcome on the planet gamma", 10, 10); 
@@ -59,7 +60,7 @@ public class Game
         Room start, alpha1, alpha2, alpha3, beta1, beta2, beta3, beta4, beta5, delta1, delta2, delta3, delta4, gamma1, gamma2, gamma3,
         gamma4, gamma5, gamma6; //decalration of the room
         
-        start = new Room("start"); 
+        start = new Room("start", startP);
         
         alpha.getListRoom().add(alpha1 = new Room("alpha1", alpha)); 
         alpha.getListRoom().add(alpha2 =new Room("alpha2", alpha)); 
@@ -151,10 +152,10 @@ public class Game
         
         //Add the monster in the rooms
         Monster monster1, monster2, monster3, monster4; //declaration of the monsters
-        alpha2.addCharacter(monster1 = new Monster("Godzilla", 10000, 56,alpha2)); 
-        beta3.addCharacter(monster2 = new Monster("Yoda", 10000, 56,beta3)); 
-        delta3.addCharacter(monster3 = new Monster("Darkness", 10000, 56,delta3)); 
-        gamma6.addCharacter(monster4 = new Monster("Piranha", 10000, 56,gamma6));
+        alpha2.addCharacter(monster1 = new Monster("Godzilla", 10000, 56,alpha2, "", "")); 
+        beta3.addCharacter(monster2 = new Monster("Yoda", 10000, 56,beta3, "", "")); 
+        delta3.addCharacter(monster3 = new Monster("Darkness", 10000, 56,delta3, "", "")); 
+        gamma6.addCharacter(monster4 = new Monster("Piranha", 10000, 56,gamma6, "", ""));
         
         //Declaration 
         Item knief1, engine, propellant, windows, wheel, magicBall1, magicBall2, diamond1, 
