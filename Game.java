@@ -157,14 +157,16 @@ public class Game
         gamma6.addCharacter(monster4 = new Monster("Piranha", 10000, 56,gamma6));
         
         //Declaration 
-        Item knief1, engine, propellant, windows, wheel, magicBall1, diamond1, fork1, diamond2, knief2, fork2;  //Declaration of the item
-        Chest chest1alpha3, chest2delta1, chest3delta4, chest4beta1, chest5beta5, chestGamma1, chestGamma1bis, chestGamma2, chestGamma5, chestGamma4, chestGamma6;//declaration of the chest
+        Item knief1, engine, propellant, windows, wheel, magicBall1, magicBall2, diamond1, fork1, diamond2, knief2, fork2;  //Declaration of the item
+        Chest chest1alpha3, chest2delta1, chest3delta4, chest4beta1, chest5beta5, chestGamma1, chestGamma1bis, chestGamma2, 
+        chestGamma5, chestGamma4, chestGamma6, chestAlpha1;//declaration of the chest
         Keys keyAlpha3, keyDelta2, keyBeta4, keyGamma2, keyGamma4; // declaration of the key to open the door
         Pet petAlpha1, petDelta1, petGamma1, petBeta1, petBeta4 ;// pets in the first room of the planet
         Seller sellerDelta2, sellerBeta2, sellerGamma3; //declaration of the sellers
         
         //Add items in the chests
         chest1alpha3.getListItems().add(knief1=new Item("Knieffy",50,10,"I am a knief, you can sell me to the sellers "));
+        chest1alpha3.getListItems().add(magicBall2=new Item("MiniBall",100,10,"I am a MagicBall, you can sell me to the sellers "));
         chest2delta1.getListItems().add(keyAlpha3 = new Keys("Red key",300,20,"I am a key, I can open the door xxxx ", "MDP"));
         chest3delta4.getListItems().add(wheel=new Item("wheely",500,50,"I am the wheel of your vessel"));
         chest4beta1.getListItems().add(keyBeta4 = new Keys("Grey key",300,20,"I am a key, I can open the door xxxx ", "MDP"));
@@ -176,6 +178,7 @@ public class Game
         chestGamma6.getListItems().add(engine = new Item("engine", 500, 50, "I am the engine of your vessel"));
         
         //Add the chests in the rooms
+        alpha1.addChest(chestAlpha1 = new Chest("Bill",0,50, "Hello my name is Bob and you lose 50 HP",0,true));
         alpha3.addChest(chest1alpha3 = new Chest("Bob",0,50,"Hello my name is Bob",50,false));
         delta1.addChest(chest2delta1 = new Chest("Sully",0,50,"Hello my name is Sully",0,false));
         delta4.addChest(chest3delta4 = new Chest ("Titi",0,50,"Hello my name is Titi ",50,false));
@@ -198,9 +201,9 @@ public class Game
         //Add items to the sellers
         sellerDelta2.getListItems().add(keyDelta2 = new Keys("Yellow key",300,20,"I am a key, I can open the door xxxx ", "MDP"));
         sellerBeta2.getListItems().add(magicBall1 = new Item ("flackball",100,50,"I am a diamond, you can win 100 pieces if you sell me"));
-        sellerBeta2.getListItems().add(diamond1 = new Item ("little diamond",250,50,"I am a diamond, you can win 250 pieces if you sell me"));
+        sellerBeta2.getListItems().add(diamond1 = new Item ("little diamond",250,50,"I am a diamond, you can bue me"));
         sellerGamma3.getListItems().add(knief2 = new Item("sharp knife", 50, 10,"I am a sharp knief, you can buy me"));
-        sellerGamma3.getListItems().add(fork2 = new Item("Small knife", 50, 10,"I am a small fork, you can buy me"));
+        sellerGamma3.getListItems().add(fork2 = new Item("Small knife", 3, 10,"I am a small fork, you can buy me"));
         sellerGamma3.getListItems().add(keyGamma4 = new Keys("Blue key", 300, 20,"I am a key, I can open the door xxxx ", "MDP"));
         
         //Add the sellers to the rooms
