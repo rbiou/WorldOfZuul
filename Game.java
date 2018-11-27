@@ -152,10 +152,10 @@ public class Game
         
         //Add the monster in the rooms
         Monster monster1, monster2, monster3, monster4; //declaration of the monsters
-        alpha2.addCharacter(monster1 = new Monster("Godzilla", 10000, 56,alpha2, "", "")); 
-        beta3.addCharacter(monster2 = new Monster("Yoda", 10000, 56,beta3, "", "")); 
-        delta3.addCharacter(monster3 = new Monster("Darkness", 10000, 56,delta3, "", "")); 
-        gamma6.addCharacter(monster4 = new Monster("Piranha", 10000, 56,gamma6, "", ""));
+        alpha2.addCharacter(monster1 = new Monster("Godzilla", 10000, 56,alpha2, "What is the capital of Bulgaria?", "Sofia")); 
+        beta3.addCharacter(monster2 = new Monster("Yoda", 10000, 56,beta3, "Who is the best friend of Dora", "Babouch")); 
+        delta3.addCharacter(monster3 = new Monster("Darkness", 10000, 56,delta3, "what is the date of the creation of the Mona Lisa", "1503")); 
+        gamma6.addCharacter(monster4 = new Monster("Piranha", 10000, 56,gamma6, "What is the color of mikey's shoes", "yellow"));
         
         //Declaration 
         Item knief1, engine, propellant, windows, wheel, magicBall1, magicBall2, diamond1;
@@ -178,7 +178,7 @@ public class Game
         gamma2.addChest(chestGamma2 = new Chest ("Banana",0,50,"Hello my name is Banane",0,true)); 
         gamma5.addChest(chestGamma5 = new Chest ("The best",0,50,"Hello my name is the best",50,false));
         gamma4.addChest(chestGamma4 = new Chest ("Magic",0,50,"Hello my name is magic",0,false)); 
-        gamma6.addChest(chestGamma4 = new Chest ("free",0,50,"Hello my name is free",50,false)); 
+        gamma6.addChest(chestGamma6 = new Chest ("free",0,50,"Hello my name is free",50,false)); 
         
        
         //Add items in the chests
@@ -203,6 +203,13 @@ public class Game
         beta1.addCharacter(petBeta1 = new Pet ("Winnie", 1000000, 10000, delta1, "bear"));
         beta4.addCharacter(petBeta4= new Pet ("Timon", 1000000, 10000, delta4, "mongouste"));
         
+         //Add the sellers to the rooms
+        delta2.addCharacter(sellerDelta2 = new Seller ("Dumbledore", 15000, 200, delta2));
+        beta2.addCharacter(sellerBeta2 = new Seller ("Hagrid", 15000, 200, beta2));
+        gamma3.addCharacter(sellerGamma3 = new Seller("Harry Potter", 15000, 500, gamma3));
+        
+        
+        
         //Add items to the sellers
         sellerDelta2.getListItems().add(keyDelta2 = new Keys("Yellow key",300,20,"I am a key, I can open the door xxxx ", "MDP"));
         sellerBeta2.getListItems().add(magicBall1 = new Item ("flackball",100,50,"I am a diamond, you can win 100 pieces if you sell me"));
@@ -214,10 +221,7 @@ public class Game
         sellerDelta2.getListItems().add(fork3 = new Item("Special fork", 3, 50, "I am a special fork, you can buy me to see why I am special"));
         
         
-        //Add the sellers to the rooms
-        delta2.addCharacter(sellerDelta2 = new Seller ("Dumbledore", 15000, 200, delta2));
-        beta2.addCharacter(sellerBeta2 = new Seller ("Hagrid", 15000, 200, beta2));
-        gamma3.addCharacter(sellerGamma3 = new Seller("Harry Potter", 15000, 500, gamma3)); 
+        
     }
    
     /**
