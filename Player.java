@@ -24,7 +24,7 @@ public class Player extends Character
     **/
     public void grabContent(Chest chest)
     {
-        addmoney(chest.getMoney());
+        addMoney(chest.getMoney());
         chest.removeMoneyChest();
 
         itemsInChest = chest.getListItems();
@@ -57,8 +57,8 @@ public class Player extends Character
     }
 
     /**
-     * Go to the room to which specified door leads to
-     * @param  door    The door to where player has to go
+     * When the player choose to move room, the game displayed the current rooms where the player is.
+     * Then the player has to choose one and is moved to it.
     **/
     public void move()
     {

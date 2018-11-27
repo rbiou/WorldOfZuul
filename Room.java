@@ -136,6 +136,10 @@ public class Room
         exit.put(exitName, arrivalDoor);
     }
     
+    /**
+     * This method displays all the different exits of the room
+     * Name of the door + Name of the room where it leads
+    **/
     public void displayExit()
     {
         Iterator<Map.Entry<String,Door>> itr = exit.entrySet().iterator();
@@ -151,11 +155,18 @@ public class Room
         }
     }
     
+    /**
+     * With this method you give in parameter the name of the door, and it returns the door
+     * where it leads.
+    **/
     public Door getSpecificExit(String nomPorte)
     {
         return exit.get(nomPorte);
     }
     
+     /**
+     * This method returns a list of the name of the different doors of the room.
+    **/
     public ArrayList<String> getNameDoor()
     {
         ArrayList<String> list = new ArrayList<String>() ;
