@@ -10,14 +10,18 @@ import java.util.*;
 public class Monster extends NonPlayerCharacter
 {
     // instance variables
-    private Hashtable<String,String>Enigme;
+    String question;
+    String answer ; 
+    boolean isResolved;
     /**
     * Constructor for objects of class Monster
     */
     public Monster(String newName, int newMoney, int newWeight,Room newRoom,String newQuestion, String newAnswer )
     {
         super(newName, newMoney, newWeight, newRoom );
-        Enigme.put(newQuestion,newAnswer) ;
+        question = newQuestion ; 
+        answer= newAnswer;
+        isResolved = false ; 
     }
 
 
@@ -32,4 +36,31 @@ public class Monster extends NonPlayerCharacter
         System.out.println("ATTACK !!!!!!!");
         player.looseHP(50);
     }
+    
+    /**
+     * this method alllows the monster to speak to the player
+     * @return the enigma of the monster
+     *
+     */
+    public void speak(Player player)
+    { 
+        if( isResolved )
+        {
+            String PlayerAnswer ="";
+            System.out.println("Welcome brave space adventurer to continue your quest you have to answer my enigma...");
+            System.out.println(question);
+            Scanner reader = new Scanner (System.in);
+            PlayerAnswer = reader.next();
+            if(PlayerAnswer == answer)
+            {
+                player.addMoney(300);
+                this.removeMoney(300);
+                System.out.println("Well done ! You are very smart, you can continue your journey");
+                isResolved = true;
+            } 
+            else { attack(player);
+            }
+        }
+    }
+
 }
