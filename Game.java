@@ -46,7 +46,7 @@ public class Game
      /**
      * the method allows you to create the World of our game
      */
-    public void createWolrd()
+    public void createWorld()
     {
 
         //creation of the planets
@@ -151,39 +151,47 @@ public class Game
         
         //Add the monster in the rooms
         Monster monster1, monster2, monster3, monster4; //declaration of the monsters
-        alpha2.addCharacter(monster1 = new Monster("Godzilla", 10000, 56)); 
-        beta3.addCharacter(monster2 = new Monster("Yoda", 10000, 56)); 
-        delta3.addCharacter(monster3 = new Monster("Darkness", 10000, 56)); 
-        gamma6.addCharacter(monster4 = new Monster("Piranha", 10000, 56));
+        alpha2.addCharacter(monster1 = new Monster("Godzilla", 10000, 56,alpha2)); 
+        beta3.addCharacter(monster2 = new Monster("Yoda", 10000, 56,beta3)); 
+        delta3.addCharacter(monster3 = new Monster("Darkness", 10000, 56,delta3)); 
+        gamma6.addCharacter(monster4 = new Monster("Piranha", 10000, 56,gamma6));
         
         //Declaration 
-        Item knief1, engine, propellant, windows, wheel;  //Declaration of the item
-        Chest chest1alpha3, chest2delta1, chest3delta4;//declaration of the chest
+        Item knief1, engine, propellant, windows, wheel, magicBall1, diamond1;  //Declaration of the item
+        Chest chest1alpha3, chest2delta1, chest3delta4, chest4beta1, chest5beta5;//declaration of the chest
         Keys keyAlpha3, keyDelta2, keyBeta4, keyGamma2, keyGamma4; // declaration of the key to open the door
-        Pet petAlpha1, petDelta1, petGamma1, petBeta1; // pets in the first room of the planet
-        Seller sellerDelta2; 
+        Pet petAlpha1, petDelta1, petGamma1, petBeta1, petBeta4 ;// pets in the first room of the planet
+        Seller sellerDelta2, sellerBeta2; 
         
         //Add items in the chests
         chest1alpha3.getListItems().add(knief1=new Item("Knieffy",50,10,"I am a knief, you can sell me to the sellers "));
         chest2delta1.getListItems().add(keyAlpha3 = new Keys("Red key",300,20,"I am a key, I can open the door xxxx ", "MDP"));
         chest3delta4.getListItems().add(wheel=new Item("wheely",500,50,"I am the wheel of your vessel"));
+        chest4beta1.getListItems().add(keyBeta4 = new Keys("Grey key",300,20,"I am a key, I can open the door xxxx ", "MDP"));
+        chest5beta5.getListItems().add(windows = new Item("windows",500,50,"I am the windows of your vessel")); 
         
         //Add the chests in the rooms
-        alpha3.addChest(chest1alpha3 = new Chest("Bob",0,50,"Hello my name is Bob",50,true));
-        delta1.addChest(chest2delta1 = new Chest("Sully",0,50,"Hello my name is Sully",0,true));
-        delta4.addChest(chest3delta4 = new Chest ("Titi",0,50,"Hello my name is Titi ",50,true));
+        alpha3.addChest(chest1alpha3 = new Chest("Bob",0,50,"Hello my name is Bob",50,false));
+        delta1.addChest(chest2delta1 = new Chest("Sully",0,50,"Hello my name is Sully",0,false));
+        delta4.addChest(chest3delta4 = new Chest ("Titi",0,50,"Hello my name is Titi ",50,false));
+        beta1.addChest(chest4beta1 = new Chest("Kiwi",0,50,"Hello my name is Kiwi",0,true));
+        beta5.addChest(chest5beta5= new Chest ("Cramberry",0,50,"Hello my name is Fraise",50,false));
         
         //Add the pets to the rooms
         alpha1.addCharacter(petAlpha1 = new Pet ("Bamby", 1000000, 10000, alpha1, "fawn")); 
         delta1.addCharacter(petDelta1 = new Pet ("Dolly", 1000000, 10000, delta1, "ship")); 
         gamma1.addCharacter(petGamma1 = new Pet ("Pumba", 1000000, 10000, gamma1, "pig")); 
         beta1.addCharacter(petBeta1 = new Pet ("Winnie", 1000000, 10000, delta1, "bear"));
+        beta4.addCharacter(petBeta4= new Pet ("Timon", 1000000, 10000, delta4, "mongouste"));
         
         //Add items to the sellers
         sellerDelta2.getListItems().add(keyDelta2 = new Keys("Yellow key",300,20,"I am a key, I can open the door xxxx ", "MDP"));
+        sellerBeta2.getListItems().add(magicBall1 = new Item ("flackball",100,50,"I am a diamond, you can win 100 pieces if you sell me"));
+        sellerBeta2.getListItems().add(diamond1 = new Item ("little diamond",250,50,"I am a diamond, you can win 250 pieces if you sell me"));
         
         //Add the sellers to the rooms
         delta2.addCharacter(sellerDelta2 = new Seller ("Dumbledore", 15000, 200, delta2));
+        beta2.addCharacter(sellerBeta2 = new Seller ("Hagrid", 15000, 200, beta2));
     }
    
     /**
