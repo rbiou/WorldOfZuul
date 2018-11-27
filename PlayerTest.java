@@ -37,13 +37,13 @@ public class PlayerTest
     @Before
     public void setUp() 
     {
-        player       = new Player("Joe",40);
+        player       = new Player("Joe",40, room1);
         chest        = new Chest("Chest1", 360, 1000, "I am the Chest1", 100, false);
         trappedChest = new Chest("Chest2", 360, 1000, "I am the Chest2", 100, true);
         item         = new Item("banana",1,1,"I'm a banana");
-        character    = new Character("Joe", 50, 40);
-        petCat       = new Pet("Minou",1000, 50,"Cat");
-        monster      = new Monster("Bowser",50, 100);
+        character    = new Character("Joe", 50, 40, room1);
+        petCat       = new Pet("Minou",1000, 50, room1, "Cat");
+        monster      = new Monster("Bowser",50, 100, room1, "Quelle est votre promo ?", "Gphy");
         room1        = new Room("Room1");
         room2        = new Room("Room2");
         door1        = new Door(room1);
@@ -129,7 +129,6 @@ public class PlayerTest
     public void testMovePlayer(){
         room1.setExit("Sortie1", door2);
         room2.setExit("Sortie1", door1);
-        room1.addCharacter(player);
         player.moveRoom(door1);
         assertEquals(room2, player.getCurrentRoom());
     }

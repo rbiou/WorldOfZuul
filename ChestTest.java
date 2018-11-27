@@ -16,6 +16,7 @@ public class ChestTest
     private Chest testChest;
     private Item testItem;
     private Player testPlayer;
+    private Room room1;
     
     /**
      * Default constructor for test class ChestTest
@@ -32,9 +33,10 @@ public class ChestTest
     @Before
     public void setUp()
     {
+        room1 = new Room("Room1");
         testChest = new Chest("Chest1", 360, 1000, "I am the Chest1", 100, false);
         testItem = new Item("banana",1,1,"I'm a banana");
-        testPlayer = new Player("Joe",40);
+        testPlayer = new Player("Joe",40, room1);
     }
 
     /**
