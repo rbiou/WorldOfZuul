@@ -1,4 +1,4 @@
-
+import java.util.*;
 /**
  * The sub-class Player : this is a class that define the characteristics     
  * of the player
@@ -61,8 +61,14 @@ public class Player extends Character
      * Go to the room to which specified door leads to
      * @param  door    The door to where player has to go
     **/
-    public void moveRoom(Door door)
+    public void move()
     {
+        System.out.println("Voici la liste des différentes sorties possibles");
+        getCurrentRoom().displayExit();
+        System.out.println("Choisissez votre porte");
+        Scanner reader = new Scanner (System.in);
+        
+        
     }
     
     
@@ -83,14 +89,7 @@ public class Player extends Character
         character.speak(this);
     }
      
-     /**
-     * Return the position of the player (the room where he is)
-     * @param 
-     */
-    public Room getCurrentRoom()
-    { 
-        return currentRoom;
-    }
+    
 }
 
 
