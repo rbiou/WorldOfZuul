@@ -23,9 +23,8 @@ abstract class NonPlayerCharacter extends Character
      * @param
      * @return  return the message of the character
      */
-    public String speak(Player player)
+    public void speak(Player player)
     {
-        return (""); 
     }
 
 }
