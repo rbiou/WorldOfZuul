@@ -21,6 +21,7 @@ public class PlayerTest
     private Room room1, room2;
     private Door door1, door2;
     private LockedDoor unlokedDoor; 
+    private Planet planet1;
     
     /**
     * Constructeur de la classe-test PlayerTest
@@ -44,7 +45,9 @@ public class PlayerTest
         character    = new Character("Joe", 50, 40, room1);
         petCat       = new Pet("Minou",1000, 50, room1, "Cat");
         monster      = new Monster("Bowser",50, 100, room1, "Quelle est votre promo ?", "Gphy");
-        room1        = new Room("Room1");
+        Planet planet1 = new Planet("Alpha","Welcome on the planet alpha",10,10);
+        planet1.addRoom(room1);
+        room1 = new Room("Room1", planet1);
         room2        = new Room("Room2");
         door1        = new Door(room1);
         door2        = new Door(room2);

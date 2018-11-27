@@ -24,6 +24,8 @@ public class ItemTest
     private Item negWeightItem;
     private Character character;
     private Room room1;
+    private Planet planet1;
+    
     /**
     * Default constructor for test class ItemTest
     */
@@ -45,7 +47,9 @@ public class ItemTest
     @Before
     public void setUp()
     {
-        room1 = new Room("Room1");
+        Planet planet1 = new Planet("Alpha","Welcome on the planet alpha",10,10);
+        planet1.addRoom(room1);
+        room1 = new Room("Room1", planet1);
         item = new Item("banana",1,1,"I'm a banana");
         bigItem = new Item("apple",1,40,"I'm a big apple");
         negItem = new Item("orange",-4,1,"I have a negative price");
