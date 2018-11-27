@@ -61,27 +61,27 @@ public class Game
         
         start = new Room("start"); 
         
-        alpha.getListRoom().add(alpha1 = new Room("alpha1")); 
-        alpha.getListRoom().add(alpha2 =new Room("alpha2")); 
-        alpha.getListRoom().add(alpha3 =new Room("alpha3")); 
+        alpha.getListRoom().add(alpha1 = new Room("alpha1", alpha)); 
+        alpha.getListRoom().add(alpha2 =new Room("alpha2", alpha)); 
+        alpha.getListRoom().add(alpha3 =new Room("alpha3", alpha)); 
         
-        beta.getListRoom().add(beta1 = new Room("beta1")); 
-        beta.getListRoom().add(beta2 = new Room("beta2"));
-        beta.getListRoom().add(beta3 = new Room("beta3"));
-        beta.getListRoom().add(beta4 = new Room("beta4"));
-        beta.getListRoom().add(beta5 = new Room("beta5"));
+        beta.getListRoom().add(beta1 = new Room("beta1", beta)); 
+        beta.getListRoom().add(beta2 = new Room("beta2", beta));
+        beta.getListRoom().add(beta3 = new Room("beta3", beta));
+        beta.getListRoom().add(beta4 = new Room("beta4", beta));
+        beta.getListRoom().add(beta5 = new Room("beta5", beta));
         
-        delta.getListRoom().add(delta1 = new Room("delta1"));
-        delta.getListRoom().add(delta2 =new Room("delta2"));
-        delta.getListRoom().add(delta3 =new Room("delta3"));
-        delta.getListRoom().add(delta4 =new Room("delta4"));
+        delta.getListRoom().add(delta1 = new Room("delta1", delta));
+        delta.getListRoom().add(delta2 =new Room("delta2", delta));
+        delta.getListRoom().add(delta3 =new Room("delta3", delta));
+        delta.getListRoom().add(delta4 =new Room("delta4", delta));
         
-        gamma.getListRoom().add(gamma1 = new Room("gamma1"));
-        gamma.getListRoom().add(gamma2 = new Room("gamma2"));
-        gamma.getListRoom().add(gamma3 = new Room("gamma3"));
-        gamma.getListRoom().add(gamma4 = new Room("gamma4"));
-        gamma.getListRoom().add(gamma5 = new Room("gamma5"));
-        gamma.getListRoom().add(gamma6 = new Room("gamma6"));
+        gamma.getListRoom().add(gamma1 = new Room("gamma1", gamma));
+        gamma.getListRoom().add(gamma2 = new Room("gamma2", gamma));
+        gamma.getListRoom().add(gamma3 = new Room("gamma3", gamma));
+        gamma.getListRoom().add(gamma4 = new Room("gamma4", gamma));
+        gamma.getListRoom().add(gamma5 = new Room("gamma5", gamma));
+        gamma.getListRoom().add(gamma6 = new Room("gamma6", gamma));
         
         //declaration of the door that will be added to the alpha planet
         Door startSouth, alpha1North, alpha1East, alpha1South, alpha2West, alpha2South, alpha3South, alpha3West, alpha3North;
