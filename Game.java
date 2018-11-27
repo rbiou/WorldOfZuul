@@ -12,7 +12,6 @@ public class Game
     public Game()
     {
         listPlanet = new ArrayList<Planet>();
-        
     }
 
     /**
