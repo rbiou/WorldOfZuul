@@ -27,13 +27,17 @@ public class Chest extends Item
      */
     public boolean removeMoneyChest()
        {
-           return false; 
+            money = 0;
+            return true;
        }
      /**
      *The player removes the item from the chest
      */
     public boolean removeItem(Item item)
     {
+        if (rewarding.remove(item)){
+            return true;
+        }
         return false;
     }
     
@@ -44,7 +48,8 @@ public class Chest extends Item
      */
     public boolean addItem(Item item)
     {
-        return false;
+        rewarding.add(item);
+        return true;
     }
 
 
