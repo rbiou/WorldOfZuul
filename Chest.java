@@ -27,7 +27,8 @@ public class Chest extends Item
      */
     public boolean removeMoneyChest()
        {
-           return false; 
+            money = 0;
+            return true;
        }
      /**
      *The player removes the item from the chest
