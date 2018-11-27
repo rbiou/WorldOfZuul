@@ -31,7 +31,7 @@ public class SellerTest
      *The method called before each test method call
      */
     @Before
-    public void setUp() // throws java.lang.Exception
+    public void setUp()
     {
        planet1 = new Planet("Alpha","Welcome on the planet alpha",10,10);
        planet1.addRoom(room1);
@@ -85,11 +85,12 @@ public class SellerTest
      * this item.
      */
     @Test
-    public void testBuyAnItemWithNotEnoughMoney() // throws java.lang.Exception
+    public void testBuyAnItemWithNotEnoughMoney()
     {
        assertEquals (0, seller.getListItems().size());
        assertEquals (100, seller.getMoney());
        seller.buyItem(item2);
        assertEquals(0, seller.getListItems().size());
     }
+    
 }

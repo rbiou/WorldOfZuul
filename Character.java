@@ -61,7 +61,7 @@ public class Character{
     public boolean addItem(Item item)
     {
         int newWeight = itemsTotalWeight + item.getWeight();
-        if ((newWeight) > getMaxWeight())
+        if ((newWeight) > getMaxWeight() || this.items.contains(item))
         {
             return false;
         }
@@ -72,7 +72,6 @@ public class Character{
             return true;
         }
     }
-    
     
     /**
      * Remove an item from the list of items

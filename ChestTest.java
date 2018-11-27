@@ -68,7 +68,7 @@ public class ChestTest
         assertEquals(true,testChest.getListItems().contains(testItem)); // test if the item is in the list of items
     }
     
-        /**
+     /**
      * This test verify if when we put an item in the chest, it is very inside
      * it. That means that when we look inside the chest, we must find it.
      */
