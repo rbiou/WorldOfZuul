@@ -29,3 +29,4 @@ abstract class NonPlayerCharacter extends Character
     }
 
 }
+
