@@ -91,7 +91,7 @@ public class Game
         beta3East, beta4North, beta4West, beta5North, beta5South;
         LockedDoor beta4South; 
         //declaration of the door that will be added to the delta planet
-        Door delta1North, delta1South, delta2North, delta2South, delta3West, delta3South, delta4North, delta4West; ; 
+        Door delta1North, delta1South, delta2North, delta3West, delta3South, delta4North ; 
         LockedDoor delta2East;
         //declaration of the door that will be added to the gamma planet
         Door gamma1North, gamma1South, gamma2North, gamma3North, gamma3South, 
@@ -115,11 +115,10 @@ public class Game
         delta1.setExit("", delta1South = new Door(delta2));
         delta2.setExit("", delta2North = new Door(delta1));       
         delta2.setExit("", delta2East = new LockedDoor(delta3, ""));
-        delta2.setExit("", delta2South = new Door(delta4));
         delta3.setExit("", delta3West = new Door(delta2));    
         delta3.setExit("", delta3South = new Door(delta4));       
         delta4.setExit("", delta4North = new Door(delta3));    
-        delta4.setExit("", delta4West = new Door(delta2));    
+           
         
         //creation of the door and they are added to the room for the beta planet
         beta1.setExit("", beta1West = new Door(alpha3));
@@ -157,7 +156,15 @@ public class Game
         delta3.addCharacter(monster3 = new Monster("Darkness", 10000, 56)); 
         gamma6.addCharacter(monster4 = new Monster("Piranha", 10000, 56));
     }
-    
+    /**
+     * Getter to return the name of the room
+     * 
+     * @return      String
+     */
+    public List<Planet> getListPlanet()
+    {
+        return this.listPlanet; 
+    }
 }    
     
 

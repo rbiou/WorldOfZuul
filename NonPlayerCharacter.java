@@ -6,7 +6,7 @@
  * @author Group 7
  * @version 14/11/2018
  */
-public class NonPlayerCharacter extends Character
+abstract class NonPlayerCharacter extends Character
 {
     // instance variables - 
     /**
