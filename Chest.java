@@ -35,6 +35,9 @@ public class Chest extends Item
      */
     public boolean removeItem(Item item)
     {
+        if (rewarding.remove(item)){
+            return true;
+        }
         return false;
     }
     
