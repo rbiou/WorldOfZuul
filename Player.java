@@ -27,7 +27,7 @@ public class Player extends Character
         addmoney(chest.getMoney());
         chest.removeMoneyChest();
 
-        itemsInChest = chest.getListItems();
+        ArrayList<Item> itemsInChest = chest.getListItems();
 
         for (Item item: itemsInChest){
             if (addItem(item))
