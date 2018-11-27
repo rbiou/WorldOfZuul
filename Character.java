@@ -119,4 +119,14 @@ public class Character{
     {
         return itemsTotalWeight;
     }
+
+
+     /**
+     * Return the position of the player (the room where he is)
+     * @param 
+     */
+    public Room getCurrentRoom()
+    { 
+        return currentRoom;
+    }
 }

@@ -69,15 +69,6 @@ public class Player extends Character
     {
         character.speak(this);
     }
-     
-     /**
-     * Return the position of the player (the room where he is)
-     * @param 
-     */
-    public Room getCurrentRoom()
-    { 
-        return currentRoom;
-    }
 }
 
 
