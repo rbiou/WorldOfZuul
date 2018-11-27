@@ -36,7 +36,7 @@ public class MonsterTest
     @Before
     public void setUp()
     {
-        Planet planet1 = new Planet("Alpha","Welcome on the planet alpha",10,10);
+        planet1 = new Planet("Alpha","Welcome on the planet alpha",10,10);
         planet1.addRoom(room1);
         room1 = new Room("Room1", planet1);
         testPlayer = new Player ("Joe", 40, room1);

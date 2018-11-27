@@ -34,7 +34,7 @@ public class PetTest
     {
         petTest = new Pet("Tom",10, 100, room1, "cat"); 
         playerTest = new Player ("Joe", 40, room1);
-        Planet planet1 = new Planet("Alpha","Welcome on the planet alpha",10,10);
+        planet1 = new Planet("Alpha","Welcome on the planet alpha",10,10);
         room1 = new Room("Room1", planet1);
     }
 

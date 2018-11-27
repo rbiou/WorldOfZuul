@@ -35,9 +35,9 @@ public class PlanetTest
     @Before
     public void setUp()
     {
-        Planet planet1 = new Planet("Alpha","Welcome on the planet alpha",10,10);
+        planet1 = new Planet("Alpha","Welcome on the planet alpha",10,10);
         planet1.addRoom(room1);
-        room1 = new Room("Room1");
+        room1 = new Room("Room1", planet1);
         character= new Character("Joe", 50, 40, room1);
     }
 

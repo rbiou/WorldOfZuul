@@ -45,10 +45,10 @@ public class PlayerTest
         character    = new Character("Joe", 50, 40, room1);
         petCat       = new Pet("Minou",1000, 50, room1, "Cat");
         monster      = new Monster("Bowser",50, 100, room1, "Quelle est votre promo ?", "Gphy");
-        Planet planet1 = new Planet("Alpha","Welcome on the planet alpha",10,10);
+        planet1      = new Planet("Alpha","Welcome on the planet alpha",10,10);
         planet1.addRoom(room1);
-        room1 = new Room("Room1", planet1);
-        room2        = new Room("Room2");
+        room1        = new Room("Room1", planet1);
+        room2        = new Room("Room2", planet1);
         door1        = new Door(room1);
         door2        = new Door(room2);
     }
@@ -80,11 +80,11 @@ public class PlayerTest
      * This test checks if when the player dies, he has no money
      *
     */
-   	@Test
-    	public void testCharacterIsDead()
-    	{
-    	    player.looseHP(100000000);
-    	    assertEquals(0,player.getMoney());		
+    @Test
+        public void testCharacterIsDead()
+        {
+            player.looseHP(100000000);
+            assertEquals(0,player.getMoney());      
         }
     
     @Test
@@ -119,8 +119,8 @@ public class PlayerTest
 
     @Test
     public void testMonsterSpeakWrongAnswer(){
-	player.interractWith(monster);
-	assertEquals(50,player.getLP());
+    player.interractWith(monster);
+    assertEquals(50,player.getLP());
     }
         
     /**

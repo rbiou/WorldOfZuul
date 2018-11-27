@@ -17,6 +17,7 @@ public class KeysTest
     private LockedDoor lockedDoor;
     private Room room1;
     private Room room2;
+    private Planet planet1;
     
     /**
      * Default constructor for test class KeysTest
@@ -35,8 +36,10 @@ public class KeysTest
     {
         testKey = new Keys("Key1",5, 2, "key for room 14", "circle");
         testBadKey = new Keys("Key1",5, 2, "key for room 14", "square");
-        room1 = new Room("Room1");
-        room2 = new Room("Room2");
+        planet1 = new Planet("Alpha","Welcome on the planet alpha",10,10);
+        planet1.addRoom(room1);
+        room1 = new Room("Room1", planet1);
+        room2 = new Room("Room2", planet1);
         lockedDoor = new LockedDoor(room2,"circle");
     }
 
