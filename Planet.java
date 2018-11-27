@@ -50,7 +50,7 @@ public class Planet
      *
      * @return the temperature
      */
-    public int getTemparature()
+    public int getTemperature()
     {
         return temperature; 
     }
