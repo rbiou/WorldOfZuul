@@ -1,4 +1,4 @@
-
+import java.util.*;
 /**
  * The class monster is the principal opponent of the player, the monster
  * ask a riddle to the player if the player answer correctly the monster
@@ -10,14 +10,17 @@
 public class Monster extends NonPlayerCharacter
 {
     // instance variables
-
+    private Hashtable<String,String>Enigme;
     /**
-     * Constructor for objects of class Monster
-     */
-    public Monster(String newName, int newMoney, int newWeight, Room newRoom)
+    * Constructor for objects of class Monster
+    */
+    public Monster(String newName, int newMoney, int newWeight,Room newRoom,String newQuestion, String newAnswer )
     {
-        super(newName, newMoney, newWeight, newRoom);
+        super(newName, newMoney, newWeight, newRoom );
+        Enigme.put(newQuestion,newAnswer) ;
+
     }
+
 
     /**
      * this method allows the monster to attack the player

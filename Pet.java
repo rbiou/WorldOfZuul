@@ -36,9 +36,6 @@ public class Pet extends NonPlayerCharacter
      */
     public String speak()
     {
-    while (Game.getListPlanet().hasNext()) 
-    {
-
-    }
+        System.out.println("You are in the "+"test"+" of the planet.");
     }
 }
