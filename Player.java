@@ -8,14 +8,13 @@
 public class Player extends Character
 {
     private int lifePoints;
-    private Room currentRoom;
     
     /**
      * Constructor
     **/
-    public Player(String newName, int newWeight)
+    public Player(String newName, int newWeight, Room newRoom)
     {
-        super(newName, 0, newWeight);
+        super(newName, 0, newWeight, newRoom);
         lifePoints = 100; 
     }
 

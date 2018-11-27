@@ -12,9 +12,9 @@ public class NonPlayerCharacter extends Character
     /**
      * Constructor for objects of class NonPLayerCharacter
      */
-    public NonPlayerCharacter(String newName, int newMoney, int newWeight)
+    public NonPlayerCharacter(String newName, int newMoney, int newWeight, Room newRoom)
     {
-        super(newName, newMoney, newWeight); 
+        super(newName, newMoney, newWeight, newRoom); 
     }
 
     /**

@@ -12,9 +12,9 @@ public class Seller extends NonPlayerCharacter
     /**
      * Constructor for objects of class Seller
      */
-    public Seller(String newName, int newMoney, int newWeight)
+    public Seller(String newName, int newMoney, int newWeight, Room newRoom)
     {
-        super(newName, newMoney, newWeight);
+        super(newName, newMoney, newWeight, newRoom);
     }
 
     /**
