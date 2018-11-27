@@ -18,7 +18,6 @@ public class Monster extends NonPlayerCharacter
     {
         super(newName, newMoney, newWeight, newRoom );
         Enigme.put(newQuestion,newAnswer) ;
-
     }
 
 
