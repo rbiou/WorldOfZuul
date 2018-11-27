@@ -159,19 +159,33 @@ public class Game
         //Declaration 
         Item knief1, engine, propellant, windows, wheel;  //Declaration of the item
         Chest chest1alpha3, chest2delta1, chest3delta4;//declaration of the chest
+        Keys keyAlpha3, keyDelta2, keyBeta4, keyGamma2, keyGamma4; // declaration of the key to open the door
+        Pet petAlpha1, petDelta1, petGamma1, petBeta1; // pets in the first room of the planet
+        Seller sellerDelta2; 
         
-        
-        //Add item in the chests
+        //Add items in the chests
         chest1alpha3.getListItems().add(knief1=new Item("Knieffy",50,10,"I am a knief, you can sell me to the sellers "));
-        chest2delta1.getListItems().add(keyalpha3=new Keys("Redkey",300,20,"I am a key, I can open the door xxxx "),"MDP");
+        chest2delta1.getListItems().add(keyAlpha3 = new Keys("Red key",300,20,"I am a key, I can open the door xxxx ", "MDP"));
         chest3delta4.getListItems().add(wheel=new Item("wheely",500,50,"I am the wheel of your vessel"));
         
-        //Add the chest in the rooms
+        //Add the chests in the rooms
         alpha3.addChest(chest1alpha3 = new Chest("Bob",0,50,"Hello my name is Bob",50,true));
         delta1.addChest(chest2delta1 = new Chest("Sully",0,50,"Hello my name is Sully",0,true));
         delta4.addChest(chest3delta4 = new Chest ("Titi",0,50,"Hello my name is Titi ",50,true));
         
+        //Add the pets to the rooms
+        alpha1.addCharacter(petAlpha1 = new Pet ("Bamby", 1000000, 10000, alpha1, "fawn")); 
+        delta1.addCharacter(petDelta1 = new Pet ("Dolly", 1000000, 10000, delta1, "ship")); 
+        gamma1.addCharacter(petGamma1 = new Pet ("Pumba", 1000000, 10000, gamma1, "pig")); 
+        beta1.addCharacter(petBeta1 = new Pet ("Winnie", 1000000, 10000, delta1, "bear"));
+        
+        //Add items to the sellers
+        sellerDelta2.getListItems().add(keyDelta2 = new Keys("Yellow key",300,20,"I am a key, I can open the door xxxx ", "MDP"));
+        
+        //Add the sellers to the rooms
+        delta2.addCharacter(sellerDelta2 = new Seller ("Dumbledore", 15000, 200, delta2));
     }
+   
     /**
      * Getter to return the name of the room
      * 
