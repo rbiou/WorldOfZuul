@@ -95,6 +95,10 @@ public class Character{
     **/
     public boolean addMoney (int amount)
     {
+        if (amount >= 0){
+            money += amount;
+            return true;
+        }
         return false;
     }
     
@@ -105,6 +109,10 @@ public class Character{
     **/
     public boolean removeMoney(int amount)
     {
+        if (amount <= 0 && money >= amount){
+            money -= amount;
+            return true;
+        }
         return false;
     }
     

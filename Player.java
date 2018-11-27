@@ -24,10 +24,22 @@ public class Player extends Character
     **/
     public void grabContent(Chest chest)
     {
+        addmoney(chest.getMoney());
+        chest.removeMoneyChest();
+
+        itemsInChest = chest.getListItems();
+
+        for (Item item: itemsInChest){
+            if (addItem(item))
+                chest.removeItem(item);
+        }
     }
     
     public void looseHP(int HP)
     {
+        if (HP > 0){
+            lifePoints -= HP;
+        }
     }
     
     public boolean checkTime()
@@ -37,11 +49,12 @@ public class Player extends Character
     
     public boolean isDead()
     {
-        return false;
+        return (lifePoints <= 0);
     }
     
     public void pet(Pet pet)
     {
+        addMoney(1);
     }
 
     /**
