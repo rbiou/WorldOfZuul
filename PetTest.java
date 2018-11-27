@@ -60,6 +60,7 @@ public class PetTest
     {
         room1.addCharacter(petTest); 
         planet1.addRoom(room1);
-        assertEquals("Welcome on the planet alpha", petTest.speak());
+        assertEquals("You are in the Room1 of the planet Alpha. The temperature is 10°C. To survive, you have a limited time of 10 seconds to explore the planet.",
+        petTest.giveMessage());
     }
 }

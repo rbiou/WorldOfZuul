@@ -34,8 +34,19 @@ public class Pet extends NonPlayerCharacter
      * When a player speak to a pet, it give the description of the planet
      * he is standing in.
      */
+    public String giveMessage()
+    {
+        return ("You are in the "+this.getCurrentRoom()+" of the planet "+this.getCurrentRoom().getPlanet()+". The temperature is "+
+        this.getCurrentRoom().getPlanet().getTemperature()+" °C. To survive, you have a limited time of "
+        +this.getCurrentRoom().getPlanet().getTime()+" seconds to explore the planet.");
+    }
+    
+    /**
+     * When a player speak to a pet, it give the description of the planet
+     * he is standing in.
+     */
     public void speak()
     {
-        System.out.println("You are in the "+this.getCurrentRoom()+" of the planet "+this.getCurrentRoom().getPlanet()+".");
+        System.out.println(giveMessage());
     }
 }
