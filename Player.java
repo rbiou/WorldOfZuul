@@ -63,18 +63,29 @@ public class Player extends Character
     public void move()
     {
         boolean test = false;
-        System.out.println("Here the list of the different possible exits");
-        getCurrentRoom().displayExit();
+        System.out.println("Here the list of the different possible exits : ");
+        ArrayList<String> exits = getCurrentRoom().getNameDoor();
+        for(int i=0;i<exits.size();i++)
+        {
+            System.out.println(exits.get(i));
+        }
         String nameDoor="";
         while (test==false){
-            System.out.println("Choose a valide exit");
+            System.out.println("Choose a valide exit | 'stop' to stop moving");
             Scanner reader = new Scanner (System.in);
             nameDoor = reader.next();
             if (getCurrentRoom().getNameDoor().contains(nameDoor))
-            {test=true;}
+            {
+                test=true;
+                Door doorExit = getCurrentRoom().getSpecificExit(nameDoor);
+                moveRoom(doorExit);
+            }
+            if (nameDoor == "stop")
+            {
+                test=true;
+            }
         }
-        Door doorExit = getCurrentRoom().getSpecificExit(nameDoor);
-        moveRoom(doorExit);
+        
     }
     
     /**

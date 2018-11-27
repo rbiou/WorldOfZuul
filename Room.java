@@ -148,8 +148,8 @@ public class Room
             Map.Entry<String,Door>entry = itr.next();
             String key = entry.getKey();
             Door value = entry.getValue();
-            System.out.println("name of the door :" + key);
-            System.out.println("exit room :" +
+            System.out.println("name of the door : " + key);
+            System.out.println("exit room : " +
             value.getNextRoom().getName());
             
         }
