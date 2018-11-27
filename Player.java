@@ -62,13 +62,16 @@ public class Player extends Character
     **/
     public void move()
     {
+        boolean test = false;
         System.out.println("Voici la liste des différentes sorties possibles");
         getCurrentRoom().displayExit();
-        System.out.println("Choisissez votre porte");
-        while (
+        while (test==false){
+            System.out.println("Choisissez une porte valide");
             Scanner reader = new Scanner (System.in);
             String porte = reader.next();
-        
+            if (getCurrentRoom().getNameDoor().contains(porte))
+            {test=true;}
+        }
         
     }
     /**

@@ -151,6 +151,20 @@ public class Room
         }
     }
     
+    public Door displayExit(String)
+    {
+        Iterator<Map.Entry<String,Door>> itr = exit.entrySet().iterator();
+        while(itr.hasNext())
+        {
+            Map.Entry<String,Door>entry = itr.next();
+            String key = entry.getKey();
+            Door value = entry.getValue();
+            System.out.println("nom de la porte :" + key);
+            System.out.println("room de sortie :" +
+            value.getNextRoom().getName());
+            
+        }
+    }
     public ArrayList<String> getNameDoor()
     {
         ArrayList<String> list = new ArrayList<String>() ;
