@@ -135,7 +135,7 @@ public class Room
             System.out.println("nom de la porte :" + key);
             System.out.println("room de sortie :" +
             value.getNextRoom().getName());
-            if (!itr.hasNext()){}
+            
         }
     }
         
