@@ -157,7 +157,8 @@ public class Game
         gamma6.addCharacter(monster4 = new Monster("Piranha", 10000, 56,gamma6));
         
         //Declaration 
-        Item knief1, engine, propellant, windows, wheel, magicBall1, magicBall2, diamond1, fork1, diamond2, knief2, fork2;  //Declaration of the item
+        Item knief1, engine, propellant, windows, wheel, magicBall1, magicBall2, diamond1, 
+        fork1, diamond2, knief2, fork2, diamond3, fork3; //Declaration of the item
         Chest chest1alpha3, chest2delta1, chest3delta4, chest4beta1, chest5beta5, chestGamma1, chestGamma1bis, chestGamma2, 
         chestGamma5, chestGamma4, chestGamma6, chestAlpha1;//declaration of the chest
         Keys keyAlpha3, keyDelta2, keyBeta4, keyGamma2, keyGamma4; // declaration of the key to open the door
@@ -205,6 +206,9 @@ public class Game
         sellerGamma3.getListItems().add(knief2 = new Item("sharp knife", 50, 10,"I am a sharp knief, you can buy me"));
         sellerGamma3.getListItems().add(fork2 = new Item("Small knife", 3, 10,"I am a small fork, you can buy me"));
         sellerGamma3.getListItems().add(keyGamma4 = new Keys("Blue key", 300, 20,"I am a key, I can open the door xxxx ", "MDP"));
+        sellerDelta2.getListItems().add(diamond3 = new Item("Special diamond", 250, 50, "I am a special diamond, you can buy me to see why I am special"));
+        sellerDelta2.getListItems().add(fork3 = new Item("Special fork", 3, 50, "I am a special fork, you can buy me to see why I am special"));
+        
         
         //Add the sellers to the rooms
         delta2.addCharacter(sellerDelta2 = new Seller ("Dumbledore", 15000, 200, delta2));
