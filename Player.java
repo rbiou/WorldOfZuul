@@ -65,7 +65,7 @@ public class Player extends Character
         boolean test = false;
         System.out.println("Here the list of the different possible exits");
         getCurrentRoom().displayExit();
-        String nameDoor;
+        String nameDoor="";
         while (test==false){
             System.out.println("Choose a valide exit");
             Scanner reader = new Scanner (System.in);
