@@ -10,9 +10,9 @@ import java.util.*;
 public class Monster extends NonPlayerCharacter
 {
     // instance variables
-    String question;
-    String answer ; 
-    boolean isResolved;
+    String question; //the question of the monster
+    String answer ; // the good answer 
+    boolean isResolved; // boolean to check if the enigma is already answered
     /**
     * Constructor for objects of class Monster
     */

@@ -49,7 +49,7 @@ public class Planet
      */
     public String descriptionDisplayPlanet()
     {
-        return ("");
+        return (description);
     }
     /**
      * Add a new room in the planet
