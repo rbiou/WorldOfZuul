@@ -150,11 +150,27 @@ public class Game
         gamma6.setExit("", gamma6South = new Door( gamma4));
         
         //Add the monster in the rooms
-        Monster monster1, monster2, monster3, monster4; //decalration of the monsters
+        Monster monster1, monster2, monster3, monster4; //declaration of the monsters
         alpha2.addCharacter(monster1 = new Monster("Godzilla", 10000, 56)); 
         beta3.addCharacter(monster2 = new Monster("Yoda", 10000, 56)); 
         delta3.addCharacter(monster3 = new Monster("Darkness", 10000, 56)); 
         gamma6.addCharacter(monster4 = new Monster("Piranha", 10000, 56));
+        
+        //Declaration 
+        Item knief1, engine, propellant, windows, wheel;  //Declaration of the item
+        Chest chest1alpha3, chest2delta1, chest3delta4;//declaration of the chest
+        
+        
+        //Add item in the chests
+        chest1alpha3.getListItems().add(knief1=new Item("Knieffy",50,10,"I am a knief, you can sell me to the sellers "));
+        chest2delta1.getListItems().add(keyalpha3=new Keys("Redkey",300,20,"I am a key, I can open the door xxxx "),"MDP");
+        chest3delta4.getListItems().add(wheel=new Item("wheely",500,50,"I am the wheel of your vessel"));
+        
+        //Add the chest in the rooms
+        alpha3.addChest(chest1alpha3 = new Chest("Bob",0,50,"Hello my name is Bob",50,true));
+        delta1.addChest(chest2delta1 = new Chest("Sully",0,50,"Hello my name is Sully",0,true));
+        delta4.addChest(chest3delta4 = new Chest ("Titi",0,50,"Hello my name is Titi ",50,true));
+        
     }
     /**
      * Getter to return the name of the room
