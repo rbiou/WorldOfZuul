@@ -67,5 +67,4 @@ public class Chest extends Item
     {
         return money;
     }
-     
 }
