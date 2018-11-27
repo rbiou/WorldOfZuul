@@ -20,16 +20,18 @@ public class Room
     private HashMap<String, Door>exit; // Each exit is associated to this room
     private ArrayList<Character> listCharacters;  // List of all the Characters present in this room
     private ArrayList<Chest> listChest; // List of all the chest present in this room
+    private Planet currentplanet;
 
     /**
      * Constructor of the Room class
      */
-    public Room(String newName)
+    public Room(String newName, Planet newPlanet)
     {
         name = newName;
         exit = new HashMap <String,Door>();
         listCharacters = new ArrayList<Character>();
         listChest = new ArrayList<Chest>();
+        currentplanet = newPlanet ;
     }
 
      /**
@@ -137,6 +139,19 @@ public class Room
             value.getNextRoom().getName());
             
         }
+    }
+    
+    public ArrayList<String> getNameDoor()
+    {
+        ArrayList<String> list = new ArrayList<String>() ;
+        Iterator<Map.Entry<String,Door>> itr = exit.entrySet().iterator();
+        while(itr.hasNext())
+        {
+            Map.Entry<String,Door>entry = itr.next();
+            String key = entry.getKey();
+            list.add(key);
+        }
+        return list;
     }
         
 }

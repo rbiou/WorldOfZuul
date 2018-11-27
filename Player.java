@@ -54,10 +54,17 @@ public class Player extends Character
         getCurrentRoom().displayExit();
         System.out.println("Choisissez votre porte");
         Scanner reader = new Scanner (System.in);
+        String porte = reader.next();
         
         
     }
-    
+    /**
+     * Go to the room to which specified door leads to
+     * @param  door    The door to where player has to go
+    **/
+    public void moveRoom(Door door)
+    {
+    }
     
     /**
      * getter to get the LP of the player
