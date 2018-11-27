@@ -20,6 +20,7 @@ public class RoomTest
     private Player player; 
     private Chest chest; 
     private Room room1, room2;
+    private Room planet1;
     
     /**
      * Constructor
@@ -37,8 +38,11 @@ public class RoomTest
     {   
         player = new Player("Joe", 50, room1);
         chest = new Chest("Chest1", 360, 1000, "I am the Chest1", 100, false);
-        room1 = new Room("Room1");
-        room2 = new Room("Room2"); 
+        Planet planet1 = new Planet("Alpha","Welcome on the planet alpha",10,10);
+        planet1.addRoom(room1);
+        planet1.addRoom(room2);
+        room1 = new Room("Room1", planet1);
+        room2 = new Room("Room2", planet1); 
     }
 
     @Test

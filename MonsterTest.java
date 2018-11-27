@@ -19,6 +19,8 @@ public class MonsterTest
     private Monster testMonster;
     private Player testPlayer;
     private Room room1;
+    private Planet planet1;
+    
     /**
      * Default constructor for test class MonsterTest
      */
@@ -34,7 +36,9 @@ public class MonsterTest
     @Before
     public void setUp()
     {
-        room1 = new Room("Room1");
+        Planet planet1 = new Planet("Alpha","Welcome on the planet alpha",10,10);
+        planet1.addRoom(room1);
+        room1 = new Room("Room1", planet1);
         testPlayer = new Player ("Joe", 40, room1);
         testMonster = new Monster ("Bowser", 50 , 100, room1, "Quelle est votre promo ?","Gphy");
     }

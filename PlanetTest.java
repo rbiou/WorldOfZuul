@@ -36,6 +36,7 @@ public class PlanetTest
     public void setUp()
     {
         Planet planet1 = new Planet("Alpha","Welcome on the planet alpha",10,10);
+        planet1.addRoom(room1);
         room1 = new Room("Room1");
         character= new Character("Joe", 50, 40, room1);
     }
@@ -46,7 +47,6 @@ public class PlanetTest
     @Test
     public void testTimeLimit()
     {
-        planet1.addRoom(room1);
         long original = System.currentTimeMillis();
         while (true) {
             if (System.currentTimeMillis() - original >= (planet1.getTime()*1000)+1000) {
