@@ -8,7 +8,7 @@ import java.util.*;
  *
  * A "Room" represents one location in the scenery of our game. Planet contains different rooms. 
  * There is not the same number of rooms on each planet. 
- * It is connected to other rooms via exits. 
+ * It is connected to other rooms via exits. f
  * The number of exits (doors) is different for each room.
  * 
  * @author (Groupe 7)
