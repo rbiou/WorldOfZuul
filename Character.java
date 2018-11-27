@@ -5,16 +5,21 @@ public class Character{
     private int money;             // Money owned by character
     private ArrayList<Item> items; // Items owned by character
     private int maxWeight;         // Maximum weight character can
+    private int itemsTotalWeight;       // Total weight of the bag
+    private Room currentRoom;
+
 
     /**
      * Constructor
     **/
-    public Character(String newName, int newMoney, int newWeight)
+    public Character(String newName, int newMoney, int newWeight, Room newRoom)
     {
-        money = newMoney; 
-        name = newName; 
-        maxWeight = newWeight; 
-        items = new ArrayList<Item>(); 
+        money       = newMoney; 
+        name        = newName; 
+        maxWeight   = newWeight; 
+        items       = new ArrayList<Item>(); 
+        itemsTotalWeight = 0;
+        currentRoom = newRoom;
     }
     
     public ArrayList<Item> getListItems(){
@@ -27,7 +32,7 @@ public class Character{
      * @return     The character's name.
      */
     public String getName(){
-        return name; 
+        return name;
     }
     
     /**
@@ -55,7 +60,17 @@ public class Character{
     **/
     public boolean addItem (Item item)
     {
-        return false;
+        int newWeight = itemsTotalWeight + item.getWeight();
+        if ((newWeight) > getMaxWeight())
+        {
+            return false;
+        }
+        else 
+        {
+            items.add(item);
+            itemsTotalWeight = newWeight;
+            return true;
+        }
     }
     
     
@@ -66,6 +81,10 @@ public class Character{
     **/
     public boolean removeItem(Item item)
     {
+        if (items.remove(item)){
+            itemsTotalWeight -= item.getWeight();
+            return true;
+        }
         return false;
     }
     
@@ -98,6 +117,16 @@ public class Character{
     public int getTotalWeight()
     
     {
-        return 1;
+        return itemsTotalWeight;
+    }
+
+
+     /**
+     * Return the position of the player (the room where he is)
+     * @param 
+     */
+    public Room getCurrentRoom()
+    { 
+        return currentRoom;
     }
 }

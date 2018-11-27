@@ -16,9 +16,9 @@ public class Pet extends NonPlayerCharacter
     /**
      * Constructor for objects of class Pets
      */
-    public Pet(String newName, int newMoney, int newWeight, String newSpecies)
+    public Pet(String newName, int newMoney, int newWeight, Room newRoom, String newSpecies)
     {
-        super(newName, newMoney, newWeight); 
+        super(newName, newMoney, newWeight, newRoom); 
         String species = newSpecies;
     }
     
@@ -36,6 +36,9 @@ public class Pet extends NonPlayerCharacter
      */
     public String speak()
     {
-        return "";
+    while (Game.getListPlanet().hasNext()) 
+    {
+
+    }
     }
 }

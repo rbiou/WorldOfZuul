@@ -14,9 +14,9 @@ public class Monster extends NonPlayerCharacter
     /**
      * Constructor for objects of class Monster
      */
-    public Monster(String newName, int newMoney, int newWeight)
+    public Monster(String newName, int newMoney, int newWeight, Room newRoom)
     {
-        super(newName, newMoney, newWeight); 
+        super(newName, newMoney, newWeight, newRoom);
     }
 
     /**

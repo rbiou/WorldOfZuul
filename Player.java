@@ -8,14 +8,13 @@
 public class Player extends Character
 {
     private int lifePoints;
-    private Room currentRoom;
     
     /**
      * Constructor
     **/
-    public Player(String newName, int newWeight)
+    public Player(String newName, int newWeight, Room newRoom)
     {
-        super(newName, 0, newWeight);
+        super(newName, 0, newWeight, newRoom);
         lifePoints = 100; 
     }
 
@@ -70,15 +69,6 @@ public class Player extends Character
     public void interractWith(NonPlayerCharacter character)
     {
         character.speak(this);
-    }
-     
-     /**
-     * Return the position of the player (the room where he is)
-     * @param 
-     */
-    public Room getCurrentRoom()
-    { 
-        return currentRoom;
     }
 }
 
