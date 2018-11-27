@@ -156,7 +156,15 @@ public class Game
         delta3.addCharacter(monster3 = new Monster("Darkness", 10000, 56)); 
         gamma6.addCharacter(monster4 = new Monster("Piranha", 10000, 56));
     }
-    
+    /**
+     * Getter to return the name of the room
+     * 
+     * @return      String
+     */
+    public List<Planet> getListPlanet()
+    {
+        return this.listPlanet; 
+    }
 }    
     
 
