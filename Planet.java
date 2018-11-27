@@ -72,7 +72,7 @@ public class Planet
      */
     public boolean addRoom(Room newRoom)
     {
-        if (listRoom.contains(newRoom)){
+        if (this.listRoom.contains(newRoom)){
             return false; }
         else {
             this.listRoom.add(newRoom);
