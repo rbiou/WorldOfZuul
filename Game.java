@@ -155,7 +155,7 @@ public class Game
         alpha2.addCharacter(monster1 = new Monster("Godzilla", 10000, 56)); 
         beta3.addCharacter(monster2 = new Monster("Yoda", 10000, 56)); 
         delta3.addCharacter(monster3 = new Monster("Darkness", 10000, 56)); 
-        gamma6.addCharacter(monster4 = new Monster("Piranha", 10000, 56)); 
+        gamma6.addCharacter(monster4 = new Monster("Piranha", 10000, 56));
     }
     
 }    
