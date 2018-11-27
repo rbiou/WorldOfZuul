@@ -19,7 +19,7 @@ public class Player extends Character
     }
 
     /**
-     * the player grab the content of the chest
+     * the player grabs the content of the chest
      * @param door
     **/
     public void grabContent(Chest chest)
@@ -52,9 +52,13 @@ public class Player extends Character
         return (lifePoints <= 0);
     }
     
+    /**
+     * This method allows to pet a pet
+     * The player earns 1 piece
+     * The pet loses 1 piece
+    **/
     public void pet(Pet pet)
     {
-        
     }
 
     /**
