@@ -28,7 +28,6 @@ public class Item
         description = newDescription; 
     }
 
-    
     /**
      * getter to get the weight of the object
     **/

@@ -48,10 +48,12 @@ public class Chest extends Item
      */
     public boolean addItem(Item item)
     {
-        rewarding.add(item);
-        return true;
+        if (this.rewarding.contains(item)){
+            return false; }
+        else {
+            this.rewarding.add(item);
+            return true;}
     }
-
 
     /**
      * Returns the list of items in the chest

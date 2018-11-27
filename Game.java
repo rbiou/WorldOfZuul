@@ -49,27 +49,27 @@ public class Game
         
         start = new Room("start", startP);
         
-        alpha.getListRoom().add(alpha1 = new Room("alpha1", alpha)); 
-        alpha.getListRoom().add(alpha2 =new Room("alpha2", alpha)); 
-        alpha.getListRoom().add(alpha3 =new Room("alpha3", alpha)); 
+        alpha.addRoom(alpha1 = new Room("alpha1", alpha)); 
+        alpha.addRoom(alpha2 =new Room("alpha2", alpha)); 
+        alpha.addRoom(alpha3 =new Room("alpha3", alpha)); 
         
-        beta.getListRoom().add(beta1 = new Room("beta1", beta)); 
-        beta.getListRoom().add(beta2 = new Room("beta2", beta));
-        beta.getListRoom().add(beta3 = new Room("beta3", beta));
-        beta.getListRoom().add(beta4 = new Room("beta4", beta));
-        beta.getListRoom().add(beta5 = new Room("beta5", beta));
+        beta.addRoom(beta1 = new Room("beta1", beta)); 
+        beta.addRoom(beta2 = new Room("beta2", beta));
+        beta.addRoom(beta3 = new Room("beta3", beta));
+        beta.addRoom(beta4 = new Room("beta4", beta));
+        beta.addRoom(beta5 = new Room("beta5", beta));
         
-        delta.getListRoom().add(delta1 = new Room("delta1", delta));
-        delta.getListRoom().add(delta2 =new Room("delta2", delta));
-        delta.getListRoom().add(delta3 =new Room("delta3", delta));
-        delta.getListRoom().add(delta4 =new Room("delta4", delta));
+        delta.addRoom(delta1 = new Room("delta1", delta));
+        delta.addRoom(delta2 =new Room("delta2", delta));
+        delta.addRoom(delta3 =new Room("delta3", delta));
+        delta.addRoom(delta4 =new Room("delta4", delta));
         
-        gamma.getListRoom().add(gamma1 = new Room("gamma1", gamma));
-        gamma.getListRoom().add(gamma2 = new Room("gamma2", gamma));
-        gamma.getListRoom().add(gamma3 = new Room("gamma3", gamma));
-        gamma.getListRoom().add(gamma4 = new Room("gamma4", gamma));
-        gamma.getListRoom().add(gamma5 = new Room("gamma5", gamma));
-        gamma.getListRoom().add(gamma6 = new Room("gamma6", gamma));
+        gamma.addRoom(gamma1 = new Room("gamma1", gamma));
+        gamma.addRoom(gamma2 = new Room("gamma2", gamma));
+        gamma.addRoom(gamma3 = new Room("gamma3", gamma));
+        gamma.addRoom(gamma4 = new Room("gamma4", gamma));
+        gamma.addRoom(gamma5 = new Room("gamma5", gamma));
+        gamma.addRoom(gamma6 = new Room("gamma6", gamma));
         
         //declaration of the doors that will be added to the alpha planet
         Door startSouth, alpha1North, alpha1East, alpha1South, alpha2West, alpha2South, alpha3South, alpha3West, alpha3North;
@@ -169,17 +169,17 @@ public class Game
         
        
         //Add items in the chests
-        chest1alpha3.getListItems().add(knief1=new Item("Knieffy",50,10,"I am a knief, you can sell me to the sellers "));
-        chest1alpha3.getListItems().add(magicBall2=new Item("MiniBall",100,10,"I am a MagicBall, you can sell me to the sellers "));
-        chest2delta1.getListItems().add(keyAlpha3 = new Keys("Red key",300,20,"I am a key, I can open the door Vanity Smurf", "square"));
-        chest3delta4.getListItems().add(wheel=new Item("wheely",500,50,"I am the wheel of your vessel"));
-        chest4beta1.getListItems().add(keyBeta4 = new Keys("Grey key",300,20,"I am a key, I can open the door Architect Smurf", "triangle"));
-        chest5beta5.getListItems().add(windows = new Item("windows",500,50,"I am the windows of your vessel")); 
-        chestGamma1.getListItems().add(keyGamma2 = new Keys("Green key",300,20,"I am a key, I can open the door Enamored Smurf", "star"));
-        chestGamma1.getListItems().add(fork1 = new Item("Big fork",3,10,"I am the fork that you need because I can fly"));
-        chestGamma5.getListItems().add(propellant = new Item("propellant", 500, 50, "I am a the propellant of your vessel"));
-        chestGamma4.getListItems().add(diamond2 = new Item("Wonderful diamond", 250, 50, "I am a wonderful brillant diamond"));
-        chestGamma6.getListItems().add(engine = new Item("engine", 500, 50, "I am the engine of your vessel"));
+        chest1alpha3.addItem(knief1=new Item("Knieffy",50,10,"I am a knief, you can sell me to the sellers "));
+        chest1alpha3.addItem(magicBall2=new Item("MiniBall",100,10,"I am a MagicBall, you can sell me to the sellers "));
+        chest2delta1.addItem(keyAlpha3 = new Keys("Red key",300,20,"I am a key, I can open the door Vanity Smurf", "square"));
+        chest3delta4.addItem(wheel=new Item("wheely",500,50,"I am the wheel of your vessel"));
+        chest4beta1.addItem(keyBeta4 = new Keys("Grey key",300,20,"I am a key, I can open the door Architect Smurf", "triangle"));
+        chest5beta5.addItem(windows = new Item("windows",500,50,"I am the windows of your vessel")); 
+        chestGamma1.addItem(keyGamma2 = new Keys("Green key",300,20,"I am a key, I can open the door Enamored Smurf", "star"));
+        chestGamma1.addItem(fork1 = new Item("Big fork",3,10,"I am the fork that you need because I can fly"));
+        chestGamma5.addItem(propellant = new Item("propellant", 500, 50, "I am a the propellant of your vessel"));
+        chestGamma4.addItem(diamond2 = new Item("Wonderful diamond", 250, 50, "I am a wonderful brillant diamond"));
+        chestGamma6.addItem(engine = new Item("engine", 500, 50, "I am the engine of your vessel"));
         
          
         
@@ -196,15 +196,14 @@ public class Game
         gamma3.addCharacter(sellerGamma3 = new Seller("Harry Potter", 15000, 500, gamma3));
         
         //Add items to the sellers
-        sellerDelta2.getListItems().add(keyDelta2 = new Keys("Yellow key",300,20,"I am a key, I can open the door Sloppy Smurf", "circle"));
-        sellerBeta2.getListItems().add(magicBall1 = new Item ("flackball",100,50,"I am a diamond, you can win 100 pieces if you sell me"));
-        sellerBeta2.getListItems().add(diamond1 = new Item ("little diamond",250,50,"I am a diamond, you can bue me"));
-        sellerGamma3.getListItems().add(knief2 = new Item("sharp knife", 50, 10,"I am a sharp knief, you can buy me"));
-        sellerGamma3.getListItems().add(fork2 = new Item("Small knife", 3, 10,"I am a small fork, you can buy me"));
-        sellerGamma3.getListItems().add(keyGamma4 = new Keys("Blue key", 300, 20,"I am a key, I can open the door Lazy Smurf", "rectangle"));
-        sellerDelta2.getListItems().add(diamond3 = new Item("Special diamond", 250, 50, "I am a special diamond, you can buy me to see why I am special"));
-        sellerDelta2.getListItems().add(fork3 = new Item("Special fork", 3, 50, "I am a special fork, you can buy me to see why I am special"));
-        
+        sellerDelta2.addItem(keyDelta2 = new Keys("Yellow key",300,20,"I am a key, I can open the door Sloppy Smurf", "circle"));
+        sellerBeta2.addItem(magicBall1 = new Item ("flackball",100,50,"I am a diamond, you can win 100 pieces if you sell me"));
+        sellerBeta2.addItem(diamond1 = new Item ("little diamond",250,50,"I am a diamond, you can bue me"));
+        sellerGamma3.addItem(knief2 = new Item("sharp knife", 50, 10,"I am a sharp knief, you can buy me"));
+        sellerGamma3.addItem(fork2 = new Item("Small knife", 3, 10,"I am a small fork, you can buy me"));
+        sellerGamma3.addItem(keyGamma4 = new Keys("Blue key", 300, 20,"I am a key, I can open the door Lazy Smurf", "rectangle"));
+        sellerDelta2.addItem(diamond3 = new Item("Special diamond", 250, 50, "I am a special diamond, you can buy me to see why I am special"));
+        sellerDelta2.addItem(fork3 = new Item("Special fork", 3, 50, "I am a special fork, you can buy me to see why I am special"));
     }
    
     /**

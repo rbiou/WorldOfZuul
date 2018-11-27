@@ -84,7 +84,11 @@ public class Room
      */
     public boolean addCharacter(Character newChar)
     {
-        return false;
+        if (this.listCharacters.contains(newChar)){
+            return false; }
+        else {
+            this.listCharacters.add(newChar);
+            return true;}
     }
     
     /**
@@ -96,9 +100,13 @@ public class Room
      */
     public boolean addChest(Chest newChest)
     {
-         return false;
+        if (this.listChest.contains(newChest)){
+            return false; }
+        else {
+            this.listChest.add(newChest);
+            return true;}
     }
-   
+    
     /**
      * Remove a character from the room
      *
@@ -108,7 +116,11 @@ public class Room
      */
     public boolean removeCharacter(Character oldChar)
     {
-         return false;
+        if (this.listCharacters.contains(oldChar)){
+            this.listCharacters.remove(oldChar);
+            return true; }
+        else {
+            return false;}
     }
     
     /**
@@ -120,8 +132,13 @@ public class Room
      */
     public boolean removeChest (Chest oldChest)
     {
-         return false;
+        if (this.listChest.contains(oldChest)){
+            this.listChest.remove(oldChest);
+            return true; }
+        else {
+            return false;}
     }
+    
     
     /**
      * Define the exit of this room. 
