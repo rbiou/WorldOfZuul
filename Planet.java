@@ -44,6 +44,17 @@ public class Planet
     {
         return time; 
     }
+    
+     /**
+     * Get the temperature of the planet
+     *
+     * @return the temperature
+     */
+    public int getTemparature()
+    {
+        return temperature; 
+    }
+    
     /**
      * This method allows you to display the description of the planet
      */
