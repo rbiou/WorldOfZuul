@@ -124,11 +124,24 @@ public class Room
         exit.put(exitName, arrivalDoor);
     }
     
-
-    
-    
-    
+    public void displayExit()
+    {
+        Iterator<Map.Entry<String,Door>> itr = exit.entrySet().iterator();
+        while(itr.hasNext())
+        {
+            Map.Entry<String,Door>entry = itr.next();
+            String key = entry.getKey();
+            Door value = entry.getValue();
+            System.out.println("nom de la porte :" + key);
+            System.out.println("room de sortie :" +
+            value.getNextRoom().getName());
+            if (!itr.hasNext()){}
+        }
+    }
+        
 }
+    
+
 
 
 

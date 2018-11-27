@@ -15,4 +15,10 @@ public class Door
     {
         nextRoom = newNextRoom;
     }
+    
+    public Room getNextRoom()
+    {
+        return nextRoom;
+    }
 }
+
