@@ -1,6 +1,6 @@
 import java.util.*;
 /**
- * 
+ * Game class
  */
 public class Game
 {
@@ -12,6 +12,7 @@ public class Game
     public Game()
     {
         listPlanet = new ArrayList<Planet>();
+        createWorld();
     }
 
     /**
@@ -25,20 +26,6 @@ public class Game
      * this method allows you to open the game
      */
     public void openGame()
-    {
-        //
-    }
-    /**
-     * this method allows you to save the game
-     */
-    public void save()
-    {
-        //
-    }
-    /**
-     * the method allows you to create a Room
-     */
-    public void createRoom()
     {
         //
     }
@@ -84,7 +71,7 @@ public class Game
         gamma.getListRoom().add(gamma5 = new Room("gamma5", gamma));
         gamma.getListRoom().add(gamma6 = new Room("gamma6", gamma));
         
-        //declaration of the door that will be added to the alpha planet
+        //declaration of the doors that will be added to the alpha planet
         Door startSouth, alpha1North, alpha1East, alpha1South, alpha2West, alpha2South, alpha3South, alpha3West, alpha3North;
         LockedDoor alpha3East; 
         //declaration of the door that will be added to the beta planet
@@ -100,55 +87,55 @@ public class Game
         LockedDoor gamma2South, gamma4North; 
         
         //creation of the door and they are added to the room for the alpha planet
-        start.setExit("",startSouth = new Door(alpha1)); 
-        alpha1.setExit("", alpha1North = new Door(start));
-        alpha1.setExit("", alpha1East = new Door(alpha2));
-        alpha1.setExit("", alpha1South = new Door(alpha3));
-        alpha2.setExit("", alpha2West = new Door(alpha1));
-        alpha2.setExit("", alpha2South = new Door(alpha3));
-        alpha3.setExit("", alpha3North = new Door(alpha2));
-        alpha3.setExit("", alpha3West = new Door(alpha1));
-        alpha3.setExit("", alpha3South = new Door(delta1));
-        alpha3.setExit("", alpha3East = new LockedDoor(beta1, ""));
+        start.setExit("Smurfette",startSouth = new Door(alpha1)); 
+        alpha1.setExit("Papa Smurf", alpha1North = new Door(start));
+        alpha1.setExit("Hefty Smurf", alpha1East = new Door(alpha2));
+        alpha1.setExit("Brainy Smurf", alpha1South = new Door(alpha3));
+        alpha2.setExit("Grouchy Smurf", alpha2West = new Door(alpha1));
+        alpha2.setExit("Clumsy Smurf", alpha2South = new Door(alpha3));
+        alpha3.setExit("Greedy Smurf", alpha3North = new Door(alpha2));
+        alpha3.setExit("Jokey Smurf", alpha3West = new Door(alpha1));
+        alpha3.setExit("Chef Smurf", alpha3South = new Door(delta1));
+        alpha3.setExit("Vanity Smurf", alpha3East = new LockedDoor(beta1, "square"));
         
         //creation of the door and they are added to the room for the delta planet
-        delta1.setExit("", delta1North = new Door(alpha3));
-        delta1.setExit("", delta1South = new Door(delta2));
-        delta2.setExit("", delta2North = new Door(delta1));       
-        delta2.setExit("", delta2East = new LockedDoor(delta3, ""));
-        delta3.setExit("", delta3West = new Door(delta2));    
-        delta3.setExit("", delta3South = new Door(delta4));       
-        delta4.setExit("", delta4North = new Door(delta3));    
+        delta1.setExit("Handy Smurf", delta1North = new Door(alpha3));
+        delta1.setExit("Scaredy Smurf", delta1South = new Door(delta2));
+        delta2.setExit("Tracker Smurf", delta2North = new Door(delta1));       
+        delta2.setExit("Sloppy Smurf", delta2East = new LockedDoor(delta3, "circle"));
+        delta3.setExit("Harmony Smurf", delta3West = new Door(delta2));    
+        delta3.setExit("Painter Smurf", delta3South = new Door(delta4));       
+        delta4.setExit("Poet Smurf", delta4North = new Door(delta3));    
            
         
         //creation of the door and they are added to the room for the beta planet
-        beta1.setExit("", beta1West = new Door(alpha3));
-        beta1.setExit("", beta1South = new Door(beta3));
-        beta1.setExit("", beta1East = new Door( beta2));      
-        beta2.setExit("", beta2West = new Door(beta1));      
-        beta2.setExit("", beta2South = new Door(beta4));            
-        beta3.setExit("", beta3North = new Door(beta1)); 
-        beta3.setExit("", beta3East = new Door(beta4));   
-        beta4.setExit("", beta4North = new Door(beta2)); 
-        beta4.setExit("", beta4West = new Door(beta3));
-        beta4.setExit("", beta4South = new LockedDoor(beta5, ""));
-        beta5.setExit("", beta5North = new Door(beta4));
-        beta5.setExit("", beta5South = new Door(gamma1));
+        beta1.setExit("Farmer Smurf", beta1West = new Door(alpha3));
+        beta1.setExit("Natural Smurf", beta1South = new Door(beta3));
+        beta1.setExit("Snappy Smurfling", beta1East = new Door( beta2));      
+        beta2.setExit("Slouchy Smurfling", beta2West = new Door(beta1));      
+        beta2.setExit("Grandpa Smurf", beta2South = new Door(beta4));            
+        beta3.setExit("Baby Smurf", beta3North = new Door(beta1)); 
+        beta3.setExit("Sassette Smurfling", beta3East = new Door(beta4));   
+        beta4.setExit("Alchemist Smurf", beta4North = new Door(beta2)); 
+        beta4.setExit("Timid Smurf", beta4West = new Door(beta3));
+        beta4.setExit("Architect Smurf", beta4South = new LockedDoor(beta5, "triangle"));
+        beta5.setExit("Baker Smurf", beta5North = new Door(beta4));
+        beta5.setExit("Clockwork Smurf", beta5South = new Door(gamma1));
         
         //creation of the door and they are added to the room for the gamma planet
-        gamma1.setExit("", gamma1North = new Door(beta5));
-        gamma1.setExit("", gamma1South = new Door(gamma2));
-        gamma2.setExit("", gamma2North = new Door(gamma1));
-        gamma2.setExit("", gamma2South = new LockedDoor(gamma3, ""));
-        gamma3.setExit("", gamma3North = new Door(gamma2));
-        gamma3.setExit("", gamma3South = new Door(gamma5));
-        gamma3.setExit("", gamma3East = new Door(gamma4));
-        gamma4.setExit("", gamma4North = new LockedDoor(gamma6, ""));
-        gamma4.setExit("", gamma4West = new Door(gamma3));
-        gamma4.setExit("", gamma4South = new Door(gamma5));
-        gamma5.setExit("", gamma5North = new Door(gamma4));
-        gamma5.setExit("", gamma5West = new Door(gamma3));
-        gamma6.setExit("", gamma6South = new Door( gamma4));
+        gamma1.setExit("Dabbler Smurf", gamma1North = new Door(beta5));
+        gamma1.setExit("Doctor Smurf", gamma1South = new Door(gamma2));
+        gamma2.setExit("Dopey Smurf", gamma2North = new Door(gamma1));
+        gamma2.setExit("Enamored Smurf", gamma2South = new LockedDoor(gamma3, "star"));
+        gamma3.setExit("Finance Smurf", gamma3North = new Door(gamma2));
+        gamma3.setExit("Flying Smurf", gamma3South = new Door(gamma5));
+        gamma3.setExit("King Smurf", gamma3East = new Door(gamma4));
+        gamma4.setExit("Lazy Smurf", gamma4North = new LockedDoor(gamma6, "rectangle"));
+        gamma4.setExit("Miner Smurf", gamma4West = new Door(gamma3));
+        gamma4.setExit("Nanny Smurf", gamma4South = new Door(gamma5));
+        gamma5.setExit("Nosey Smurf", gamma5North = new Door(gamma4));
+        gamma5.setExit("Editor Smurf", gamma5West = new Door(gamma3));
+        gamma6.setExit("Reflection Smurf", gamma6South = new Door( gamma4));
         
         //Add the monster in the rooms
         Monster monster1, monster2, monster3, monster4; //declaration of the monsters
@@ -184,11 +171,11 @@ public class Game
         //Add items in the chests
         chest1alpha3.getListItems().add(knief1=new Item("Knieffy",50,10,"I am a knief, you can sell me to the sellers "));
         chest1alpha3.getListItems().add(magicBall2=new Item("MiniBall",100,10,"I am a MagicBall, you can sell me to the sellers "));
-        chest2delta1.getListItems().add(keyAlpha3 = new Keys("Red key",300,20,"I am a key, I can open the door xxxx ", "MDP"));
+        chest2delta1.getListItems().add(keyAlpha3 = new Keys("Red key",300,20,"I am a key, I can open the door Vanity Smurf", "square"));
         chest3delta4.getListItems().add(wheel=new Item("wheely",500,50,"I am the wheel of your vessel"));
-        chest4beta1.getListItems().add(keyBeta4 = new Keys("Grey key",300,20,"I am a key, I can open the door xxxx ", "MDP"));
+        chest4beta1.getListItems().add(keyBeta4 = new Keys("Grey key",300,20,"I am a key, I can open the door Architect Smurf", "triangle"));
         chest5beta5.getListItems().add(windows = new Item("windows",500,50,"I am the windows of your vessel")); 
-        chestGamma1.getListItems().add(keyGamma2 = new Keys("Green key",300,20,"I am a key, I can open the door xxxx ", "MDP"));
+        chestGamma1.getListItems().add(keyGamma2 = new Keys("Green key",300,20,"I am a key, I can open the door Enamored Smurf", "star"));
         chestGamma1.getListItems().add(fork1 = new Item("Big fork",3,10,"I am the fork that you need because I can fly"));
         chestGamma5.getListItems().add(propellant = new Item("propellant", 500, 50, "I am a the propellant of your vessel"));
         chestGamma4.getListItems().add(diamond2 = new Item("Wonderful diamond", 250, 50, "I am a wonderful brillant diamond"));
@@ -208,19 +195,15 @@ public class Game
         beta2.addCharacter(sellerBeta2 = new Seller ("Hagrid", 15000, 200, beta2));
         gamma3.addCharacter(sellerGamma3 = new Seller("Harry Potter", 15000, 500, gamma3));
         
-        
-        
         //Add items to the sellers
-        sellerDelta2.getListItems().add(keyDelta2 = new Keys("Yellow key",300,20,"I am a key, I can open the door xxxx ", "MDP"));
+        sellerDelta2.getListItems().add(keyDelta2 = new Keys("Yellow key",300,20,"I am a key, I can open the door Sloppy Smurf", "circle"));
         sellerBeta2.getListItems().add(magicBall1 = new Item ("flackball",100,50,"I am a diamond, you can win 100 pieces if you sell me"));
         sellerBeta2.getListItems().add(diamond1 = new Item ("little diamond",250,50,"I am a diamond, you can bue me"));
         sellerGamma3.getListItems().add(knief2 = new Item("sharp knife", 50, 10,"I am a sharp knief, you can buy me"));
         sellerGamma3.getListItems().add(fork2 = new Item("Small knife", 3, 10,"I am a small fork, you can buy me"));
-        sellerGamma3.getListItems().add(keyGamma4 = new Keys("Blue key", 300, 20,"I am a key, I can open the door xxxx ", "MDP"));
+        sellerGamma3.getListItems().add(keyGamma4 = new Keys("Blue key", 300, 20,"I am a key, I can open the door Lazy Smurf", "rectangle"));
         sellerDelta2.getListItems().add(diamond3 = new Item("Special diamond", 250, 50, "I am a special diamond, you can buy me to see why I am special"));
         sellerDelta2.getListItems().add(fork3 = new Item("Special fork", 3, 50, "I am a special fork, you can buy me to see why I am special"));
-        
-        
         
     }
    
