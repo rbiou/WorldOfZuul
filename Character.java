@@ -127,4 +127,13 @@ public class Character{
     { 
         return currentRoom;
     }
+    
+     /**
+     * Change the position of the player (the room where he is)
+     * @param 
+     */
+    public void setCurrentRoom(Room newRoom)
+    { 
+        currentRoom = newRoom;
+    }
 }

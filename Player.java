@@ -63,23 +63,28 @@ public class Player extends Character
     public void move()
     {
         boolean test = false;
-        System.out.println("Voici la liste des différentes sorties possibles");
+        System.out.println("Here the list of the different possible exits");
         getCurrentRoom().displayExit();
+        String nameDoor;
         while (test==false){
-            System.out.println("Choisissez une porte valide");
+            System.out.println("Choose a valide exit");
             Scanner reader = new Scanner (System.in);
-            String porte = reader.next();
-            if (getCurrentRoom().getNameDoor().contains(porte))
+            nameDoor = reader.next();
+            if (getCurrentRoom().getNameDoor().contains(nameDoor))
             {test=true;}
         }
-        
+        Door doorExit = getCurrentRoom().getSpecificExit(nameDoor);
+        moveRoom(doorExit);
     }
+    
     /**
      * Go to the room to which specified door leads to
      * @param  door    The door to where player has to go
     **/
     public void moveRoom(Door door)
     {
+        setCurrentRoom(door.getNextRoom());
+        door.getNextRoom().addCharacter(this);
     }
     
     /**

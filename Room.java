@@ -144,27 +144,18 @@ public class Room
             Map.Entry<String,Door>entry = itr.next();
             String key = entry.getKey();
             Door value = entry.getValue();
-            System.out.println("nom de la porte :" + key);
-            System.out.println("room de sortie :" +
+            System.out.println("name of the door :" + key);
+            System.out.println("exit room :" +
             value.getNextRoom().getName());
             
         }
     }
     
-    public Door displayExit(String)
+    public Door getSpecificExit(String nomPorte)
     {
-        Iterator<Map.Entry<String,Door>> itr = exit.entrySet().iterator();
-        while(itr.hasNext())
-        {
-            Map.Entry<String,Door>entry = itr.next();
-            String key = entry.getKey();
-            Door value = entry.getValue();
-            System.out.println("nom de la porte :" + key);
-            System.out.println("room de sortie :" +
-            value.getNextRoom().getName());
-            
-        }
+        return exit.get(nomPorte);
     }
+    
     public ArrayList<String> getNameDoor()
     {
         ArrayList<String> list = new ArrayList<String>() ;
