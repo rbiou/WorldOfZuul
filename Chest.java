@@ -23,22 +23,26 @@ public class Chest extends Item
     }
     
     /**
-     *The player removes the money from the chest
+     *The player removes the money from the chest. 
+     *The chest contains 50 or 0 piece(s). 
+     *If they contain money, the player earns it
      */
     public boolean removeMoneyChest()
        {
-            money = 0;
-            return true;
+            money=0; 
+            return true; 
        }
+       
      /**
      *The player removes the item from the chest
      */
     public boolean removeItem(Item item)
-    {
-        if (rewarding.remove(item)){
-            return true;
-        }
-        return false;
+    {        
+        if (this.rewarding.contains(item)){
+            this.rewarding.remove(item);
+            return true;}
+        else {
+            return false;}
     }
     
      /**

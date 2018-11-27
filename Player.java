@@ -54,6 +54,7 @@ public class Player extends Character
     
     public void pet(Pet pet)
     {
+        
     }
 
     /**

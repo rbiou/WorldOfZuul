@@ -58,7 +58,7 @@ public class Character{
      * @param  item
      * @return boolean
     **/
-    public boolean addItem (Item item)
+    public boolean addItem(Item item)
     {
         int newWeight = itemsTotalWeight + item.getWeight();
         if ((newWeight) > getMaxWeight())
@@ -95,17 +95,31 @@ public class Character{
     **/
     public boolean addMoney (int amount)
     {
-        return false;
+        if (this.money>=0){
+            this.money = money+amount; 
+            return true;}
+        else 
+            return false; 
     }
     
     /**
-     * Remove an item from the list of items
+     * The amount of money of the character decreases. 
      * @param  amount  The amount of money that character loses
      * @return boolean
     **/
     public boolean removeMoney(int amount)
     {
-        return false;
+        int newValueMoney; 
+        if (this.money>=0){
+            newValueMoney = money-amount;
+                if (newValueMoney < 0){
+                    this.money = 0; 
+                }
+                else 
+                    this.money = newValueMoney; 
+            return true;}
+        else 
+            return false;
     }
     
     /**
