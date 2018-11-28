@@ -1,3 +1,4 @@
+import java.util.*;
 
 /**
  * The seller is the subclass of the non player character the seller
@@ -55,7 +56,7 @@ public class Seller extends NonPlayerCharacter
     {
         System.out.println("Would you like to buy or sell something ?");
         Scanner reader = new Scanner (System.in);
-        answer = reader.next();
+        String answer = reader.next();
         
         if (answer == "buy"){
 
@@ -64,6 +65,8 @@ public class Seller extends NonPlayerCharacter
                 return;
             }
             // TODO
+            
+        }
 
         if (answer == "sell"){
 
@@ -78,20 +81,21 @@ public class Seller extends NonPlayerCharacter
 
     public Item selectItemFromList(ArrayList<Item> items)
     {
+        Scanner reader = new Scanner (System.in);
         while(true){
             System.out.println("Select an item");
             for (int i = 0; i < items.size(); i++)
             {
-                System.out.println(i + " : " + item.getName());
+                System.out.println(i + " : " + items.get(i).getName());
             }
             System.out.println("exit : CANCEL");
 
-            answer = reader.next();
-            if (answer = "exit"){
+            String answer = reader.next();
+            if (answer == "exit"){
                 return null;
             }
             
-            itemIndex = Integer.valueOf(answer);
+            int itemIndex = Integer.valueOf(answer);
             if (itemIndex < 0 || itemIndex >= items.size() - 1){
                 System.out.println("Wrong item selected");
                 continue;
