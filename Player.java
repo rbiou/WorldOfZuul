@@ -142,7 +142,39 @@ public class Player extends Character
         character.speak(this);
     }
      
+    /**
+     * this method allows the player to sell an item to the seller
+     *
+     * @param item
+     * @return return the amount of money owned by the player
+     */
+    public boolean sellItem(Seller seller, Item item)
+    {
+        int price = item.getValue();
+        this.addMoney(price);
+        this.removeItem(item);
+        seller.addItem(item);
+        return true;
+    }
     
+    /**
+     * this method allows the player to buy an item from the seller
+     *
+     * @param amount of money
+     * @return return the new item get by the player
+     */
+    public boolean buyItem(Seller seller, Item item)
+    {
+        int price = item.getValue();
+        if (price <= this.getMoney())
+        {
+            this.removeMoney(price);
+            this.addItem(item);
+            seller.removeItem(item);
+            return true;
+        }
+        return false;
+    }
 }
 
 
