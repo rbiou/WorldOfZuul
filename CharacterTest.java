@@ -96,7 +96,7 @@ public class CharacterTest
     @Test
     public void testCharacterCreationWrongName()
     {
-        String error;
+        String error = "";
         try
         {
             Player player = new Player("", 6, room1);
@@ -114,7 +114,7 @@ public class CharacterTest
     @Test
     public void testCharacterCreationWrongWeight()
     {
-        String error;
+        String error = "";
         try
         {
             Player player = new Player("Jo", -1, room1);
