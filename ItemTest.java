@@ -56,16 +56,6 @@ public class ItemTest
         negWeightItem = new Item("papaye",1,-4,"I have a negative weight");
         character= new Character("Joe", 50, 40, room1);
     }
-    
-    /**
-    * Tears down the test fixture.
-    *
-    * Called after every test case method.
-    */
-    @After
-    public void tearDown()
-    {
-    }
 
     /**
     * Method testItemDescription : test if the item description is available for the player
@@ -110,7 +100,7 @@ public class ItemTest
         assertEquals(true, character.removeItem(item));
     }
     
-    /**
+        /**
     * Method addItemEnoughPlace : test if an item is added in a bag with enough place, if there is enough place in the bag
     * the item is added in the bag and the size of the bag is implemented, otherwise if there is not enough places in the bag
     * an error message "not enough places" is displayed.
