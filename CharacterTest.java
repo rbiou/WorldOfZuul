@@ -14,7 +14,8 @@ public class CharacterTest
     Seller seller;
     Room room1; 
     Planet planet1; 
-    Item item; 
+    Item item;
+    Player player;
     /**
      * Default constructor for test class CharacterTest
      */
@@ -33,7 +34,8 @@ public class CharacterTest
         planet1 = new Planet("Start", "Welcome on the planet start", 10, 10); 
         room1 = new Room ("room1", planet1); 
         seller = new Seller ("Dumbledore", 15000, 200, room1);
-        item = new Item ("ball",500,50,"I am the ball"); 
+        item = new Item ("ball",500,50,"I am the ball");
+        player = new Player("Jo", 6, room1);
     }
     
     /**
@@ -63,6 +65,28 @@ public class CharacterTest
             nbItem++;
         }
         assertEquals(1, nbItem);
+    }
+    
+    /**
+     * The test will test that paying him loses a lot of money
+     */
+    @Test
+    public void testRemovemoney()
+    {
+        player.removeMoney(66666);
+        assertEquals(0,player.getMoney());    
+    }
+    
+    /**
+     * The test will test remove an item from the list of items
+     */
+    @Test
+    public void testRemoveItem()
+    {
+        seller.addItem(item);
+        assertEquals(true, seller.getListItems().contains(item));
+        seller.removeItem(item);
+        assertEquals(false, seller.getListItems().contains(item));
     }
 }
 

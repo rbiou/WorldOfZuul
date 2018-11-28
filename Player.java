@@ -8,77 +8,74 @@ import java.util.*;
 public class Player extends Character
 {
     private int lifePoints;
-    
+
     /**
      * Constructor
-    **/
+     **/
     public Player(String newName, int newWeight, Room newRoom)
     {
         super(newName, 0, newWeight, newRoom);
         lifePoints = 100;
-        
+
     }
 
     /**
      * the player grabs the content of the chest
      * @param door
-    **/
+     **/
     public void grabContent(Chest chest)
     {
-        int newLP = 0; 
+        int newLP; 
         if (chest.getIsTrap()==true){
             newLP = this.lifePoints - 25; 
+            this.lifePoints = newLP; 
             if (newLP < 0){
-            this.lifePoints=0; 
+            this.lifePoints=0;
+            this.lifePoints = newLP;
             }
         }; 
-        
+
         this.addMoney(chest.getMoney());
         chest.removeMoneyChest();
 
-        ArrayList<Item> itemsInChest = chest.getListItems();
-
-        for (Item item: itemsInChest){
-            if (this.addItem(item))
-                chest.removeItem(item);
+        for(int i = 0; i < chest.getListItems().size(); i++){
+            if (this.addItem(chest.getListItems().get(i)))
+                chest.removeItem(chest.getListItems().get(i));
         }
-        
-        
-        
-
-        
     }
-    
+
     public void looseHP(int HP)
     {
         if (HP > 0){
             lifePoints -= HP;
         }
     }
-    
+
     public boolean checkTime()
     {
         return false;
     }
-    
+
     public boolean isDead()
     {
         return (lifePoints <= 0);
     }
-    
+
     /**
      * This method allows to pet a pet
      * The player earns 1 piece
      * The pet loses 1 piece
-    **/
+     **/
     public void pet(Pet pet)
     {
+        pet.removeMoney(1);
+        this.addMoney(1);
     }
 
     /**
      * When the player choose to move room, the game displayed the current rooms where the player is.
      * Then the player has to choose one and is moved to it.
-    **/
+     **/
     public void move()
     {
         boolean test = false;
@@ -97,22 +94,10 @@ public class Player extends Character
             {
                 test=true;
                 Door doorExit = getCurrentRoom().getSpecificExit(nameDoor);
-           
+
                 if (doorExit.getIfLocked())
                 {
-                    
-                    for(int i=0;i<getListItems().size();i++)
-                    {
-                        if (getListItems().get(i).getShape()== doorExit.ShapeKeyDescription())
-                        {
-                            moveRoom(doorExit);
-                            doorExit.openLocked();
-                        }
-                        else 
-                        {System.out.println("You do not have the right key please pass your way");
-                        }
-                    }
-                    
+                    moveLockedDoor(doorExit);
                 }
                 else
                 {
@@ -124,27 +109,55 @@ public class Player extends Character
                 test=true;
             }
         }
-        
+
     }
-    
+
     /**
      * Go to the room to which specified door leads to
      * @param  door    The door to where player has to go
-    **/
+     **/
     public void moveRoom(Door door)
     {
         setCurrentRoom(door.getNextRoom());
         door.getNextRoom().addCharacter(this);
     }
-    
+
+    /**
+     * Go to the room to which specified lockeDoor leads to
+     * @param  door    The door to where player has to go
+     * @return a boolean 
+     *  if the player does not have the key return false;
+     *  if the player has the key return true; 
+     **/
+    public boolean moveLockedDoor(Door doorExit)
+    {
+
+        boolean rightKey = false;
+        for(int i=0;i<getListItems().size();i++)
+        {
+            if (getListItems().get(i).getShape()== doorExit.ShapeKeyDescription())
+            {
+                rightKey = true;
+                moveRoom(doorExit);
+                doorExit.openLocked();
+            }
+        }
+        if (!rightKey)
+        {
+            System.out.println("You do not have the right key please pass your way");
+        }
+
+        return rightKey; 
+    }
+
     /**
      * getter to get the LP of the player
-    **/
+     **/
     public int getLP()
     {
         return lifePoints;
     }
-    
+
     /**
      * Interract with the no player character
      * @param 
@@ -153,7 +166,7 @@ public class Player extends Character
     {
         character.speak(this);
     }
-     
+
     /**
      * this method allows the player to sell an item to the seller
      *
@@ -168,7 +181,7 @@ public class Player extends Character
         seller.addItem(item);
         return true;
     }
-    
+
     /**
      * this method allows the player to buy an item from the seller
      *
@@ -188,6 +201,5 @@ public class Player extends Character
         return false;
     }
 }
-
 
 

@@ -1,8 +1,8 @@
 import java.util.*;
 /**
- * The class monster is the principal opponent of the player, the monster
- * ask a riddle to the player if the player answer correctly the monster
- * give money to him otherwise the monster attack the player.
+ * The class monster is the principal opponent of the player. The monster
+ * asks a riddle to the player. If he answers correctly the monster
+ * gives money to him otherwise the monster attack the player.
  *
  * @author Group 7
  * @version 14/11/2018
@@ -46,21 +46,31 @@ public class Monster extends NonPlayerCharacter
     { 
         if( isResolved )
         {
-            String PlayerAnswer ="";
+            String playerAnswer ="";
             System.out.println("Welcome brave space adventurer to continue your quest you have to answer my enigma...");
             System.out.println(question);
             Scanner reader = new Scanner (System.in);
-            PlayerAnswer = reader.next();
-            if(PlayerAnswer == answer)
+            playerAnswer = reader.next();
+            checkAnswer(playerAnswer, player);
+        }
+    }
+    
+    public boolean checkAnswer(String playerAnswer, Player player){
+            if(playerAnswer == answer)
             {
                 player.addMoney(300);
                 this.removeMoney(300);
                 System.out.println("Well done ! You are very smart, you can continue your journey");
                 isResolved = true;
+                return true; 
             } 
-            else { attack(player);
+            else { 
+                attack(player);
+                return false; 
             }
-        }
     }
-
+    
+    public boolean getIsResolved(){
+        return isResolved; 
+    }
 }

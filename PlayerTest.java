@@ -1,4 +1,3 @@
- 
 import static org.junit.Assert.*;
 import org.junit.After;
 import org.junit.Before;
@@ -20,7 +19,7 @@ public class PlayerTest
     private Monster monster;
     private Room room1, room2;
     private Door door1, door2;
-    private LockedDoor unlokedDoor; 
+    private LockedDoor lockedDoor1; 
     private Planet planet1;
     
     /**
@@ -38,20 +37,27 @@ public class PlayerTest
     @Before
     public void setUp() 
     {
-        player       = new Player("Joe",40, room1);
+        //Items
         chest        = new Chest("Chest1", 360, 1000, "I am the Chest1", 100, false);
         trappedChest = new Chest("Chest2", 360, 1000, "I am the Chest2", 100, true);
         item         = new Item("banana",1,1,"I'm a banana");
         bigItem      = new Item("Big item",41,41, "I am a big item"); 
-        character    = new Character("Joe", 50, 40, room1);
-        petCat       = new Pet("Minou",1000, 50, room1, "Cat");
-        monster      = new Monster("Bowser",50, 100, room1, "Quelle est votre promo ?", "Gphy");
+        //Location
         planet1      = new Planet("Alpha","Welcome on the planet alpha",10,10);
-        planet1.addRoom(room1);
         room1        = new Room("Room1", planet1);
         room2        = new Room("Room2", planet1);
-        door1        = new Door(room1);
-        door2        = new Door(room2);
+        //Characters
+        petCat       = new Pet("Minou",1000, 50, room1, "Cat");
+        monster      = new Monster("Bowser",50, 100, room1, "Quelle est votre promo ?", "Gphy");
+        player       = new Player("Joe",40, room1);
+        //Locate all characters generated
+        room1.addCharacter(player);
+        planet1.addRoom(room1);
+        planet1.addRoom(room2);
+        //Generate doors
+        door1        = new Door(room2);
+        door2        = new Door(room1);
+        lockedDoor1  = new LockedDoor(room2, "triangle");
     }
 
     /**
@@ -119,7 +125,20 @@ public class PlayerTest
     }
 
     /**
-     * this test Monster Speak Wrong Answer, allows to reduce the points of a player's life proscription
+     * this test Monster Speak Right Answer, allows to add 300 money to the player
+     * @return:
+     * @correction:
+     */   
+
+    @Test
+    public void testMonsterSpeakRightAnswer(){
+        player.interractWith(monster);
+        assertEquals(true,monster.checkAnswer("Gphy",player));
+        assertEquals(300,player.getMoney());
+    }
+    
+     /**
+     * this test Monster Speak wrong Answer, allows to reduce the points of a player's life proscription
      * @return:
      * @correction:
      */   
@@ -127,6 +146,7 @@ public class PlayerTest
     @Test
     public void testMonsterSpeakWrongAnswer(){
         player.interractWith(monster);
+        assertEquals(false,monster.checkAnswer("Gcell",player));
         assertEquals(50,player.getLP());
     }
         
@@ -137,8 +157,8 @@ public class PlayerTest
      */
     @Test
     public void testMovePlayer(){
-        room1.setExit("Sortie1", door2);
-        room2.setExit("Sortie1", door1);
+        room1.setExit("Sortie1", door1);
+        room2.setExit("Sortie1", door2);
         player.moveRoom(door1);
         assertEquals(room2, player.getCurrentRoom());
     }
@@ -153,5 +173,35 @@ public class PlayerTest
         chest.addItem(bigItem);
         player.grabContent(chest);
         assertEquals(0,player.getListItems().size()); //the item should not be added to the player's bag
+    }
+    
+    /**
+    * Method addItemEnoughPlace : test if an item is added in a bag with enough place, if there is enough place in the bag
+    * the item is added in the bag and the size of the bag is implemented, otherwise if there is not enough places in the bag
+    * an error message "not enough places" is displayed.
+    * @return : charater.addItem(item) = true ;
+    *
+    */
+    @Test
+    public void testaddItemEnoughPlace()
+    {
+        chest.addItem(item);
+        player.grabContent(chest);
+        //assertEquals(true,player.addItem(item));
+        assertEquals(1,player.getListItems().size());
+        assertEquals(true,player.getListItems().contains(item));
+        
+    }
+    /**
+     * This test checks if the player cannot move in another room if the door is locked
+     * and if he do not have the specific key to open the door
+     * @result : The player should be in the room1 (starting room) after trying to move. 
+     * @error : It may be an issue in the method moveRoom()
+     */
+    @Test
+    public void testMovePlayerButLocked(){
+        room1.setExit("Sortie1", lockedDoor1);
+        player.moveLockedDoor(lockedDoor1);
+        assertEquals(room1, player.getCurrentRoom());
     }
 }
