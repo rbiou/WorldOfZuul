@@ -68,11 +68,11 @@ public class Game
     {
 
         //creation of the planets
-        Planet startP = new Planet("Start", "Welcome on the planet start", 10, 10); 
-        Planet alpha = new Planet("Alpha", "Welcome on the planet alpha", 10, 10); 
-        Planet beta = new Planet("Beta", "Welcome on the planet beta", 10, 10); 
-        Planet gamma = new Planet("Gamma", "Welcome on the planet gamma", 10, 10); 
-        Planet delta = new Planet("Delta", "Welcome on the planet alpha", 10, 10);
+        Planet startP = new Planet("Start", "Hic incipit adventum tuum.", 10, 10); 
+        Planet alpha = new Planet("Alpha", "Ikke kast bort tiden din her, det er ingen nøkkel eller del av skipet.", 10, 10); 
+        Planet beta = new Planet("Beta", "Θα βρείτε ένα κλειδί στο δωμάτιο ένα και ένα δωμάτιο του πλοίου στην αίθουσα πέντε.", 10, 10); 
+        Planet gamma = new Planet("Gamma", "您將在第一和第三房間找到鑰匙，以及第五和第六房間的船隻。", 10, 10); 
+        Planet delta = new Planet("Delta", "Вы найдете ключи в номерах один и два, а также комнату в комнате четыре.", 10, 10);
 
         //creation of the rooms in each planet according to the map that we defined
         Room start, alpha1, alpha2, alpha3, beta1, beta2, beta3, beta4, beta5, delta1, delta2, delta3, delta4, gamma1, gamma2, gamma3,

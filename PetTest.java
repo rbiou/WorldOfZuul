@@ -32,10 +32,11 @@ public class PetTest
     @Before
     public void setUp()
     {
-        petTest = new Pet("Tom",10, 100, room1, "cat"); 
-        playerTest = new Player ("Joe", 40, room1);
         planet1 = new Planet("Alpha","Welcome on the planet alpha",10,10);
         room1 = new Room("Room1", planet1);
+        planet1.addRoom(room1);
+        petTest = new Pet("Tom",10, 100, room1, "cat"); 
+        room1.addCharacter(petTest); 
     }
 
     /**
@@ -58,9 +59,10 @@ public class PetTest
     @Test
     public void testSpeak()
     {
-        room1.addCharacter(petTest); 
-        planet1.addRoom(room1);
-        assertEquals("You are in the Room1 of the planet Alpha. The temperature is 10°C. To survive, you have a limited time of 10 seconds to explore the planet.",
+        System.out.println("You are in the "+petTest.getCurrentRoom().getName()+" of the planet "+petTest.getCurrentRoom().getPlanet().getPlanetName()
+        +". The temperature is "+petTest.getCurrentRoom().getPlanet().getTemperature()+"°C. To survive, you have a limited time of "
+        +petTest.getCurrentRoom().getPlanet().getTime()+" seconds to explore the planet.");
+        assertEquals("You are in the Room1 of the planet Alpha. The temperature is 10°C. To survive, you have a limited time of 10 seconds to explore the planet. People of this planet left me a message for you : Welcome on the planet alpha",
         petTest.giveMessage());
     }
 }
