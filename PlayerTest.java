@@ -1,4 +1,3 @@
- 
 import static org.junit.Assert.*;
 import org.junit.After;
 import org.junit.Before;
@@ -38,22 +37,26 @@ public class PlayerTest
     @Before
     public void setUp() 
     {
+        //Items
         chest        = new Chest("Chest1", 360, 1000, "I am the Chest1", 100, false);
         trappedChest = new Chest("Chest2", 360, 1000, "I am the Chest2", 100, true);
         item         = new Item("banana",1,1,"I'm a banana");
         bigItem      = new Item("Big item",41,41, "I am a big item"); 
-        character    = new Character("Joe", 50, 40, room1);
-        petCat       = new Pet("Minou",1000, 50, room1, "Cat");
-        monster      = new Monster("Bowser",50, 100, room1, "Quelle est votre promo ?", "Gphy");
+        //Location
         planet1      = new Planet("Alpha","Welcome on the planet alpha",10,10);
         room1        = new Room("Room1", planet1);
         room2        = new Room("Room2", planet1);
+        //Characters
+        petCat       = new Pet("Minou",1000, 50, room1, "Cat");
+        monster      = new Monster("Bowser",50, 100, room1, "Quelle est votre promo ?", "Gphy");
         player       = new Player("Joe",40, room1);
+        //Locate all characters generated
         room1.addCharacter(player);
         planet1.addRoom(room1);
         planet1.addRoom(room2);
-        door1        = new Door(room1);
-        door2        = new Door(room2);
+        //Generate doors
+        door1        = new Door(room2);
+        door2        = new Door(room1);
         lockedDoor1  = new LockedDoor(room2, "triangle");
     }
 
@@ -144,7 +147,10 @@ public class PlayerTest
     public void testMovePlayer(){
         room1.setExit("Sortie1", door1);
         room2.setExit("Sortie1", door2);
+<<<<<<< HEAD
         room1.addCharacter(player);
+=======
+>>>>>>> e8b1a4b5a6694cc4d17d846668d20784c6712cc1
         player.moveRoom(door1);
         assertEquals(room2, player.getCurrentRoom());
     }
@@ -188,7 +194,7 @@ public class PlayerTest
     @Test
     public void testMovePlayerButLocked(){
         room1.setExit("Sortie1", lockedDoor1);
-        player.move();
+        player.moveLockedDoor(lockedDoor1);
         assertEquals(room1, player.getCurrentRoom());
     }
 }
