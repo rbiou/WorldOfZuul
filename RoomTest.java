@@ -19,7 +19,7 @@ public class RoomTest
 {
     private Player player; 
     private Chest chest; 
-    private Room room1, room2;
+    private Room room1, room2, emptyNameRoom;
     private Planet planet1;
     
     /**
@@ -160,5 +160,25 @@ public class RoomTest
             nbChar++;
         }
         assertEquals(1, nbChar);
+    }
+    
+    /**
+     * Methode testEmptyName : test if the name is empty, if the name is empty there is an error
+     * message : "Name can't be empty." and the item is not created.
+     * @return exception.getMessage()= "Name can't be empty.";
+     */
+    @Test
+    public void testEmptyName()
+    {
+        String message ="";
+        try
+        {
+            emptyNameRoom = new Room("", planet1);;
+        }
+        catch (IllegalArgumentException exception)
+        {
+            message = exception.getMessage();
+        }
+        assertEquals("Name can't be empty.", message);
     }
 }

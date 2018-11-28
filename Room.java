@@ -27,7 +27,10 @@ public class Room
      */
     public Room(String newName, Planet newPlanet)
     {
-        name = newName; 
+        name = newName.trim();
+        if (name == ""){
+            throw new IllegalArgumentException("Name can't be empty.");
+        }
         exit = new HashMap <String,Door>(); 
         listCharacters = new ArrayList<Character>();
         listChest = new ArrayList<Chest>();
