@@ -1,7 +1,9 @@
 import java.util.*;
 
 /**
- *The Chest class : this is class defines what is contained in the chests. 
+ *The Chest class : this is class defines what is contained in the chests.
+ * The chest can have 50 tests or a piece of the vessel. He can have a trap
+ * and the player loses 25 life points.
  * @Groupe 7
  * @14/11/2018
  **/
@@ -38,6 +40,8 @@ public class Chest extends Item
        
      /**
      *The player removes the item from the chest
+     *@param : item to remove 
+     *
      */
     public boolean removeItem(Item item)
     {        
@@ -50,7 +54,7 @@ public class Chest extends Item
     
      /**
       * Adds an item to the rewarding of the chest
-      * @param item the item to add to the chest
+      * @param item : the item to add to the chest
       * @return true if operation is successful
      */
     public boolean addItem(Item item)
