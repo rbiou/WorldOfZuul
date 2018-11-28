@@ -1,7 +1,11 @@
 import java.util.*;
 /**
  * The sub-class Player : this is a class that define the characteristics     
- * of the player
+ * of the player. The player a life point. At the beggining, the player 
+ * has 100 life point in his chest. He can check the time. He can lose
+ * life points and if he has not life points he deads. He can win money
+ * when he pets a pet.
+ * The player change room with the door. He can open the door with key.
  * @author Group 7
  * @version 13/11/2018
  */

@@ -24,8 +24,20 @@ public class Planet
         time = newTime; 
         description = newDescription; 
         temperature = newTemp; 
-        listRoom = new ArrayList<Room>(); 
+        listRoom = new ArrayList<Room>();
+
+        if (time <= 0){
+            throw new IllegalArgumentException("time can't be negative.");
+        }
+        if (name == ""){
+            throw new IllegalArgumentException("Name can't be empty.");
+        }
+        if (description == ""){
+            throw new IllegalArgumentException("Description can't be empty.");
+        }
+        
     }
+    
     /**
      * Get the room list of the planet
      *
@@ -35,6 +47,7 @@ public class Planet
     {
         return listRoom; 
     }
+    
     /**
      * Get the time limit of the planet
      *
@@ -90,4 +103,3 @@ public class Planet
     }
     
 }
-
