@@ -23,7 +23,7 @@ public class Seller extends NonPlayerCharacter
      * @param item
      * @return return the amount of money owned by the player
      */
-    public void sellItems(Item item)
+    public void sellItem(Item item)
     {
         // put your code here
     }
@@ -36,7 +36,7 @@ public class Seller extends NonPlayerCharacter
      */
     public void buyItem(Item item)
     {
-        // put your code here
+
     }
 
     /**
@@ -51,6 +51,55 @@ public class Seller extends NonPlayerCharacter
         // put your code here
     }
 
+    public void speak (Player player)
+    {
+        System.out.println("Would you like to buy or sell something ?");
+        Scanner reader = new Scanner (System.in);
+        answer = reader.next();
+        
+        if (answer == "buy"){
+
+            Item item = selectItemFromList(this.getListItems());
+            if (item == null) {
+                return;
+            }
+            // TODO
+
+        if (answer == "sell"){
+
+            Item item = selectItemFromList(this.getListItems());
+            if (item == null) {
+                return;
+            }
+            // TODO
+
+        }
+    }
+
+    public Item selectItemFromList(ArrayList<Item> items)
+    {
+        while(true){
+            System.out.println("Select an item");
+            for (int i = 0; i < items.size())
+            {
+                System.out.println(i + " : " + item.getName());
+            }
+            System.out.println("exit : CANCEL");
+
+            answer = reader.next();
+            if (answer = "exit"){
+                return null;
+            }
+            
+            itemIndex = Integer.valueOf(answer)
+            if (itemIndex < 0 || itemIndex >= items.size() - 1){
+                System.out.println("Wrong item selected");
+                continue;
+            }
+
+            return items.get(itemIndex)
+        }
+    }
 }
 
 
