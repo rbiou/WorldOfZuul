@@ -26,7 +26,7 @@ public class Monster extends NonPlayerCharacter
         }
         answer= newAnswer;
         if (answer == ""){
-            throw new IllegalArgumentException("Anwser can't be empty.");
+            throw new IllegalArgumentException("Answer can't be empty.");
         }
         isResolved = false ; 
     }
