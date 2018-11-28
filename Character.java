@@ -127,11 +127,15 @@ public class Character{
      * @param  
      * @return int TotalWeight
      */
-    public int getTotalWeight()
+    public int getTotalWeight(Character character)
     
-    {
+    { for(int i = 0; i < character.items().size(); i++){
+            if (room1.getListCharacter().get(i)==player) {
+                test = true;}
+            }
         return itemsTotalWeight;
     }
+    
      /**
      * Return the position of the player (the room where he is)
      * @param 

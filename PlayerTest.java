@@ -155,4 +155,23 @@ public class PlayerTest
         player.moveRoom(door1);
         assertEquals(room2, player.getCurrentRoom());
     }
+    
+    /**
+    * Method addItemEnoughPlace : test if an item is added in a bag with enough place, if there is enough place in the bag
+    * the item is added in the bag and the size of the bag is implemented, otherwise if there is not enough places in the bag
+    * an error message "not enough places" is displayed.
+    * @return : charater.addItem(item) = true ;
+    *
+    */
+    @Test
+    public void testaddItemEnoughPlace()
+    {
+        chest.addItem(item);
+        player.grabContent(chest);
+        if( player.getTotalWeight()+item.getWeight() < player.getMaxWeight())
+        { assertEquals(true,character.addItem(item));
+          assertEquals(1,character.getListItems().size());
+          assertEquals(true,character.getListItems().contains(item));
+        }
+    }
 }
