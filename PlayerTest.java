@@ -55,6 +55,7 @@ public class PlayerTest
 
     /**
     * This test checks if the starting player has 100 points of life
+    * the right name and he should be in the room1
     */
     
     @Test
