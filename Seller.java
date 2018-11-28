@@ -80,7 +80,7 @@ public class Seller extends NonPlayerCharacter
     {
         while(true){
             System.out.println("Select an item");
-            for (int i = 0; i < items.size())
+            for (int i = 0; i < items.size(); i++)
             {
                 System.out.println(i + " : " + item.getName());
             }
@@ -91,13 +91,13 @@ public class Seller extends NonPlayerCharacter
                 return null;
             }
             
-            itemIndex = Integer.valueOf(answer)
+            itemIndex = Integer.valueOf(answer);
             if (itemIndex < 0 || itemIndex >= items.size() - 1){
                 System.out.println("Wrong item selected");
                 continue;
             }
 
-            return items.get(itemIndex)
+            return items.get(itemIndex);
         }
     }
 }
