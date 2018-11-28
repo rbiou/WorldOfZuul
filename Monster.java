@@ -2,7 +2,8 @@ import java.util.*;
 /**
  * The class monster is the principal opponent of the player. The monster
  * asks a riddle to the player. If he answers correctly the monster
- * gives money to him otherwise the monster attack the player.
+ * gives money to him otherwise the monster attack the player and the 
+ * player loses 50 life points.
  *
  * @author Group 7
  * @version 14/11/2018
@@ -11,7 +12,7 @@ public class Monster extends NonPlayerCharacter
 {
     // instance variables
     String question; //the question of the monster
-    String answer ; // the good answer 
+    String answer ; // the good answer at the question 
     boolean isResolved; // boolean to check if the enigma is already answered
     /**
     * Constructor for objects of class Monster
@@ -28,8 +29,8 @@ public class Monster extends NonPlayerCharacter
     /**
      * this method allows the monster to attack the player
      *
-     * @return the number of HP that the player lost after the monster
-     * attack
+     * @return the number of life point that the player lost after 
+     * the monster attack
      */
     public void attack(Player player)
     {
@@ -55,6 +56,12 @@ public class Monster extends NonPlayerCharacter
         }
     }
     
+    /**
+     * This method allows to see if the answer is good or false
+     * @param String playerAnswer : the answer of the player
+     * @return boolean : true : the answer is good.The player wins 300 pieces
+     *                  false : the answers is false. The player loses 50HP.
+     */                 
     public boolean checkAnswer(String playerAnswer, Player player){
             if(playerAnswer == answer)
             {
