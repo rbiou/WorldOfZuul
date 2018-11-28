@@ -1,8 +1,8 @@
 import java.util.*;
 /**
- * The class monster is the principal opponent of the player, the monster
- * ask a riddle to the player if the player answer correctly the monster
- * give money to him otherwise the monster attack the player.
+ * The class monster is the principal opponent of the player. The monster
+ * asks a riddle to the player. If he answers correctly the monster
+ * gives money to him otherwise the monster attack the player.
  *
  * @author Group 7
  * @version 14/11/2018
