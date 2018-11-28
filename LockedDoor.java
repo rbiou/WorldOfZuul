@@ -55,7 +55,5 @@ public class LockedDoor extends Door{
             this.locked = false; //The door is opened if the shape of 
                                  //the key corresponds to the shape of the door
         }
-        else
-            System.out.println("This key can not open the door or the door is  ");
     }
 }
