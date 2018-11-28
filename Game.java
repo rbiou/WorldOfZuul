@@ -38,7 +38,7 @@ public class Game
     private List<Planet>listPlanet; // list of planet of our game
     
     /**
-     * Constructeur d'objets de classe Game
+     * Constructor for objects of class Game
      */
     public Game()
     {
