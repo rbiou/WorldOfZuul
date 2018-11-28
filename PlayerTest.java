@@ -68,7 +68,6 @@ public class PlayerTest
     @Test
     public void testNewPlayer()
     {
-        //room1.addCharacter(player);
         assertEquals("Joe",player.getName());
         assertEquals(100,player.getLP());
         assertEquals(room1,player.getCurrentRoom());
@@ -126,7 +125,7 @@ public class PlayerTest
     }
 
     /**
-     * this test Monster Speak Right Answer, allows to reduce the points of a player's life proscription
+     * this test Monster Speak Right Answer, allows to add 300 money to the player
      * @return:
      * @correction:
      */   
@@ -134,8 +133,21 @@ public class PlayerTest
     @Test
     public void testMonsterSpeakRightAnswer(){
         player.interractWith(monster);
-        assertEquals(true,checkAnswer("Gphy",player));
+        assertEquals(true,monster.checkAnswer("Gphy",player));
         assertEquals(300,player.getMoney());
+    }
+    
+     /**
+     * this test Monster Speak wrong Answer, allows to reduce the points of a player's life proscription
+     * @return:
+     * @correction:
+     */   
+
+    @Test
+    public void testMonsterSpeakWrongAnswer(){
+        player.interractWith(monster);
+        assertEquals(false,monster.checkAnswer("Gcell",player));
+        assertEquals(50,player.getLP());
     }
         
     /**
@@ -175,11 +187,10 @@ public class PlayerTest
     {
         chest.addItem(item);
         player.grabContent(chest);
-        if(character.getTotalWeight(player)+item.getWeight() < character.getMaxWeight())
-        { assertEquals(true,character.addItem(item));
-          assertEquals(1,character.getListItems().size());
-          assertEquals(true,character.getListItems().contains(item));
-        }
+        assertEquals(true,player.addItem(item));
+        assertEquals(1,player.getListItems().size());
+        assertEquals(true,player.getListItems().contains(item));
+        
     }
     /**
      * This test checks if the player cannot move in another room if the door is locked

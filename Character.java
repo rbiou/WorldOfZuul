@@ -20,6 +20,12 @@ public class Character{
         items       = new ArrayList<Item>(); 
         itemsTotalWeight = 0;
         currentRoom = newRoom;
+        if (maxWeight < 0){
+            throw new InvalidArgumentException("Maximum weight can't be negative.");
+        }
+        if (name.trim()){
+            throw new InvalidArgumentException("Name can't be empty.");
+        }
     }
     
     public ArrayList<Item> getListItems(){
