@@ -63,7 +63,7 @@ public class Monster extends NonPlayerCharacter
      *                  false : the answers is false. The player loses 50HP.
      */                 
     public boolean checkAnswer(String playerAnswer, Player player){
-            if(playerAnswer == answer)
+            if(playerAnswer.equals(answer))
             {
                 player.addMoney(300);
                 this.removeMoney(300);
