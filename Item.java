@@ -25,7 +25,13 @@ public class Item
         name = newName; 
         value = newValue; 
         weight = newWeight; 
-        description = newDescription; 
+        description = newDescription;
+        if (weight < 0){
+            throw new InvalidArgumentException("Weight can't be negative.");
+        }
+        if (name.trim()){
+            throw new InvalidArgumentException("Name can't be empty.");
+        }
     }
 
     /**

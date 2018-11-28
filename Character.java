@@ -1,4 +1,7 @@
 import java.util.*;
+import java.io.*;
+import java.lang.*; 
+
 
 public class Character{
     private String name;           // Name of character
@@ -20,6 +23,12 @@ public class Character{
         items       = new ArrayList<Item>(); 
         itemsTotalWeight = 0;
         currentRoom = newRoom;
+        if (maxWeight < 0){
+            throw new IllegaldArgumentException("Maximum weight can't be negative.");
+        }
+        if (name.trim()){
+            throw new IllegalArgumentException("Name can't be empty.");
+        }
     }
     
     public ArrayList<Item> getListItems(){
