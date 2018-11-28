@@ -20,8 +20,11 @@ public class Player extends Character
     }
 
     /**
-     * the player grabs the content of the chest
-     * @param door
+     * The player grabs the content of the chest
+     * He loses 25 LP when the chest is trapped
+     * The items/money which are presents in the chest are added to 
+     * player's bag. Then they are removed from the chest. 
+     * @param   chest opens by the player
      **/
     public void grabContent(Chest chest)
     {
@@ -44,18 +47,36 @@ public class Player extends Character
         }
     }
 
+    /**
+     * The player loses LP 
+     * The life points can not be negative
+     * @param    number of HP that should be removed from player's LP
+    **/
     public void looseHP(int HP)
     {
         if (HP > 0){
-            lifePoints -= HP;
+            this.lifePoints -= HP;
+            if (this.lifePoints < 0){
+                this.lifePoints = 0; 
+            }
         }
     }
 
-    public boolean checkTime()
-    {
+    /**
+     * This method checks the time when the player enters in a room
+     * He can stay on the planet only during a specific time (definied in each
+     * planet)
+    **/
+    public boolean checkTime() //no create yet
+     {
         return false;
     }
 
+    /**
+     * This method returns true if the player is dead. 
+     * In this case, his life points are egals to 0
+     * @param    number of HP that should be removed from player's LP
+    **/
     public boolean isDead()
     {
         return (lifePoints <= 0);
