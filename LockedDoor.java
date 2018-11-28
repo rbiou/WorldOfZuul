@@ -47,9 +47,16 @@ public class LockedDoor extends Door{
     }
     
     /**
-     * Test if the shape of the given key correspond to the shape of the door and open it if they correspond.
+     * If the shape of the given key corresponds to 
+     * the shape of the door, the latter is opened.
     **/
-    public void open(Keys testedKey)
+    public void open(Keys key)
     { 
+        if (this.shapeLocked.equals(key.getShape()) && this.locked == true){
+            this.locked = false; //The door is opened if the shape of 
+                                 //the key corresponds to the shape of the door
+        }
+        else
+            System.out.println("This key can not open the door or the door is already opened");
     }
 }
