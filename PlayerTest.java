@@ -6,7 +6,7 @@ import org.junit.Test;
 /**
  * Classe-test PlayerTest.
  *
- * @author  Marliat Julien
+ * @author  Groupe 7
  * @version 20/11/2018
  * 
  */
@@ -24,17 +24,17 @@ public class PlayerTest
     private Planet planet1;
     
     /**
-    * Constructeur de la classe-test PlayerTest
+    * Default constructor for test class ChestTest
     */
     public PlayerTest()
     {
     }
     
     /**
-    * Met en place les engagements.
-    *
-    * Méthode appelée avant chaque appel de méthode de test.
-    */
+     * Sets up the test fixture.
+     *
+     * Called before every test case method.
+     */
     @Before
     public void setUp() 
     {
