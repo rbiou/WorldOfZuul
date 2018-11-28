@@ -167,7 +167,7 @@ public class PlayerTest
     {
         chest.addItem(item);
         player.grabContent(chest);
-        if( player.getTotalWeight()+item.getWeight() < player.getMaxWeight())
+        if(character.getTotalWeight(player)+item.getWeight() < character.getMaxWeight())
         { assertEquals(true,character.addItem(item));
           assertEquals(1,character.getListItems().size());
           assertEquals(true,character.getListItems().contains(item));

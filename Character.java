@@ -129,12 +129,12 @@ public class Character{
      */
     public int getTotalWeight(Character character)
     
-    { for(int i = 0; i < character.items().size(); i++){
-            if (room1.getListCharacter().get(i)==player) {
-                test = true;}
+    {   int weightTot = 0 ; 
+        for (int i = 0; i < character.items.size(); i++){
+            weightTot = weightTot + character.items.get(i).getWeight() ;   
             }
-        return itemsTotalWeight;
-        
+        itemsTotalWeight = weightTot ; 
+        return itemsTotalWeight ;
     }
     
      /**
