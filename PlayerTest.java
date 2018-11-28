@@ -187,7 +187,7 @@ public class PlayerTest
     {
         chest.addItem(item);
         player.grabContent(chest);
-        assertEquals(true,player.addItem(item));
+        //assertEquals(true,player.addItem(item));
         assertEquals(1,player.getListItems().size());
         assertEquals(true,player.getListItems().contains(item));
         

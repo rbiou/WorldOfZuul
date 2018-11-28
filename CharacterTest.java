@@ -76,5 +76,17 @@ public class CharacterTest
         player.removeMoney(66666);
         assertEquals(0,player.getMoney());    
     }
+    
+    /**
+     * The test will test remove an item from the list of items
+     */
+    @Test
+    public void testRemoveItem()
+    {
+        seller.addItem(item);
+        assertEquals(true, seller.getListItems().contains(item));
+        seller.removeItem(item);
+        assertEquals(false, seller.getListItems().contains(item));
+    }
 }
 
