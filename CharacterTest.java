@@ -88,5 +88,23 @@ public class CharacterTest
         seller.removeItem(item);
         assertEquals(false, seller.getListItems().contains(item));
     }
+
+    /**
+     * The test will test the creation of an character with wrong name
+     */
+    @Test
+    public void testCharacterCreationWrongName()
+    {
+        String error;
+        try
+        {
+            Player player = new Player("", 6, room1);
+        }
+        catch (IllegalArgumentException exception)
+        {
+            error = exception.getMessage();
+        }
+        assertEquals("Name can't be empty.", error);
+    }
 }
 
