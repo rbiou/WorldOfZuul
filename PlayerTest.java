@@ -65,10 +65,10 @@ public class PlayerTest
     @Test
     public void testNewPlayer()
     {
-        room1.addCharacter(player);
+        //room1.addCharacter(player);
         assertEquals("Joe",player.getName());
         assertEquals(100,player.getLP());
-        //assertEquals(room1,player.getCurrentRoom());
+        assertEquals(room1,player.getCurrentRoom());
     }
         
     /**
@@ -123,15 +123,16 @@ public class PlayerTest
     }
 
     /**
-     * this test Monster Speak Wrong Answer, allows to reduce the points of a player's life proscription
+     * this test Monster Speak Right Answer, allows to reduce the points of a player's life proscription
      * @return:
      * @correction:
      */   
 
     @Test
-    public void testMonsterSpeakWrongAnswer(){
+    public void testMonsterSpeakRightAnswer(){
         player.interractWith(monster);
-        assertEquals(50,player.getLP());
+        assertEquals(true,checkAnswer("Gphy",player));
+        assertEquals(300,player.getMoney());
     }
         
     /**
@@ -141,8 +142,8 @@ public class PlayerTest
      */
     @Test
     public void testMovePlayer(){
-        room1.setExit("Sortie1", door2);
-        room2.setExit("Sortie1", door1);
+        room1.setExit("Sortie1", door1);
+        room2.setExit("Sortie1", door2);
         room1.addCharacter(player);
         player.moveRoom(door1);
         assertEquals(room2, player.getCurrentRoom());
