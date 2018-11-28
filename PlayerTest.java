@@ -147,10 +147,6 @@ public class PlayerTest
     public void testMovePlayer(){
         room1.setExit("Sortie1", door1);
         room2.setExit("Sortie1", door2);
-<<<<<<< HEAD
-        room1.addCharacter(player);
-=======
->>>>>>> e8b1a4b5a6694cc4d17d846668d20784c6712cc1
         player.moveRoom(door1);
         assertEquals(room2, player.getCurrentRoom());
     }
