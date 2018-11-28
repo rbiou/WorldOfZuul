@@ -100,7 +100,18 @@ public class Player extends Character
            
                 if (doorExit.getIfLocked())
                 {
-                    ArrayList<Item> bag = getListItems();
+                    
+                    for(int i=0;i<getListItems().size();i++)
+                    {
+                        if (getListItems().get(i).getShape()== doorExit.ShapeKeyDescription())
+                        {
+                            moveRoom(doorExit);
+                            doorExit.openLocked();
+                        }
+                        else 
+                        {System.out.println("You do not have the right key please pass your way");
+                        }
+                    }
                     
                 }
                 else
