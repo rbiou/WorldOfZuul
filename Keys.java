@@ -22,6 +22,8 @@ public class Keys extends Item
     
     /**
      * Getter for the attribute shape
+     * @param String shape :Shape of the key to open the doors
+     * @return the shape of the key
      */
     public String getShape()
     {
