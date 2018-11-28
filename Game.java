@@ -1,6 +1,34 @@
 import java.util.*;
 /**
  * Game class
+ * 
+ * The game is built in this class : 
+ * First, planets and rooms are created. Rooms are added to the planets (not the same number of rooms in each planet). 
+ * Then, exits(Door) are associated to the rooms (not the same number of exits in the rooms). 
+ * A door can be a simple door (which is always opened) or a locked door. The latter is opened with a specific key. 
+ * All the keys to open the locked door are in the chest or selling by the sellers : Key : price=300 & weight= 20
+ * Other objects can be found (in a chest or thank to a seller) : 
+ *      MagicBall : price=150  &  weight= 10
+ *      Diamond : price=250  &  weight= 30
+ *      Knief : price=50  &  weight= 5
+ *      Fork : price= 3  &  weight= 5
+ *      Vessel pieces : wheel/window/propullant/engine : available in a chest with : weight = 50
+ * 
+ * The player can also sell his own objects that he found to earn money. 
+ * A chest can be trapped. In this case, the player loses 25 life points.
+ * All objects that the player finds are added to his bag. It has a limit of weight. 
+ * The player starts the game with 100 life points. 
+ * 
+ * The aim of the game is to find all the vessel pieces. In this way, the player who is lost in the space 
+ * can repair his vessel and go back on earth. He has to move between the different rooms (so, he moves between planets) using
+ * the door to find all the vessel pieces. 
+ * 
+ * During his journey to find his pieces of vessel, he can meet : pets and monsters. 
+ * Pets are presents in the first room of each planet to explain the feature of the planet. 
+ * There also pets that give money to the player (1 piece when he pets them)
+ * Monsters can also interact with the player with enigmas. If the answer of the player is right, he earns 300pieces. 
+ * In the other case, he loses 50 life points.
+ * 
  */
 public class Game
 {
@@ -169,16 +197,16 @@ public class Game
         
        
         //Add items in the chests
-        chest1alpha3.addItem(knief1=new Item("Knieffy",50,10,"I am a knief, you can sell me to the sellers "));
+        chest1alpha3.addItem(knief1=new Item("Knieffy",50,5,"I am a knief, you can sell me to the sellers "));
         chest1alpha3.addItem(magicBall2=new Item("MiniBall",100,10,"I am a MagicBall, you can sell me to the sellers "));
         chest2delta1.addItem(keyAlpha3 = new Keys("Red key",300,20,"I am a key, I can open the door Vanity Smurf", "square"));
         chest3delta4.addItem(wheel=new Item("wheely",500,50,"I am the wheel of your vessel"));
         chest4beta1.addItem(keyBeta4 = new Keys("Grey key",300,20,"I am a key, I can open the door Architect Smurf", "triangle"));
         chest5beta5.addItem(windows = new Item("windows",500,50,"I am the windows of your vessel")); 
         chestGamma1.addItem(keyGamma2 = new Keys("Green key",300,20,"I am a key, I can open the door Enamored Smurf", "star"));
-        chestGamma1.addItem(fork1 = new Item("Big fork",3,10,"I am the fork that you need because I can fly"));
+        chestGamma1.addItem(fork1 = new Item("Big fork",3,5,"I am the fork that you need because I can fly"));
         chestGamma5.addItem(propellant = new Item("propellant", 500, 50, "I am a the propellant of your vessel"));
-        chestGamma4.addItem(diamond2 = new Item("Wonderful diamond", 250, 50, "I am a wonderful brillant diamond"));
+        chestGamma4.addItem(diamond2 = new Item("Wonderful diamond", 250, 30, "I am a wonderful brillant diamond"));
         chestGamma6.addItem(engine = new Item("engine", 500, 50, "I am the engine of your vessel"));
         
          
@@ -197,13 +225,13 @@ public class Game
         
         //Add items to the sellers
         sellerDelta2.addItem(keyDelta2 = new Keys("Yellow key",300,20,"I am a key, I can open the door Sloppy Smurf", "circle"));
-        sellerBeta2.addItem(magicBall1 = new Item ("flackball",100,50,"I am a diamond, you can win 100 pieces if you sell me"));
-        sellerBeta2.addItem(diamond1 = new Item ("little diamond",250,50,"I am a diamond, you can bue me"));
-        sellerGamma3.addItem(knief2 = new Item("sharp knife", 50, 10,"I am a sharp knief, you can buy me"));
-        sellerGamma3.addItem(fork2 = new Item("Small knife", 3, 10,"I am a small fork, you can buy me"));
+        sellerBeta2.addItem(magicBall1 = new Item ("flackball",100,30,"I am a diamond, you can buy me"));
+        sellerBeta2.addItem(diamond1 = new Item ("little diamond",250,30,"I am a diamond, you can buy me"));
+        sellerGamma3.addItem(knief2 = new Item("sharp knife", 50, 5,"I am a sharp knief, you can buy me"));
+        sellerGamma3.addItem(fork2 = new Item("Small knife", 3, 5,"I am a small fork, you can buy me"));
         sellerGamma3.addItem(keyGamma4 = new Keys("Blue key", 300, 20,"I am a key, I can open the door Lazy Smurf", "rectangle"));
-        sellerDelta2.addItem(diamond3 = new Item("Special diamond", 250, 50, "I am a special diamond, you can buy me to see why I am special"));
-        sellerDelta2.addItem(fork3 = new Item("Special fork", 3, 50, "I am a special fork, you can buy me to see why I am special"));
+        sellerDelta2.addItem(diamond3 = new Item("Special diamond", 250, 30, "I am a special diamond, you can buy me to see why I am special"));
+        sellerDelta2.addItem(fork3 = new Item("Special fork", 3, 5, "I am a special fork, you can buy me to see why I am special"));
     }
    
     /**
