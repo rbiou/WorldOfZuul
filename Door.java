@@ -37,5 +37,13 @@ public class Door
     {
         return ""; 
     }
+    
+     /**
+     * open a lockedDoor
+    **/
+    
+    public void openLocked()
+    {
+    }
 }
 

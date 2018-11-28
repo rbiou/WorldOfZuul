@@ -13,7 +13,7 @@ import org.junit.Test;
 public class PlayerTest
 {
     private Player player;
-    private Item item;
+    private Item item, bigItem;
     private Chest chest, trappedChest;
     private Character character;
     private Pet petCat; 
@@ -42,6 +42,7 @@ public class PlayerTest
         chest        = new Chest("Chest1", 360, 1000, "I am the Chest1", 100, false);
         trappedChest = new Chest("Chest2", 360, 1000, "I am the Chest2", 100, true);
         item         = new Item("banana",1,1,"I'm a banana");
+        bigItem      = new Item("Big item",41,41, "I am a big item"); 
         character    = new Character("Joe", 50, 40, room1);
         petCat       = new Pet("Minou",1000, 50, room1, "Cat");
         monster      = new Monster("Bowser",50, 100, room1, "Quelle est votre promo ?", "Gphy");
@@ -80,7 +81,8 @@ public class PlayerTest
     }
     
     /**
-     * This test checks if when the player dies, he has no money and his LP are equals to 0 
+     * This test checks if when the player dies, he has no money 
+     * and his LP are equals to 0 
      *
     */
     @Test
@@ -139,5 +141,17 @@ public class PlayerTest
         room2.setExit("Sortie1", door1);
         player.moveRoom(door1);
         assertEquals(room2, player.getCurrentRoom());
+    }
+    
+    /**
+     * The player can not add an item if his bag if full
+     * @result : The item should not be added to the bag
+     * @error : It may be an issue in the method moveRoom()
+     */
+    @Test
+    public void testaddBigItem(){
+        chest.addItem(bigItem);
+        player.grabContent(chest);
+        assertEquals(0,player.getListItems().size()); //the item should not be added to the player's bag
     }
 }
