@@ -1,4 +1,3 @@
-
 import static org.junit.Assert.*;
 import org.junit.After;
 import org.junit.Before;
@@ -14,6 +13,7 @@ public class KeysTest
 {
     private Keys testKey;
     private Keys testBadKey;
+    private Keys emptyShapeKey;
     private LockedDoor lockedDoor;
     private Room room1;
     private Room room2;
@@ -81,5 +81,25 @@ public class KeysTest
         assertEquals(true,testKey.getShape().equals(lockedDoor.ShapeKeyDescription()));
         lockedDoor.open(testKey);
         assertEquals(false,lockedDoor.getIfLocked());
+    }
+    
+    /**
+     * Methode testEmptyShape : test if the shape is empty, if the shape is empty there is an error
+     * message : "Key must have a shape." and the key is not created.
+     * @return exception.getMessage()= "Item must have a name.";
+     */
+    @Test
+    public void testEmptyShape()
+    {
+        String message ="";
+        try
+        {
+            emptyShapeKey = new Keys("Key1",5, 2, "I have an empty shape.", "");
+        }
+        catch (IllegalArgumentException exception)
+        {
+            message = exception.getMessage();
+        }
+        assertEquals("Key must have a shape.", message);
     }
 }

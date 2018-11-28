@@ -1,4 +1,3 @@
-
 /**
  * The Keys class : this is a specific item that enable the player
  * to open a locked door. The key have a specific shape that can only interact
@@ -17,17 +16,17 @@ public class Keys extends Item
     public Keys(String newName, int newValue, int newWeight, String newDescription, String newShape)
     {
         super(newName, newValue, newWeight, newDescription);
-        shape = newShape; 
+        shape = newShape;
+        if (shape.trim() == ""){
+            throw new IllegalArgumentException("Key must have a shape.");
+        }
     }
     
     /**
      * Getter for the attribute shape
-     * @param String shape :Shape of the key to open the doors
-     * @return the shape of the key
      */
     public String getShape()
     {
         return shape;
     }
 }
-
