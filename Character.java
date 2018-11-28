@@ -17,7 +17,7 @@ public class Character{
 
 
     /**
-     * Constructor
+     * Constructor of the class character 
     **/
     public Character(String newName, int newMoney, int newWeight, Room newRoom)
     {
