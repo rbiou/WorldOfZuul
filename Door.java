@@ -1,7 +1,8 @@
 
 /**
  * This class describe the door in the different rooms.This class allows
- * us to know where we go with the doors and if they are locked or not
+ * us to know where we go with the doors and if they are locked or not.
+ * The player must open the door to change room.
   * @author Group 7
  * @version 14/11/2018
  */
