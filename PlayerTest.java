@@ -20,7 +20,7 @@ public class PlayerTest
     private Monster monster;
     private Room room1, room2;
     private Door door1, door2;
-    private LockedDoor unlokedDoor; 
+    private LockedDoor lockedDoor1; 
     private Planet planet1;
     
     /**
@@ -47,11 +47,13 @@ public class PlayerTest
         petCat       = new Pet("Minou",1000, 50, room1, "Cat");
         monster      = new Monster("Bowser",50, 100, room1, "Quelle est votre promo ?", "Gphy");
         planet1      = new Planet("Alpha","Welcome on the planet alpha",10,10);
-        planet1.addRoom(room1);
         room1        = new Room("Room1", planet1);
         room2        = new Room("Room2", planet1);
+        planet1.addRoom(room1);
+        planet1.addRoom(room2);
         door1        = new Door(room1);
         door2        = new Door(room2);
+        lockedDoor1  = new LockedDoor(room2, "triangle");
     }
 
     /**
@@ -172,5 +174,17 @@ public class PlayerTest
           assertEquals(1,character.getListItems().size());
           assertEquals(true,character.getListItems().contains(item));
         }
+    }
+    /**
+     * This test checks if the player cannot move in another room if the door is locked
+     * and if he do not have the specific key to open the door
+     * @result : The player should be in the room1 (starting room) after trying to move. 
+     * @error : It may be an issue in the method moveRoom()
+     */
+    @Test
+    public void testMovePlayerButLocked(){
+        room1.setExit("Sortie1", lockedDoor1);
+        player.moveRoom(lockedDoor1);
+        assertEquals(room1, player.getCurrentRoom());
     }
 }
