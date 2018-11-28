@@ -175,6 +175,7 @@ public class Room
     /**
      * With this method you give in parameter the name of the door, and it returns the door
      * where it leads.
+     * @return the door that correspond to the given name
     **/
     public Door getSpecificExit(String nomPorte)
     {
@@ -183,6 +184,7 @@ public class Room
     
      /**
      * This method returns a list of the name of the different doors of the room.
+     * @return the name of the different doors
     **/
     public ArrayList<String> getNameDoor()
     {
