@@ -62,5 +62,8 @@ public class Monster extends NonPlayerCharacter
             }
         }
     }
-
+    
+    public boolean getIsResolved(){
+        return isResolved; 
+    }
 }
