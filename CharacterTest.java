@@ -106,5 +106,23 @@ public class CharacterTest
         }
         assertEquals("Name can't be empty.", error);
     }
+
+    /**
+     * The test will test the creation of an character with wrong name
+     */
+    @Test
+    public void testCharacterCreationWrongWeight()
+    {
+        String error;
+        try
+        {
+            Player player = new Player("Jo", -1, room1);
+        }
+        catch (IllegalArgumentException exception)
+        {
+            error = exception.getMessage();
+        }
+        assertEquals("Maximum weight can't be negative.", error);
+    }
 }
 
