@@ -3,7 +3,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 /**
- * Classe-test PlayerTest.
+ * PlayerTest class
  *
  * @author  Groupe 7
  * @version 20/11/2018
@@ -11,6 +11,7 @@ import org.junit.Test;
  */
 public class PlayerTest
 {
+    //declaration
     private Player player;
     private Item item, bigItem;
     private Chest chest, trappedChest;
@@ -61,7 +62,7 @@ public class PlayerTest
     }
 
     /**
-    * This test checks if the starting player has 100 points of life
+    * This test checks if the starting player has 100 points of life,
     * the right name and he should be in the room1
     */
     
@@ -87,7 +88,7 @@ public class PlayerTest
     }
     
     /**
-     * This test checks if when the player dies, he has no money 
+     * This test checks if when the player dies. In this case, he has no money 
      * and his LP are equals to 0 
      *
     */
@@ -111,10 +112,10 @@ public class PlayerTest
 
     @Test
     /**
-     * Test when a player grab an item from a chest. If the player have enought weight available, the item go his bah and be removed
-     * from the chest.
-     * @return :
-     * @correction : 
+     * Test when a player grabs an item from a chest. If the player has enough weight available, 
+     * the item goes in his bag and be removed from the chest.
+     * @result : The item should be added to the chest, the chest should be removed from the chest
+     *           As the chest is not trapped, the life points are still egal to 100
      */
     public void testGrabAnItemFromAChest() {
         chest.addItem(item);
@@ -125,11 +126,9 @@ public class PlayerTest
     }
 
     /**
-     * this test Monster Speak Right Answer, allows to add 300 money to the player
-     * @return:
-     * @correction:
+     * This test checks if 300 money pieces are added to the player if the answer is right
+     * @result: The player earns 300 pieces of money
      */   
-
     @Test
     public void testMonsterSpeakRightAnswer(){
         player.interractWith(monster);
@@ -137,18 +136,16 @@ public class PlayerTest
         assertEquals(300,player.getMoney());
     }
     
-     /**
-     * this test Monster Speak wrong Answer, allows to reduce the points of a player's life proscription
-     * @return:
-     * @correction:
-     */   
-
-    @Test
-    public void testMonsterSpeakWrongAnswer(){
-        player.interractWith(monster);
-        assertEquals(false,monster.checkAnswer("Gcell",player));
-        assertEquals(50,player.getLP());
-    }
+    /**
+     * This test checks if the player loses 50 LP when the answer is wrong
+     * @result: The player should lose 50 LP
+    */   
+   @Test
+   public void testMonsterSpeakWrongAnswer(){
+       player.interractWith(monster);
+       assertEquals(false,monster.checkAnswer("Gcell",player));
+       assertEquals(50,player.getLP());
+   }
         
     /**
      * This test checks if the player can move in another room
@@ -164,39 +161,38 @@ public class PlayerTest
     }
     
     /**
-     * The player can not add an item if his bag if full
+     * The player can not add an item if his bag is full
      * @result : The item should not be added to the bag
-     * @error : It may be an issue in the method moveRoom()
+     * @error : It may be an issue in the method grabContent()
      */
     @Test
     public void testaddBigItem(){
         chest.addItem(bigItem);
         player.grabContent(chest);
         assertEquals(0,player.getListItems().size()); //the item should not be added to the player's bag
+        assertEquals(false,player.getListItems().contains(item));
     }
     
     /**
-    * Method addItemEnoughPlace : test if an item is added in a bag with enough place, if there is enough place in the bag
-    * the item is added in the bag and the size of the bag is implemented, otherwise if there is not enough places in the bag
-    * an error message "not enough places" is displayed.
+    * Method addItemEnoughPlace : test if an item is added in a bag with enough place, 
+    * if there is enough place in the bag the item is added in the bag and 
+    * the size of the bag is implemented.
     * @return : charater.addItem(item) = true ;
-    *
     */
     @Test
     public void testaddItemEnoughPlace()
     {
         chest.addItem(item);
         player.grabContent(chest);
-        //assertEquals(true,player.addItem(item));
         assertEquals(1,player.getListItems().size());
         assertEquals(true,player.getListItems().contains(item));
-        
     }
+    
     /**
-     * This test checks if the player cannot move in another room if the door is locked
-     * and if he do not have the specific key to open the door
+     * This test checks if the player can not move in another room if the door is locked
+     * and if he does not have the specific key to open the door
      * @result : The player should be in the room1 (starting room) after trying to move. 
-     * @error : It may be an issue in the method moveRoom()
+     * @error : It may be an issue in the method moveLockedDoor()
      */
     @Test
     public void testMovePlayerButLocked(){
