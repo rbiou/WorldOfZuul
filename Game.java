@@ -1,5 +1,5 @@
-<<<<<<< HEAD
-=======
+
+
 import java.util.*;
 /**
  * Game class
@@ -250,5 +250,3 @@ public class Game
     }
 }    
     
-
->>>>>>> 60d66876048969efd8999850bc54509e1d257d22

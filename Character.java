@@ -72,7 +72,7 @@ import java.lang.*;
     
     /**
      * Add an item to the list of items
-     * @param  item
+     * @param  item add in a list
      * @return boolean
     **/
     public boolean addItem(Item item)
@@ -92,7 +92,7 @@ import java.lang.*;
     
     /**
      * Remove an item from the list of items
-     * @param  item
+     * @param  item : item remove to a list
      * @return boolean
     **/
     public boolean removeItem(Item item)
@@ -140,8 +140,6 @@ import java.lang.*;
     
     /**
      * Return the total weight of items owned by character
-     *
-     * @param  
      * @return int TotalWeight
      */
     public int getTotalWeight(Character character)
@@ -156,7 +154,7 @@ import java.lang.*;
     
      /**
      * Return the position of the player (the room where he is)
-     * @param 
+     * @return Current Room
      */
     public Room getCurrentRoom()
     { 
@@ -165,7 +163,8 @@ import java.lang.*;
     
      /**
      * Change the position of the player (the room where he is)
-     * @param 
+     * @param new Room
+     *  retrun current Room
      */
     public void setCurrentRoom(Room newRoom)
     { 
