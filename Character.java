@@ -2,6 +2,10 @@ import java.util.*;
 import java.io.*;
 import java.lang.*; 
 
+   /** Character is a super Class. It contains all the attributes which in
+   * common subclasses. The subclasses are Player and NPC.
+   */
+
 
 public class Character{
     private String name;           // Name of character
@@ -9,7 +13,7 @@ public class Character{
     private ArrayList<Item> items; // Items owned by character
     private int maxWeight;         // Maximum weight character can
     private int itemsTotalWeight;       // Total weight of the bag
-    private Room currentRoom;
+    private Room currentRoom;      // To know where is the Character
 
 
     /**
@@ -24,15 +28,10 @@ public class Character{
         itemsTotalWeight = 0;
         currentRoom = newRoom;
         if (maxWeight < 0){
-<<<<<<< HEAD
-            throw new IllegaldArgumentException("Maximum weight can't be negative.");
-        }
-        if (name.trim()){
-=======
             throw new IllegalArgumentException("Maximum weight can't be negative.");
         }
         if (name == ""){
->>>>>>> 010674a61f01b508b31ae3b47253f05b8de8cb9a
+
             throw new IllegalArgumentException("Name can't be empty.");
         }
     }

@@ -151,7 +151,7 @@ public class ItemTest
         String message ="";
         try
         {
-            emptyNameItem = new Item("apple",1,1,"");
+            emptyNameItem = new Item("",1,1,"I have an empty name.");
         }
         catch (IllegalArgumentException exception)
         {
@@ -177,7 +177,7 @@ public class ItemTest
         {
             message = exception.getMessage();
         }
-        assertEquals("Item must have a name.", message);
+        assertEquals("Item must have a description.", message);
     }
 }
 
