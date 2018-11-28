@@ -1,7 +1,10 @@
 import java.util.*;
 import java.io.*;
 import java.lang.*; 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 010674a61f01b508b31ae3b47253f05b8de8cb9a
 
 public class Character{
     private String name;           // Name of character
@@ -18,15 +21,21 @@ public class Character{
     public Character(String newName, int newMoney, int newWeight, Room newRoom)
     {
         money       = newMoney; 
-        name        = newName; 
+        name        = newName.trim(); 
         maxWeight   = newWeight; 
         items       = new ArrayList<Item>(); 
         itemsTotalWeight = 0;
         currentRoom = newRoom;
         if (maxWeight < 0){
+<<<<<<< HEAD
             throw new IllegaldArgumentException("Maximum weight can't be negative.");
         }
         if (name.trim()){
+=======
+            throw new IllegalArgumentException("Maximum weight can't be negative.");
+        }
+        if (name == ""){
+>>>>>>> 010674a61f01b508b31ae3b47253f05b8de8cb9a
             throw new IllegalArgumentException("Name can't be empty.");
         }
     }
