@@ -15,7 +15,8 @@ public class Player extends Character
     public Player(String newName, int newWeight, Room newRoom)
     {
         super(newName, 0, newWeight, newRoom);
-        lifePoints = 100; 
+        lifePoints = 100;
+        
     }
 
     /**
