@@ -25,11 +25,13 @@ public class Player extends Character
     **/
     public void grabContent(Chest chest)
     {
-        int newLP = 0; 
+        int newLP; 
         if (chest.getIsTrap()==true){
             newLP = this.lifePoints - 25; 
+            this.lifePoints = newLP; 
             if (newLP < 0){
-            this.lifePoints=0; 
+            this.lifePoints=0;
+            this.lifePoints = newLP;
             }
         }; 
         
