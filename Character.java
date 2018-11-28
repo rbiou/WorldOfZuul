@@ -18,15 +18,15 @@ public class Character{
     public Character(String newName, int newMoney, int newWeight, Room newRoom)
     {
         money       = newMoney; 
-        name        = newName; 
+        name        = newName.trim(); 
         maxWeight   = newWeight; 
         items       = new ArrayList<Item>(); 
         itemsTotalWeight = 0;
         currentRoom = newRoom;
         if (maxWeight < 0){
-            throw new IllegaldArgumentException("Maximum weight can't be negative.");
+            throw new IllegalArgumentException("Maximum weight can't be negative.");
         }
-        if (name.trim()){
+        if (name == ""){
             throw new IllegalArgumentException("Name can't be empty.");
         }
     }
