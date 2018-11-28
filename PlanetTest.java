@@ -18,6 +18,9 @@ import org.junit.Test;
 public class PlanetTest
 {
     private Planet planet1;
+    private Planet negPlanet;
+    private Planet emptyDescriptionPlanet;
+    private Planet emptyNamePlanet ;
     private Character character; 
     private Room room1;
     
@@ -87,6 +90,68 @@ public class PlanetTest
             nbRoom++;
         }
         assertEquals(1, nbRoom);
+    }
+    
+    /**
+    * Methode testNegativeTime : check that the remainnig time of the player in the planet is not negative , 
+    * if the time is negative there is a message 
+    * "Time can't be negative." and the planet is not created.
+    * @return exception.getMessage()= "Time can't be negative."; 
+    */
+    @Test
+    public void testNegativeTime()
+    {
+        String message ="";
+        try
+        {
+            negPlanet = new Planet("Beta","Welcome on the planet Beta",10,-10);
+        }
+        catch (IllegalArgumentException exception)
+        {
+            message = exception.getMessage();
+        }
+        assertEquals("time can't be negative.", message);
+    }
+    
+    /**
+    * Methode testEmptyName : check if the name of a planet is empty, if the name is empty there is a message :  
+    * "A planet needs a name" and the planet is not created.
+    * @return exception.getMessage()= "Name cant' be nempty"; 
+    */
+    @Test
+    public void testEmptyName()
+    {
+        String message ="";
+        try
+        {
+            emptyNamePlanet = new Planet("","Welcome on the planet B",10,10);
+        }
+        catch (IllegalArgumentException exception)
+        {
+            message = exception.getMessage();
+        }
+        assertEquals("Name can't be empty.", message);
+    }
+    
+    /**
+    * Methode testEmptyDescription : check if the description of a planer is empty, 
+    * if the description is empty there is a message :  
+    * "A planet needs a description" and the planet is not created.
+    * @return exception.getMessage()= "Description cant' be empty"; 
+    */
+    @Test
+    public void testEmptyDescription()
+    {
+        String message ="";
+        try
+        {
+            emptyDescriptionPlanet = new Planet("Gamma","",10,10);
+        }
+        catch (IllegalArgumentException exception)
+        {
+            message = exception.getMessage();
+        }
+        assertEquals("Description can't be empty.", message);
     }
 }
 
