@@ -1,3 +1,6 @@
+import java.util.*;
+import java.io.*;
+import java.lang.*; 
 
 /**
  * The item class : Base class that will be used for every different item  
@@ -22,15 +25,15 @@ public class Item
      */
     public Item(String newName, int newValue, int newWeight, String newDescription)
     {
-        name = newName; 
+        name = newName.trim(); 
         value = newValue; 
         weight = newWeight; 
         description = newDescription;
         if (weight < 0){
-            throw new InvalidArgumentException("Weight can't be negative.");
+            throw new IllegalArgumentException("Weight can't be negative.");
         }
-        if (name.trim()){
-            throw new InvalidArgumentException("Name can't be empty.");
+        if (name == ""){
+            throw new IllegalArgumentException("Name can't be empty.");
         }
     }
 

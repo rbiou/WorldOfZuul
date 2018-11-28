@@ -68,6 +68,8 @@ public class Player extends Character
      **/
     public void pet(Pet pet)
     {
+        pet.removeMoney(1);
+        this.addMoney(1);
     }
 
     /**
