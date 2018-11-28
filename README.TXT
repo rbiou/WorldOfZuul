@@ -1,12 +1,20 @@
 ------------------------------------------------------------------------
-Ceci est le fichier LISEZMOI (README) du projet.  Décrivez-y votre projet.
-Dites au lecteur (qui ne sait rien du projet) ce qu'il a besoin de savoir.
-Au minimum, remplissez cette description :
-------------------------------------------------------------------------
+
 
 TITRE DU PROJET : Space World of Zull
-BUT POURSUIVI : Game where a player have to find the different parts of his spaceship in order to get back home
-VERSION ou DATE :
-COMMENT INVOQUER CE PROJET :
-AUTEURS :
-INSTRUCTIONS Ŕ L'USAGER :
+BUT POURSUIVI : Game where a player have to find his different vessel parts to repair his 
+                vessel in order to get back home (on earth)
+VERSION ou DATE : 28/11/2018
+COMMENT INVOQUER CE PROJET : ?????????
+AUTEURS : Group7 - Gphy2020
+
+------------------------------------------------------------------------
+INSTRUCTIONS A L'USAGER :
+The aim to move between room to find 4 vessel pieces. You can interact with pets, monsters 
+and sellers durong your journey in space. You have a bag when you can stored object but 
+be careful : your bag has a limit of weight ! 
+At the beginning of the game you have 100 life points but some trapped are present 
+in the game. You must be careful :)
+
+Good luck and have fun ! :)
+

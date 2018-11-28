@@ -29,6 +29,9 @@ import java.util.*;
  * Monsters can also interact with the player with enigmas. If the answer of the player is right, he earns 300pieces. 
  * In the other case, he loses 50 life points.
  * 
+ * The player can stay on the planet during a specific time. Each planet has its specific features. 
+ * If the time that he spends on the planet is to long, the player dies and returns to the beginning of the game. 
+ * 
  */
 public class Game
 {
