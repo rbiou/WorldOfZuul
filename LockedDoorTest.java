@@ -5,7 +5,9 @@ import org.junit.Test;
 
 /**
  * The test class LockedDoorTest.
- *
+ * A locked door can not open with a key who does not have the right 
+ * shape.
+ * A locked door can not open with different keys
  * @author  (Group7)
  * @version (28/11/18)
  */
