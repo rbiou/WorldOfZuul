@@ -11,7 +11,8 @@ import org.junit.Test;
  */
 public class LockedDoorTest
 {
-    LockedDoor lockedDoor; 
+    LockedDoor lockedDoor;
+    LockedDoor doorEmptyShapeKey;
     Keys key1, key2; 
     Room room1; 
     Planet alpha; 
@@ -87,5 +88,25 @@ public class LockedDoorTest
         lockedDoor.open(key1); // The door is open a first time
         lockedDoor.open(key1); // We try to open the door a second time
         assertEquals(false, lockedDoor.getIfLocked()); // test if the door is always closed
+    }
+    
+    /**
+     * Methode testEmptyShapeKey : test if the shape of the key is empty, if the shape of the key is empty there is an error
+     * message : "The shape of the key which open the door can not be empty." and the locked door is not created.
+     * @return exception.getMessage()= "The shape of the key which open the door can not be empty.";
+     */
+    @Test
+    public void testEmptyName()
+    {
+        String message ="";
+        try
+        {
+            doorEmptyShapeKey = new LockedDoor(room1, "");
+        }
+        catch (IllegalArgumentException exception)
+        {
+            message = exception.getMessage();
+        }
+        assertEquals("The shape of the key which open the door can not be empty.", message);
     }
 }

@@ -15,7 +15,10 @@ public class LockedDoor extends Door{
     {
         super(newNextRoom);
         locked = true;
-        shapeLocked = newShapeKey; 
+        shapeLocked = newShapeKey.trim();
+        if (newShapeKey == ""){
+            throw new IllegalArgumentException("The shape of the key which open the door can not be empty.");
+        }
     }
     
     /**

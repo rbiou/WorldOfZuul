@@ -29,7 +29,7 @@ public class Item
         name = newName.trim(); 
         value = newValue; 
         weight = newWeight; 
-        description = newDescription;
+        description = newDescription.trim();
         if (weight <= 0){
             throw new IllegalArgumentException("Weight can't be negative.");
         }
