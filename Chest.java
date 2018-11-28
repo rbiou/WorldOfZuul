@@ -18,7 +18,10 @@ public class Chest extends Item
         //List<Item> item, int newMoney
         super(newName, newValue, newWeight, newDescription); 
         rewarding = new ArrayList<Item>(); // creation of the list of Item
-        money = newMoney; 
+        money = newMoney;
+        if (money < 0){
+            throw new IllegalArgumentException("Money contained in the chest can not be negative.");
+        }
         isTrap = isTrapped;
     }
     

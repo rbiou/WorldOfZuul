@@ -14,6 +14,7 @@ import org.junit.Test;
 public class ChestTest
 {
     private Chest testChest;
+    private Chest negMoneyChest;
     private Item testItem;
     private Player testPlayer;
     private Room room1;
@@ -107,5 +108,25 @@ public class ChestTest
     {
         testPlayer.grabContent(testChest);
         assertEquals(0,testChest.getMoney());
+    }
+    
+    /**
+    * Methode testNegativeMoney : test if the money contained a chest in creation is negative, there is a message 
+    * "Money contained in the chest can not be negative." and the chest is not created.
+    * @return exception.getMessage()= "Money contained in the chest can not be negative."; 
+    */
+    @Test
+    public void testNegativeMoney()
+    {
+        String message ="";
+        try
+        {
+            negMoneyChest = new Chest("Chest1", -10, 1000, "I am the Chest1", 100, false);
+        }
+        catch (IllegalArgumentException exception)
+        {
+            message = exception.getMessage();
+        }
+        assertEquals("Money contained in the chest can not be negative.", message);
     }
 }
