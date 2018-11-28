@@ -101,7 +101,10 @@ public class ItemTest
     }
     
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 490ffde937af74dce41f530de5a3960ad7b577ad
         /**
     * Method addItemEnoughPlace : test if an item is added in a bag with enough place, if there is enough place in the bag
     * the item is added in the bag and the size of the bag is implemented, otherwise if there is not enough places in the bag
