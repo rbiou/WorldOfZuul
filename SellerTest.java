@@ -55,7 +55,7 @@ public class SellerTest
     public void testSellAnItemWithoutItems() 
     {
         assertEquals(0,seller.getListItems().size());
-        seller.sellItems(item1);
+        seller.sellItem(item1);
         assertEquals(false, seller.getListItems().size());
     }
      

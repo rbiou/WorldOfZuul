@@ -33,13 +33,13 @@ public class Player extends Character
             }
         }; 
         
-        addMoney(chest.getMoney());
+        this.addMoney(chest.getMoney());
         chest.removeMoneyChest();
 
         ArrayList<Item> itemsInChest = chest.getListItems();
 
         for (Item item: itemsInChest){
-            if (addItem(item))
+            if (this.addItem(item))
                 chest.removeItem(item);
         }
         
