@@ -5,7 +5,7 @@ import java.util.*;
  * They contain rooms (different number according to the planet)
  *
  * @author (Groupe7)
- * @version (13/11/2018)
+ * @version (28/11/2018)
  */
 public class Planet
 {
@@ -15,9 +15,18 @@ public class Planet
     private int time; // Limit of time (in seconds) available for the player in one planet
     private ArrayList<Room> listRoom; // Rooms that are in the planet
 
+ 
+    
     /**
-     * Constructor of Planet class
+     * Planet Constructor
+     * In the game there are 4 planets. 
+     * They contain rooms (different number according to the planet).
+     * Each planet has a description, a specific temperature and a specific name.
+     * The player can stay on the planet during a specific time. 
+     * The time depends on the planet (specific for each planet)
+     * When the time is over, the player is dead (he loses his life point and he returns to the beginnig of the game).
      */
+    
     public Planet(String newName, String newDescription, int newTemp, int newTime)
     {
         name = newName; 
