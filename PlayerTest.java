@@ -153,7 +153,6 @@ public class PlayerTest
         chest.addItem(bigItem);
         player.grabContent(chest);
         assertEquals(0,player.getListItems().size()); //the item should not be added to the player's bag
-<<<<<<< HEAD
     }
     
     /**
@@ -173,7 +172,5 @@ public class PlayerTest
           assertEquals(1,character.getListItems().size());
           assertEquals(true,character.getListItems().contains(item));
         }
-=======
->>>>>>> 490ffde937af74dce41f530de5a3960ad7b577ad
     }
 }
