@@ -16,7 +16,7 @@ import org.junit.Test;
  */
 public class MonsterTest
 {
-    private Monster testMonster;
+    private Monster testMonster, emptyAnswerMonster, emptyQuestionMonster;
     private Player testPlayer;
     private Room room1;
     private Planet planet1;
@@ -70,5 +70,45 @@ public class MonsterTest
         testMonster.attack(testPlayer);
         assertEquals(50, testPlayer.getLP());
         
+    }
+    
+    /**
+     * Methode testEmptyQuestion : test if the question is empty, if the question is empty there is an error
+     * message : "Question can't be empty." and the monster is not created.
+     * @return exception.getMessage()= "Question can't be empty.";
+     */
+    @Test
+    public void testEmptyQuestion()
+    {
+        String message ="";
+        try
+        {
+            emptyQuestionMonster = new Monster ("Bowser", 50 , 100, room1, "","Gphy");
+        }
+        catch (IllegalArgumentException exception)
+        {
+            message = exception.getMessage();
+        }
+        assertEquals("Question can't be empty.", message);
+    }
+    
+    /**
+     * Methode testEmptyAnswer : test if the answer is empty, if the answer is empty there is an error
+     * message : "Answer can't be empty." and the monster is not created.
+     * @return exception.getMessage()= "Answer can't be empty.";
+     */
+    @Test
+    public void testEmptyAnswer()
+    {
+        String message ="";
+        try
+        {
+            emptyAnswerMonster = new Monster ("Bowser", 50 , 100, room1, "Quelle est votre promo ?","");
+        }
+        catch (IllegalArgumentException exception)
+        {
+            message = exception.getMessage();
+        }
+        assertEquals("Answer can't be empty.", message);
     }
 }

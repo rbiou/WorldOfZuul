@@ -164,7 +164,7 @@ public class RoomTest
     
     /**
      * Methode testEmptyName : test if the name is empty, if the name is empty there is an error
-     * message : "Name can't be empty." and the item is not created.
+     * message : "Name can't be empty." and the room is not created.
      * @return exception.getMessage()= "Name can't be empty.";
      */
     @Test

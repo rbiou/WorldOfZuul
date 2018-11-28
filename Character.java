@@ -31,7 +31,6 @@ public class Character{
             throw new IllegalArgumentException("Maximum weight can't be negative.");
         }
         if (name == ""){
-
             throw new IllegalArgumentException("Name can't be empty.");
         }
     }

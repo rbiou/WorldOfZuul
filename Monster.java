@@ -20,8 +20,14 @@ public class Monster extends NonPlayerCharacter
     public Monster(String newName, int newMoney, int newWeight,Room newRoom,String newQuestion, String newAnswer )
     {
         super(newName, newMoney, newWeight, newRoom );
-        question = newQuestion ; 
+        question = newQuestion.trim() ;
+        if (question == ""){
+            throw new IllegalArgumentException("Question can't be empty.");
+        }
         answer= newAnswer;
+        if (answer == ""){
+            throw new IllegalArgumentException("Anwser can't be empty.");
+        }
         isResolved = false ; 
     }
 
