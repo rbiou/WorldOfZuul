@@ -59,8 +59,9 @@ public class PlanetTest
     // }
     
      /**
-     * Test to add a room to the planet
+     * Test to add the same room twice in the planet
      * We can not add the same room twice
+     * @expected result : the same room is not added to the planet because it already exists in the planet.
      */
     @Test
     public void testAddRoom() 

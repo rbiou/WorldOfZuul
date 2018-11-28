@@ -25,6 +25,7 @@ public class Planet
      * The player can stay on the planet during a specific time. 
      * The time depends on the planet (specific for each planet)
      * When the time is over, the player is dead (he loses his life point and he returns to the beginnig of the game).
+     * 
      */
     
     public Planet(String newName, String newDescription, int newTemp, int newTime)
@@ -48,9 +49,9 @@ public class Planet
     }
     
     /**
-     * Get the room list of the planet
+     * This method get the room list of the planet
      *
-     * @return     listRoom of the planet
+     * @return listRoom of the planet
      */
     public List<Room> getListRoom()
     {
@@ -58,9 +59,9 @@ public class Planet
     }
     
     /**
-     * Get the time limit of the planet
+     *This method get the time limit of the planet
      *
-     * @return     time of the planet
+     * @return  time of the planet
      */
     public int getTime()
     {
@@ -80,7 +81,7 @@ public class Planet
     /**
      * Get the temperature of the planet
      *
-     * @return the temperature
+     * @return the temperature.
      */
     public String getPlanetName()
     {
@@ -88,7 +89,8 @@ public class Planet
     }
     
     /**
-     * This method allows you to display the description of the planet
+     * This method allows the user to display the description of the planet
+     * @return the description of the planet.
      */
     public String descriptionDisplayPlanet()
     {
@@ -96,11 +98,11 @@ public class Planet
     }
     
     /**
-     * Add a new room in the planet
+     * This method check with a boolean if the room can be added in the planet 
      *
-     * @param        a room
-     * @return       a boolean : true when the room is added to the planet
-     *                           false when the room is not added to the planet
+     * @param a room
+     * @return a boolean : true when the room is added to the planet 
+     * false when the room is not added to the planet
      */
     public boolean addRoom(Room newRoom)
     {
