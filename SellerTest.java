@@ -41,56 +41,7 @@ public class SellerTest
        item2 = new Item ("banana2",300,1,"I am a banana2");
        item3 = new Item ("banana3",30,1,"I am a banana3");
     }
-
-    // /**
-    //  * Description : The seller must not be able to sell an 
-    //  * item without item in his bag. 
-    //  * 
-    //  * @return : We want the test return false if the 
-    //  * seller try to sell an item without item his bag.
-    //  * @ correction : the seller add an item before to sell
-    //  * an item
-    //  */
-    // @Test
-    // public void testSellAnItemWithoutItems() 
-    // {
-    //     assertEquals(0,seller.getListItems().size());
-    //     seller.sellItems(item1);
-    //     assertEquals(false, seller.getListItems().size());
-    // }
-     
-    // /**
-    //  * Description : the seller can buy an item if he has 
-    //  * enough money.
-    //  * @ return : We want the test to be good if the 
-    //  * seller try to buy an item with enough money.
-    //  */
-    // @Test
-    // public void testBuyAnItemWithEnoughMoney() 
-    // {
-    //    assertEquals (0, seller.getListItems().size());
-    //    assertEquals (100, seller.getMoney());
-    //    seller.buyItem(item1);
-    //    assertEquals(1, seller.getListItems().size());
-    //    assertEquals(99,seller.getMoney());
-       
-    // }
-    
-    // /**
-    //  * Description : the seller cannot buy an item if he has 
-    //  * not enough money.
-    //  * @ return : We want the test to be not good if the 
-    //  * seller try to buy an item without enough money.
-    //  * @correction: The seller must win money before buy 
-    //  * this item.
-    //  */
-    // @Test
-    // public void testBuyAnItemWithNotEnoughMoney()
-    // {
-    //    assertEquals (0, seller.getListItems().size());
-    //    assertEquals (100, seller.getMoney());
-    //    seller.buyItem(item2);
-    //    assertEquals(0, seller.getListItems().size());
-    // }
-    
+    // TODO
+    // Create OK seller
+    // Create WRONG seller
 }
