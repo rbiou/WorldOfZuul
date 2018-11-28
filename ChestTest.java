@@ -121,7 +121,7 @@ public class ChestTest
         String message ="";
         try
         {
-            negMoneyChest = new Chest("Chest1", -10, 1000, "I am the Chest1", 100, false);
+            negMoneyChest = new Chest("Chest1", 360, 1000, "I am the Chest1", -10, false);
         }
         catch (IllegalArgumentException exception)
         {
