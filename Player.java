@@ -25,30 +25,24 @@ public class Player extends Character
     **/
     public void grabContent(Chest chest)
     {
-        // int newLP = 0; 
-        // if (chest.getIsTrap()==true){
-            // newLP = this.lifePoints - 25; 
-            // if (newLP < 0){
-            // this.lifePoints=0; 
-            // }
-        // }; 
+        int newLP = 0; 
+        if (chest.getIsTrap()==true){
+            newLP = this.lifePoints - 25; 
+            if (newLP < 0){
+            this.lifePoints=0; 
+            }
+        }; 
         
         this.addMoney(chest.getMoney());
         chest.removeMoneyChest();
 
-        ArrayList<Item> itemsInChest = chest.getListItems();
-
-        for (Item item: itemsInChest){
-            if (this.addItem(item))
-                chest.removeItem(item);
-        }
-        
-        
-        
-
-        
-    }
-    
+ 
+        for(int i = 0; i < chest.getListItems().size(); i++){
+            if (this.addItem(chest.getListItems().get(i)))
+                chest.removeItem(chest.getListItems().get(i));
+                }
+            }
+     
     public void looseHP(int HP)
     {
         if (HP > 0){
