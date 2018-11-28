@@ -35,6 +35,7 @@ public class CharacterTest
         seller = new Seller ("Dumbledore", 15000, 200, room1);
         item = new Item ("ball",500,50,"I am the ball"); 
     }
+    
     /**
      * This test is used to see we can add an item to list of item of character
      * @result : The item should be added to the list of item (of the character) 

@@ -55,17 +55,6 @@ public class PlanetTest
         assertEquals(0, planet1.getListRoom().get(0).getListCharacter().size());
     }
     
-    /**
-     * Supprime les engagements
-     *
-     * Méthode appelée après chaque appel de méthode de test.
-     */
-    @Test
-    public void tearDown() // throws java.lang.Exception
-    {
-        //Libérez ici les ressources engagées par setUp()
-    }
-    
      /**
      * Test to add a room to the planet
      * We can not add the same room twice

@@ -17,16 +17,6 @@ public class LockedDoor extends Door{
         locked = true;
         shapeLocked = newShapeKey; 
     }
-
-    /**
-     * Open a LockedDoor - The shape of the lock must correspond to the shape of the key
-     * If it corresponds, the door is opened
-     * If it not corresponds, the door stay locked
-    **/
-    public boolean unlock(Keys key)
-    {
-        return false; 
-    }
     
     /**
      * Description of the shape of the key
@@ -57,6 +47,6 @@ public class LockedDoor extends Door{
                                  //the key corresponds to the shape of the door
         }
         else
-            System.out.println("This key can not open the door or the door is already opened");
+            System.out.println("This key can not open the door or the door is  ");
     }
 }

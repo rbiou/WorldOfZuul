@@ -36,7 +36,19 @@ public class LockedDoorTest
         key2 = new Keys("key2", 300, 50,"I am the key2. I can't open the door1", "rectangle");
         lockedDoor = new LockedDoor(room1, "circle"); 
     }
-
+    
+     /**
+     *  This test verify if the locked door is well created and has all the good values
+     *  for the different attributes given in the constructor
+     */
+    @Test
+    public void testCreationLockedDoor()
+    {
+        assertEquals(true,lockedDoor.getIfLocked());
+        assertEquals("circle", lockedDoor.ShapeKeyDescription());
+        assertEquals(room1,lockedDoor.getNextRoom());
+    }
+    
     /**
      * This test is used to open a door when the shape of the door 
      * and the shape of key are the same. 

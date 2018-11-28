@@ -58,9 +58,11 @@ public class PlayerTest
     */
     
     @Test
-    public void testCheckplayerHP()
+    public void testNewPlayer()
     {
+        assertEquals("Joe",player.getName());
         assertEquals(100,player.getLP());
+        assertEquals(room1,player.getCurrentRoom());
     }
         
     /**
@@ -77,14 +79,15 @@ public class PlayerTest
     }
     
     /**
-     * This test checks if when the player dies, he has no money
+     * This test checks if when the player dies, he has no money and his LP are equals to 0 
      *
     */
     @Test
         public void testCharacterIsDead()
         {
-            player.looseHP(100000000);
-            assertEquals(0,player.getMoney());      
+            player.looseHP(100);
+            assertEquals(0,player.getMoney());   
+            assertEquals(0,player.getLP()); 
         }
     
     @Test
@@ -109,6 +112,7 @@ public class PlayerTest
         player.grabContent(chest);
         assertEquals(true,player.getListItems().contains(item));
         assertEquals(false,chest.getListItems().contains(item));
+        assertEquals(100,player.getLP()); //His LP should not be modify because the chest is not trapped
     }
 
     /**
@@ -119,8 +123,8 @@ public class PlayerTest
 
     @Test
     public void testMonsterSpeakWrongAnswer(){
-    player.interractWith(monster);
-    assertEquals(50,player.getLP());
+        player.interractWith(monster);
+        assertEquals(50,player.getLP());
     }
         
     /**

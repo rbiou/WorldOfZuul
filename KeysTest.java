@@ -65,7 +65,7 @@ public class KeysTest
     @Test
     public void testOpenADoorWithWrongKey()
     {
-        assertEquals(false,testBadKey.getShape()==lockedDoor.ShapeKeyDescription());
+        assertEquals(false,testBadKey.getShape().equals(lockedDoor.ShapeKeyDescription()));
         lockedDoor.open(testBadKey);
         assertEquals(true,lockedDoor.getIfLocked());
     }
@@ -78,7 +78,7 @@ public class KeysTest
     @Test
     public void testOpenADoorWithGoodKey()
     {
-        assertEquals(false,testKey.getShape()==lockedDoor.ShapeKeyDescription());
+        assertEquals(true,testKey.getShape().equals(lockedDoor.ShapeKeyDescription()));
         lockedDoor.open(testKey);
         assertEquals(false,lockedDoor.getIfLocked());
     }
