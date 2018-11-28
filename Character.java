@@ -1,4 +1,7 @@
 import java.util.*;
+import java.io.*;
+import java.lang.*; 
+
 
 public class Character{
     private String name;           // Name of character
@@ -21,10 +24,10 @@ public class Character{
         itemsTotalWeight = 0;
         currentRoom = newRoom;
         if (maxWeight < 0){
-            throw new InvalidArgumentException("Maximum weight can't be negative.");
+            throw new IllegaldArgumentException("Maximum weight can't be negative.");
         }
         if (name.trim()){
-            throw new InvalidArgumentException("Name can't be empty.");
+            throw new IllegalArgumentException("Name can't be empty.");
         }
     }
     
