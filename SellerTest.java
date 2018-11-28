@@ -71,7 +71,7 @@ public class SellerTest
     {
         player.addMoney(1000000);
         seller.addItem(item2);
-        asserEquals(true, player.buyItem(seller, item2))
+        asserEquals(true, player.buyItem(seller, item2));
     }
     
     /**
