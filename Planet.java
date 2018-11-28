@@ -56,6 +56,16 @@ public class Planet
     }
     
     /**
+     * Get the temperature of the planet
+     *
+     * @return the temperature
+     */
+    public String getPlanetName()
+    {
+        return name; 
+    }
+    
+    /**
      * This method allows you to display the description of the planet
      */
     public String descriptionDisplayPlanet()
@@ -78,5 +88,6 @@ public class Planet
             this.listRoom.add(newRoom);
             return true;}
     }
+    
 }
 

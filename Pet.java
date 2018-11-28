@@ -36,9 +36,11 @@ public class Pet extends NonPlayerCharacter
      */
     public String giveMessage()
     {
-        return ("You are in the "+this.getCurrentRoom()+" of the planet "+this.getCurrentRoom().getPlanet()+". The temperature is "+
-        this.getCurrentRoom().getPlanet().getTemperature()+" °C. To survive, you have a limited time of "
-        +this.getCurrentRoom().getPlanet().getTime()+" seconds to explore the planet.");
+        return ("You are in the "+this.getCurrentRoom().getName()+" of the planet "+this.getCurrentRoom().getPlanet().getPlanetName()
+        +". The temperature is "+this.getCurrentRoom().getPlanet().getTemperature()+"°C. To survive, you have a limited time of "
+        +this.getCurrentRoom().getPlanet().getTime()
+        +" seconds to explore the planet. People of this planet left me a message for you : ")
+        +this.getCurrentRoom().getPlanet().descriptionDisplayPlanet();
     }
     
     /**

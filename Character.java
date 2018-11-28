@@ -127,11 +127,16 @@ public class Character{
      * @param  
      * @return int TotalWeight
      */
-    public int getTotalWeight()
+    public int getTotalWeight(Character character)
     
-    {
-        return itemsTotalWeight;
+    {   int weightTot = 0 ; 
+        for (int i = 0; i < character.items.size(); i++){
+            weightTot = weightTot + character.items.get(i).getWeight() ;   
+            }
+        itemsTotalWeight = weightTot ; 
+        return itemsTotalWeight ;
     }
+    
      /**
      * Return the position of the player (the room where he is)
      * @param 
