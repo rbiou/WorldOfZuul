@@ -19,9 +19,10 @@ public class Item
      *Constructor of the object Item.
      *Initially, each item has its own value, weight and decription.
      *
-     *@param description : the description of the item.
-     *@parm price : the price of the item.
+     *@parm description : the description of the item.
+     *@parm value : the price of the item.
      *@parm weight : the weight of the item.
+     *@ return : item with value, weight, description
      */
     public Item(String newName, int newValue, int newWeight, String newDescription)
     {
