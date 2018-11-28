@@ -2,9 +2,10 @@ import java.util.*;
 import java.io.*;
 import java.lang.*; 
 
-   /** Character is a super Class. It contains all the attributes which in
-   * common subclasses. The subclasses are Player and NPC.
-   */
+/** Character is a super Class. It contains all the attributes which in
+* common subclasses. The subclasses are Player and NPC.
+* a character has a name, some money, a maximum weight of items that he can grab, and the current room where he is.
+*/
 
 
 public class Character{

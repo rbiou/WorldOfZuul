@@ -68,7 +68,9 @@ public class CharacterTest
     }
     
     /**
-     * The test will test that paying him loses a lot of money
+     * The test chek if the player lose money
+     * @expected player.getMoney()=0 
+     * @result the player lose an amount of money
      */
     @Test
     public void testRemoveMoney()
@@ -91,7 +93,7 @@ public class CharacterTest
     }
 
     /**
-     * The test will test the creation of an character with wrong name
+     * The test will test the creation of a character with wrong name
      */
     @Test
     public void testCharacterCreationWrongName()
@@ -109,7 +111,7 @@ public class CharacterTest
     }
 
     /**
-     * The test will test the creation of an character with wrong name
+     * The test will test the creation of a character with wrong name
      */
     @Test
     public void testCharacterCreationWrongWeight()
