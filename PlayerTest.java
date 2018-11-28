@@ -38,7 +38,6 @@ public class PlayerTest
     @Before
     public void setUp() 
     {
-        player       = new Player("Joe",40, room1);
         chest        = new Chest("Chest1", 360, 1000, "I am the Chest1", 100, false);
         trappedChest = new Chest("Chest2", 360, 1000, "I am the Chest2", 100, true);
         item         = new Item("banana",1,1,"I'm a banana");
@@ -49,6 +48,8 @@ public class PlayerTest
         planet1      = new Planet("Alpha","Welcome on the planet alpha",10,10);
         room1        = new Room("Room1", planet1);
         room2        = new Room("Room2", planet1);
+        player       = new Player("Joe",40, room1);
+        room1.addCharacter(player);
         planet1.addRoom(room1);
         planet1.addRoom(room2);
         door1        = new Door(room1);
@@ -184,7 +185,7 @@ public class PlayerTest
     @Test
     public void testMovePlayerButLocked(){
         room1.setExit("Sortie1", lockedDoor1);
-        player.moveRoom(lockedDoor1);
+        player.move();
         assertEquals(room1, player.getCurrentRoom());
     }
 }
