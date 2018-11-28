@@ -93,11 +93,8 @@ public class ItemTest
     {
         character.addItem(item); // add an item into a character bag
         assertEquals(true,character.getListItems().contains(item)); // test if the item is in the list of items
-        assertEquals(1,character.getListItems().size());// test if the size of the list is 1
         character.removeItem(item);
-        assertEquals(0,character.getListItems().size());
-        assertEquals(false,character.getListItems().contains(item));
-        assertEquals(true, character.removeItem(item));
+        assertEquals(false,character.getListItems().contains(item)); // test if the item is not in the list of items after removing him
     }
     
     /**
