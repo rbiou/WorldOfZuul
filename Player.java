@@ -87,7 +87,6 @@ public class Player extends Character
         while (test==false){           
             System.out.println("Choose a valide exit | 'stop' to stop moving");
             Scanner reader = new Scanner (System.in);
-            reader.nextLine();
             String nameDoor="";
             nameDoor = reader.next();
             if (getCurrentRoom().getNameDoor().contains(nameDoor))
@@ -104,6 +103,7 @@ public class Player extends Character
                     moveRoom(doorExit);
                 }
             }
+            
             if (nameDoor == "stop")
             {
                 test=true;
