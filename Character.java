@@ -134,6 +134,7 @@ public class Character{
                 test = true;}
             }
         return itemsTotalWeight;
+        
     }
     
      /**

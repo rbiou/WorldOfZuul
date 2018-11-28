@@ -144,16 +144,15 @@ public class PlayerTest
     }
     
     /**
-     * This test checks if the player can move in another room
-     * @result : The player should be in the room2 (next room) by using the door. 
+     * The player can not add an item if his bag if full
+     * @result : The item should not be added to the bag
      * @error : It may be an issue in the method moveRoom()
      */
     @Test
     public void testaddBigItem(){
-        room1.setExit("Sortie1", door2);
-        room2.setExit("Sortie1", door1);
-        player.moveRoom(door1);
-        assertEquals(room2, player.getCurrentRoom());
+        chest.addItem(bigItem);
+        player.grabContent(chest);
+        assertEquals(0,player.getListItems().size()); //the item should not be added to the player's bag
     }
     
     /**

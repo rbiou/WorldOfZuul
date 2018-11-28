@@ -37,6 +37,15 @@ public class LockedDoor extends Door{
     }
     
     /**
+     * open the lockedDoor
+    **/
+    @Override
+    public void openLocked()
+    {
+        locked=false; 
+    }
+    
+    /**
      * If the shape of the given key corresponds to 
      * the shape of the door, the latter is opened.
     **/

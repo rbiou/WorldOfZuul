@@ -18,27 +18,6 @@ public class Seller extends NonPlayerCharacter
         super(newName, newMoney, newWeight, newRoom);
     }
 
-    /**
-     * this method allows the player to sell an item to the seller
-     *
-     * @param item
-     * @return return the amount of money owned by the player
-     */
-    public void sellItem(Item item)
-    {
-        // put your code here
-    }
-    
-    /**
-     * this method allows the player to buy an item from the seller
-     *
-     * @param amount of money
-     * @return return the new item get by the player
-     */
-    public void buyItem(Item item)
-    {
-
-    }
 
     /**
      * this method allows the player to display the different items in
@@ -62,20 +41,25 @@ public class Seller extends NonPlayerCharacter
 
             Item item = selectItemFromList(this.getListItems());
             if (item == null) {
-                return;
+                boolean success = player.buyItem(this, item);
+                if (success)
+                    System.out.println("Thanks.");
+                else
+                    System.out.println("You don't have enough money.");
             }
-            // TODO
-            
         }
 
         if (answer == "sell"){
 
             Item item = selectItemFromList(this.getListItems());
             if (item == null) {
-                return;
-            }
-            // TODO
+                boolean success = player.sellItem(this, item);
+                if (success)
+                    System.out.println("Cheers.");
+                else
+                    System.out.println("You can't sell this.");
 
+            }
         }
     }
 

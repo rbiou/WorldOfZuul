@@ -37,6 +37,14 @@ public class Item
     }
 
     /**
+     * Getter for the attribute shape
+     */
+    public String getShape()
+    {
+        return "";
+    }
+    
+    /**
      * getter to get the name of the object
     **/
     public String getName()
