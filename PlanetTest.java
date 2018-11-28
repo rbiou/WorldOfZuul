@@ -38,6 +38,8 @@ public class PlanetTest
         planet1 = new Planet("Alpha","Welcome on the planet alpha",10,10);
         room1 = new Room("Room1", planet1);
         character= new Character("Joe", 50, 40, room1);
+        room1.addCharacter(character);
+        planet1.addRoom(room1);
     }
 
     /**
@@ -63,7 +65,6 @@ public class PlanetTest
     public void testAddRoom() 
     {
         boolean trouve = false; 
-        planet1.addRoom(room1);
         if (planet1.getListRoom().contains(room1)){
             trouve = true; 
         }
