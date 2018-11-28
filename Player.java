@@ -95,7 +95,7 @@ public class Player extends Character
 
                 if (doorExit.getIfLocked())
                 {
-                    moveLockedDoor(doorExit, this);
+                    moveLockedDoor(doorExit);
                 }
                 else
                 {
@@ -127,7 +127,7 @@ public class Player extends Character
      *  if the player does not have the key return false;
      *  if the player has the key return true; 
      **/
-    public boolean moveLockedDoor(Door doorExit, Player player)
+    public boolean moveLockedDoor(Door doorExit)
     {
 
         boolean rightKey = false;

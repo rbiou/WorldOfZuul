@@ -1,4 +1,3 @@
- 
 import static org.junit.Assert.*;
 import org.junit.After;
 import org.junit.Before;
@@ -187,7 +186,7 @@ public class PlayerTest
     @Test
     public void testMovePlayerButLocked(){
         room1.setExit("Sortie1", lockedDoor1);
-        player.move();
+        player.moveLockedDoor(lockedDoor1);
         assertEquals(room1, player.getCurrentRoom());
     }
 }
