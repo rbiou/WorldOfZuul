@@ -1,5 +1,8 @@
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> f99aa66cc6534688d540a1b5d7ad3dc70056579e
 import java.util.*;
 /**
  * Game class
