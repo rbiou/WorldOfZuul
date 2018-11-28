@@ -2,7 +2,6 @@ import java.util.*;
 import java.io.*;
 import java.lang.*; 
 
-
 public class Character{
     private String name;           // Name of character
     private int money;             // Money owned by character
