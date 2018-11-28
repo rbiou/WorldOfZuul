@@ -19,7 +19,10 @@ public class Pet extends NonPlayerCharacter
     public Pet(String newName, int newMoney, int newWeight, Room newRoom, String newSpecies)
     {
         super(newName, newMoney, newWeight, newRoom); 
-        String species = newSpecies;
+        String species = newSpecies.trim();
+        if (species == ""){
+            throw new IllegalArgumentException("Specie can't be empty.");
+        }
     }
     
     /**

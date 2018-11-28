@@ -11,7 +11,7 @@ import org.junit.Test;
  */
 public class PetTest
 {
-    private Pet petTest;
+    private Pet petTest, emptySpeciePet;
     private Player playerTest;
     private Room room1;
     private Planet planet1;
@@ -64,5 +64,25 @@ public class PetTest
         +petTest.getCurrentRoom().getPlanet().getTime()+" seconds to explore the planet.");
         assertEquals("You are in the Room1 of the planet Alpha. The temperature is 10°C. To survive, you have a limited time of 10 seconds to explore the planet. People of this planet left me a message for you : Welcome on the planet alpha",
         petTest.giveMessage());
+    }
+    
+    /**
+     * Methode testEmptySpecie : test if the specie is empty, if the specie is empty there is an error
+     * message : "Specie can't be empty." and the pet is not created.
+     * @return exception.getMessage()= "Specie can't be empty.";
+     */
+    @Test
+    public void testEmptyAnswer()
+    {
+        String message ="";
+        try
+        {
+            emptySpeciePet = new Pet("Tom",10, 100, room1, "");
+        }
+        catch (IllegalArgumentException exception)
+        {
+            message = exception.getMessage();
+        }
+        assertEquals("Specie can't be empty.", message);
     }
 }
