@@ -142,8 +142,8 @@ public class ItemTest
     
     /**
      * Methode testEmptyName : test if the name is empty, if the name is empty there is an error
-     * message : "Item must have a name." and the item is not created.
-     * @return exception.getMessage()= "Item must have a name.";
+     * message : "Name can't be empty." and the item is not created.
+     * @return exception.getMessage()= "Name can't be empty.";
      */
     @Test
     public void testEmptyName()
@@ -157,13 +157,13 @@ public class ItemTest
         {
             message = exception.getMessage();
         }
-        assertEquals("Item must have a name.", message);
+        assertEquals("Name can't be empty.", message);
     }
     
         /**
      * Methode testEmptyDescription : test if the description is empty, if the description is empty there is an error
-     * message : "Item must have a description." and the item is not created.
-     * @return exception.getMessage()= "Item must have a description.";
+     * message : "Description can't be empty." and the item is not created.
+     * @return exception.getMessage()= "Description can't be empty.";
      */
     @Test
     public void testEmptyDescription()
@@ -177,7 +177,7 @@ public class ItemTest
         {
             message = exception.getMessage();
         }
-        assertEquals("Item must have a description.", message);
+        assertEquals("Description can't be empty.", message);
     }
 }
 
