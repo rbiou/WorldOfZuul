@@ -78,4 +78,14 @@ public class Chest extends Item
     {
         return money;
     }
+    
+    /**
+     * Returns the chest is trapped or not
+     *
+     * @return     boolean isTrap
+     */
+    public boolean getIsTrap()
+    {
+        return isTrap;
+    }
 }

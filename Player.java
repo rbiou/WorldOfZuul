@@ -24,6 +24,14 @@ public class Player extends Character
     **/
     public void grabContent(Chest chest)
     {
+        int newLP = 0; 
+        if (chest.getIsTrap()==true){
+            newLP = this.lifePoints - 25; 
+            if (newLP < 0){
+            this.lifePoints=0; 
+            }
+        }; 
+        
         addMoney(chest.getMoney());
         chest.removeMoneyChest();
 
@@ -33,6 +41,11 @@ public class Player extends Character
             if (addItem(item))
                 chest.removeItem(item);
         }
+        
+        
+        
+
+        
     }
     
     public void looseHP(int HP)
