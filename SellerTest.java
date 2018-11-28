@@ -19,6 +19,7 @@ public class SellerTest
     private Item item3;
     private Room room1;
     private Planet planet1;
+    private Player player;
     /**
      * Constructor of the class seller test
      */
@@ -26,21 +27,6 @@ public class SellerTest
     {
     }
 
-    /**
-     * 
-     *The method called before each test method call
-     */
-    @Before
-    public void setUp()
-    {
-       planet1 = new Planet("Alpha","Welcome on the planet alpha",10,10);
-       planet1.addRoom(room1);
-       room1 = new Room("Room1", planet1);
-       seller= new Seller ("Marc",100,10000,room1);
-       item1 = new Item ("banana1",1,1,"I am a banana1");
-       item2 = new Item ("banana2",300,1,"I am a banana2");
-       item3 = new Item ("banana3",30,1,"I am a banana3");
-    }
 
     /**
      * 
@@ -56,7 +42,7 @@ public class SellerTest
        item1 = new Item ("banana1",1,1,"I am a banana1");
        item2 = new Item ("banana2",300,1,"I am a banana2");
        item3 = new Item ("banana3",30,1,"I am a banana3");
-       player= new Player ("Marc",100,10000,room1);
+       player= new Player ("Marc",100,room1);
     }
 
 
@@ -71,7 +57,11 @@ public class SellerTest
     {
         player.addMoney(1000000);
         seller.addItem(item2);
+<<<<<<< HEAD
         asserEquals(true, player.buyItem(seller, item2));
+=======
+        assertEquals(true, player.buyItem(seller, item2));
+>>>>>>> 64fdc839ca5f9907dc8d1fe1af51ae46fbd49fd1
     }
     
     /**
@@ -87,6 +77,6 @@ public class SellerTest
     {
         player.removeMoney(1000000);
         seller.addItem(item2);
-        asserEquals(false, player.buyItem(seller, item2));
+        assertEquals(false, player.buyItem(seller, item2));
     }
 }
