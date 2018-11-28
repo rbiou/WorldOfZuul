@@ -71,14 +71,15 @@ public class CharacterTest
      * The test will test that paying him loses a lot of money
      */
     @Test
-    public void testRemovemoney()
+    public void testRemoveMoney()
     {
         player.removeMoney(66666);
         assertEquals(0,player.getMoney());    
     }
     
     /**
-     * The test will test remove an item from the list of items
+     * This test is used to see that you can remove an element from the list of character elements
+     * @result: The element must be deleted from the list of elements (of the character) 
      */
     @Test
     public void testRemoveItem()

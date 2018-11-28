@@ -1,10 +1,7 @@
 import java.util.*;
 import java.io.*;
 import java.lang.*; 
-<<<<<<< HEAD
 
-=======
->>>>>>> 010674a61f01b508b31ae3b47253f05b8de8cb9a
 
 public class Character{
     private String name;           // Name of character
