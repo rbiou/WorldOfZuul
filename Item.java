@@ -29,11 +29,17 @@ public class Item
         value = newValue; 
         weight = newWeight; 
         description = newDescription;
-        if (weight < 0){
+        if (weight <= 0){
             throw new IllegalArgumentException("Weight can't be negative.");
+        }
+        if (value <= 0){
+            throw new IllegalArgumentException("Price can't be negative.");
         }
         if (name == ""){
             throw new IllegalArgumentException("Name can't be empty.");
+        }
+        if (description == ""){
+            throw new IllegalArgumentException("Description can't be empty.");
         }
     }
 

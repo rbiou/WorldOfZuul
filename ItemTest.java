@@ -22,6 +22,8 @@ public class ItemTest
     private Item bigItem;
     private Item negItem;
     private Item negWeightItem;
+    private Item emptyDescriptionItem;
+    private Item emptyNameItem;
     private Character character;
     private Room room1;
     private Planet planet1;
@@ -52,8 +54,6 @@ public class ItemTest
         room1 = new Room("Room1", planet1);
         item = new Item("banana",1,1,"I'm a banana");
         bigItem = new Item("apple",1,40,"I'm a big apple");
-        negItem = new Item("orange",-4,1,"I have a negative price");
-        negWeightItem = new Item("papaye",1,-4,"I have a negative weight");
         character= new Character("Joe", 50, 40, room1);
     }
 
@@ -102,34 +102,83 @@ public class ItemTest
     
     /**
     * Methode testNegativePrice : test if the price of an item is negative, if the price is negative there is a message 
-    * "the price of this item is negative" and the item is not added into the character bag.
-    * @return character.addItem(negItem)= false; 
+    * "Price can't be negative." and the item is not created.
+    * @return exception.getMessage()= "Price can't be negative."; 
     */
     @Test
     public void testNegativePrice()
     {
-        character.addItem(negItem);
-        assertEquals(-4,negItem.getValue());
-        assertEquals(false,character.addItem(negItem));
-        assertEquals(0,character.getListItems().size());
-        assertEquals(false,character.getListItems().contains(negItem));
-        
+        String message ="";
+        try
+        {
+            negItem = new Item("orange",-4,1,"I have a negative price");
+        }
+        catch (IllegalArgumentException exception)
+        {
+            message = exception.getMessage();
+        }
+        assertEquals("Price can't be negative.", message);
     }
     
     /**
      * Methode testNegativeWeight : test if the weight of an item is negative, if the weight is negative there is an error
-     * message : " the weight can't be negative" and the item is not added into the character bag.
-     * @return 
+     * message : "Weight can't be negative." and the item is not created.
+     * @return exception.getMessage()= "Weight can't be negative."; 
      */
+    @Test
     public void testNegativeWeight()
     {
-        character.addItem(negWeightItem);
-        assertEquals(-4,negWeightItem.getWeight());
-        assertEquals(false,character.addItem(negWeightItem));
-        assertEquals(0,character.getListItems().size());
-        assertEquals(false,character.getListItems().contains(negWeightItem));
+        String message ="";
+        try
+        {
+            negWeightItem = new Item("papaye",1,-4,"I have a negative weight");
+        }
+        catch (IllegalArgumentException exception)
+        {
+            message = exception.getMessage();
+        }
+        assertEquals("Weight can't be negative.", message);
     }
-
+    
+    /**
+     * Methode testEmptyName : test if the name is empty, if the name is empty there is an error
+     * message : "Item must have a name." and the item is not created.
+     * @return exception.getMessage()= "Item must have a name.";
+     */
+    @Test
+    public void testEmptyName()
+    {
+        String message ="";
+        try
+        {
+            emptyNameItem = new Item("apple",1,1,"");
+        }
+        catch (IllegalArgumentException exception)
+        {
+            message = exception.getMessage();
+        }
+        assertEquals("Item must have a name.", message);
+    }
+    
+        /**
+     * Methode testEmptyDescription : test if the description is empty, if the description is empty there is an error
+     * message : "Item must have a description." and the item is not created.
+     * @return exception.getMessage()= "Item must have a description.";
+     */
+    @Test
+    public void testEmptyDescription()
+    {
+        String message ="";
+        try
+        {
+            emptyDescriptionItem = new Item("apple",1,1,"");
+        }
+        catch (IllegalArgumentException exception)
+        {
+            message = exception.getMessage();
+        }
+        assertEquals("Item must have a name.", message);
+    }
 }
 
 
