@@ -22,7 +22,7 @@ public class InterfaceGame extends JFrame implements ActionListener
     public InterfaceGame()
     {
         InterfacePlayer panelOfPlayer = new InterfacePlayer(); 
-        InterfaceChar panelOfChar = new InterfaceChar(); 
+        InterfaceChar panelOfChar = new InterfaceChar();
         
         gameFrame = new JFrame ("GAME");
         gameFrame.setDefaultCloseOperation(gameFrame.EXIT_ON_CLOSE);

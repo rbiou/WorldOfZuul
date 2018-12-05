@@ -34,17 +34,23 @@ import java.util.*;
  * If the time that he spends on the planet is to long, the player dies and returns to the beginning of the game. 
  * 
  */
-public class Game
+public class Game 
 {
-    private List<Planet>listPlanet; // list of planet of our game
-    
+    private ArrayList<Planet>listPlanet; // list of planet of our game
+    private Planet startP, alpha, beta, gamma, delta; 
     /**
      * Constructeur d'objets de classe Game
      */
-    public Game()
+    private Game()
     {
         listPlanet = new ArrayList<Planet>();
         createWorld();
+    }
+    
+    private static final Game game = new Game();
+    
+    public static Game getGame(){
+        return game; 
     }
 
     /**
@@ -62,24 +68,35 @@ public class Game
         //
     }
     
+    public ArrayList<Planet> getalpha() {
+        return listPlanet; 
+    }
+    
      /**
      * the method allows you to create the World of our game
      */
     public void createWorld()
-    {
-
+    {   
         //creation of the planets
-        Planet startP = new Planet("Start", "Hic incipit adventum tuum.", 10, 10); 
-        Planet alpha = new Planet("Alpha", "Ikke kast bort tiden din her, det er ingen nøkkel eller del av skipet.", 10, 10); 
-        Planet beta = new Planet("Beta", "Θα βρείτε ένα κλειδί στο δωμάτιο ένα και ένα δωμάτιο του πλοίου στην αίθουσα πέντε.", 10, 10); 
-        Planet gamma = new Planet("Gamma", "您將在第一和第三房間找到鑰匙，以及第五和第六房間的船隻。", 10, 10); 
-        Planet delta = new Planet("Delta", "Вы найдете ключи в номерах один и два, а также комнату в комнате четыре.", 10, 10);
-
+        startP = new Planet("Start", "Hic incipit adventum tuum.", 10, 10); 
+        alpha = new Planet("Alpha", "Ikke kast bort tiden din her, det er ingen nøkkel eller del av skipet.", 10, 10); 
+        beta = new Planet("Beta", "Θα βρείτε ένα κλειδί στο δωμάτιο ένα και ένα δωμάτιο του πλοίου στην αίθουσα πέντε.", 10, 10); 
+        gamma = new Planet("Gamma", "您將在第一和第三房間找到鑰匙，以及第五和第六房間的船隻。", 10, 10); 
+        delta = new Planet("Delta", "Вы найдете ключи в номерах один и два, а также комнату в комнате четыре.", 10, 10);
+        listPlanet.add(alpha);
+        listPlanet.add(beta);
+        listPlanet.add(gamma);
+        listPlanet.add(delta);
+        listPlanet.add(startP);
+     
         //creation of the rooms in each planet according to the map that we defined
         Room start, alpha1, alpha2, alpha3, beta1, beta2, beta3, beta4, beta5, delta1, delta2, delta3, delta4, gamma1, gamma2, gamma3,
         gamma4, gamma5, gamma6; //decalration of the room
         
         start = new Room("start", startP);
+        
+        // creation of the player
+        Player player = new Player("Tintin",200,start); 
         
         alpha.addRoom(alpha1 = new Room("alpha1", alpha)); 
         alpha.addRoom(alpha2 =new Room("alpha2", alpha)); 
