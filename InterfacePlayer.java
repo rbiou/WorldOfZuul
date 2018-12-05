@@ -27,7 +27,7 @@ public class InterfacePlayer extends JPanel implements ActionListener
         //myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         
         bagButton = new JButton ("BAG");
-        playerLabel = new JLabel ("Name : ", JLabel.CENTER);
+        playerLabel = new JLabel ("Name : "+Game.getPlayer().getName(), JLabel.CENTER);
         roomLabel = new JLabel ("You are in the room : ", JLabel.CENTER);
         moneyLabel = new JLabel ("Money : ", JLabel.CENTER);
         weightLabel = new JLabel ("Weight available in your bag : ", JLabel.CENTER);

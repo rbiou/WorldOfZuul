@@ -38,6 +38,7 @@ public class Game
 {
     private ArrayList<Planet>listPlanet; // list of planet of our game
     private Planet startP, alpha, beta, gamma, delta; 
+    private static Player player;
     /**
      * Constructeur d'objets de classe Game
      */
@@ -68,8 +69,12 @@ public class Game
         //
     }
     
-    public ArrayList<Planet> getalpha() {
+    public ArrayList<Planet> getPlanet() {
         return listPlanet; 
+    }
+    
+    public static Player getPlayer() {
+        return player;
     }
     
      /**
@@ -96,7 +101,7 @@ public class Game
         start = new Room("start", startP);
         
         // creation of the player
-        Player player = new Player("Tintin",200,start); 
+        player = new Player("Tintin",200,start); 
         
         alpha.addRoom(alpha1 = new Room("alpha1", alpha)); 
         alpha.addRoom(alpha2 =new Room("alpha2", alpha)); 
