@@ -11,32 +11,47 @@ import java.util.*;
  */
 public class InterfaceRoom extends JPanel implements ActionListener
 {
-private JButton button1,button2,button3,button4;
-private Game myGame;
-private Room myRoom;
-private Player myPlayer;
-private JPanel myPanel;
-public HashMap<String, Door>exit;
+    private JButton button1,button2,button3,button4;
+    private Game myGame;
+    private Room myRoom;
+    private Player myPlayer;
+    private JPanel myPanel;
+    private ArrayList<JButton> button; 
 
     /**
      * Constructor for objects of class InterfaceRoom
      */
     public InterfaceRoom(Game newGame)
     {
-    myGame = newGame ;
-    myPlayer = myGame.getPlayer();
-    myRoom = myGame.getPlayer().getCurrentRoom();
-    myPanel = new JPanel();
-    
-    for (int i=0; i < myRoom.exit.size(); i++)
+        myGame = newGame ;
+        myPlayer = myGame.getPlayer();
+        myRoom = myGame.getPlayer().getCurrentRoom();
+        myPanel = new JPanel();
+        ArrayList <JButton> button = new ArrayList <JButton>();
+
+        for (int i=0; i < myRoom.getNameDoor().size(); i++)
         {
-    };
-};
-      
-public void actionPerformed(ActionEvent e){
+            JButton btn = new JButton(myRoom.getNameDoor().get(i));
+            myPanel.add(btn);
+            btn.addActionListener(this);
+            button.add(btn);
+            };
+            
+         //System.out.println(button.size());
     };
     
- public JPanel getPanelRoom()
- { return myPanel;
+    public void actionPerformed(ActionEvent e){
+        // System.out.println(button.size());
+    // for (int i=0; i < button.size(); i++) {
+       // if ((JButton)e.getSource() ==  button.get(i)) { 
+        // myGame.getPlayer().moveRoom(myRoom.exit.get(i));
+        // this.revalidate();
+        // this.repaint();
+    // };
+// };
+};
+    
+    public JPanel getPanelRoom()
+    { return myPanel;
     }
 };
