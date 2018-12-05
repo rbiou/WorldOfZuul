@@ -27,21 +27,18 @@ public class InterfaceGame extends JFrame implements ActionListener
      */
     public InterfaceGame(Game game)
     {
-<<<<<<< HEAD
         gamebis = game; 
         panelOfPlayer = new InterfacePlayer(game); 
         panelOfChar = new InterfaceChar(game);
         panelOfMap = new InterfaceMap();
         panelItems = new InterfaceItem(game);
         panelOfRoom = new InterfaceRoom(game);
-=======
         InterfacePlayer panelOfPlayer = new InterfacePlayer(game); 
         InterfaceChar panelOfChar = new InterfaceChar(game);
         InterfaceMap panelOfMap = new InterfaceMap();
         InterfaceItem panelItems = new InterfaceItem(game);
         InterfaceRoom panelOfRoom = new InterfaceRoom(game);
         InterfacePets panelOfPets = new InterfacePets(game);
->>>>>>> 445056496bc7093cbfb9ab047057d121ea9f40a4
         
         gameFrame = new JFrame ("GAME");
         gameFrame.setDefaultCloseOperation(gameFrame.EXIT_ON_CLOSE);
