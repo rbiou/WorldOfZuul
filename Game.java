@@ -209,7 +209,7 @@ public class Game
         beta1.addChest(chest4beta1 = new Chest("Kiwi",0,50,"Hello my name is Kiwi",0,true));
         beta5.addChest(chest5beta5= new Chest ("Cramberry",0,50,"Hello my name is Fraise",50,false));
         gamma1.addChest(chestGamma1 = new Chest ("Grosminet",0,50,"Hello my name is Grosminet",0,false));
-        gamma1.addChest(chestGamma1bis = new Chest ("Shield",0,50,"Hello my name is Shield",50,false));
+        //gamma1.addChest(chestGamma1bis = new Chest ("Shield",0,50,"Hello my name is Shield",50,false));
         gamma2.addChest(chestGamma2 = new Chest ("Banana",0,50,"Hello my name is Banane",0,true)); 
         gamma5.addChest(chestGamma5 = new Chest ("The best",0,50,"Hello my name is the best",50,false));
         gamma4.addChest(chestGamma4 = new Chest ("Magic",0,50,"Hello my name is magic",0,false)); 

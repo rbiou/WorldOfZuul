@@ -43,6 +43,11 @@ public class InterfaceChar extends JFrame implements ActionListener
     }
 
     public void actionPerformed(ActionEvent e){
+        if (e.getSource() == chestButton) {
+            //faire appel a la classe pour afficher la liste 
+            //if (){
+            //}
+        }
     }
     
     public JPanel getPanelChar(){
