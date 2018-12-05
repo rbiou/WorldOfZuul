@@ -23,6 +23,10 @@ public class InterfaceChar extends JFrame implements ActionListener
         petButton = new JButton("Pet");
         chestButton = new JButton("Chest"); 
         
+        monsterButton.setPreferredSize(new Dimension(50, 50));
+        monsterButton.setPreferredSize(new Dimension(50, 50));
+        monsterButton.setPreferredSize(new Dimension(50, 50));
+        
         panelChar = new JPanel();
         //panelChar.setPreferredSize(new Dimension(2,2));
         panelChar.setLayout(new GridLayout (4,1));

@@ -44,7 +44,7 @@ public class Game
      */
     public Game()
     {
-        listPlanet = new ArrayList<Planet>();
+        listPlanet = new ArrayList<Planet>(); 
         createWorld(); 
     }
     
