@@ -24,7 +24,7 @@ public class InterfaceGame extends JFrame implements ActionListener
         InterfacePlayer panelOfPlayer = new InterfacePlayer(game); 
         InterfaceChar panelOfChar = new InterfaceChar(game);
         InterfaceMap panelOfMap = new InterfaceMap();
-        InterfaceItem panelItems = new InterfaceItem();
+        InterfaceItem panelItems = new InterfaceItem(game);
         InterfaceRoom panelOfRoom = new InterfaceRoom(game);
         
         gameFrame = new JFrame ("GAME");

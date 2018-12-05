@@ -19,7 +19,7 @@ public class InterfaceItem extends JPanel implements ActionListener
     /**
      * Constructor for objects of class InterfaceItem
      */
-    public InterfaceItem(ArrayList<Item> items)
+    public InterfaceItem(Game game)
     {
 
         // Label avec image
@@ -29,9 +29,9 @@ public class InterfaceItem extends JPanel implements ActionListener
          // Cration List
         list = new JComboBox();
 
-        for (Item item: items){
-            list.addItem(item.getName());
-        }
+        // for (Item item: items){
+        //     list.addItem(item.getName());
+        // }
 
         //Création du LabelItem
         labelItem = new JLabel ("List of item on your bag");
