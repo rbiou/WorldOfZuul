@@ -19,26 +19,25 @@ public class InterfaceItem extends JPanel implements ActionListener
     /**
      * Constructor for objects of class InterfaceItem
      */
-    public InterfaceItem()
-    // public InterfaceItem(ArrayList<Item> items)
+    public InterfaceItem(ArrayList<Item> items)
     {
 
         // Label avec image
         String name = "Item";
-        // Icon imageItem = new ImageIcon("./"+name+".png");
-        Icon imageItem = new ImageIcon("Item.png");
+        Icon imageItem = new ImageIcon(name+".png");
        
          // Cration List
         list = new JComboBox();
 
-        // for (Item item: items){
-        //     list.addItem(item.getName());
-        // }
+        for (Item item: items){
+            list.addItem(item.getName());
+        }
+
         //Création du LabelItem
         labelItem = new JLabel ("List of item on your bag");
        
         labelItem.add(list);
-       
+        
         labelDescription = new JLabel("Description item");
         labelImage = new JLabel(imageItem);
        
