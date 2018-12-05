@@ -17,7 +17,7 @@ import java.util.*;
 public class Room 
 {
     private String name; // Name of the room
-    private HashMap<String, Door>exit; // Each exit is associated to this room
+    public HashMap<String, Door>exit; // Each exit is associated to this room
     private ArrayList<Character> listCharacters;  // List of all the Characters present in this room
     private ArrayList<Chest> listChest; // List of all the chest present in this room
     private Planet currentPlanet; // planet where is the room
@@ -201,7 +201,9 @@ public class Room
         }
         return list;
     }
-        
+    
+    
+
 }
     
 

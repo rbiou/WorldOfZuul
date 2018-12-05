@@ -25,6 +25,7 @@ public class InterfaceGame extends JFrame implements ActionListener
         InterfaceChar panelOfChar = new InterfaceChar(game);
         InterfaceMap panelOfMap = new InterfaceMap();
         InterfaceItem panelItems = new InterfaceItem();
+        InterfaceRoom panelOfRoom = new InterfaceRoom(game);
         
         gameFrame = new JFrame ("GAME");
         gameFrame.setDefaultCloseOperation(gameFrame.EXIT_ON_CLOSE);
@@ -45,6 +46,7 @@ public class InterfaceGame extends JFrame implements ActionListener
         
         panelDoor = new JPanel();
         panelDoor.setLayout(new GridLayout (1,1));
+        panelDoor.add(panelOfRoom.getPanelRoom());
         
         panelMap = new JPanel();
         panelMap.setLayout(new GridLayout (1,1));
