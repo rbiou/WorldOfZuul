@@ -15,7 +15,7 @@ public class InterfaceChar extends JFrame implements ActionListener
     /**
      * Constructor for objects of class InterfaceChar
      */
-    public InterfaceChar()
+    public InterfaceChar(Game game)
     {
         monsterButton = new JButton("Monster");
         monsterButton.setSize(20,20);
