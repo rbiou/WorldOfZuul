@@ -26,12 +26,13 @@ public HashMap<String, Door>exit;
     myGame = newGame ;
     myPlayer = myGame.getPlayer();
     myRoom = myGame.getPlayer().getCurrentRoom();
+    
     // list of the exits of the current room of the player
-    for (int i=0; i < myRoom.exit.size(); i++)
-        {
-            //myPanel.add( new JButton("bllaa"));
+    // for (int i=0; i < myRoom.exit.size(); i++)
+        // {
+            // //myPanel.add( new JButton("bllaa")
       
-    };
+    // };
 };
       
 public void actionPerformed(ActionEvent e){
