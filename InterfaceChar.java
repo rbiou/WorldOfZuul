@@ -22,6 +22,18 @@ public class InterfaceChar extends JFrame implements ActionListener
         petButton = new JButton("Pet");
         chestButton = new JButton("Chest"); 
         
+        monsterButton.setBackground(Color.gray);
+        monsterButton.setForeground(Color.white);
+        
+        sellerButton.setBackground(Color.gray);
+        sellerButton.setForeground(Color.white);
+        
+        petButton.setBackground(Color.gray);
+        petButton.setForeground(Color.white);
+        
+        chestButton.setBackground(Color.gray);
+        chestButton.setForeground(Color.white);
+        
         panelChar = new JPanel();
         panelChar.setLayout(new GridLayout(4,1));
         panelChar.add(monsterButton); 
@@ -30,7 +42,7 @@ public class InterfaceChar extends JFrame implements ActionListener
         panelChar.add(chestButton);
     }
 
-        public void actionPerformed(ActionEvent e){
+    public void actionPerformed(ActionEvent e){
     }
     
     public JPanel getPanelChar(){
