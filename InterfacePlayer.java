@@ -28,9 +28,9 @@ public class InterfacePlayer extends JPanel implements ActionListener
         
         bagButton = new JButton ("BAG");
         playerLabel = new JLabel ("Name : "+game.getPlayer().getName(), JLabel.CENTER);
-        roomLabel = new JLabel ("You are in the room : ", JLabel.CENTER);
-        moneyLabel = new JLabel ("Money : ", JLabel.CENTER);
-        weightLabel = new JLabel ("Weight available in your bag : ", JLabel.CENTER);
+        roomLabel = new JLabel ("You are in the room : "+ game.getPlayer().getCurrentRoom(), JLabel.CENTER);
+        moneyLabel = new JLabel ("Money : "+game.getPlayer().getMoney()+" pieces", JLabel.CENTER);
+        weightLabel = new JLabel ("Weight available in your bag : "+game.getPlayer().getTotalWeight(), JLabel.CENTER);
         //
         lifeBar  = new JProgressBar(0, 100);
         lifeBar.setMaximum(100);

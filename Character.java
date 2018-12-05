@@ -139,11 +139,11 @@ public class Character{
      * Return the total weight of items owned by character
      * @return int TotalWeight
      */
-    public int getTotalWeight(Character character)
+    public int getTotalWeight()
     
     {   int weightTot = 0 ; 
-        for (int i = 0; i < character.items.size(); i++){
-            weightTot = weightTot + character.items.get(i).getWeight() ;   
+        for (int i = 0; i < this.items.size(); i++){
+            weightTot = weightTot + this.items.get(i).getWeight() ;   
             }
         itemsTotalWeight = weightTot ; 
         return itemsTotalWeight ;
