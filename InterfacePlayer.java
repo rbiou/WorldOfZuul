@@ -23,12 +23,9 @@ public class InterfacePlayer extends JPanel implements ActionListener
      */
     public InterfacePlayer(Game game)
     {
-        //myFrame = new JFrame ("GAME");
-        //myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        
         bagButton = new JButton ("BAG");
         playerLabel = new JLabel ("Name : "+game.getPlayer().getName(), JLabel.CENTER);
-        roomLabel = new JLabel ("You are in the room : "+ game.getPlayer().getCurrentRoom(), JLabel.CENTER);
+        roomLabel = new JLabel ("You are in the room : "+ game.getPlayer().getCurrentRoom().getName(), JLabel.CENTER);
         moneyLabel = new JLabel ("Money : "+game.getPlayer().getMoney()+" pieces", JLabel.CENTER);
         weightLabel = new JLabel ("Weight available in your bag : "+game.getPlayer().getTotalWeight(), JLabel.CENTER);
         //
@@ -37,8 +34,7 @@ public class InterfacePlayer extends JPanel implements ActionListener
         lifeBar.setMinimum(0); 
         lifeBar.setStringPainted(true);
         //
-        String name = "avatar"; 
-        Icon imagePlanet = new ImageIcon(name+".jpg");
+        Icon imagePlanet = new ImageIcon("avatar/avatar.jpg");
         picture = new JLabel(imagePlanet, JLabel.CENTER);
         //
         panel1 = new JPanel(); 
@@ -52,16 +48,12 @@ public class InterfacePlayer extends JPanel implements ActionListener
         //
         panel2 = new JPanel();
         panel2.setLayout(new GridLayout (1,1));
-        panel2.add(picture); 
+        panel2.add(picture);
         //
         panelFinalPlayer = new JPanel();
         panelFinalPlayer.setLayout(new GridLayout (1,3));
         panelFinalPlayer.add(panel2);
-        panelFinalPlayer.add(panel1); 
-        //
-        //this.add(panelFinalPlayer); 
-        //this.pack();
-        //this.setVisible(true);
+        panelFinalPlayer.add(panel1);
     }
     
     public void actionPerformed(ActionEvent e){
