@@ -21,13 +21,13 @@ public class InterfacePlayer extends JPanel implements ActionListener
     /**
      * Constructor for objects of class Counter
      */
-    public InterfacePlayer()
+    public InterfacePlayer(Game game)
     {
         //myFrame = new JFrame ("GAME");
         //myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         
         bagButton = new JButton ("BAG");
-        playerLabel = new JLabel ("Name : "+Game.getPlayer().getName(), JLabel.CENTER);
+        playerLabel = new JLabel ("Name : "+game.getPlayer().getName(), JLabel.CENTER);
         roomLabel = new JLabel ("You are in the room : ", JLabel.CENTER);
         moneyLabel = new JLabel ("Money : ", JLabel.CENTER);
         weightLabel = new JLabel ("Weight available in your bag : ", JLabel.CENTER);
@@ -43,6 +43,7 @@ public class InterfacePlayer extends JPanel implements ActionListener
         //
         panel1 = new JPanel(); 
         panel1.setLayout(new GridLayout (7,1));
+        panel1.add(playerLabel);
         panel1.add(lifeBar);
         panel1.add(bagButton); 
         panel1.add(roomLabel);

@@ -33,7 +33,7 @@ public class Item
         if (weight <= 0){
             throw new IllegalArgumentException("Weight can't be negative.");
         }
-        if (value <= 0){
+        if (value < 0){
             throw new IllegalArgumentException("Price can't be negative.");
         }
         if (name == ""){

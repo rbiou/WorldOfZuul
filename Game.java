@@ -38,22 +38,16 @@ public class Game
 {
     private ArrayList<Planet>listPlanet; // list of planet of our game
     private Planet startP, alpha, beta, gamma, delta; 
-    private static Player player;
+    private Player player;
     /**
      * Constructeur d'objets de classe Game
      */
-    private Game()
+    public Game()
     {
         listPlanet = new ArrayList<Planet>();
-        createWorld();
+        createWorld(); 
     }
     
-    private static final Game game = new Game();
-    
-    public static Game getGame(){
-        return game; 
-    }
-
     /**
      * this method allows you to quit the game
      */
@@ -73,7 +67,7 @@ public class Game
         return listPlanet; 
     }
     
-    public static Player getPlayer() {
+    public Player getPlayer() {
         return player;
     }
     
