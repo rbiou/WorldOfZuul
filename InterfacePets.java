@@ -8,7 +8,7 @@ import javax.swing.ImageIcon;
  * @MARLIAT Julien
  * @5/12/2018
  */
-public class InterfacePets implements ActionListener
+public class InterfacePets 
 {
     // variables d'instance - remplacez l'exemple qui suit par le vôtre
      private JPanel panel1 ;
@@ -43,12 +43,7 @@ public class InterfacePets implements ActionListener
        
     }
 
-    /**
-     * Un exemple de méthode - remplacez ce commentaire par le vôtre
-     *
-     * @param  y   le paramètre de la méthode
-     * @return     la somme de x et de y
-     */
-       public void actionPerformed(ActionEvent e){
+    public JPanel getPanelPet(){
+        return panel1; 
     }
 }

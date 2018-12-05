@@ -1,6 +1,7 @@
 import java.awt.*;
 import javax.swing.*;
 import java.awt.event.*;
+import java.util.*; 
 import javax.swing.ImageIcon;
 /**
  * Write a description of class InterfaceGame here.
@@ -21,6 +22,7 @@ public class InterfaceGame extends JFrame implements ActionListener
     private InterfaceMap panelOfMap; 
     private InterfaceItem panelItems;
     private InterfaceRoom panelOfRoom; 
+    private InterfacePets panelOfPets;
     private Game gamebis; 
     /**
      * Constructor for objects of class InterfaceGame
@@ -33,12 +35,7 @@ public class InterfaceGame extends JFrame implements ActionListener
         panelOfMap = new InterfaceMap();
         panelItems = new InterfaceItem(game);
         panelOfRoom = new InterfaceRoom(game);
-        InterfacePlayer panelOfPlayer = new InterfacePlayer(game); 
-        InterfaceChar panelOfChar = new InterfaceChar(game);
-        InterfaceMap panelOfMap = new InterfaceMap();
-        InterfaceItem panelItems = new InterfaceItem(game);
-        InterfaceRoom panelOfRoom = new InterfaceRoom(game);
-        InterfacePets panelOfPets = new InterfacePets(game);
+        panelOfPets = new InterfacePets(game);
         
         gameFrame = new JFrame ("GAME");
         gameFrame.setDefaultCloseOperation(gameFrame.EXIT_ON_CLOSE);
@@ -94,6 +91,12 @@ public class InterfaceGame extends JFrame implements ActionListener
         this.pack();
         this.setVisible(true);
     }
+            
+           public void changerPanel (JPanel panel, JPanel mod){
+            this.setContentPane(panel); 
+            mod.revalidate(); 
+            mod.repaint(); 
+        }
     
         public void actionPerformed(ActionEvent e){
         if (e.getSource() == panelOfChar.getChestButton()) {
@@ -101,6 +104,9 @@ public class InterfaceGame extends JFrame implements ActionListener
             gamebis.getPlayer().grabContent(gamebis.getPlayer().getCurrentRoom().getListChest().get(0));
             panelOfPlayer.getLifeBar().setValue(gamebis.getPlayer().getLP());
             }
+        else if (e.getSource() == panelOfChar.getPetButton()){
+            changerPanel(panelOfPets.getPanelPet(), panelDescription); //écraser 
+        }
         }
     }
     
