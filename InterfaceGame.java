@@ -23,6 +23,7 @@ public class InterfaceGame extends JFrame implements ActionListener
     private InterfaceItem panelItems;
     private InterfaceRoom panelOfRoom; 
     private InterfacePets panelOfPets;
+    private InterfacePlanet panelOfPlanet;
     private Game gamebis; 
     /**
      * Constructor for objects of class InterfaceGame
@@ -36,6 +37,7 @@ public class InterfaceGame extends JFrame implements ActionListener
         panelItems = new InterfaceItem(game);
         panelOfRoom = new InterfaceRoom(game);
         panelOfPets = new InterfacePets(game);
+        panelOfPlanet = new InterfacePlanet(game);
         
         gameFrame = new JFrame ("GAME");
         gameFrame.setDefaultCloseOperation(gameFrame.EXIT_ON_CLOSE);
@@ -68,6 +70,7 @@ public class InterfaceGame extends JFrame implements ActionListener
         
         panelPlanet = new JPanel();
         panelPlanet.setLayout(new GridLayout (1,1));
+        panelPlanet.add(panelOfPlanet.getPanelPlanet());
         
         panelDescription = new JPanel(); 
         panelDescription.setLayout(new GridLayout (1,1));
