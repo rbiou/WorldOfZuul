@@ -28,11 +28,11 @@ public class InterfacePlayer extends JPanel implements ActionListener
         roomLabel = new JLabel ("You are in the room : "+ game.getPlayer().getCurrentRoom().getName(), JLabel.CENTER);
         moneyLabel = new JLabel ("Money : "+game.getPlayer().getMoney()+" pieces", JLabel.CENTER);
         weightLabel = new JLabel ("Weight available in your bag : "+game.getPlayer().getTotalWeight(), JLabel.CENTER);
-        //
-        lifeBar  = new JProgressBar(0, 100);
-        lifeBar.setMaximum(100);
-        lifeBar.setMinimum(0); 
-        lifeBar.setStringPainted(true);
+        
+        lifeBar  = new JProgressBar(0, game.getPlayer().getLP());
+        lifeBar.setValue(game.getPlayer().getLP()); 
+        lifeBar.setStringPainted(true); 
+        lifeBar.setForeground(Color.red);
         //
         Icon imagePlanet = new ImageIcon("avatar/avatar.jpg");
         picture = new JLabel(imagePlanet, JLabel.CENTER);
@@ -57,6 +57,9 @@ public class InterfacePlayer extends JPanel implements ActionListener
     }
     
     public void actionPerformed(ActionEvent e){
+        //if (e.getSource() == bagButton){
+          //visualisation de la liste des items dans le panel de Marie et Aurele  
+        //}
     }
     
     public JPanel getPanelPlayer(){
