@@ -27,31 +27,39 @@ public class InterfaceRoom extends JPanel implements ActionListener
         myPlayer = myGame.getPlayer();
         myRoom = myGame.getPlayer().getCurrentRoom();
         myPanel = new JPanel();
-        ArrayList <JButton> button = new ArrayList <JButton>();
+        button = new ArrayList <JButton>();
 
         for (int i=0; i < myRoom.getNameDoor().size(); i++)
         {
             JButton btn = new JButton(myRoom.getNameDoor().get(i));
             myPanel.add(btn);
-            btn.addActionListener(this);
             button.add(btn);
-            };
-            
-         //System.out.println(button.size());
+            btn.addActionListener(this);
+        };
     };
-    
+
     public void actionPerformed(ActionEvent e){
-        // System.out.println(button.size());
-    // for (int i=0; i < button.size(); i++) {
-       // if ((JButton)e.getSource() ==  button.get(i)) { 
-        // myGame.getPlayer().moveRoom(myRoom.exit.get(i));
-        // this.revalidate();
-        // this.repaint();
-    // };
-// };
-};
-    
+        for (int i=0; i < button.size(); i++) {
+            if ((JButton)e.getSource() ==  button.get(i)) { 
+                myGame.getPlayer().moveRoom(myRoom.exit.get(button.get(i).getText()));
+                myPanel.removeAll();
+                myRoom = myGame.getPlayer().getCurrentRoom();
+                button = new ArrayList <JButton>();
+                for (int y=0; y < myRoom.getNameDoor().size(); y++)
+                {
+                    JButton btn = new JButton(myRoom.getNameDoor().get(y));
+                    myPanel.add(btn);
+                    button.add(btn);
+                    btn.addActionListener(this);
+                };
+                myPanel.revalidate();
+                myPanel.repaint();
+            };
+        };
+    };
+
     public JPanel getPanelRoom()
-    { return myPanel;
+    { 
+        return myPanel;
     }
 };
