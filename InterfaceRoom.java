@@ -9,7 +9,7 @@ import java.util.*;
  * @author (Groupe 7)
  * @version (05/12/2018)
  */
-public class InterfaceRoom extends JFrame implements ActionListener
+public class InterfaceRoom extends JPanel implements ActionListener
 {
 private JButton button1,button2,button3,button4;
 private Game myGame;
@@ -26,11 +26,10 @@ public HashMap<String, Door>exit;
     myGame = newGame ;
     myPlayer = myGame.getPlayer();
     myRoom = myGame.getPlayer().getCurrentRoom();
+    myPanel = new JPanel();
     
     for (int i=0; i < myRoom.exit.size(); i++)
         {
-            
-      
     };
 };
       
