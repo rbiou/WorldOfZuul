@@ -8,7 +8,7 @@ import javax.swing.ImageIcon;
  * @author (Group 7)
  * @version (04/12/18)
  */
-public class InterfaceChar extends JFrame implements ActionListener
+public class InterfaceChar extends JFrame
 {
     private JButton monsterButton, petButton, sellerButton, chestButton; 
     private JPanel panelChar; 
@@ -41,16 +41,24 @@ public class InterfaceChar extends JFrame implements ActionListener
         panelChar.add(petButton);
         panelChar.add(chestButton);
     }
-
-    public void actionPerformed(ActionEvent e){
-        if (e.getSource() == chestButton) {
-            //faire appel a la classe pour afficher la liste 
-            //if (){
-            //}
-        }
-    }
     
     public JPanel getPanelChar(){
         return panelChar; 
+    }
+    
+    public JButton getChestButton(){
+        return chestButton; 
+    }
+    
+        public JButton getMonsterButton(){
+        return monsterButton; 
+    }
+    
+    public JButton getPetButton(){
+        return petButton; 
+    }
+    
+    public JButton getSellerButton(){
+        return sellerButton; 
     }
 }

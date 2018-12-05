@@ -65,6 +65,10 @@ public class InterfacePlayer extends JPanel implements ActionListener
     public JPanel getPanelPlayer(){
         return panelFinalPlayer; 
     }
+    
+    public JProgressBar getLifeBar(){
+        return lifeBar; 
+    }
 }
 
 

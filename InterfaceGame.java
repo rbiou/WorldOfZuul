@@ -16,16 +16,23 @@ public class InterfaceGame extends JFrame implements ActionListener
     private JMenuBar menuBar;
     private JMenu menuName;
     private JMenuItem menu1, menu2, menu3; 
+    private InterfaceChar panelOfChar; 
+    private InterfacePlayer panelOfPlayer;
+    private InterfaceMap panelOfMap; 
+    private InterfaceItem panelItems;
+    private InterfaceRoom panelOfRoom; 
+    private Game gamebis; 
     /**
      * Constructor for objects of class InterfaceGame
      */
     public InterfaceGame(Game game)
     {
-        InterfacePlayer panelOfPlayer = new InterfacePlayer(game); 
-        InterfaceChar panelOfChar = new InterfaceChar(game);
-        InterfaceMap panelOfMap = new InterfaceMap();
-        InterfaceItem panelItems = new InterfaceItem(game);
-        InterfaceRoom panelOfRoom = new InterfaceRoom(game);
+        gamebis = game; 
+        panelOfPlayer = new InterfacePlayer(game); 
+        panelOfChar = new InterfaceChar(game);
+        panelOfMap = new InterfaceMap();
+        panelItems = new InterfaceItem(game);
+        panelOfRoom = new InterfaceRoom(game);
         
         gameFrame = new JFrame ("GAME");
         gameFrame.setDefaultCloseOperation(gameFrame.EXIT_ON_CLOSE);
@@ -83,5 +90,11 @@ public class InterfaceGame extends JFrame implements ActionListener
     }
     
         public void actionPerformed(ActionEvent e){
+        if (e.getSource() == panelOfChar.getChestButton()) {
+            //faire appel a la classe pour afficher la liste 
+            gamebis.getPlayer().grabContent(gamebis.getPlayer().getCurrentRoom().getListChest().get(0));
+            panelOfPlayer.getLifeBar().setValue(gamebis.getPlayer().getLP());
+            }
+        }
     }
-}
+    
