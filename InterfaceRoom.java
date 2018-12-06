@@ -17,7 +17,6 @@ public class InterfaceRoom extends JPanel implements ActionListener
     private Player myPlayer;
     private JPanel myPanel;
     private ArrayList<JButton> button; 
-
     /**
      * Constructor for objects of class InterfaceRoom
      */

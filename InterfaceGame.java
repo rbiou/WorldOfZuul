@@ -38,11 +38,11 @@ public class InterfaceGame extends JFrame implements ActionListener
         panelOfRoom = new InterfaceRoom(game);
         panelOfPets = new InterfacePets(game);
         panelOfPlanet = new InterfacePlanet(game);
-        
+
         gameFrame = new JFrame ("GAME");
         gameFrame.setDefaultCloseOperation(gameFrame.EXIT_ON_CLOSE);
         menuBar = new JMenuBar(); 
-        
+
         this.setJMenuBar(menuBar); 
         menuName = new JMenu("GAME"); 
         this.menuBar.add(menuName); 
@@ -55,32 +55,31 @@ public class InterfaceGame extends JFrame implements ActionListener
         menu3 = new JMenuItem ("Quit"); 
         this.menuName.add(menu3); 
         menu3.addActionListener(this);
-        
+
         panelDoor = new JPanel();
         panelDoor.setLayout(new GridLayout (1,1));
         panelDoor.add(panelOfRoom.getPanelRoom());
-        
+
         panelMap = new JPanel();
         panelMap.setLayout(new GridLayout (1,1));
         panelMap.add(panelOfMap.getPanelMap());
-        
+
         panelPlayer = new JPanel();
         panelPlayer.setLayout(new GridLayout (1,1));
         panelPlayer.add(panelOfPlayer.getPanelPlayer()); 
-        
+
         panelPlanet = new JPanel();
         panelPlanet.setLayout(new GridLayout (1,1));
         panelPlanet.add(panelOfPlanet.getPanelPlanet());
-        
+
         panelDescription = new JPanel(); 
         panelDescription.setLayout(new GridLayout (1,1));
         panelDescription.add(panelItems.getPanel());
-        
+
         panelChar = new JPanel(); 
         panelChar.setLayout(new GridLayout (1,1));
         panelChar.add(panelOfChar.getPanelChar());
 
-        
         panelFinal = new JPanel(); 
         panelFinal.setLayout(new GridLayout (2,3));
         panelFinal.add(panelDoor); 
@@ -94,22 +93,49 @@ public class InterfaceGame extends JFrame implements ActionListener
         this.pack();
         this.setVisible(true);
     }
-            
-           public void changerPanel (JPanel panel, JPanel mod){
-            this.setContentPane(panel); 
-            mod.revalidate(); 
-            mod.repaint(); 
-        }
-    
-        public void actionPerformed(ActionEvent e){
-        if (e.getSource() == panelOfChar.getChestButton()) {
-            //faire appel a la classe pour afficher la liste 
-            gamebis.getPlayer().grabContent(gamebis.getPlayer().getCurrentRoom().getListChest().get(0));
-            panelOfPlayer.getLifeBar().setValue(gamebis.getPlayer().getLP());
-            }
-        else if (e.getSource() == panelOfChar.getPetButton()){
-            changerPanel(panelOfPets.getPanelPet(), panelDescription); //écraser 
-        }
-        }
+
+    public void changerPanel(JPanel panel, JPanel mod){
+        this.setContentPane(panel); 
+        mod.revalidate(); 
+        mod.repaint(); 
     }
-    
+
+    public void actionPerformed(ActionEvent e){
+
+        if (gamebis.getPlayer().getCurrentRoom().getMonster() != null) {
+            //event sur le bouton monster 
+        }
+        else {
+            panelOfChar.getMonsterButton().setEnabled(false);
+        }
+        //
+        if (gamebis.getPlayer().getCurrentRoom().getSeller() != null) {
+            //envent sur le bouton seller
+        }
+        else {
+            panelOfChar.getSellerButton().setEnabled(false);
+        }
+        //
+        if (gamebis.getPlayer().getCurrentRoom().getPet() != null) {
+            if (e.getSource() == panelOfChar.getPetButton()){
+                changerPanel(panelOfPets.getPanelPet(), panelDescription); //écraser 
+            }
+        }
+        else {
+            panelOfChar.getPetButton().setEnabled(false);
+        }
+        //
+        if (gamebis.getPlayer().getCurrentRoom().getChest() != null) {
+            if (e.getSource() == panelOfChar.getChestButton()) {
+                //faire appel a la classe pour afficher la liste 
+                gamebis.getPlayer().grabContent(gamebis.getPlayer().getCurrentRoom().getListChest().get(0));
+                panelOfPlayer.getLifeBar().setValue(gamebis.getPlayer().getLP());
+            }
+        }
+        else {
+            panelOfChar.getChestButton().setEnabled(false);
+        }
+
+    }
+}
+

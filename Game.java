@@ -213,7 +213,7 @@ public class Game
         gamma2.addChest(chestGamma2 = new Chest ("Banana",0,50,"Hello my name is Banane",0,true)); 
         gamma5.addChest(chestGamma5 = new Chest ("The best",0,50,"Hello my name is the best",50,false));
         gamma4.addChest(chestGamma4 = new Chest ("Magic",0,50,"Hello my name is magic",0,false)); 
-        gamma6.addChest(chestGamma6 = new Chest ("free",0,50,"Hello my name is free",50,false)); 
+        gamma6.addChest(chestGamma6 = new Chest ("Free",0,50,"Hello my name is free",50,false)); 
         
        
         //Add items in the chests

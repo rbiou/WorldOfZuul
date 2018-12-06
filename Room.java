@@ -202,8 +202,74 @@ public class Room
         return list;
     }
     
+    /**
+     * Return a specific monster present in a room
+     * Only one monster is present in a room
+     */
+    public Monster getMonster() {
+        for (int i = 0; i< this.listCharacters.size(); i++)
+        {
+            if (this.listCharacters.get(i)!=null){
+                if (this.listCharacters.get(i).getName() == "Godzilla" || this.listCharacters.get(i).getName() == "Yoda" ||
+                this.listCharacters.get(i).getName() == "Darkness" || this.listCharacters.get(i).getName() == "Piranha")
+                    return ((Monster)listCharacters.get(i));
+            }
+        }
+        return null; 
+    }
     
-
+     /**
+     * Return a specific seller present in a room
+     * Only one seller is present in a room
+     */
+        public Seller getSeller() {
+        for (int i = 0; i< this.listCharacters.size(); i++)
+        {
+            if (this.listCharacters.get(i)!=null){
+                if (this.listCharacters.get(i).getName() == "Dumbledore" || this.listCharacters.get(i).getName() == "Hagrid" ||
+                this.listCharacters.get(i).getName() == "Harry Potter" )
+                    return ((Seller)listCharacters.get(i));
+            }
+        }
+        return null; 
+    }
+    
+     /**
+     * Return a specific pet present in a room
+     * Only one pet is present in a room
+     */
+        public Pet getPet() {
+        for (int i = 0; i< this.listCharacters.size(); i++)
+        {
+            if (this.listCharacters.get(i)!=null){
+                if (this.listCharacters.get(i).getName() == "Bamby" || this.listCharacters.get(i).getName() == "Dolly" ||
+                this.listCharacters.get(i).getName() == "Pumba" || this.listCharacters.get(i).getName() == "Winnie" || 
+                this.listCharacters.get(i).getName() == "Timon" )
+                    return ((Pet)listCharacters.get(i));
+            }
+        }
+        return null; 
+    }
+    
+    /**
+     * Return a specific chest present in a room
+     * Only one chest is present in a room
+     */
+        public Chest getChest() {
+        for (int i = 0; i< listChest.size(); i++)
+        {
+            if (listChest.get(i)!=null){
+                if (this.listChest.get(i).getName() == "Bill" || this.listChest.get(i).getName() == "Bob" ||
+                this.listChest.get(i).getName() == "Sully" || this.listChest.get(i).getName() == "Kiwi" || 
+                this.listChest.get(i).getName() == "Titi" || this.listChest.get(i).getName() == "Cramberry" ||
+                this.listChest.get(i).getName() == "Grosminet" || this.listChest.get(i).getName() == "Banana" ||
+                this.listChest.get(i).getName() == "The best" || this.listChest.get(i).getName() == "Free" || 
+                this.listChest.get(i).getName() == "Magic")
+                    return (listChest.get(i));
+            }
+        }
+        return null; 
+    }
 }
     
 

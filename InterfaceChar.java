@@ -8,10 +8,11 @@ import javax.swing.ImageIcon;
  * @author (Group 7)
  * @version (04/12/18)
  */
-public class InterfaceChar extends JFrame
+public class InterfaceChar extends JFrame 
 {
     private JButton monsterButton, petButton, sellerButton, chestButton; 
     private JPanel panelChar; 
+
     /**
      * Constructor for objects of class InterfaceChar
      */
@@ -21,7 +22,6 @@ public class InterfaceChar extends JFrame
         sellerButton = new JButton("Seller");
         petButton = new JButton("Pet");
         chestButton = new JButton("Chest"); 
-        
         monsterButton.setBackground(Color.gray);
         monsterButton.setForeground(Color.white);
         
