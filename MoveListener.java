@@ -67,6 +67,7 @@ public class MoveListener extends JPanel implements ActionListener
                     else {
                         myGame.getInterfaceGame().getInterfaceChar().getMonsterButton().setEnabled(false);
                     }
+                    
                     //check if there is a seller in the room
                     if (myGame.getPlayer().getCurrentRoom().getSeller() != null) {
                         myGame.getInterfaceGame().getInterfaceChar().getSellerButton().setEnabled(true);
@@ -75,17 +76,21 @@ public class MoveListener extends JPanel implements ActionListener
                     else {
                         myGame.getInterfaceGame().getInterfaceChar().getSellerButton().setEnabled(false);
                     }
+                    
                     //check if there is a pet in the room
                     if (myGame.getPlayer().getCurrentRoom().getPet() != null) {
                         myGame.getInterfaceGame().getInterfaceChar().getPetButton().setEnabled(true);
                         if (e.getSource() ==  myGame.getInterfaceGame().getInterfaceChar().getPetButton()){
                             myGame.getInterfaceGame().getPanelDescription().removeAll();
                             myGame.getInterfaceGame().getPanelDescription().add(myGame.getInterfaceGame().getInterfacePet().getPanelPet()); 
+                            //myGame.getInterfaceGame().getPanelDescription().revalidate();
+                            //myGame.getInterfaceGame().getPanelDescription().repaint();
                         }
                     }
                     else {
                         myGame.getInterfaceGame().getInterfaceChar().getPetButton().setEnabled(false);
                     }
+                    
                     //check if there is a chest in the room
                     if (myGame.getPlayer().getCurrentRoom().getChest() != null) {
                         myGame.getInterfaceGame().getInterfaceChar().getChestButton().setEnabled(true);
@@ -93,6 +98,8 @@ public class MoveListener extends JPanel implements ActionListener
                             //faire appel a la classe pour afficher la liste
                             myGame.getPlayer().grabContent(myGame.getPlayer().getCurrentRoom().getListChest().get(0));
                             myGame.getInterfaceGame().getInterfacePlayer().getLifeBar().setValue(myGame.getPlayer().getLP());
+                            //myGame.getInterfaceGame().getPanelPlayer().revalidate();
+                            //myGame.getInterfaceGame().getPanelPlayer().repaint();
                         }
                     }
                     else {
