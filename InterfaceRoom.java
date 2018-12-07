@@ -9,7 +9,7 @@ import java.util.*;
  * @author (Groupe 7)
  * @version (05/12/2018)
  */
-public class InterfaceRoom extends JPanel implements ActionListener
+public class InterfaceRoom extends JPanel
 {
     private JButton button1,button2,button3,button4;
     private Game myGame;
@@ -33,32 +33,17 @@ public class InterfaceRoom extends JPanel implements ActionListener
             JButton btn = new JButton(myRoom.getNameDoor().get(i));
             myPanel.add(btn);
             button.add(btn);
-            btn.addActionListener(this);
-        };
-    };
-
-    public void actionPerformed(ActionEvent e){
-        for (int i=0; i < button.size(); i++) {
-            if ((JButton)e.getSource() ==  button.get(i)) { 
-                myGame.getPlayer().moveRoom(myRoom.exit.get(button.get(i).getText()));
-                myPanel.removeAll();
-                myRoom = myGame.getPlayer().getCurrentRoom();
-                button = new ArrayList <JButton>();
-                for (int y=0; y < myRoom.getNameDoor().size(); y++)
-                {
-                    JButton btn = new JButton(myRoom.getNameDoor().get(y));
-                    myPanel.add(btn);
-                    button.add(btn);
-                    btn.addActionListener(this);
-                };
-                myPanel.revalidate();
-                myPanel.repaint();
-            };
+            btn.addActionListener(new MoveListener(myGame,button));
         };
     };
 
     public JPanel getPanelRoom()
     { 
         return myPanel;
+    }
+
+    public ArrayList<JButton> getButtonsRoom()
+    { 
+        return button;
     }
 };

@@ -33,7 +33,7 @@ public class InterfaceGame extends JFrame implements ActionListener
         gamebis = game; 
         panelOfPlayer = new InterfacePlayer(game); 
         panelOfChar = new InterfaceChar(game);
-        panelOfMap = new InterfaceMap();
+        panelOfMap = new InterfaceMap(game);
         panelItems = new InterfaceItem(game);
         panelOfRoom = new InterfaceRoom(game);
         panelOfPets = new InterfacePets(game);
@@ -136,6 +136,14 @@ public class InterfaceGame extends JFrame implements ActionListener
             panelOfChar.getChestButton().setEnabled(false);
         }
 
+    }
+    public InterfaceMap getInterfaceMap()
+    { 
+        return panelOfMap;
+    }
+    public InterfaceRoom getInterfaceRoom()
+    { 
+        return panelOfRoom;
     }
 }
 

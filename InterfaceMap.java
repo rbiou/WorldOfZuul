@@ -10,7 +10,7 @@ import javax.swing.ImageIcon;
  * @author (Groupe 7)
  * @version (07/)
  */
-public class InterfaceMap extends JFrame implements ActionListener
+public class InterfaceMap extends JPanel
 {
     private JLabel myMap;
     private JPanel panelMap;
@@ -18,21 +18,15 @@ public class InterfaceMap extends JFrame implements ActionListener
     /**
      * Constructeur d'objets de classe Interface_Map
      */
-    public InterfaceMap()
+    public InterfaceMap(Game game)
     {
         panelMap = new JPanel();
-        //Icon imageMap = new ImageIcon("map/planet_"+currentPlanet+
-        //"_room_"+currentRoom+".jpg");
-        Icon imageMap = new ImageIcon(new ImageIcon("map/planet_Alpha_room_alpha1.jpg")
-        .getImage().getScaledInstance(480, 270, Image.SCALE_DEFAULT));
+        Icon imageMap = new ImageIcon(new ImageIcon("map/planet_"+game.getPlayer().getCurrentRoom().getPlanet().getPlanetName()+
+        "_room_"+game.getPlayer().getCurrentRoom().getName()+".jpg").getImage().getScaledInstance(480, 270, Image.SCALE_DEFAULT));
         myMap = new JLabel(imageMap, JLabel.CENTER);
         panelMap.add(myMap);
     }
 
-    public void actionPerformed(ActionEvent e)
-    {
-    }
-    
     public JPanel getPanelMap(){
         return panelMap; 
     }

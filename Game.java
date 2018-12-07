@@ -39,13 +39,15 @@ public class Game
     private ArrayList<Planet>listPlanet; // list of planet of our game
     private Planet startP, alpha, beta, gamma, delta; 
     private Player player;
+    private InterfaceGame interfaceGame;
     /**
      * Constructeur d'objets de classe Game
      */
     public Game()
     {
         listPlanet = new ArrayList<Planet>(); 
-        createWorld(); 
+        createWorld();
+        interfaceGame = new InterfaceGame(this);
     }
     
     /**
@@ -69,6 +71,10 @@ public class Game
     
     public Player getPlayer() {
         return player;
+    }
+    
+    public InterfaceGame getInterfaceGame() {
+        return interfaceGame;
     }
     
      /**
