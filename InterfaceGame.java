@@ -102,45 +102,12 @@ public class InterfaceGame extends JFrame implements ActionListener
 
     public void actionPerformed(ActionEvent e){
 
-        if (gamebis.getPlayer().getCurrentRoom().getMonster() != null) {
-            //event sur le bouton monster 
-        }
-        else {
-            panelOfChar.getMonsterButton().setEnabled(false);
-        }
-        //
-        if (gamebis.getPlayer().getCurrentRoom().getSeller() != null) {
-            //envent sur le bouton seller
-        }
-        else {
-            panelOfChar.getSellerButton().setEnabled(false);
-        }
-        //
-        if (gamebis.getPlayer().getCurrentRoom().getPet() != null) {
-            if (e.getSource() == panelOfChar.getPetButton()){
-                changerPanel(panelOfPets.getPanelPet(), panelDescription); //écraser 
-            }
-        }
-        else {
-            panelOfChar.getPetButton().setEnabled(false);
-        }
-        //
-        if (gamebis.getPlayer().getCurrentRoom().getChest() != null) {
-            if (e.getSource() == panelOfChar.getChestButton()) {
-                //faire appel a la classe pour afficher la liste 
-                gamebis.getPlayer().grabContent(gamebis.getPlayer().getCurrentRoom().getListChest().get(0));
-                panelOfPlayer.getLifeBar().setValue(gamebis.getPlayer().getLP());
-            }
-        }
-        else {
-            panelOfChar.getChestButton().setEnabled(false);
-        }
-
     }
     public InterfaceMap getInterfaceMap()
     { 
         return panelOfMap;
     }
+    
     public InterfaceRoom getInterfaceRoom()
     { 
         return panelOfRoom;
@@ -150,5 +117,20 @@ public class InterfaceGame extends JFrame implements ActionListener
     { 
         return panelOfPlayer;
     }
+    
+    public InterfaceChar getInterfaceChar()
+    { 
+        return panelOfChar;
+    }
+    
+    public InterfacePets getInterfacePet()
+    { 
+        return panelOfPets;
+    }
+    
+    public JPanel getPanelDescription(){
+        return panelDescription;
+    }
+   
 }
 
