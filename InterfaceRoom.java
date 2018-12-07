@@ -41,9 +41,4 @@ public class InterfaceRoom extends JPanel
     { 
         return myPanel;
     }
-
-    public ArrayList<JButton> getButtonsRoom()
-    { 
-        return button;
-    }
 };

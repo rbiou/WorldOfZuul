@@ -11,11 +11,11 @@ import java.util.*;
  */
 public class MoveListener extends JPanel implements ActionListener
 {
-    private JPanel myRoomPanel, myMapPanel; //All the interface panels which change 
+    private JPanel myRoomPanel, myMapPanel, myPlayerPanel; //All the interface panels which change 
     private Game myGame; //Our game
     private ArrayList<JButton> myRoomButtons; //List of buttons which indicate all the possible directions in the room panel
     private Room myRoom; //The actual room of the player
-    private JLabel myMap; //The map which is put on the map panel
+    private JLabel myMap, roomLabel, playerLabel, moneyLabel, weightLabel; //Modified labels
 
     /**
      * Constructeur d'objets de classe MoveListener
@@ -77,5 +77,7 @@ public class MoveListener extends JPanel implements ActionListener
         myMapPanel.removeAll();
         //Add the new map to the map panel
         myMapPanel.add(myMap);
+        
+        //ON PLAYER PANEL
     }
 }
