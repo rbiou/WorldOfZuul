@@ -70,11 +70,16 @@ public class MoveListener extends JPanel implements ActionListener
                     
                     //check if there is a seller in the room
                     if (myGame.getPlayer().getCurrentRoom().getSeller() != null) {
-                        myGame.getInterfaceGame().getInterfaceChar().getSellerButton().setEnabled(true);
-                        //envent sur le bouton seller
+                        if (myGame.getPlayer().getMoney()>0) //check if the player has money to buy somthing
+                        myGame.getInterfaceGame().getInterfaceChar().getSellerButtonBuy().setEnabled(true);
+                        
+                        if (myGame.getPlayer().getListItems().size() > 0) //check if the player has items to sell
+                        myGame.getInterfaceGame().getInterfaceChar().getSellerButtonSell().setEnabled(true);                        
+                        //event sur le bouton seller
                     }
                     else {
-                        myGame.getInterfaceGame().getInterfaceChar().getSellerButton().setEnabled(false);
+                        myGame.getInterfaceGame().getInterfaceChar().getSellerButtonBuy().setEnabled(false);
+                        myGame.getInterfaceGame().getInterfaceChar().getSellerButtonSell().setEnabled(false);
                     }
                     
                     //check if there is a pet in the room

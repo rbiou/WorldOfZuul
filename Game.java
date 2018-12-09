@@ -40,6 +40,7 @@ public class Game
     private Planet startP, alpha, beta, gamma, delta; 
     private Player player;
     private InterfaceGame interfaceGame;
+    private Item engine, propellant, windows, wheel;
     /**
      * Constructeur d'objets de classe Game
      */
@@ -53,10 +54,18 @@ public class Game
     /**
      * this method allows you to quit the game
      */
-    public void quit()
+    public void endGame()
     {
-        //
+        if (player.getListItems().contains(engine) && player.getListItems().contains(propellant)
+        && player.getListItems().contains(windows) && player.getListItems().contains(wheel)){ 
+            //you have win
+        }
+        
+        if (player.getLP() == 0){
+            //stop the game
+        }
     }
+    
     /**
      * this method allows you to open the game
      */
@@ -199,7 +208,7 @@ public class Game
         gamma6.addCharacter(monster4 = new Monster("Piranha", 10000, 56,gamma6, "What is the color of mikey's shoes", "yellow"));
         
         //Declaration 
-        Item knief1, engine, propellant, windows, wheel, magicBall1, magicBall2, diamond1;
+        Item knief1, magicBall1, magicBall2, diamond1;
         Item fork1, diamond2, knief2, fork2, diamond3, fork3; //Declaration of the item
         Chest chest1alpha3, chest2delta1, chest3delta4, chest4beta1, chest5beta5, chestGamma1, chestGamma1bis, chestGamma2; 
         Chest chestGamma5, chestGamma4, chestGamma6, chestAlpha1;//declaration of the chest
