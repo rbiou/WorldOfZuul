@@ -34,23 +34,39 @@ public class GameListener extends JPanel implements ActionListener
             myGame.getInterfaceGame().getInterfacePlayer().updateInterfaceRoom(myGame);
         }
 
-        if (e.getSource() ==  myGame.getInterfaceGame().getInterfaceChar().getMonsterButton()){
+        else if (e.getSource() ==  myGame.getInterfaceGame().getInterfaceChar().getMonsterButton()){
             Monster recupMonster = myGame.getPlayer().getCurrentRoom().getMonster();
             //panelOfMonster = new InterfaceMonster(myGame, recupMonster);
         }
 
-        if (e.getSource() ==  myGame.getInterfaceGame().getInterfaceChar().getChestButton()){
+        else if (e.getSource() ==  myGame.getInterfaceGame().getInterfaceChar().getChestButton()){
             Chest chestRecup = myGame.getPlayer().getCurrentRoom().getChest();
             myGame.getPlayer().grabContent(chestRecup);
             myGame.getInterfaceGame().getInterfacePlayer().updateInterfaceRoom(myGame);
         }
 
-        if (e.getSource() ==  myGame.getInterfaceGame().getInterfaceChar().getSellerButtonBuy()){
+        else if (e.getSource() ==  myGame.getInterfaceGame().getInterfaceChar().getSellerButtonBuy()){
 
         }
 
-        if (e.getSource() ==  myGame.getInterfaceGame().getInterfaceChar().getSellerButtonSell()){
+        else if (e.getSource() ==  myGame.getInterfaceGame().getInterfaceChar().getSellerButtonSell()){
 
         }        
+        
+        else if (e.getSource() == myGame.getInterfaceGame().getInterfaceChar().getSellerButtonSell())
+        {
+            Player player =  myGame.getPlayer();
+            InterfaceItem itemListPanel = myGame.getInterfaceGame().getInterfaceItem();
+            itemListPanel.showList(player.getListItems());
+            itemListPanel.getSellButton().setEnabled(true);
+        }
+        
+        else if (e.getSource() == myGame.getInterfaceGame().getInterfaceChar().getSellerButtonBuy())
+        {
+            Seller seller = myGame.getPlayer().getCurrentRoom().getSeller();
+            InterfaceItem itemListPanel = myGame.getInterfaceGame().getInterfaceItem();
+            itemListPanel.showList(seller.getListItems());
+            itemListPanel.getBuyButton().setEnabled(true);
+        }
     }
 }

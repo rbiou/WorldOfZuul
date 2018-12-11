@@ -19,6 +19,7 @@ public class InterfaceItem extends JPanel implements ActionListener
     private ArrayList<Item> itemList;
     private Item selectedItem;
     private JButton buttonBuy, buttonSell;
+    private Game game;
     /**
      * Constructor for objects of class InterfaceItem
      */
@@ -26,10 +27,13 @@ public class InterfaceItem extends JPanel implements ActionListener
     {
 
         // Label avec image
+        this.game = game;
         String name = "Item";
         Icon imageItem = new ImageIcon(name+".png");
         buttonBuy = new JButton("Buy");
-        buttonSell = new JButton("Sell");        
+        buttonSell = new JButton("Sell");
+        buttonBuy.setEnabled(false);
+        buttonSell.setEnabled(false);
         
          // Cration List
         itemBox = new JComboBox();
@@ -69,14 +73,42 @@ public class InterfaceItem extends JPanel implements ActionListener
         panelFinal.add(labelImage);
         panelFinal.add(panel1);
         panelFinal.add(panel2);
-              
     }
     
     public void actionPerformed(ActionEvent e){
-        int itemNumber = itemBox.getSelectedIndex();
-        Item item = itemList.get(itemNumber);
-        imageItem = new ImageIcon(item.getName()+".png");
-        labelDescription.setText(item.getDescription());
+        // Get event origin
+        Object source = e.getSource();
+
+
+        if (source == itemBox)
+        {
+            int itemNumber = itemBox.getSelectedIndex();
+            selectedItem = itemList.get(itemNumber);
+            imageItem = new ImageIcon(selectedItem.getName()+".png");
+            labelDescription.setText(selectedItem.getDescription());
+            return;
+        }
+
+        // Get player and seller
+        Seller seller = game.getPlayer().getCurrentRoom().getSeller();
+        Player player = game.getPlayer();
+
+        if (source == buttonBuy)
+        {
+            if (player.buyItem(seller, selectedItem))
+            {
+                JOptionPane jop1 = new JOptionPane();
+                jop1.showMessageDialog(null, "Cheers, bro", "Information", JOptionPane.INFORMATION_MESSAGE);
+            } else {
+                JOptionPane jop1 = new JOptionPane();
+                jop1.showMessageDialog(null, "Come back when you'll be wealthy enough for that boy.", "Information", JOptionPane.INFORMATION_MESSAGE);
+            }
+        }
+        else if (source == buttonSell)
+        {
+            JOptionPane jop1 = new JOptionPane();
+            jop1.showMessageDialog(null, "Cheers, bro", "Information", JOptionPane.INFORMATION_MESSAGE);
+        }
     }
 
     public JPanel getPanel(){
@@ -98,4 +130,11 @@ public class InterfaceItem extends JPanel implements ActionListener
         return selectedItem;
     }
     
+    public JButton getBuyButton(){
+        return buttonBuy;
+    }
+
+    public JButton getSellButton(){
+        return buttonSell;
+    }
 }
