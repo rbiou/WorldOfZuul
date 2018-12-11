@@ -101,8 +101,8 @@ public class InterfaceGame extends JFrame implements ActionListener
     }
 
     public void actionPerformed(ActionEvent e){
-
     }
+    
     public InterfaceMap getInterfaceMap()
     { 
         return panelOfMap;
@@ -140,6 +140,6 @@ public class InterfaceGame extends JFrame implements ActionListener
     {
         return panelItems;
     }
-
+    
 }
 

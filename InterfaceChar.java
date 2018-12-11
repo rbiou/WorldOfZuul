@@ -31,22 +31,27 @@ public class InterfaceChar extends JFrame
         monsterButton.setBackground(Color.gray);
         monsterButton.setForeground(Color.white);
         monsterButton.setEnabled(false);
-
+        monsterButton.addActionListener(new GameListener(myGame));
+        
         sellerButtonBuy.setBackground(Color.gray);
         sellerButtonBuy.setForeground(Color.white);
         sellerButtonBuy.setEnabled(false);
+        sellerButtonBuy.addActionListener(new GameListener(myGame));        
         
         sellerButtonSell.setBackground(Color.gray);
         sellerButtonSell.setForeground(Color.white);
         sellerButtonSell.setEnabled(false);
+        sellerButtonSell.addActionListener(new GameListener(myGame));        
         
         petButton.setBackground(Color.gray);
         petButton.setForeground(Color.white);
         petButton.setEnabled(false);
+        petButton.addActionListener(new GameListener(myGame));        
         
         chestButton.setBackground(Color.gray);
         chestButton.setForeground(Color.white);
         chestButton.setEnabled(false); 
+        chestButton.addActionListener(new GameListener(myGame));
         
         panelSeller = new JPanel();
         panelSeller.setLayout(new GridLayout(1,3));
