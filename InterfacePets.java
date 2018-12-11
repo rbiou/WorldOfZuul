@@ -14,36 +14,38 @@ public class InterfacePets
      private JPanel panel1 ;
      private JLabel label1 ,label2;
      private ImageIcon petsimage; 
-     private String namePet;
+     private Pet pet;
+     private JButton button1;
+    
     /**
      * Constructeur d'objets de classe Listener
      */
-    public InterfacePets(Game game)
+    public InterfacePets(Game game,Pet petroom)
     {
+      
        panel1 = new JPanel(); 
+       pet= petroom;
        
-       for (int i=0;i<game.getPlayer().getCurrentRoom().getListCharacter().size();i++)
-       {if(game.getPlayer().getCurrentRoom().getListCharacter().get(i).getName()== "Bamby" ||game.getPlayer().getCurrentRoom().getListCharacter().get(i).getName() == "Timon" || 
-           game.getPlayer().getCurrentRoom().getListCharacter().get(i).getName() == "Pumba" ||game.getPlayer().getCurrentRoom().getListCharacter().get(i).getName() == "Dolly" || game.getPlayer().getCurrentRoom().getListCharacter().get(i).getName() == "Winnie")
-           namePet=game.getPlayer().getCurrentRoom().getListCharacter().get(i).getName(); 
-        }
-        label1 = new JLabel("*** THANK YOU FOR YOUR VISIT AND TAKING SOME TIMES FOR ME ***  I AM" +namePet+ " *** HERE A RECOMPENSE***",JLabel.CENTER);
-       Icon imagePets = new ImageIcon("pets/"+namePet+".jpg");
+       label1 = new JLabel("*** THANK YOU FOR YOUR VISIT AND TAKING SOME TIMES FOR ME ***  I AM" +pet.getName()+ " *** HERE A RECOMPENSE***",JLabel.CENTER);
+       Icon imagePets = new ImageIcon("pets/"+pet.getName()+".jpg");
        label2 = new JLabel(imagePets,JLabel.CENTER);
+       button1 = new JButton("GOODBYE"); 
        panel1.setLayout(new BorderLayout());
        
        Font f = new Font("Serif", Font.PLAIN, 29); 
-
+       
        label1.setFont(f);
        panel1.add(label1,BorderLayout.NORTH);
-       
-       
-       
+   
        panel1.add(label2,BorderLayout.CENTER);
-       
+       panel1.add(button1,BorderLayout.SOUTH);
+     
     }
 
     public JPanel getPanelPet(){
         return panel1; 
+    }
+    public JButton getButtonPet(){
+        return button1;
     }
 }
