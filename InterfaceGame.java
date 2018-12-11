@@ -146,5 +146,10 @@ public class InterfaceGame extends JFrame implements ActionListener
     {
         return panelOfDescription;
     }
+    
+        public InterfacePlanet getInterfacePlanet()
+    {
+        return panelOfPlanet;
+    }
 }
 
