@@ -14,10 +14,11 @@ public class InterfaceItem extends JPanel implements ActionListener
 {
     private JLabel labelImage,labelDescription, labelItem;;
     private ImageIcon imageItem;
-    private JPanel panel1,panelFinal;
+    private JPanel panel1, panel2,panelFinal;
     private JComboBox itemBox;
     private ArrayList<Item> itemList;
     private Item selectedItem;
+    private JButton buttonBuy, buttonSell;
     /**
      * Constructor for objects of class InterfaceItem
      */
@@ -27,7 +28,9 @@ public class InterfaceItem extends JPanel implements ActionListener
         // Label avec image
         String name = "Item";
         Icon imageItem = new ImageIcon(name+".png");
-       
+        buttonBuy = new JButton("Buy");
+        buttonSell = new JButton("Sell");        
+        
          // Cration List
         itemBox = new JComboBox();
         //Création du LabelItem
@@ -40,25 +43,33 @@ public class InterfaceItem extends JPanel implements ActionListener
         labelItem.add(itemBox);
         itemBox.addActionListener(this);
      
-        labelDescription = new JLabel("Description item");
-        labelDescription.setHorizontalAlignment(JLabel.CENTER);
-        labelDescription.setOpaque(true);
-        labelDescription.setBackground(Color.LIGHT_GRAY);
-        labelDescription.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+        labelDescription = new JLabel();
+        labelDescription.setBorder(BorderFactory.createLineBorder(Color.BLACK));  // Border
+     
+
+     
+        
         labelImage = new JLabel(imageItem);
+        
         
         // panel 1 en bas
         panel1 = new JPanel();
         panel1.setLayout(new GridLayout (1,2));
         panel1.add(labelItem);
         panel1.add(labelDescription);
-       
+        //panel 2 
+        panel2 = new JPanel();
+        panel2.setLayout(new GridLayout (1,2));
+        panel2.add(buttonSell);
+        panel2.add(buttonBuy);
        
         //Creation panel Final
         panelFinal = new JPanel();
-        panelFinal.setLayout(new GridLayout(2, 1));
+        panelFinal.setLayout(new GridLayout(3, 1));
         panelFinal.add(labelImage);
         panelFinal.add(panel1);
+        panelFinal.add(panel2);
+              
     }
     
     public void actionPerformed(ActionEvent e){
