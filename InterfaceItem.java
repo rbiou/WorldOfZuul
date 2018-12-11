@@ -97,4 +97,5 @@ public class InterfaceItem extends JPanel implements ActionListener
     public Item getSelectedItem(){
         return selectedItem;
     }
+    
 }
