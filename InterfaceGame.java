@@ -95,12 +95,6 @@ public class InterfaceGame extends JFrame implements ActionListener
         this.setVisible(true);
     }
 
-    public void changerPanel(JPanel panel, JPanel mod){
-        this.setContentPane(panel); 
-        mod.revalidate(); 
-        mod.repaint(); 
-    }
-
     public void actionPerformed(ActionEvent e){
     }
     
