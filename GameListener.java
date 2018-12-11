@@ -29,11 +29,10 @@ public class GameListener extends JPanel implements ActionListener
         if (e.getSource() ==  myGame.getInterfaceGame().getInterfaceChar().getPetButton()){
             Pet recupPet = myGame.getPlayer().getCurrentRoom().getPet();
             panelOfPets = new InterfacePets(myGame, recupPet);
-            myGame.getInterfaceGame().getPanelDescription().removeAll();
-            myGame.getInterfaceGame().getPanelDescription().add(myGame.getInterfaceGame().getInterfacePet().getPanelPet()); 
-            myGame.getInterfaceGame().getPanelDescription().revalidate();
-            myGame.getInterfaceGame().getPanelDescription().repaint();
+            myGame.getInterfaceGame().getInterfaceDescription().updatePanelDescription(panelOfPets.getPanelPet());
         }
 
     }
+
+    
 }
