@@ -22,7 +22,7 @@ public class Player extends Character
         lifePoints = 100;
 
     }
-
+    
     /**
      * The player grabs the content of the chest
      * He loses 25 LP when the chest is trapped

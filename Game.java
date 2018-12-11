@@ -1,4 +1,3 @@
-
 import java.util.*;
 /**
  * Game class
@@ -41,6 +40,8 @@ public class Game
     private Player player;
     private InterfaceGame interfaceGame;
     private Item engine, propellant, windows, wheel;
+    private long time_less;
+    
     /**
      * Constructeur d'objets de classe Game
      */
@@ -278,6 +279,26 @@ public class Game
     public List<Planet> getListPlanet()
     {
         return this.listPlanet; 
+    }
+    
+    /**
+     * Start a chronometer when the player changing room, with a limited time which correspond to the time available in the
+     * planet. If the player keeps too long on the planet, he is killed.
+     * @param   timeInSec : the time in second available in the current planet
+     **/
+    public void startChrono()
+    {
+        Room currentRoom = getPlayer().getCurrentRoom();
+        Room room_during_timer = currentRoom;
+        long original = System.currentTimeMillis();
+        while (room_during_timer == currentRoom) {
+            room_during_timer = getPlayer().getCurrentRoom(); 
+            time_less = (getPlayer().getCurrentRoom().getPlanet().getTime()*1000) - (System.currentTimeMillis() - original);
+            if (time_less <= 0) {
+                getPlayer().looseHP(100);
+                break;
+            }
+        } 
     }
 }    
     
