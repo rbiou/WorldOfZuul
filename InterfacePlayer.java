@@ -14,10 +14,10 @@ public class InterfacePlayer extends JPanel implements ActionListener
     //declaration of the variables
     //private JFrame myFrame;
     private Game game;
-    private JLabel descriptionLabel, roomLabel, moneyLabel, weightLabel, playerLabel, picture, updateRoomLabel;
+    private JLabel descriptionLabel, roomLabel, moneyLabel, weightLabel, playerLabel, picture, updateRoomLabel, updateMoneyLabel, updateWeightLabel;
     private JButton bagButton;
     private JPanel panel1, panel2, panelFinalPlayer, panel3, panelRoom; 
-    private JProgressBar lifeBar; 
+    private JProgressBar lifeBar, updateLifeBar; 
     private ImageIcon image;
     /**
      * Constructor for objects of class Counter
@@ -62,11 +62,22 @@ public class InterfacePlayer extends JPanel implements ActionListener
         panel1.removeAll();
         updateRoomLabel = new JLabel ("You are in the room : "+ game.getPlayer().getCurrentRoom().getName(), JLabel.CENTER);
         panel1.add(updateRoomLabel);
+        
         panel1.add(playerLabel);
-        panel1.add(lifeBar);
+        
+        updateLifeBar  = new JProgressBar(0, game.getPlayer().getLP());
+        updateLifeBar.setValue(game.getPlayer().getLP()); 
+        updateLifeBar.setStringPainted(true); 
+        updateLifeBar.setForeground(Color.red);
+        panel1.add(updateLifeBar);
+        
         panel1.add(bagButton); 
-        panel1.add(moneyLabel);
-        panel1.add(weightLabel); 
+        
+        updateMoneyLabel = new JLabel ("Money : "+game.getPlayer().getMoney()+" pieces", JLabel.CENTER);
+        panel1.add(updateMoneyLabel);
+        
+        updateWeightLabel = new JLabel ("Weight available in your bag : "+game.getPlayer().getTotalWeight(), JLabel.CENTER);
+        panel1.add(updateWeightLabel); 
         
         panel1.revalidate();
         panel1.repaint(); 
