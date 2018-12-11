@@ -22,24 +22,32 @@ public class InterfacePets
      */
     public InterfacePets(Game game,Pet petroom)
     {
+     
       
        panel1 = new JPanel(); 
        pet= petroom;
        
-       label1 = new JLabel("*** THANK YOU FOR YOUR VISIT AND TAKING SOME TIMES FOR ME ***  I AM" +pet.getName()+ " *** HERE A RECOMPENSE***",JLabel.CENTER);
+       label1 = new JLabel("",JLabel.CENTER);
+       label1.setText("<html><center>***Welcome on the planet "+
+       game.getPlayer().getCurrentRoom().getPlanet().getPlanetName()+
+       "*** <br> I am " +pet.getName()+"."+
+       "The current temperature is " +game.getPlayer().getCurrentRoom().getPlanet().getTemperature()+" °c."+
+       " Warning you have " +game.getPlayer().getCurrentRoom().getPlanet().getTime()+ "  minutes to succeed." + "<br>"+
+         " Here is a small reward to start the quest on this planet</center></html>");
        Icon imagePets = new ImageIcon("pets/"+pet.getName()+".jpg");
+      
        label2 = new JLabel(imagePets,JLabel.CENTER);
-       button1 = new JButton("GOODBYE"); 
+       button1 = new JButton("GOOD LUCK"); 
        panel1.setLayout(new BorderLayout());
        
-       Font f = new Font("Serif", Font.PLAIN, 29); 
+       Font f = new Font("Serif", Font.PLAIN, 12); 
        
        label1.setFont(f);
        panel1.add(label1,BorderLayout.NORTH);
    
        panel1.add(label2,BorderLayout.CENTER);
        panel1.add(button1,BorderLayout.SOUTH);
-     
+      
     }
 
     public JPanel getPanelPet(){
