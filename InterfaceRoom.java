@@ -3,6 +3,7 @@ import javax.swing.*;
 import java.awt.event.*;
 import javax.swing.ImageIcon;
 import java.util.*;
+
 /**
  * Write a description of class InterfaceRoom here.
  *
@@ -11,11 +12,12 @@ import java.util.*;
  */
 public class InterfaceRoom extends JPanel
 {
-    private Game myGame;
-    private Room myRoom;
-    private Player myPlayer;
-    private JPanel myRoomPanel;
-    private ArrayList<JButton> myRoomButtons;
+    private Game myGame;                      //The game
+    private Room myRoom;                      //The actual room of the player
+    private Player myPlayer;                  //The actual player
+    private JPanel myRoomPanel;               //The JPanel for the Room interface 
+    private ArrayList<JButton> myRoomButtons; //The list of possible directions buttons which correspond to all exits possible of
+    //the current room of the player.
 
     /**
      * Constructor for objects of class InterfaceRoom
@@ -27,19 +29,15 @@ public class InterfaceRoom extends JPanel
         updateInterfaceRoom(newGame);
     }
 
+    
     public void updateInterfaceRoom(Game myGame)
     {
-        //Get the room panel at the moment when he click on the button
-        myPlayer = myGame.getPlayer();
-        myRoom = myGame.getPlayer().getCurrentRoom();
-        myRoomButtons = new ArrayList <JButton>();
-
         //Clear the room buttons panel
         myRoomPanel.removeAll();
+        //Clear all exit buttons from the precedent room
+        myRoomButtons.clear();
         //Get the current room of the player after his moove
         myRoom = myGame.getPlayer().getCurrentRoom();
-        //Create a new list of possible directions buttons which correspond to all exits possible of his new room
-        myRoomButtons.clear();
         //Iterate over all exits possible for this new room where the player is now after he moved
         for (int y=0; y < myRoom.getNameDoor().size(); y++)
         {
@@ -47,11 +45,11 @@ public class InterfaceRoom extends JPanel
             JButton btn = new JButton(myRoom.getNameDoor().get(y));
             //Add the button to the interface
             myRoomPanel.add(btn);
+            //Add the button to the list of buttons
             myRoomButtons.add(btn);
             //Link the button with all the actions performed where he moved to perform them for next player moove
             btn.addActionListener(new MoveListener(myGame));
-
-        };
+        }
         //Reload the room buttons panel
         myRoomPanel.revalidate();
         myRoomPanel.repaint();
@@ -61,7 +59,7 @@ public class InterfaceRoom extends JPanel
     { 
         return myRoomPanel;
     }
-    
+
     public ArrayList<JButton> getButtonsList()
     { 
         return myRoomButtons;
