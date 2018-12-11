@@ -10,7 +10,8 @@ import java.util.*;
  */
 public class GameListener extends JPanel implements ActionListener
 {
-    private Game myGame; 
+    private Game myGame;
+    private InterfacePets panelOfPets;
     /**
      * Constructor for objects of class CharListener
      */
@@ -25,12 +26,14 @@ public class GameListener extends JPanel implements ActionListener
      */
     public void actionPerformed (ActionEvent e)
     {
-                    if (e.getSource() ==  myGame.getInterfaceGame().getInterfaceChar().getPetButton()){
-                myGame.getInterfaceGame().getPanelDescription().removeAll();
-                myGame.getInterfaceGame().getPanelDescription().add(myGame.getInterfaceGame().getInterfacePet().getPanelPet()); 
-                myGame.getInterfaceGame().getPanelDescription().revalidate();
-                myGame.getInterfaceGame().getPanelDescription().repaint();
-            }
-        
-}
+        if (e.getSource() ==  myGame.getInterfaceGame().getInterfaceChar().getPetButton()){
+            Pet recupPet = myGame.getPlayer().getCurrentRoom().getPet();
+            panelOfPets = new InterfacePets(myGame);
+            myGame.getInterfaceGame().getPanelDescription().removeAll();
+            myGame.getInterfaceGame().getPanelDescription().add(myGame.getInterfaceGame().getInterfacePet().getPanelPet()); 
+            myGame.getInterfaceGame().getPanelDescription().revalidate();
+            myGame.getInterfaceGame().getPanelDescription().repaint();
+        }
+
+    }
 }
