@@ -13,6 +13,7 @@ public class InterfacePlayer extends JPanel implements ActionListener
 {
     //declaration of the variables
     //private JFrame myFrame;
+    private Game game;
     private JLabel descriptionLabel, roomLabel, moneyLabel, weightLabel, playerLabel, picture;
     private JButton bagButton;
     private JPanel panel1, panel2, panelFinalPlayer, panel3; 
@@ -23,7 +24,10 @@ public class InterfacePlayer extends JPanel implements ActionListener
      */
     public InterfacePlayer(Game game)
     {
+        this.game = game;
         bagButton = new JButton ("BAG");
+        bagButton.addActionListener(new HandleBagButtonPressed(game));
+
         playerLabel = new JLabel ("Name : "+game.getPlayer().getName(), JLabel.CENTER);
         roomLabel = new JLabel ("You are in the room : "+ game.getPlayer().getCurrentRoom().getName(), JLabel.CENTER);
         moneyLabel = new JLabel ("Money : "+game.getPlayer().getMoney()+" pieces", JLabel.CENTER);
@@ -57,9 +61,9 @@ public class InterfacePlayer extends JPanel implements ActionListener
     }
     
     public void actionPerformed(ActionEvent e){
-        //if (e.getSource() == bagButton){
-          //visualisation de la liste des items dans le panel de Marie et Aurele  
-        //}
+        game.getInterfaceGame().getInterfaceItem().showList(
+            game.getPlayer().getListItems()
+        );
     }
     
     public JPanel getPanelPlayer(){
