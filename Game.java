@@ -244,7 +244,6 @@ public class Game
         chestGamma4.addItem(diamond2 = new Item("Wonderful diamond", 250, 30, "I am a wonderful brillant diamond"));
         chestGamma6.addItem(engine = new Item("engine", 500, 50, "I am the engine of your vessel"));
 
-        
         //Add the pets to the rooms
         alpha1.addCharacter(petAlpha1 = new Pet ("Bamby", 1000000, 10000, alpha1, "fawn")); 
         delta1.addCharacter(petDelta1 = new Pet ("Dolly", 1000000, 10000, delta1, "ship")); 
@@ -276,31 +275,6 @@ public class Game
     public List<Planet> getListPlanet()
     {
         return this.listPlanet; 
-    }
-
-    /**
-     * Start a timer when the player changing room, with a limited time which correspond to the time available in the
-     * planet. If the player keeps too long on the planet, he is killed.
-     **/
-    public void startTimer()
-    {
-        Room currentRoom = getPlayer().getCurrentRoom();
-        Room room_during_timer = currentRoom;
-        long original = System.currentTimeMillis();
-        while (room_during_timer == currentRoom) {
-            room_during_timer = getPlayer().getCurrentRoom(); 
-            time_less = (getPlayer().getCurrentRoom().getPlanet().getTime()*1000) - (System.currentTimeMillis() - original);
-            if (time_less <= 0) {
-                getPlayer().looseHP(100);
-                break;
-            }
-            try 
-            {
-                Thread.sleep(1000);
-            } 
-            catch(InterruptedException e)
-            {}
-        } 
     }
 }    
 
