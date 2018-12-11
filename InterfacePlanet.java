@@ -70,6 +70,9 @@ public class InterfacePlanet extends JPanel implements ActionListener
         // myPanel2.add(descriptionLabel);
         // myPanel2.add(timeLabel);
         
+        myPanel2.add(planetLabel);
+        myPanel2.add(descriptionLabel);
+        myPanel2.add(timeLabel);
         myPanel2.revalidate();
         myPanel2.repaint(); 
  
