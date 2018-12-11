@@ -51,6 +51,8 @@ public class MoveListener extends JPanel implements ActionListener
         //ON INTERFACE MAP PANEL
         myGame.getInterfaceGame().getInterfaceMap().updateInterfaceMap(myGame);
         
+        //ON INTERFACE PLANET PANEL
+        myGame.getInterfaceGame().getInterfacePlanet().updateInterfacePlanet(myGame);
 
         //ON INTERFACE PLAYER PANEL
         myGame.getInterfaceGame().getInterfacePlayer().updateInterfaceRoom(myGame);
