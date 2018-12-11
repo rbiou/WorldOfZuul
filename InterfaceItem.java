@@ -32,11 +32,13 @@ public class InterfaceItem extends JPanel implements ActionListener
         itemBox = new JComboBox();
         //Création du LabelItem
         labelItem = new JLabel ("List of item on your bag");
+        labelItem.setHorizontalAlignment(JLabel.CENTER);
         labelItem.setBorder(BorderFactory.createLineBorder(Color.BLACK));
         labelItem.add(itemBox);
         itemBox.addActionListener(this);
      
         labelDescription = new JLabel("Description item");
+        labelDescription.setHorizontalAlignment(JLabel.CENTER);
         labelDescription.setBorder(BorderFactory.createLineBorder(Color.BLACK));
         labelImage = new JLabel(imageItem);
         
