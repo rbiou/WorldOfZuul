@@ -56,6 +56,6 @@ public class MoveListener extends JPanel implements ActionListener
         myGame.getInterfaceGame().getInterfacePlayer().updateInterfaceRoom(myGame);
         
         //ON TIMER
-        MyTimer.main(myGame);
+        //MyTimer.main(myGame);
     }
 }
