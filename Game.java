@@ -282,11 +282,10 @@ public class Game
     }
     
     /**
-     * Start a chronometer when the player changing room, with a limited time which correspond to the time available in the
+     * Start a timer when the player changing room, with a limited time which correspond to the time available in the
      * planet. If the player keeps too long on the planet, he is killed.
-     * @param   timeInSec : the time in second available in the current planet
      **/
-    public void startChrono()
+    public void startTimer()
     {
         Room currentRoom = getPlayer().getCurrentRoom();
         Room room_during_timer = currentRoom;

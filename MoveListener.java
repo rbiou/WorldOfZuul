@@ -45,10 +45,13 @@ public class MoveListener extends JPanel implements ActionListener
             };
         };
         
-        // ON INTERFACE CHARACTER PANEL
+        //ON INTERFACE CHARACTER PANEL
         myGame.getInterfaceGame().getInterfaceChar().modButton();
         
         //ON INTERFACE MAP PANEL
         myGame.getInterfaceGame().getInterfaceMap().updateInterfaceMap(myGame);
+        
+        //ON TIMER FOR THE NEW ROOM
+        myGame.startTimer();
     }
 }
