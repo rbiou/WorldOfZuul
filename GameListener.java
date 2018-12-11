@@ -12,7 +12,7 @@ public class GameListener extends JPanel implements ActionListener
 {
     private Game myGame;
     private InterfacePets panelOfPets;
-    //private InterfaceMonster panelOfMonster;
+    private InterfaceMonster panelOfMonster;
     /**
      * Constructor for objects of class CharListener
      */
@@ -36,7 +36,8 @@ public class GameListener extends JPanel implements ActionListener
 
         else if (e.getSource() ==  myGame.getInterfaceGame().getInterfaceChar().getMonsterButton()){
             Monster recupMonster = myGame.getPlayer().getCurrentRoom().getMonster();
-            //panelOfMonster = new InterfaceMonster(myGame, recupMonster);
+            panelOfMonster = new InterfaceMonster(myGame, recupMonster);
+            myGame.getInterfaceGame().getInterfaceDescription().updatePanelDescription(panelOfMonster.getPanel1());
         }
 
         else if (e.getSource() ==  myGame.getInterfaceGame().getInterfaceChar().getChestButton()){
