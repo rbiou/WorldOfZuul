@@ -15,7 +15,9 @@ public class InterfaceItem extends JPanel implements ActionListener
     private JLabel labelImage,labelDescription, labelItem;;
     private ImageIcon imageItem;
     private JPanel panel1,panelFinal;
-    private JComboBox list;
+    private JComboBox itemBox;
+    private ArrayList<Item> itemList;
+    private Item selectedItem;
     /**
      * Constructor for objects of class InterfaceItem
      */
@@ -27,20 +29,17 @@ public class InterfaceItem extends JPanel implements ActionListener
         Icon imageItem = new ImageIcon(name+".png");
        
          // Cration List
-        list = new JComboBox();
-
-        // for (Item item: items){
-        //     list.addItem(item.getName());
-        // }
-
+        itemBox = new JComboBox();
         //Création du LabelItem
         labelItem = new JLabel ("List of item on your bag");
-       
-        labelItem.add(list);
-        
+        labelItem.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+        labelItem.add(itemBox);
+        itemBox.addActionListener(this);
+     
         labelDescription = new JLabel("Description item");
+        labelDescription.setBorder(BorderFactory.createLineBorder(Color.BLACK));
         labelImage = new JLabel(imageItem);
-       
+        
         // panel 1 en bas
         panel1 = new JPanel();
         panel1.setLayout(new GridLayout (1,2));
@@ -50,15 +49,34 @@ public class InterfaceItem extends JPanel implements ActionListener
        
         //Creation panel Final
         panelFinal = new JPanel();
-        panelFinal.setLayout(new GridLayout(2,1));
+        panelFinal.setLayout(new GridLayout(2, 1));
+        panelFinal.add(labelImage);
         panelFinal.add(panel1);
-
     }
     
     public void actionPerformed(ActionEvent e){
+        int itemNumber = itemBox.getSelectedIndex();
+        Item item = itemList.get(itemNumber);
+        imageItem = new ImageIcon(item.getName()+".png");
+        labelDescription.setText(item.getDescription());
     }
 
     public JPanel getPanel(){
         return panelFinal;
+    }
+
+    public void showList(ArrayList<Item> items){
+        itemList = items;
+        int n = itemBox.getItemCount();
+        for(int i=0;i<n;i++){
+            itemBox.removeItemAt(0);
+        }
+        for (Item item: items){
+            itemBox.addItem(item.getName());
+        }
+    }
+
+    public Item getSelectedItem(){
+        return selectedItem;
     }
 }
