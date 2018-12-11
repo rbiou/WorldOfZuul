@@ -11,34 +11,59 @@ import java.util.*;
  */
 public class InterfaceRoom extends JPanel
 {
-    private JButton button1,button2,button3,button4;
     private Game myGame;
     private Room myRoom;
     private Player myPlayer;
-    private JPanel myPanel;
-    private ArrayList<JButton> button; 
+    private JPanel myRoomPanel;
+    private ArrayList<JButton> myRoomButtons;
+
     /**
      * Constructor for objects of class InterfaceRoom
      */
     public InterfaceRoom(Game newGame)
     {
-        myGame = newGame ;
+        myRoomPanel = new JPanel();
+        myRoomButtons = new ArrayList <JButton>();
+        updateInterfaceRoom(newGame);
+    }
+
+    public void updateInterfaceRoom(Game myGame)
+    {
+        //Get the room panel at the moment when he click on the button
         myPlayer = myGame.getPlayer();
         myRoom = myGame.getPlayer().getCurrentRoom();
-        myPanel = new JPanel();
-        button = new ArrayList <JButton>();
+        myRoomButtons = new ArrayList <JButton>();
 
-        for (int i=0; i < myRoom.getNameDoor().size(); i++)
+        //Clear the room buttons panel
+        myRoomPanel.removeAll();
+        //Get the current room of the player after his moove
+        myRoom = myGame.getPlayer().getCurrentRoom();
+        //Create a new list of possible directions buttons which correspond to all exits possible of his new room
+        myRoomButtons.clear();
+        //Iterate over all exits possible for this new room where the player is now after he moved
+        for (int y=0; y < myRoom.getNameDoor().size(); y++)
         {
-            JButton btn = new JButton(myRoom.getNameDoor().get(i));
-            myPanel.add(btn);
-            button.add(btn);
-            btn.addActionListener(new MoveListener(myGame,button));
+            //Create the button for each new exit
+            JButton btn = new JButton(myRoom.getNameDoor().get(y));
+            //Add the button to the interface
+            myRoomPanel.add(btn);
+            myRoomButtons.add(btn);
+            //Link the button with all the actions performed where he moved to perform them for next player moove
+            btn.addActionListener(new MoveListener(myGame));
+
         };
-    };
+        //Reload the room buttons panel
+        myRoomPanel.revalidate();
+        myRoomPanel.repaint();
+    }
 
     public JPanel getPanelRoom()
     { 
-        return myPanel;
+        return myRoomPanel;
+    }
+    
+    public ArrayList<JButton> getButtonsList()
+    { 
+        return myRoomButtons;
     }
 };
