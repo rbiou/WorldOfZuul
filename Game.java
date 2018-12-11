@@ -41,7 +41,7 @@ public class Game
     private InterfaceGame interfaceGame;
     private Item engine, propellant, windows, wheel;
     private long time_less;
-    
+
     /**
      * Constructeur d'objets de classe Game
      */
@@ -51,7 +51,7 @@ public class Game
         createWorld();
         interfaceGame = new InterfaceGame(this);
     }
-    
+
     /**
      * this method allows you to quit the game
      */
@@ -61,12 +61,12 @@ public class Game
         && player.getListItems().contains(windows) && player.getListItems().contains(wheel)){ 
             //you have win
         }
-        
+
         if (player.getLP() == 0){
             //stop the game
         }
     }
-    
+
     /**
      * this method allows you to open the game
      */
@@ -74,20 +74,20 @@ public class Game
     {
         //
     }
-    
+
     public ArrayList<Planet> getPlanet() {
         return listPlanet; 
     }
-    
+
     public Player getPlayer() {
         return player;
     }
-    
+
     public InterfaceGame getInterfaceGame() {
         return interfaceGame;
     }
-    
-     /**
+
+    /**
      * the method allows you to create the World of our game
      */
     public void createWorld()
@@ -103,39 +103,39 @@ public class Game
         listPlanet.add(gamma);
         listPlanet.add(delta);
         listPlanet.add(startP);
-     
+
         //creation of the rooms in each planet according to the map that we defined
         Room start, alpha1, alpha2, alpha3, beta1, beta2, beta3, beta4, beta5, delta1, delta2, delta3, delta4, gamma1, gamma2, gamma3,
         gamma4, gamma5, gamma6; //decalration of the room
-        
+
         start = new Room("start", startP);
-        
+
         // creation of the player
         player = new Player("Tintin",200,start); 
         start.addCharacter(player);
-        
+
         alpha.addRoom(alpha1 = new Room("alpha1", alpha)); 
         alpha.addRoom(alpha2 =new Room("alpha2", alpha)); 
         alpha.addRoom(alpha3 =new Room("alpha3", alpha)); 
-        
+
         beta.addRoom(beta1 = new Room("beta1", beta)); 
         beta.addRoom(beta2 = new Room("beta2", beta));
         beta.addRoom(beta3 = new Room("beta3", beta));
         beta.addRoom(beta4 = new Room("beta4", beta));
         beta.addRoom(beta5 = new Room("beta5", beta));
-        
+
         delta.addRoom(delta1 = new Room("delta1", delta));
         delta.addRoom(delta2 =new Room("delta2", delta));
         delta.addRoom(delta3 =new Room("delta3", delta));
         delta.addRoom(delta4 =new Room("delta4", delta));
-        
+
         gamma.addRoom(gamma1 = new Room("gamma1", gamma));
         gamma.addRoom(gamma2 = new Room("gamma2", gamma));
         gamma.addRoom(gamma3 = new Room("gamma3", gamma));
         gamma.addRoom(gamma4 = new Room("gamma4", gamma));
         gamma.addRoom(gamma5 = new Room("gamma5", gamma));
         gamma.addRoom(gamma6 = new Room("gamma6", gamma));
-        
+
         //declaration of the doors that will be added to the alpha planet
         Door startSouth, alpha1North, alpha1East, alpha1South, alpha2West, alpha2South, alpha3South, alpha3West, alpha3North;
         LockedDoor alpha3East; 
@@ -150,7 +150,7 @@ public class Game
         Door gamma1North, gamma1South, gamma2North, gamma3North, gamma3South, 
         gamma3East, gamma4West, gamma4South, gamma6South, gamma5North, gamma5West; 
         LockedDoor gamma2South, gamma4North; 
-        
+
         //creation of the door and they are added to the room for the alpha planet
         start.setExit("Smurfette",startSouth = new Door(alpha1)); 
         alpha1.setExit("Papa Smurf", alpha1North = new Door(start));
@@ -162,7 +162,7 @@ public class Game
         alpha3.setExit("Jokey Smurf", alpha3West = new Door(alpha1));
         alpha3.setExit("Chef Smurf", alpha3South = new Door(delta1));
         alpha3.setExit("Vanity Smurf", alpha3East = new LockedDoor(beta1, "square"));
-        
+
         //creation of the door and they are added to the room for the delta planet
         delta1.setExit("Handy Smurf", delta1North = new Door(alpha3));
         delta1.setExit("Scaredy Smurf", delta1South = new Door(delta2));
@@ -171,8 +171,7 @@ public class Game
         delta3.setExit("Harmony Smurf", delta3West = new Door(delta2));    
         delta3.setExit("Painter Smurf", delta3South = new Door(delta4));       
         delta4.setExit("Poet Smurf", delta4North = new Door(delta3));    
-           
-        
+
         //creation of the door and they are added to the room for the beta planet
         beta1.setExit("Farmer Smurf", beta1West = new Door(alpha3));
         beta1.setExit("Natural Smurf", beta1South = new Door(beta3));
@@ -186,7 +185,7 @@ public class Game
         beta4.setExit("Architect Smurf", beta4South = new LockedDoor(beta5, "triangle"));
         beta5.setExit("Baker Smurf", beta5North = new Door(beta4));
         beta5.setExit("Clockwork Smurf", beta5South = new Door(gamma1));
-        
+
         //creation of the door and they are added to the room for the gamma planet
         gamma1.setExit("Dabbler Smurf", gamma1North = new Door(beta5));
         gamma1.setExit("Doctor Smurf", gamma1South = new Door(gamma2));
@@ -201,14 +200,14 @@ public class Game
         gamma5.setExit("Nosey Smurf", gamma5North = new Door(gamma4));
         gamma5.setExit("Editor Smurf", gamma5West = new Door(gamma3));
         gamma6.setExit("Reflection Smurf", gamma6South = new Door( gamma4));
-        
+
         //Add the monster in the rooms
         Monster monster1, monster2, monster3, monster4; //declaration of the monsters
         alpha2.addCharacter(monster1 = new Monster("Godzilla", 10000, 56,alpha2, "What is the capital of Bulgaria?", "Sofia")); 
         beta3.addCharacter(monster2 = new Monster("Yoda", 10000, 56,beta3, "Who is the best friend of Dora", "Babouch")); 
         delta3.addCharacter(monster3 = new Monster("Darkness", 10000, 56,delta3, "what is the date of the creation of the Mona Lisa", "1503")); 
         gamma6.addCharacter(monster4 = new Monster("Piranha", 10000, 56,gamma6, "What is the color of mikey's shoes", "yellow"));
-        
+
         //Declaration 
         Item knief1, magicBall1, magicBall2, diamond1;
         Item fork1, diamond2, knief2, fork2, diamond3, fork3; //Declaration of the item
@@ -217,8 +216,8 @@ public class Game
         Keys keyAlpha3, keyDelta2, keyBeta4, keyGamma2, keyGamma4; // declaration of the key to open the door
         Pet petAlpha1, petDelta1, petGamma1, petBeta1, petBeta4 ;// pets in the first room of the planet
         Seller sellerDelta2, sellerBeta2, sellerGamma3; //declaration of the sellers
-        
-         //Add the chests in the rooms
+
+        //Add the chests in the rooms
         alpha1.addChest(chestAlpha1 = new Chest("Bill",0,50, "Hello my name is Bob and you lose 50 HP",0,true));
         alpha3.addChest(chest1alpha3 = new Chest("Bob",0,50,"Hello my name is Bob",50,false));
         delta1.addChest(chest2delta1 = new Chest("Sully",0,50,"Hello my name is Sully",0,false));
@@ -231,8 +230,7 @@ public class Game
         gamma5.addChest(chestGamma5 = new Chest ("The best",0,50,"Hello my name is the best",50,false));
         gamma4.addChest(chestGamma4 = new Chest ("Magic",0,50,"Hello my name is magic",0,false)); 
         gamma6.addChest(chestGamma6 = new Chest ("Free",0,50,"Hello my name is free",50,false)); 
-        
-       
+
         //Add items in the chests
         chest1alpha3.addItem(knief1=new Item("Knieffy",50,5,"I am a knief, you can sell me to the sellers "));
         chest1alpha3.addItem(magicBall2=new Item("MiniBall",100,10,"I am a MagicBall, you can sell me to the sellers "));
@@ -245,8 +243,7 @@ public class Game
         chestGamma5.addItem(propellant = new Item("propellant", 500, 50, "I am a the propellant of your vessel"));
         chestGamma4.addItem(diamond2 = new Item("Wonderful diamond", 250, 30, "I am a wonderful brillant diamond"));
         chestGamma6.addItem(engine = new Item("engine", 500, 50, "I am the engine of your vessel"));
-        
-         
+
         
         //Add the pets to the rooms
         alpha1.addCharacter(petAlpha1 = new Pet ("Bamby", 1000000, 10000, alpha1, "fawn")); 
@@ -254,12 +251,12 @@ public class Game
         gamma1.addCharacter(petGamma1 = new Pet ("Pumba", 1000000, 10000, gamma1, "pig")); 
         beta1.addCharacter(petBeta1 = new Pet ("Winnie", 1000000, 10000, delta1, "bear"));
         beta4.addCharacter(petBeta4= new Pet ("Timon", 1000000, 10000, delta4, "mongouste"));
-        
-         //Add the sellers to the rooms
+
+        //Add the sellers to the rooms
         delta2.addCharacter(sellerDelta2 = new Seller ("Dumbledore", 15000, 200, delta2));
         beta2.addCharacter(sellerBeta2 = new Seller ("Hagrid", 15000, 200, beta2));
         gamma3.addCharacter(sellerGamma3 = new Seller("Harry Potter", 15000, 500, gamma3));
-        
+
         //Add items to the sellers
         sellerDelta2.addItem(keyDelta2 = new Keys("Yellow key",300,20,"I am a key, I can open the door Sloppy Smurf", "circle"));
         sellerBeta2.addItem(magicBall1 = new Item ("flackball",100,30,"I am a diamond, you can buy me"));
@@ -270,7 +267,7 @@ public class Game
         sellerDelta2.addItem(diamond3 = new Item("Special diamond", 250, 30, "I am a special diamond, you can buy me to see why I am special"));
         sellerDelta2.addItem(fork3 = new Item("Special fork", 3, 5, "I am a special fork, you can buy me to see why I am special"));
     }
-   
+
     /**
      * Getter to return the name of the room
      * 
@@ -280,7 +277,7 @@ public class Game
     {
         return this.listPlanet; 
     }
-    
+
     /**
      * Start a timer when the player changing room, with a limited time which correspond to the time available in the
      * planet. If the player keeps too long on the planet, he is killed.
@@ -297,7 +294,13 @@ public class Game
                 getPlayer().looseHP(100);
                 break;
             }
+            try 
+            {
+                Thread.sleep(1000);
+            } 
+            catch(InterruptedException e)
+            {}
         } 
     }
 }    
-    
+
