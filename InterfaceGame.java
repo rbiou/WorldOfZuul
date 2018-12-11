@@ -135,5 +135,11 @@ public class InterfaceGame extends JFrame implements ActionListener
     public JPanel getPanelPlayer(){
         return panelPlayer;
     }
+
+    public InterfaceItem getIterfaceItem()
+    {
+        return panelItems;
+    }
+
 }
 
