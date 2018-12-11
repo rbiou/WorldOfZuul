@@ -27,21 +27,27 @@ public class InterfaceChar extends JFrame
         sellerButtonSell = new JButton("Sell something");
         petButton = new JButton("Pet");
         chestButton = new JButton("Chest"); 
+        
         monsterButton.setBackground(Color.gray);
         monsterButton.setForeground(Color.white);
+        monsterButton.setEnabled(false);
 
         sellerButtonBuy.setBackground(Color.gray);
         sellerButtonBuy.setForeground(Color.white);
-
+        sellerButtonBuy.setEnabled(false);
+        
         sellerButtonSell.setBackground(Color.gray);
         sellerButtonSell.setForeground(Color.white);
-
+        sellerButtonSell.setEnabled(false);
+        
         petButton.setBackground(Color.gray);
         petButton.setForeground(Color.white);
-
+        petButton.setEnabled(false);
+        
         chestButton.setBackground(Color.gray);
         chestButton.setForeground(Color.white);
-
+        chestButton.setEnabled(false); 
+        
         panelSeller = new JPanel();
         panelSeller.setLayout(new GridLayout(1,3));
         panelSeller.add(labelSeller); 
@@ -81,41 +87,42 @@ public class InterfaceChar extends JFrame
     }
 
     public void modButton(){
-        //check if there is a Monster in the room
+        
+        //check if there is a Monster in the room    
         if (myGame.getPlayer().getCurrentRoom().getMonster() != null) {
-            myGame.getInterfaceGame().getInterfaceChar().getMonsterButton().setEnabled(true);
+            monsterButton.setEnabled(true);
         }
         else {
-            myGame.getInterfaceGame().getInterfaceChar().getMonsterButton().setEnabled(false);
+            monsterButton.setEnabled(false);
         }
 
         //check if there is a seller in the room
         if (myGame.getPlayer().getCurrentRoom().getSeller() != null) {
             if (myGame.getPlayer().getMoney()>0) //check if the player has money to buy somthing
-                myGame.getInterfaceGame().getInterfaceChar().getSellerButtonBuy().setEnabled(true);
+                sellerButtonBuy.setEnabled(true);
 
             if (myGame.getPlayer().getListItems().size() > 0) //check if the player has items to sell
-                myGame.getInterfaceGame().getInterfaceChar().getSellerButtonSell().setEnabled(true);                        
+                sellerButtonSell.setEnabled(true);                        
         }
         else {
-            myGame.getInterfaceGame().getInterfaceChar().getSellerButtonBuy().setEnabled(false);
-            myGame.getInterfaceGame().getInterfaceChar().getSellerButtonSell().setEnabled(false);
+            sellerButtonBuy.setEnabled(false);
+            sellerButtonSell.setEnabled(false);
         }
 
         //check if there is a pet in the room
         if (myGame.getPlayer().getCurrentRoom().getPet() != null) {
-            myGame.getInterfaceGame().getInterfaceChar().getPetButton().setEnabled(true);
+            petButton.setEnabled(true);
         }
         else {
-            myGame.getInterfaceGame().getInterfaceChar().getPetButton().setEnabled(false);
+            petButton.setEnabled(false);
         }
 
         //check if there is a chest in the room
         if (myGame.getPlayer().getCurrentRoom().getChest() != null) {
-            myGame.getInterfaceGame().getInterfaceChar().getChestButton().setEnabled(true);
+            chestButton.setEnabled(true);
         }
         else {
-            myGame.getInterfaceGame().getInterfaceChar().getChestButton().setEnabled(false);
+            chestButton.setEnabled(false);
         }
     }
 }

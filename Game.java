@@ -111,6 +111,7 @@ public class Game
         
         // creation of the player
         player = new Player("Tintin",200,start); 
+        start.addCharacter(player);
         
         alpha.addRoom(alpha1 = new Room("alpha1", alpha)); 
         alpha.addRoom(alpha2 =new Room("alpha2", alpha)); 
