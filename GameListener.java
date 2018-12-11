@@ -1,0 +1,36 @@
+import java.awt.*;
+import javax.swing.*;
+import java.awt.event.*;
+import java.util.*;
+/**
+ * Write a description of class CharListener here.
+ *
+ * @author (group7)
+ * @version (11/12/18)
+ */
+public class GameListener extends JPanel implements ActionListener
+{
+    private Game myGame; 
+    /**
+     * Constructor for objects of class CharListener
+     */
+    public GameListener(Game theGame)
+    {
+        myGame = theGame;
+    }
+
+    /**
+     * 
+     *
+     */
+    public void actionPerformed (ActionEvent e)
+    {
+                    if (e.getSource() ==  myGame.getInterfaceGame().getInterfaceChar().getPetButton()){
+                myGame.getInterfaceGame().getPanelDescription().removeAll();
+                myGame.getInterfaceGame().getPanelDescription().add(myGame.getInterfaceGame().getInterfacePet().getPanelPet()); 
+                myGame.getInterfaceGame().getPanelDescription().revalidate();
+                myGame.getInterfaceGame().getPanelDescription().repaint();
+            }
+        
+}
+}

@@ -34,8 +34,8 @@ public class InterfacePlayer extends JPanel implements ActionListener
         lifeBar.setStringPainted(true); 
         lifeBar.setForeground(Color.red);
         //
-        Icon imagePlanet = new ImageIcon("avatar/avatar.jpg");
-        picture = new JLabel(imagePlanet, JLabel.CENTER);
+        Icon imageAvatar = new ImageIcon("avatar/avatar.jpg");
+        picture = new JLabel(imageAvatar, JLabel.CENTER);
         //
         panel1 = new JPanel(); 
         panel1.setLayout(new GridLayout (7,1));
