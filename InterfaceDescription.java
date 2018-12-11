@@ -17,7 +17,6 @@ public class InterfaceDescription extends JPanel
     public InterfaceDescription(Game game)
     {
         myGame = game; 
-        //updatePanelDescription(myGame.getInterfaceGame().getPanelDescription());
     }
 
     public void updatePanelDescription(JPanel panel){

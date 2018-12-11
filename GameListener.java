@@ -39,7 +39,7 @@ public class GameListener extends JPanel implements ActionListener
         }
 
         if (e.getSource() ==  myGame.getInterfaceGame().getInterfaceChar().getChestButton()){
-
+            myGame.getInterfaceGame().getInterfacePlayer().updateInterfaceRoom(myGame);
         }
 
         if (e.getSource() ==  myGame.getInterfaceGame().getInterfaceChar().getSellerButtonBuy()){
