@@ -40,7 +40,6 @@ public class Monster extends NonPlayerCharacter
      */
     public void attack(Player player)
     {
-        System.out.println("ATTACK !!!!!!!");
         player.looseHP(50);
     }
     
@@ -73,7 +72,6 @@ public class Monster extends NonPlayerCharacter
             {
                 player.addMoney(300);
                 this.removeMoney(300);
-                System.out.println("Well done ! You are very smart, you can continue your journey");
                 isResolved = true;
                 return true; 
             } 
@@ -85,5 +83,10 @@ public class Monster extends NonPlayerCharacter
     
     public boolean getIsResolved(){
         return isResolved; 
+    }
+    
+    public String getQuestion()
+    {
+    return question;
     }
 }
