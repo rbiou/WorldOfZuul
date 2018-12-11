@@ -66,21 +66,5 @@ public class MoveListener extends JPanel implements ActionListener
             };
         };
 
-        //ON MAP PANEL
-        //Get the map panel at the moment when he click on the button
-        myMapPanel = myGame.getInterfaceGame().getInterfaceMap().getPanelMap();
-        //Load the image map designed for this room
-        Icon imageMap = new ImageIcon(new ImageIcon("map/planet_"+myGame.getPlayer().getCurrentRoom().getPlanet().getPlanetName()+
-                    "_room_"+myGame.getPlayer().getCurrentRoom().getName()+".jpg").getImage().getScaledInstance(480, 270, Image.SCALE_DEFAULT));
-        //Load the new map on a new JLabel
-        myMap = new JLabel(imageMap, JLabel.CENTER);
-        //Clear the actual map panel to delete the precedent map
-        myMapPanel.removeAll();
-        //Add the new map to the map panel
-        myMapPanel.add(myMap);
-
-        //
-
-
     }
 }
