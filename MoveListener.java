@@ -33,7 +33,7 @@ public class MoveListener extends JPanel implements ActionListener
     public void actionPerformed (ActionEvent e)
     {
         //Actions occured when we change room
-
+        
         //ON ROOM PANEL
         //Iterate over all the actual directions buttons to know which button was pressed
         for (int i=0; i < myGame.getInterfaceGame().getInterfaceRoom().getButtonsList().size(); i++) {
@@ -52,7 +52,10 @@ public class MoveListener extends JPanel implements ActionListener
         myGame.getInterfaceGame().getInterfaceMap().updateInterfaceMap(myGame);
         
 
-        // ON INTERFACE PLAYER PANEL
+        //ON INTERFACE PLAYER PANEL
         myGame.getInterfaceGame().getInterfacePlayer().updateInterfaceRoom(myGame);
+        
+        //ON TIMER
+        MyTimer.main(myGame);
     }
 }
