@@ -10,7 +10,6 @@ import java.util.*;
  */
 public class CharListener extends JPanel implements ActionListener
 {
-    private int x;
     private Game myGame; 
     
     /**
