@@ -60,6 +60,7 @@ public class GameListener extends JPanel implements ActionListener
             InterfaceItem itemListPanel = myGame.getInterfaceGame().getInterfaceItem();
             itemListPanel.showList(player.getListItems());
             itemListPanel.getSellButton().setEnabled(true);
+            myGame.getInterfaceGame().getInterfaceDescription().updatePanelDescription(myGame.getInterfaceGame().getInterfaceItem());
         }
         
         else if (e.getSource() == myGame.getInterfaceGame().getInterfaceChar().getSellerButtonBuy())
@@ -68,6 +69,7 @@ public class GameListener extends JPanel implements ActionListener
             InterfaceItem itemListPanel = myGame.getInterfaceGame().getInterfaceItem();
             itemListPanel.showList(seller.getListItems());
             itemListPanel.getBuyButton().setEnabled(true);
+            myGame.getInterfaceGame().getInterfaceDescription().updatePanelDescription(myGame.getInterfaceGame().getInterfaceItem());
         }
     }
 }
