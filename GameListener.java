@@ -41,7 +41,7 @@ public class GameListener extends JPanel implements ActionListener
             Monster recupMonster = myGame.getPlayer().getCurrentRoom().getMonster();
             panelOfMonster = new InterfaceMonster(myGame, recupMonster);
             myGame.getInterfaceGame().getInterfaceDescription().updatePanelDescription(panelOfMonster.getPanel1());
-            myGame.getInterfaceGame().getInterfaceChar().getMonsterButton().setEnabled(false);
+            //myGame.getInterfaceGame().getInterfaceChar().getMonsterButton().setEnabled(false);
         }
 
         else if (e.getSource() ==  myGame.getInterfaceGame().getInterfaceChar().getChestButton()){

@@ -86,7 +86,7 @@ public class InterfaceGame extends JFrame implements ActionListener
         panelFinal.add(panelChar); 
         panelFinal.add(panelDescription);
         panelFinal.add(panelPlanet);
-
+        
         this.add(panelFinal); 
         this.pack();
         this.setVisible(true);

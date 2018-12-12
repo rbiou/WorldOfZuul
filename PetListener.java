@@ -1,33 +1,39 @@
+import java.awt.event.*;
+import javax.swing.*;
 
 /**
- * Décrivez votre classe PetListener ici.
+ * Décrivez votre classe Listener ici.
  *
- * @author (votre nom)
- * @version (un numéro de version ou une date)
+ * @author (Lagrange Romain)
+ * @version (5/12/2018)
  */
-public class PetListener
+public class PetListener implements ActionListener
 {
-    // variables d'instance - remplacez l'exemple qui suit par le vôtre
-    private int x;
-
+    // variables d'instance 
+    private InterfacePets interPet;
+    private Game myGame; 
+    
+    
     /**
-     * Constructeur d'objets de classe PetListener
+     * Constructeur d'objets de classe Listener
      */
-    public PetListener()
+    public PetListener(InterfacePets i, Game game)
     {
-        // initialisation des variables d'instance
-        x = 0;
+        interPet = i;
+        myGame = game;
     }
-
+    
     /**
-     * Un exemple de méthode - remplacez ce commentaire par le vôtre
-     *
-     * @param  y   le paramètre de la méthode
-     * @return     la somme de x et de y
+     * Action performed for the different buttons
      */
-    public int sampleMethod(int y)
-    {
-        // Insérez votre code ici
-        return x + y;
+    public void actionPerformed(ActionEvent e){
+        //check answer monster
+         if (e.getSource()== interPet.getButtonPet()){
+            
+             myGame.getInterfaceGame().getInterfaceDescription().updatePanelDescription(new JPanel());
+            }
+        }
     }
-}
+    
+             
+             
