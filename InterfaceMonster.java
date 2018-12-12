@@ -10,7 +10,7 @@ import java.util.*;
  * @MARLIAT Julien
  * @5/12/2018
  */
-public class InterfaceMonster extends JFrame
+public class InterfaceMonster extends JPanel
 {
     // variables d'instance - remplacez l'exemple qui suit par le vôtre
      private JPanel panel1, panelDroite, panelSouth, panelCenter, panelWin, panelLoose ;
@@ -19,7 +19,7 @@ public class InterfaceMonster extends JFrame
      private JButton buttonReponse;
      private ImageIcon monsterImage; 
      private Monster monster;
-     private JFrame myFrame;
+     
      private JTextField labelReponse;
      private Game game ;
     /**
@@ -49,7 +49,7 @@ public class InterfaceMonster extends JFrame
        labelReponse =  new JTextField();
        labelReponse.setColumns(20);
        buttonReponse = new JButton ("Validate my answer ! ");
-       buttonReponse.addActionListener(new MonsterListener(this));
+       buttonReponse.addActionListener(new GameListener(game));
        
        panelDroite = new JPanel();
        panelDroite.setLayout(new BorderLayout());
@@ -67,13 +67,7 @@ public class InterfaceMonster extends JFrame
        
        panel1.add(labelImage);
        panel1.add(panelDroite);
-       myFrame = new JFrame("Monster");
-       myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        
-       this.add(panel1);
-      
-       this.pack();
-       this.setVisible(true);
+       panel1.setVisible(true);
        
     }
     
@@ -113,15 +107,6 @@ public class InterfaceMonster extends JFrame
         return panel1; 
     }
     
-    /**
-     * Method used to actualize the actual panel displayed on the window
-     */
-    public void changerPanel(JPanel pan){
-        this.setContentPane(pan);
-        this.revalidate();
-        this.repaint();
-    }
-    
     public JButton getButtonReponse() {
         return buttonReponse;
     }
@@ -142,3 +127,4 @@ public class InterfaceMonster extends JFrame
         return panel1;
     }
 }
+
