@@ -16,7 +16,7 @@ public class InterfacePlanet extends JPanel implements ActionListener
     // variables d'instance - remplacez l'exemple qui suit par le vôtre
     //private JFrame myFrame;
     private JPanel myPanel2,myPanel1, panelPlanet;
-    private JLabel planetLabel, temperatureLabel, descriptionLabel, timeLabel, updatePlanetLabel;
+    private JLabel planetLabel,imagePlanetLabel, temperatureLabel, descriptionLabel, timeLabel, updatePlanetLabel;
     //private Planet planet;
     private Timer room_timer;
     private Game game;
@@ -31,13 +31,7 @@ public class InterfacePlanet extends JPanel implements ActionListener
         //myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         //myFrame.setLayout(new GridLayout(0,2));
         game = game;
-        Icon imagePlanet = new ImageIcon("planet.jpg");
-        JLabel imageplanetLabel = new JLabel(imagePlanet);
-
-        planetLabel = new JLabel("Nom: " + game.getPlayer().getCurrentRoom().getPlanet().getPlanetName(), JLabel.CENTER);
-        descriptionLabel = new JLabel("Description: " + game.getPlayer().getCurrentRoom().getPlanet().descriptionDisplayPlanet(), JLabel.CENTER);
-        timeLabel = new JLabel("Time: " + game.getPlayer().getCurrentRoom().getPlanet().getTime(), JLabel.CENTER);
-        
+          
         updateTimer(game.getPlayer().getCurrentRoom().getPlanet().getTime());
         
         myPanel1 = new JPanel();
@@ -45,22 +39,15 @@ public class InterfacePlanet extends JPanel implements ActionListener
 
         myPanel2 = new JPanel();
         myPanel2.setLayout(new GridLayout(3,1));
-        // myPanel2.add(planetLabel);
-        // myPanel2.add(descriptionLabel);
-        // myPanel2.add(timeLabel);
+        
 
         panelPlanet = new JPanel();
         panelPlanet.setLayout(new GridLayout (1,3));
-        panelPlanet.add(myPanel1);
-        panelPlanet.add(myPanel2);
+        
 
         updateInterfacePlanet(game);
 
-        //myFrame.add(myPanel1);
-        //myFrame.add(myPanel2);
-
-        //myFrame.pack();
-        //myFrame.setVisible(true);
+       
     }
 
     public void updateInterfacePlanet(Game game){
@@ -74,15 +61,23 @@ public class InterfacePlanet extends JPanel implements ActionListener
         
         updateTimer(game.getPlayer().getCurrentRoom().getPlanet().getTime());
         
-        // myPanel2.add(planetLabel);
-        // myPanel2.add(descriptionLabel);
-        // myPanel2.add(timeLabel);
 
         myPanel2.add(planetLabel);
         myPanel2.add(descriptionLabel);
         myPanel2.add(timeLabel);
         myPanel2.revalidate();
         myPanel2.repaint(); 
+        
+        myPanel1.removeAll();
+        Icon imagePlanet = new ImageIcon(new ImageIcon("planet/planet_"+game.getPlayer().getCurrentRoom().getPlanet().getPlanetName()+
+        ".png").getImage().getScaledInstance(200, 200, Image.SCALE_DEFAULT));
+        imagePlanetLabel = new JLabel(imagePlanet);
+        myPanel1.add(imagePlanetLabel);
+        
+        myPanel1.revalidate();
+        myPanel1.repaint();
+        panelPlanet.add(myPanel1);
+        panelPlanet.add(myPanel2);
 
     }
 
