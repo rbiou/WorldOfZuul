@@ -162,8 +162,7 @@ public class InterfaceGame extends JFrame implements ActionListener
     public JMenuItem getQuitMenuItem(){
         return menu2; 
     }
-
-<<<<<<< HEAD
+    
     public void popUpWin(){
         JOptionPane win = new JOptionPane();      
         option = win.showConfirmDialog(null, 
@@ -185,11 +184,9 @@ public class InterfaceGame extends JFrame implements ActionListener
             gamebis.resetGame();
         }
     }
-}
-=======
-    public JFrame getGameFrame(){
+    
+ public JFrame getGameFrame(){
         return gameFrame;
     }
 }
 
->>>>>>> 5e1560730f0d9ef0b7fe7104f67df0c824dd192e
