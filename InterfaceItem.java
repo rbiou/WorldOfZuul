@@ -12,9 +12,9 @@ import javax.swing.JComboBox;
  */
 public class InterfaceItem extends JPanel implements ActionListener
 {
-    private JLabel labelImage,labelDescription, labelItem;
+    private JLabel labelImage,labelDescription;
     private ImageIcon imageItem;
-    private JPanel panel1, panel2,panelFinal;
+    private JPanel panel1, panel2,panel3,panelFinal;
     private JComboBox itemBox;
     private ArrayList<Item> itemList;
     private Item selectedItem;
@@ -38,28 +38,16 @@ public class InterfaceItem extends JPanel implements ActionListener
         
         // Creation List
         itemBox = new JComboBox();
-        
-        //Création du LabelItem
-        labelItem = new JLabel ("List of item on your bag");
-        labelItem.setHorizontalAlignment(JLabel.CENTER);
-        labelItem.setBorder(BorderFactory.createLineBorder(Color.BLACK));
-        labelItem.setOpaque(true);
-        labelItem.setBackground(Color.PINK);
-
-        labelItem.add(itemBox);
         itemBox.addActionListener(this);
-     
-        labelDescription = new JLabel();
-        labelDescription.setBorder(BorderFactory.createLineBorder(Color.BLACK));  // Border
-     
+        //Création du LabelItem
         
         labelImage = new JLabel(imageItem);
-        
+        labelDescription = new JLabel();
         
         // panel 1 en bas
         panel1 = new JPanel();
         panel1.setLayout(new GridLayout (1,2));
-        panel1.add(labelItem);
+        panel1.add(itemBox);
         panel1.add(labelDescription);
         //panel 2 
         panel2 = new JPanel();
@@ -67,12 +55,15 @@ public class InterfaceItem extends JPanel implements ActionListener
         panel2.add(buttonSell);
         panel2.add(buttonBuy);
        
+        panel3 = new JPanel();
+       
         //Creation panel Final
         panelFinal = new JPanel();
         panelFinal.setLayout(new GridLayout(3, 1));
         panelFinal.add(labelImage);
         panelFinal.add(panel1);
         panelFinal.add(panel2);
+        panelFinal.add(panel3);
     }
     
     
@@ -120,10 +111,10 @@ public class InterfaceItem extends JPanel implements ActionListener
     public void showList(ArrayList<Item> items){
         itemList = items;
         int n = itemBox.getItemCount();
-        for(int i=0;i<n;i++){
-            itemBox.removeItemAt(0);
-        }
+        System.out.println(n);
+        itemBox.removeAllItems();
         for (Item item: items){
+            System.out.println(item.getName());
             itemBox.addItem(item.getName());
         }
     }

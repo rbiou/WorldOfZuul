@@ -26,6 +26,7 @@ public class InterfaceGame extends JFrame implements ActionListener
     private InterfaceDescription panelOfDescription; 
     private InterfaceMonster panelOfMonster;
     private Game gamebis; 
+    private int option; 
     /**
      * Constructor for objects of class InterfaceGame
      */
@@ -56,7 +57,7 @@ public class InterfaceGame extends JFrame implements ActionListener
 
         panelDoor = new JPanel();
         panelDoor.setLayout(new GridLayout (1,1));
-        panelDoor.add(panelOfRoom.getPanelRoom());
+        panelDoor.add(panelOfRoom.getPanelFinal());
 
         panelMap = new JPanel();
         panelMap.setLayout(new GridLayout (1,1));
@@ -97,6 +98,7 @@ public class InterfaceGame extends JFrame implements ActionListener
             gamebis.resetGame();
         }
         if (e.getSource() ==  gamebis.getInterfaceGame().getQuitMenuItem()){
+            gamebis.getInterfaceGame().getInterfacePlanet().getRoomTimer().cancel();
             System.exit(0);
         }
     }
@@ -162,8 +164,34 @@ public class InterfaceGame extends JFrame implements ActionListener
         return menu2; 
     }
 
-    public JFrame getGameFrame(){
-        return gameFrame;
+    public void popUpWin(){
+        JOptionPane win = new JOptionPane();      
+        option = win.showConfirmDialog(null, 
+            "Congratulation you have win!! Now you can go on earth! \n  Do you want to start again ?", "WIN", 
+            JOptionPane.YES_NO_OPTION, 
+            JOptionPane.QUESTION_MESSAGE);
+        if (option == JOptionPane.OK_OPTION){
+            gamebis.resetGame();
+        }
+        else if (option == JOptionPane.NO_OPTION){
+            gamebis.getInterfaceGame().getInterfacePlanet().getRoomTimer().cancel();
+            System.exit(0);
+        }
+    }
+
+    public void popUpLose(){
+        JOptionPane win = new JOptionPane();      
+        option = win.showConfirmDialog(null, 
+            "Oh no you have lose!! \n  Do you want to start again ?", "LOSE", 
+            JOptionPane.YES_NO_OPTION, 
+            JOptionPane.QUESTION_MESSAGE);
+        if (option == JOptionPane.OK_OPTION){
+            gamebis.resetGame();
+        }
+        else if (option == JOptionPane.NO_OPTION){
+            gamebis.getInterfaceGame().getInterfacePlanet().getRoomTimer().cancel();
+            System.exit(0);
+        }
     }
 }
 
