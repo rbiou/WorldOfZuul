@@ -47,7 +47,7 @@ public class InterfaceGame extends JFrame implements ActionListener
     public InterfaceGame(Game game)
     {
         gamebis = game; 
-        
+
         //Instantation of objects from the different classes
         panelOfPlayer = new InterfacePlayer(game); 
         panelOfChar = new InterfaceChar(game);
@@ -56,12 +56,12 @@ public class InterfaceGame extends JFrame implements ActionListener
         panelOfRoom = new InterfaceRoom(game);
         panelOfPlanet = new InterfacePlanet(game);
         panelOfDescription = new InterfaceDescription(game);
-        
+
         //frame creation
         gameFrame = new JFrame ("GAME");
         gameFrame.setDefaultCloseOperation(gameFrame.DISPOSE_ON_CLOSE);
         menuBar = new JMenuBar(); 
-        
+
         //menu creation
         this.setJMenuBar(menuBar); 
         menuName = new JMenu("GAME"); 
@@ -72,27 +72,27 @@ public class InterfaceGame extends JFrame implements ActionListener
         menu2 = new JMenuItem ("Quit"); 
         this.menuName.add(menu2); 
         menu2.addActionListener(this);
-        
+
         //panel door = displays exits
         panelDoor = new JPanel();
         panelDoor.setLayout(new GridLayout (1,1));
         panelDoor.add(panelOfRoom.getPanelFinal());
-        
+
         //panel map = displays the map
         panelMap = new JPanel();
         panelMap.setLayout(new GridLayout (1,1));
         panelMap.add(panelOfMap.getPanelMap());
-        
+
         //panel player = displays information about the player
         panelPlayer = new JPanel();
         panelPlayer.setLayout(new GridLayout (1,1));
         panelPlayer.add(panelOfPlayer.getPanelPlayer()); 
-        
+
         //panel planet = displays information about the planet
         panelPlanet = new JPanel();
         panelPlanet.setLayout(new GridLayout (1,1));
         panelPlanet.add(panelOfPlanet.getPanelPlanet());
-        
+
         //panel description = display many information (interaction with characters)
         panelDescription = new JPanel(); 
         panelDescription.setLayout(new GridLayout (1,1));
@@ -101,7 +101,7 @@ public class InterfaceGame extends JFrame implements ActionListener
         panelChar = new JPanel(); 
         panelChar.setLayout(new GridLayout (1,1));
         panelChar.add(panelOfChar.getPanelChar());
-        
+
         //final panel = contains all the previous panel
         panelFinal = new JPanel(); 
         panelFinal.setLayout(new GridLayout (2,3));
@@ -111,7 +111,7 @@ public class InterfaceGame extends JFrame implements ActionListener
         panelFinal.add(panelChar); 
         panelFinal.add(panelDescription);
         panelFinal.add(panelPlanet);
-        
+
         //add the final panel to the frame and displays the frame
         this.add(panelFinal); 
         this.pack();
@@ -128,85 +128,154 @@ public class InterfaceGame extends JFrame implements ActionListener
         }
     }
 
+    /**
+     * Getter of the InterfaceMap
+     * @return InterfaceMap : panelOfMap
+     */
     public InterfaceMap getInterfaceMap()
     { 
         return panelOfMap;
     }
 
+    /**
+     * Getter of the InterfaceRoom
+     * @return InterfaceRoom : panelOfRoom
+     */
     public InterfaceRoom getInterfaceRoom()
     { 
         return panelOfRoom;
     }
 
+    /**
+     * Getter of the InterfacePlayer
+     * @return InterfacePlayer : panelOfPlayer
+     */
     public InterfacePlayer getInterfacePlayer()
     { 
         return panelOfPlayer;
     }
 
+    /**
+     * Getter of the InterfaceChar
+     * @return InterfaceChar : panelOfChar
+     */
     public InterfaceChar getInterfaceChar()
     { 
         return panelOfChar;
     }
 
+    /**
+     * Getter of the InterfacePet
+     * @return InterfacePet : panelOfPets
+     */
     public InterfacePets getInterfacePet()
     { 
         return panelOfPets;
     }
 
-    public JPanel getPanelDescription(){
-        return panelDescription;
-    }
-
-    public JPanel getPanelPlayer(){
-        return panelPlayer;
-    }
-
+    /**
+     * Getter of the InterfaceItem
+     * @return InterfaceItem : panelOfItem
+     */
     public InterfaceItem getInterfaceItem()
     {
         return panelItems;
     }
 
+    /**
+     * Getter of the InterfaceDescription
+     * @return InterfaceDescription : panelOfDescription
+     */
     public InterfaceDescription getInterfaceDescription()
     {
         return panelOfDescription;
     }
 
+    /**
+     * Getter of the InterfacePlanter
+     * @return InterfacePlanet : panelOfPlanet
+     */
     public InterfacePlanet getInterfacePlanet()
     {
         return panelOfPlanet;
     }
 
+    /**
+     * Getter of the InterfaceMonster
+     * @return InterfaceMonster : panelOfMonster
+     */
     public InterfaceMonster getInterfaceMonster()
     {
         return panelOfMonster;
     }
 
+    /**
+     * Getter of the RestartMenuItem
+     * @return JMenuItem : menu1
+     */
     public JMenuItem getRestartMenuItem(){
         return menu1; 
     }
 
+    /**
+     * Getter of the quittMenuItem
+     * @return JMenuItem : menu2
+     */
     public JMenuItem getQuitMenuItem(){
         return menu2; 
     }
 
+    /**
+     * Getter of the panelDescription
+     * @return JPanel : panelDescription
+     */
+    public JPanel getPanelDescription(){
+        return panelDescription;
+    }
+
+    /**
+     * Getter of the panelPlayer
+     * @return JPanel : panelPlayer
+     */    
+    public JPanel getPanelPlayer(){
+        return panelPlayer;
+    }
+
+     /**
+     * Display a window when the user wins the game
+     * Ask if he wants to start again
+     *        Answer = YES -> reset the game
+     *        Answer = NO -> quit the game
+     */
     public void popUpWin(){
+        //image added in the window
         ImageIcon icon = new ImageIcon("items/win.jpg");
+        //creation of the window with a specific message
         JOptionPane win = new JOptionPane();      
         option = win.showConfirmDialog(null, 
             "Congratulation you have win!! Now you can go on earth! \n  Do you want to start again ?", "WIN", 
             JOptionPane.YES_NO_OPTION, 
             JOptionPane.QUESTION_MESSAGE, icon);
-        if (option == JOptionPane.OK_OPTION){
+        //events
+            if (option == JOptionPane.OK_OPTION){ //when the user clicks on YES
             gamebis.resetGame();
         }
-        else if (option == JOptionPane.NO_OPTION){
+        else if (option == JOptionPane.NO_OPTION){ //when the user clicks on NO
             gamebis.getInterfaceGame().getInterfacePlanet().getRoomTimer().cancel();
             System.exit(0);
         }
     }
 
+     /**
+     * Display a window when the user loses the game
+     * Ask if he wants to start again
+     *        Answer = YES -> reset the game
+     *        Answer = NO -> quit the game
+     */
     public void popUpLose(){
+        //image added in the window
         ImageIcon icon = new ImageIcon("items/lose.jpg");
+        //creation of the window with a specific message
         JOptionPane win = new JOptionPane();
         Font f = new Font("Serif", Font.PLAIN, 20);         
         win.setFont(f);      
@@ -214,10 +283,11 @@ public class InterfaceGame extends JFrame implements ActionListener
             "Oh no you lost!! \n  Do you want to start again ?", "LOSE", 
             JOptionPane.YES_NO_OPTION, 
             JOptionPane.QUESTION_MESSAGE, icon);
-        if (option == JOptionPane.OK_OPTION){
+        //events
+            if (option == JOptionPane.OK_OPTION){ //when the user clicks on YES
             gamebis.resetGame();
         }
-        else if (option == JOptionPane.NO_OPTION){
+        else if (option == JOptionPane.NO_OPTION){ //when the user clicks on NO
             gamebis.getInterfaceGame().getInterfacePlanet().getRoomTimer().cancel();
             System.exit(0);
         }
