@@ -14,12 +14,14 @@ public class GameListener extends JPanel implements ActionListener
     private InterfacePets panelOfPets;
     private InterfaceMonster panelOfMonster;
     private String reponse;
+    private JOptionPane jop1;
     /**
      * Constructor for objects of class CharListener
      */
     public GameListener(Game theGame)
     {
         myGame = theGame;
+        JOptionPane jop1 ; 
     }
 
     /**
@@ -46,7 +48,12 @@ public class GameListener extends JPanel implements ActionListener
             Chest chestRecup = myGame.getPlayer().getCurrentRoom().getChest();
             myGame.getPlayer().grabContent(chestRecup);
             myGame.getInterfaceGame().getInterfacePlayer().updateInterfacePlayer(myGame);
-            myGame.getInterfaceGame().getInterfaceChar().getChestButton().setEnabled(false);
+            if ( chestRecup.getIsTrap()){
+                jop1 = new JOptionPane();
+                ImageIcon img = new ImageIcon(new ImageIcon("trap/chest.png").getImage().getScaledInstance(100, 100, Image.SCALE_DEFAULT));
+                jop1.showMessageDialog(null, "IT WAS A TRAP !! YOU LOSE 25 HP", "chest", JOptionPane.INFORMATION_MESSAGE,img);
+            }
+            myGame.getInterfaceGame().getInterfaceChar().getChestButton().setEnabled(false);           
         }
 
         else if (e.getSource() == myGame.getInterfaceGame().getInterfaceChar().getSellerButtonSell())
