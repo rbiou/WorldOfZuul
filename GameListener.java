@@ -31,7 +31,7 @@ public class GameListener extends JPanel implements ActionListener
             panelOfPets = new InterfacePets(myGame, recupPet);
             myGame.getPlayer().pet(recupPet); //The player earn one piece
             myGame.getInterfaceGame().getInterfaceDescription().updatePanelDescription(panelOfPets.getPanelPet());
-            myGame.getInterfaceGame().getInterfacePlayer().updateInterfaceRoom(myGame);
+            myGame.getInterfaceGame().getInterfacePlayer().updateInterfacePlayer(myGame);
         }
 
         else if (e.getSource() ==  myGame.getInterfaceGame().getInterfaceChar().getMonsterButton()){
@@ -43,7 +43,7 @@ public class GameListener extends JPanel implements ActionListener
         else if (e.getSource() ==  myGame.getInterfaceGame().getInterfaceChar().getChestButton()){
             Chest chestRecup = myGame.getPlayer().getCurrentRoom().getChest();
             myGame.getPlayer().grabContent(chestRecup);
-            myGame.getInterfaceGame().getInterfacePlayer().updateInterfaceRoom(myGame);
+            myGame.getInterfaceGame().getInterfacePlayer().updateInterfacePlayer(myGame);
         }
 
         else if (e.getSource() ==  myGame.getInterfaceGame().getInterfaceChar().getSellerButtonBuy()){

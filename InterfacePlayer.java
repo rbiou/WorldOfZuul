@@ -53,11 +53,11 @@ public class InterfacePlayer extends JPanel implements ActionListener
         panelFinalPlayer.add(panel2);
         panelFinalPlayer.add(panel1);
         //
-        updateInterfaceRoom(game);
+        updateInterfacePlayer(game);
         
     }
     
-    public void updateInterfaceRoom(Game game){  
+    public void updateInterfacePlayer(Game game){  
         
         panel1.removeAll();
         updateRoomLabel = new JLabel ("You are in the room : "+ game.getPlayer().getCurrentRoom().getName(), JLabel.CENTER);
