@@ -94,10 +94,10 @@ public class Game
     {   
         //creation of the planets
         startP = new Planet("Start", "Hic incipit adventum tuum.", 10, 10); 
-        alpha = new Planet("Alpha", "Ikke kast bort tiden din her, det er ingen nøkkel eller del av skipet.", 10, 10); 
-        beta = new Planet("Beta", "Θα βρείτε ένα κλειδί στο δωμάτιο ένα και ένα δωμάτιο του πλοίου στην αίθουσα πέντε.", 10, 10); 
-        gamma = new Planet("Gamma", "您將在第一和第三房間找到鑰匙，以及第五和第六房間的船隻。", 10, 10); 
-        delta = new Planet("Delta", "Вы найдете ключи в номерах один и два, а также комнату в комнате четыре.", 10, 10);
+        alpha = new Planet("Alpha", "Ikke kast bort tiden din her, det er ingen nøkkel eller del av skipet.", 10, 10000); 
+        beta = new Planet("Beta", "Θα βρείτε ένα κλειδί στο δωμάτιο ένα και ένα δωμάτιο του πλοίου στην αίθουσα πέντε.", 10, 100000); 
+        gamma = new Planet("Gamma", "您將在第一和第三房間找到鑰匙，以及第五和第六房間的船隻。", 10, 100000); 
+        delta = new Planet("Delta", "Вы найдете ключи в номерах один и два, а также комнату в комнате четыре.", 10, 1000000);
         listPlanet.add(alpha);
         listPlanet.add(beta);
         listPlanet.add(gamma);
