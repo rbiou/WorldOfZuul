@@ -98,6 +98,7 @@ public class InterfaceGame extends JFrame implements ActionListener
             gamebis.resetGame();
         }
         if (e.getSource() ==  gamebis.getInterfaceGame().getQuitMenuItem()){
+            gamebis.getInterfaceGame().getInterfacePlanet().getRoomTimer().cancel();
             System.exit(0);
         }
     }
@@ -162,26 +163,38 @@ public class InterfaceGame extends JFrame implements ActionListener
     public JMenuItem getQuitMenuItem(){
         return menu2; 
     }
-    
+
     public void popUpWin(){
+        ImageIcon icon = new ImageIcon("items/win.jpg");
         JOptionPane win = new JOptionPane();      
         option = win.showConfirmDialog(null, 
             "Congratulation you have win!! Now you can go on earth! \n  Do you want to start again ?", "WIN", 
             JOptionPane.YES_NO_OPTION, 
-            JOptionPane.QUESTION_MESSAGE);
+            JOptionPane.QUESTION_MESSAGE, icon);
         if (option == JOptionPane.OK_OPTION){
             gamebis.resetGame();
         }
+        else if (option == JOptionPane.NO_OPTION){
+            gamebis.getInterfaceGame().getInterfacePlanet().getRoomTimer().cancel();
+            System.exit(0);
+        }
     }
-    
+
     public void popUpLose(){
-        JOptionPane win = new JOptionPane();      
+        ImageIcon icon = new ImageIcon("items/lose.jpg");
+        JOptionPane win = new JOptionPane();
+        Font f = new Font("Serif", Font.PLAIN, 20);         
+        win.setFont(f);      
         option = win.showConfirmDialog(null, 
-            "Oh no you have lose!! \n  Do you want to start again ?", "LOSE", 
+            "Oh no you lost!! \n  Do you want to start again ?", "LOSE", 
             JOptionPane.YES_NO_OPTION, 
-            JOptionPane.QUESTION_MESSAGE);
+            JOptionPane.QUESTION_MESSAGE, icon);
         if (option == JOptionPane.OK_OPTION){
             gamebis.resetGame();
+        }
+        else if (option == JOptionPane.NO_OPTION){
+            gamebis.getInterfaceGame().getInterfacePlanet().getRoomTimer().cancel();
+            System.exit(0);
         }
     }
 }

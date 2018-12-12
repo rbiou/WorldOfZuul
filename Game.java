@@ -95,11 +95,11 @@ public class Game
     public void createWorld()
     {   
         //creation of the planets
-        startP = new Planet("Start", "Hic incipit adventum tuum.", 10, 10); 
-        alpha = new Planet("Alpha", "Ikke kast bort tiden din her, det er ingen nøkkel eller del av skipet.", 30, 10000); 
-        beta = new Planet("Beta", "Θα βρείτε ένα κλειδί στο δωμάτιο ένα και ένα δωμάτιο του πλοίου στην αίθουσα πέντε.", -5, 100000); 
-        gamma = new Planet("Gamma", "您將在第一和第三房間找到鑰匙，以及第五和第六房間的船隻。", 24, 100000); 
-        delta = new Planet("Delta", "Вы найдете ключи в номерах один и два, а также комнату в комнате четыре.", 50, 1000000);
+        startP = new Planet("Start", "Hic incipit adventum tuum.", 10, 30); 
+        alpha = new Planet("Alpha", "Ikke kast bort tiden din her, det er ingen nøkkel eller del av skipet.", 30, 30); 
+        beta = new Planet("Beta", "Θα βρείτε ένα κλειδί στο δωμάτιο ένα και ένα δωμάτιο του πλοίου στην αίθουσα πέντε.", -5, 30); 
+        gamma = new Planet("Gamma", "您將在第一和第三房間找到鑰匙，以及第五和第六房間的船隻。", 24, 10); 
+        delta = new Planet("Delta", "Вы найдете ключи в номерах один и два, а также комнату в комнате четыре.", 50, 30);
         listPlanet.add(alpha);
         listPlanet.add(beta);
         listPlanet.add(gamma);
@@ -237,14 +237,14 @@ public class Game
         chest1alpha3.addItem(knief1=new Item("Knieffy",50,5,"I am a knief, you can sell me to the sellers "));
         chest1alpha3.addItem(magicBall2=new Item("MiniBall",100,10,"I am a MagicBall, you can sell me to the sellers "));
         chest2delta1.addItem(keyAlpha3 = new Keys("Red key",300,20,"I am a key, I can open the door Vanity Smurf", "square"));
-        chest3delta4.addItem(wheel=new Item("wheely",500,50,"I am the wheel of your vessel"));
+        chest3delta4.addItem(wheel=new Item("Wheely",500,50,"I am the wheel of your vessel"));
         chest4beta1.addItem(keyBeta4 = new Keys("Grey key",300,20,"I am a key, I can open the door Architect Smurf", "triangle"));
-        chest5beta5.addItem(windows = new Item("windows",500,50,"I am the windows of your vessel")); 
+        chest5beta5.addItem(windows = new Item("Window",500,50,"I am the window of your vessel")); 
         chestGamma1.addItem(keyGamma2 = new Keys("Green key",300,20,"I am a key, I can open the door Enamored Smurf", "star"));
         chestGamma1.addItem(fork1 = new Item("Big fork",3,5,"I am the fork that you need because I can fly"));
-        chestGamma5.addItem(propellant = new Item("propellant", 500, 50, "I am a the propellant of your vessel"));
+        chestGamma5.addItem(propellant = new Item("Propellant", 500, 50, "I am a the propellant of your vessel"));
         chestGamma4.addItem(diamond2 = new Item("Wonderful diamond", 250, 30, "I am a wonderful brillant diamond"));
-        chestGamma6.addItem(engine = new Item("engine", 500, 50, "I am the engine of your vessel"));
+        chestGamma6.addItem(engine = new Item("Engine", 500, 50, "I am the engine of your vessel"));
 
         //Add the pets to the rooms
         alpha1.addCharacter(petAlpha1 = new Pet ("Bamby", 1000000, 10000, alpha1, "fawn")); 
@@ -279,4 +279,6 @@ public class Game
         return this.listPlanet; 
     }
 }    
+
+
 

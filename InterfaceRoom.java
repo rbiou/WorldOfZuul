@@ -26,6 +26,7 @@ public class InterfaceRoom extends JPanel
     public InterfaceRoom(Game newGame)
     {
         myRoomPanel = new JPanel();
+        myRoomPanel.setLayout(new GridLayout(4,1));
         myRoomPanelFinal = new JPanel();
         myRoomPanelFinal.setLayout(new BorderLayout());
         descriptionLabel = new JTextArea ("Here the different exits possible for the current room : ");
@@ -60,8 +61,11 @@ public class InterfaceRoom extends JPanel
             //Add the button to the list of buttons
             myRoomButtons.add(btn);
             //Link the button with all the actions performed where he moved to perform them for next player moove
-            btn.setBackground(Color.gray);
-            btn.setForeground(Color.white);
+            btn.setForeground(Color.gray);
+            btn.setBackground(Color.white);
+            if (myGame.getPlayer().getCurrentRoom().exit.get(btn.getText()).getIfLocked()){
+                 btn.setEnabled(false);
+                }
             btn.addActionListener(new MoveListener(myGame));
         }
         //Reload the room buttons panel
