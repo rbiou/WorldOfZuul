@@ -12,6 +12,7 @@ public class Chest extends Item
     private ArrayList<Item> rewarding; // list of items in the chest
     private boolean isTrap; // true if the chest is trapped ; false if the chest is not trapped
     private int money; // Money in the chest
+    private boolean isOpen = false;
     /**
      * Constructeur d'objets de classe Chest
      */

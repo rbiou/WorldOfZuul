@@ -33,7 +33,7 @@ public class MonsterListener implements ActionListener
             if (interMonster.getMonster().checkAnswer(reponse, myGame.getPlayer()))
                 {
                 interMonster.getPanel1().setVisible(false);
-                myGame.getInterfaceGame().getInterfaceDescription().updatePanelDescription(interMonster.setPanelWin());
+                myGame.getInterfaceGame().getInterfaceDescription().updatePanelDescription(interMonster.setPanelWin()); 
                 myGame.getInterfaceGame().getInterfacePlayer().updateInterfacePlayer(myGame);
             }
             else {
