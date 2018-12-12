@@ -71,6 +71,7 @@ public class Game
      */
     public void resetGame()
     {
+        getInterfaceGame().dispose();
         getInterfaceGame().getInterfacePlanet().getRoomTimer().cancel();
         listPlanet = new ArrayList<Planet>(); 
         createWorld();

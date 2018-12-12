@@ -86,7 +86,7 @@ public class InterfaceGame extends JFrame implements ActionListener
         panelFinal.add(panelChar); 
         panelFinal.add(panelDescription);
         panelFinal.add(panelPlanet);
-        
+
         this.add(panelFinal); 
         this.pack();
         this.setVisible(true);
@@ -94,7 +94,6 @@ public class InterfaceGame extends JFrame implements ActionListener
 
     public void actionPerformed(ActionEvent e){
         if (e.getSource() ==  gamebis.getInterfaceGame().getRestartMenuItem()){ 
-            gamebis.getInterfaceGame().dispose();
             gamebis.resetGame();
         }
         if (e.getSource() ==  gamebis.getInterfaceGame().getQuitMenuItem()){
@@ -162,7 +161,7 @@ public class InterfaceGame extends JFrame implements ActionListener
     public JMenuItem getQuitMenuItem(){
         return menu2; 
     }
-    
+
     public JFrame getGameFrame(){
         return gameFrame;
     }
