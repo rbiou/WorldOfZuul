@@ -125,8 +125,10 @@ public class InterfaceChar extends JFrame
 
         //check if there is a chest in the room
         if (myGame.getPlayer().getCurrentRoom().getChest() != null) {
-            if (!myGame.getPlayer().getCurrentRoom().getChest().getIsOpened())
+            if (myGame.getPlayer().getCurrentRoom().getChest().getIsOpened()==false)
             chestButton.setEnabled(true);
+            else 
+                chestButton.setEnabled(false);
         }
         else {
             chestButton.setEnabled(false);
