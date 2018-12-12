@@ -58,11 +58,10 @@ public class Game
     {
         if (player.getListItems().contains(engine) && player.getListItems().contains(propellant)
         && player.getListItems().contains(windows) && player.getListItems().contains(wheel)){ 
-            //you have win
+            interfaceGame.popUpWin();
         }
-
-        if (player.getLP() == 0){
-            //stop the game
+        else if (player.getLP() == 0){
+            interfaceGame.popUpLose();
         }
     }
 
@@ -75,9 +74,9 @@ public class Game
         getInterfaceGame().getInterfacePlanet().getRoomTimer().cancel();
         listPlanet = new ArrayList<Planet>(); 
         createWorld();
-        interfaceGame = new InterfaceGame(this);
+       interfaceGame = new InterfaceGame(this);
     }
-
+    
     public ArrayList<Planet> getPlanet() {
         return listPlanet; 
     }
