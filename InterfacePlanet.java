@@ -21,26 +21,26 @@ public class InterfacePlanet extends JPanel implements ActionListener
     /**
      * Constructeur d'objets de classe Planet
      */
-    public InterfacePlanet(Game game)
+    public InterfacePlanet(Game mygame)
     {
-        game = game;
+        game = mygame;
         //create a new panelPlanet
         panelPlanet = new JPanel();
         updateInterfacePlanet(game);       
     }
 
-   /**
-    * this method update the interface Planet : update the descritpion and the 
-    * the picture of the planet
-    * @parameter game 
-    */
-        public void updateInterfacePlanet(Game game){
+    /**
+     * this method update the interface Planet : update the descritpion and the 
+     * the picture of the planet
+     * @parameter game 
+     */
+    public void updateInterfacePlanet(Game game){
         //remove the former panelPlanet
         panelPlanet.removeAll();        
         panelPlanet.setLayout(new GridLayout (1,3));
-        
+
         planetLabel = new JLabel("Nom: " + game.getPlayer().getCurrentRoom().getPlanet().getPlanetName(), JLabel.CENTER);
-        
+
         myPanel1 = new JPanel();
         myPanel1.add(planetLabel);
 
@@ -50,26 +50,25 @@ public class InterfacePlanet extends JPanel implements ActionListener
         descriptionLabel = new JLabel("Description: " + game.getPlayer().getCurrentRoom().getPlanet().descriptionDisplayPlanet(), JLabel.CENTER);
 
         timeLabel = new JLabel("Time: " + game.getPlayer().getCurrentRoom().getPlanet().getTime(), JLabel.CENTER);
-        
+
         updateTimer(game.getPlayer().getCurrentRoom().getPlanet().getTime());
-        
 
         myPanel2.add(planetLabel);
         myPanel2.add(descriptionLabel);
         myPanel2.add(timeLabel);
         myPanel2.revalidate();
         myPanel2.repaint(); 
-        
+
         Icon imagePlanet = new ImageIcon(new ImageIcon("planet/planet_"+game.getPlayer().getCurrentRoom().getPlanet().getPlanetName()+
-        ".png").getImage().getScaledInstance(200, 200, Image.SCALE_DEFAULT));
-        
+                    ".png").getImage().getScaledInstance(200, 200, Image.SCALE_DEFAULT));
+
         imagePlanetLabel = new JLabel(imagePlanet);
-        
+
         myPanel1.add(imagePlanetLabel);
-       
+
         panelPlanet.add(myPanel1);
         panelPlanet.add(myPanel2);
-        
+
         panelPlanet.revalidate();
         panelPlanet.repaint();
     }
@@ -85,6 +84,7 @@ public class InterfacePlanet extends JPanel implements ActionListener
 
     class TimerTasks extends TimerTask {
         int countdown;
+        int option; 
         public TimerTasks(int time)
         {
             countdown = time;
@@ -95,7 +95,8 @@ public class InterfacePlanet extends JPanel implements ActionListener
             if (countdown == 0) {
                 room_timer.cancel();
                 //kill the player
-                JOptionPane.showMessageDialog(null,"*blurp* *blurp* \n I'M SUFFOCATINGGGGGGG \n GAME OVER \n (et là on est censé retourner au départ mais ça sera relou pour developper le jeu)");
+                //game.getInterfaceGame().popUpLose();
+                //JOptionPane.showMessageDialog(null,"*blurp* *blurp* \n I'M SUFFOCATINGGGGGGG \n GAME OVER \n (et là on est censé retourner au départ mais ça sera relou pour developper le jeu)");
             }
             timeLabel.setText("Time: "+Integer.toString(countdown));
         }
@@ -109,5 +110,10 @@ public class InterfacePlanet extends JPanel implements ActionListener
     public JPanel getPanelPlanet()
     {
         return panelPlanet;
+    }
+    
+    public Timer getRoomTimer()
+    {
+        return room_timer;
     }
 }

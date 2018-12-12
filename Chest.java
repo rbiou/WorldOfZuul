@@ -98,12 +98,22 @@ public class Chest extends Item
     }
     
      /**
-     * Returns if the chest is opened or not
+     * set the boolean isOpen to indicate when the chest is opened
      *
-     * @return     boolean isOpen
+     * @param     boolean open
+     */
+    public void setIsOpened(boolean open)
+    {
+        isOpen = open; 
+    }
+    
+         /**
+     * set the boolean isOpen to indicate when the chest is opened
+     *
+     * @param     boolean open
      */
     public boolean getIsOpened()
     {
-        return isOpen;
+        return isOpen; 
     }
 }

@@ -40,7 +40,6 @@ public class Game
     private Player player;
     private InterfaceGame interfaceGame;
     private Item engine, propellant, windows, wheel;
-    private long time_less;
 
     /**
      * Constructeur d'objets de classe Game
@@ -59,22 +58,25 @@ public class Game
     {
         if (player.getListItems().contains(engine) && player.getListItems().contains(propellant)
         && player.getListItems().contains(windows) && player.getListItems().contains(wheel)){ 
-            //you have win
+            interfaceGame.popUpWin();
         }
-
-        if (player.getLP() == 0){
-            //stop the game
+        else if (player.getLP() == 0){
+            interfaceGame.popUpLose();
         }
     }
 
     /**
-     * this method allows you to open the game
+     * resetGame method allow the user to reset the game.
      */
-    public void openGame()
+    public void resetGame()
     {
-        //
+        getInterfaceGame().dispose();
+        getInterfaceGame().getInterfacePlanet().getRoomTimer().cancel();
+        listPlanet = new ArrayList<Planet>(); 
+        createWorld();
+       interfaceGame = new InterfaceGame(this);
     }
-
+    
     public ArrayList<Planet> getPlanet() {
         return listPlanet; 
     }
