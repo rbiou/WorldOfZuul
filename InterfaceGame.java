@@ -163,7 +163,7 @@ public class InterfaceGame extends JFrame implements ActionListener
     public JMenuItem getQuitMenuItem(){
         return menu2; 
     }
-    
+
     public void popUpWin(){
         JOptionPane win = new JOptionPane();      
         option = win.showConfirmDialog(null, 
@@ -173,8 +173,12 @@ public class InterfaceGame extends JFrame implements ActionListener
         if (option == JOptionPane.OK_OPTION){
             gamebis.resetGame();
         }
+        else if (option == JOptionPane.NO_OPTION){
+            gamebis.getInterfaceGame().getInterfacePlanet().getRoomTimer().cancel();
+            System.exit(0);
+        }
     }
-    
+
     public void popUpLose(){
         JOptionPane win = new JOptionPane();      
         option = win.showConfirmDialog(null, 
@@ -183,6 +187,10 @@ public class InterfaceGame extends JFrame implements ActionListener
             JOptionPane.QUESTION_MESSAGE);
         if (option == JOptionPane.OK_OPTION){
             gamebis.resetGame();
+        }
+        else if (option == JOptionPane.NO_OPTION){
+            gamebis.getInterfaceGame().getInterfacePlanet().getRoomTimer().cancel();
+            System.exit(0);
         }
     }
 }
