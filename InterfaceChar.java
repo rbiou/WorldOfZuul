@@ -24,7 +24,9 @@ public class InterfaceChar extends JFrame
         monsterButton = new JButton("Monster");
         labelSeller = new JLabel ("Interact with a seller : ", labelSeller.CENTER);
         sellerButtonBuy = new JButton("Buy something");
+        sellerButtonBuy.addActionListener(new SellerListener(game));
         sellerButtonSell = new JButton("Sell something");
+        sellerButtonSell.addActionListener(new SellerListener(game));
         petButton = new JButton("Pet");
         chestButton = new JButton("Chest"); 
         
