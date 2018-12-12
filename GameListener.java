@@ -41,7 +41,8 @@ public class GameListener extends JPanel implements ActionListener
             Monster recupMonster = myGame.getPlayer().getCurrentRoom().getMonster();
             panelOfMonster = new InterfaceMonster(myGame, recupMonster);
             myGame.getInterfaceGame().getInterfaceDescription().updatePanelDescription(panelOfMonster.getPanel1());
-            //myGame.getInterfaceGame().getInterfaceChar().getMonsterButton().setEnabled(false);
+            myGame.getInterfaceGame().getInterfaceChar().getMonsterButton().setEnabled(false);
+            myGame.endGame();
         }
 
         else if (e.getSource() ==  myGame.getInterfaceGame().getInterfaceChar().getChestButton()){
@@ -52,8 +53,9 @@ public class GameListener extends JPanel implements ActionListener
                 jop1 = new JOptionPane();
                 ImageIcon img = new ImageIcon(new ImageIcon("trap/chest.png").getImage().getScaledInstance(100, 100, Image.SCALE_DEFAULT));
                 jop1.showMessageDialog(null, "IT WAS A TRAP !! YOU LOSE 25 HP", "chest", JOptionPane.INFORMATION_MESSAGE,img);
-            }
-            myGame.getInterfaceGame().getInterfaceChar().getChestButton().setEnabled(false);           
+            }       
+            myGame.getInterfaceGame().getInterfaceChar().getChestButton().setEnabled(false);
+            myGame.endGame();
         }
 
         else if (e.getSource() == myGame.getInterfaceGame().getInterfaceChar().getSellerButtonSell())

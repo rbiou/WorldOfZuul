@@ -95,7 +95,7 @@ public class InterfacePlanet extends JPanel implements ActionListener
             if (countdown == 0) {
                 room_timer.cancel();
                 //kill the player
-                //game.getInterfaceGame().popUpLose();
+                game.getInterfaceGame().popUpLose();
                 //JOptionPane.showMessageDialog(null,"*blurp* *blurp* \n I'M SUFFOCATINGGGGGGG \n GAME OVER \n (et là on est censé retourner au départ mais ça sera relou pour developper le jeu)");
             }
             timeLabel.setText("Time: "+Integer.toString(countdown));
