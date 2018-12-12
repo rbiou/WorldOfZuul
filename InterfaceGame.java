@@ -56,7 +56,7 @@ public class InterfaceGame extends JFrame implements ActionListener
 
         panelDoor = new JPanel();
         panelDoor.setLayout(new GridLayout (1,1));
-        panelDoor.add(panelOfRoom.getPanelRoom());
+        panelDoor.add(panelOfRoom.getPanelFinal());
 
         panelMap = new JPanel();
         panelMap.setLayout(new GridLayout (1,1));
