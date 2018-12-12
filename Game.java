@@ -68,11 +68,13 @@ public class Game
     }
 
     /**
-     * this method allows you to open the game
+     * resetGame method allow the user to reset the game.
      */
-    public void openGame()
+    public void resetGame()
     {
-        //
+        listPlanet = new ArrayList<Planet>(); 
+        createWorld();
+        interfaceGame = new InterfaceGame(this);
     }
 
     public ArrayList<Planet> getPlanet() {

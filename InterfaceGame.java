@@ -15,7 +15,7 @@ public class InterfaceGame extends JFrame implements ActionListener
     private JPanel panelDoor, panelMap, panelPlayer, panelPlanet, panelDescription, panelChar, panelFinal; 
     private JMenuBar menuBar;
     private JMenu menuName;
-    private JMenuItem menu1, menu2, menu3; 
+    private JMenuItem menu1, menu2; 
     private InterfaceChar panelOfChar; 
     private InterfacePlayer panelOfPlayer;
     private InterfaceMap panelOfMap; 
@@ -47,15 +47,12 @@ public class InterfaceGame extends JFrame implements ActionListener
         this.setJMenuBar(menuBar); 
         menuName = new JMenu("GAME"); 
         this.menuBar.add(menuName); 
-        menu1 = new JMenuItem ("Start"); 
-        this.menuName.add(menu1);
+        menu1 = new JMenuItem ("Restart"); 
+        this.menuName.add(menu1); 
         menu1.addActionListener(this); 
-        menu2 = new JMenuItem ("Restart"); 
+        menu2 = new JMenuItem ("Quit"); 
         this.menuName.add(menu2); 
-        menu2.addActionListener(this); 
-        menu3 = new JMenuItem ("Quit"); 
-        this.menuName.add(menu3); 
-        menu3.addActionListener(this);
+        menu2.addActionListener(this);
 
         panelDoor = new JPanel();
         panelDoor.setLayout(new GridLayout (1,1));
@@ -96,37 +93,44 @@ public class InterfaceGame extends JFrame implements ActionListener
     }
 
     public void actionPerformed(ActionEvent e){
+        if (e.getSource() ==  gamebis.getInterfaceGame().getRestartMenuItem()){ 
+            gameFrame.dispose();
+            gamebis.resetGame();
+        }
+        if (e.getSource() ==  gamebis.getInterfaceGame().getQuitMenuItem()){
+            System.exit(0);
+        }
     }
-    
+
     public InterfaceMap getInterfaceMap()
     { 
         return panelOfMap;
     }
-    
+
     public InterfaceRoom getInterfaceRoom()
     { 
         return panelOfRoom;
     }
-    
+
     public InterfacePlayer getInterfacePlayer()
     { 
         return panelOfPlayer;
     }
-    
+
     public InterfaceChar getInterfaceChar()
     { 
         return panelOfChar;
     }
-    
+
     public InterfacePets getInterfacePet()
     { 
         return panelOfPets;
     }
-    
+
     public JPanel getPanelDescription(){
         return panelDescription;
     }
-   
+
     public JPanel getPanelPlayer(){
         return panelPlayer;
     }
@@ -135,20 +139,29 @@ public class InterfaceGame extends JFrame implements ActionListener
     {
         return panelItems;
     }
-    
+
     public InterfaceDescription getInterfaceDescription()
     {
         return panelOfDescription;
     }
-    
+
     public InterfacePlanet getInterfacePlanet()
     {
         return panelOfPlanet;
     }
-   
-        public InterfaceMonster getInterfaceMonster()
+
+    public InterfaceMonster getInterfaceMonster()
     {
         return panelOfMonster;
     }
+
+    public JMenuItem getRestartMenuItem(){
+        return menu1; 
+    }
+
+    public JMenuItem getQuitMenuItem(){
+        return menu2; 
+    }
+
 }
 
