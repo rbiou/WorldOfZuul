@@ -94,10 +94,10 @@ public class Game
     {   
         //creation of the planets
         startP = new Planet("Start", "Hic incipit adventum tuum.", 10, 10); 
-        alpha = new Planet("Alpha", "Ikke kast bort tiden din her, det er ingen nøkkel eller del av skipet.", 10, 10000); 
-        beta = new Planet("Beta", "Θα βρείτε ένα κλειδί στο δωμάτιο ένα και ένα δωμάτιο του πλοίου στην αίθουσα πέντε.", 10, 100000); 
-        gamma = new Planet("Gamma", "您將在第一和第三房間找到鑰匙，以及第五和第六房間的船隻。", 10, 100000); 
-        delta = new Planet("Delta", "Вы найдете ключи в номерах один и два, а также комнату в комнате четыре.", 10, 1000000);
+        alpha = new Planet("Alpha", "Ikke kast bort tiden din her, det er ingen nøkkel eller del av skipet.", 30, 10000); 
+        beta = new Planet("Beta", "Θα βρείτε ένα κλειδί στο δωμάτιο ένα και ένα δωμάτιο του πλοίου στην αίθουσα πέντε.", -5, 100000); 
+        gamma = new Planet("Gamma", "您將在第一和第三房間找到鑰匙，以及第五和第六房間的船隻。", 24, 100000); 
+        delta = new Planet("Delta", "Вы найдете ключи в номерах один и два, а также комнату в комнате четыре.", 50, 1000000);
         listPlanet.add(alpha);
         listPlanet.add(beta);
         listPlanet.add(gamma);
@@ -203,8 +203,8 @@ public class Game
 
         //Add the monster in the rooms
         Monster monster1, monster2, monster3, monster4; //declaration of the monsters
-        alpha2.addCharacter(monster1 = new Monster("Godzilla", 10000, 56,alpha2, "What is the capital of Bulgaria?", "Sofia")); 
-        beta3.addCharacter(monster2 = new Monster("Yoda", 10000, 56,beta3, "Who is the best friend of Dora", "Babouch")); 
+        alpha2.addCharacter(monster1 = new Monster("Godzilla", 10000, 56,alpha2, "What is the capital of Bulgaria?", "sofia")); 
+        beta3.addCharacter(monster2 = new Monster("Yoda", 10000, 56,beta3, "Who is the best friend of Dora", "babouch")); 
         delta3.addCharacter(monster3 = new Monster("Darkness", 10000, 56,delta3, "what is the date of the creation of the Mona Lisa", "1503")); 
         gamma6.addCharacter(monster4 = new Monster("Piranha", 10000, 56,gamma6, "What is the color of mikey's shoes", "yellow"));
 

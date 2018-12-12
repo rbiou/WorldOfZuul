@@ -11,7 +11,6 @@ import javax.swing.ImageIcon;
  */
 public class InterfaceGame extends JFrame implements ActionListener
 {
-
     private JFrame gameFrame; 
     private JPanel panelDoor, panelMap, panelPlayer, panelPlanet, panelDescription, panelChar, panelFinal; 
     private JMenuBar menuBar;
@@ -25,6 +24,7 @@ public class InterfaceGame extends JFrame implements ActionListener
     private InterfacePets panelOfPets;
     private InterfacePlanet panelOfPlanet;
     private InterfaceDescription panelOfDescription; 
+    private InterfaceMonster panelOfMonster;
     private Game gamebis; 
     /**
      * Constructor for objects of class InterfaceGame
@@ -141,9 +141,14 @@ public class InterfaceGame extends JFrame implements ActionListener
         return panelOfDescription;
     }
     
-        public InterfacePlanet getInterfacePlanet()
+    public InterfacePlanet getInterfacePlanet()
     {
         return panelOfPlanet;
+    }
+   
+        public InterfaceMonster getInterfaceMonster()
+    {
+        return panelOfMonster;
     }
 }
 

@@ -49,7 +49,7 @@ public class InterfaceMonster extends JPanel
        labelReponse =  new JTextField();
        labelReponse.setColumns(20);
        buttonReponse = new JButton ("Validate my answer ! ");
-       buttonReponse.addActionListener(new GameListener(game));
+       buttonReponse.addActionListener(new MonsterListener(this, game));
        
        panelDroite = new JPanel();
        panelDroite.setLayout(new BorderLayout());
