@@ -36,6 +36,7 @@ public class MonsterListener implements ActionListener
                 interMonster.getPanel1().setVisible(false);
                 myGame.getInterfaceGame().getInterfaceDescription().updatePanelDescription(interMonster.setPanelWin());
                 myGame.getInterfaceGame().getInterfacePlayer().updateInterfacePlayer(myGame);
+                myGame.getInterfaceGame().getInterfaceChar().getMonsterButton().setEnabled(false);
             }
             else {
                 interMonster.getPanel1().setVisible(false);
