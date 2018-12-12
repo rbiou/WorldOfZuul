@@ -96,4 +96,14 @@ public class Chest extends Item
     {
         return isTrap;
     }
+    
+     /**
+     * Returns if the chest is opened or not
+     *
+     * @return     boolean isOpen
+     */
+    public boolean getIsOpened()
+    {
+        return isOpen;
+    }
 }
