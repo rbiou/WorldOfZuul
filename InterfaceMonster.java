@@ -32,17 +32,17 @@ public class InterfaceMonster extends JPanel
        game=gameT; 
        monster=monsterT;
        labelText = new JLabel("",JLabel.CENTER);
-       labelText.setText("<html><center> I AM " +monster.getName() 
+       labelText.setText("<html><center> <br><br>I AM " +monster.getName() 
        + " !!!!! <br>  YOU ARE VERY COURAGEOUS !!!! <br> GIVE THE CORRECT ANSWER OR YOU WILL LOSE HP !!! </center></html>");
        labelEnigme = new JLabel(monster.getQuestion());
-       Icon imagePets = new ImageIcon("monster/"+monster.getName()+".jpg");
-       labelImage = new JLabel(imagePets,JLabel.CENTER);
+       Icon imageMonster = new ImageIcon(new ImageIcon("monster/"+monster.getName()+".jpg").getImage().getScaledInstance(240, 270, Image.SCALE_DEFAULT));
+       labelImage = new JLabel(imageMonster,JLabel.CENTER);
        panelCenter = new JPanel();
        panelCenter.setLayout(new GridLayout(2,1));
        panelCenter.add(labelText);
        panelCenter.add(labelEnigme);
       
-       Font f = new Font("Serif", Font.PLAIN, 18); 
+       Font f = new Font("Serif", Font.PLAIN, 15); 
 
        labelText.setFont(f);
        labelEnigme.setFont(f);

@@ -13,11 +13,8 @@ import java.util.TimerTask;
  */
 public class InterfacePlanet extends JPanel implements ActionListener
 {
-    // variables d'instance - remplacez l'exemple qui suit par le vôtre
-    //private JFrame myFrame;
     private JPanel myPanel2,myPanel1, panelPlanet;
-    private JLabel planetLabel,imagePlanetLabel, temperatureLabel, descriptionLabel, timeLabel, updatePlanetLabel;
-    //private Planet planet;
+    private JLabel planetLabel,imagePlanetLabel, descriptionLabel, timeLabel;
     private Timer room_timer;
     private Game game;
 
@@ -27,18 +24,19 @@ public class InterfacePlanet extends JPanel implements ActionListener
     public InterfacePlanet(Game game)
     {
         game = game;
-
+        //create a new panelPlanet
         panelPlanet = new JPanel();
-        
-
-        updateInterfacePlanet(game);
-
-       
+        updateInterfacePlanet(game);       
     }
 
-    public void updateInterfacePlanet(Game game){
-        panelPlanet.removeAll();
-        
+   /**
+    * this method update the interface Planet : update the descritpion and the 
+    * the picture of the planet
+    * @parameter game 
+    */
+        public void updateInterfacePlanet(Game game){
+        //remove the former panelPlanet
+        panelPlanet.removeAll();        
         panelPlanet.setLayout(new GridLayout (1,3));
         
         planetLabel = new JLabel("Nom: " + game.getPlayer().getCurrentRoom().getPlanet().getPlanetName(), JLabel.CENTER);
@@ -64,6 +62,7 @@ public class InterfacePlanet extends JPanel implements ActionListener
         
         Icon imagePlanet = new ImageIcon(new ImageIcon("planet/planet_"+game.getPlayer().getCurrentRoom().getPlanet().getPlanetName()+
         ".png").getImage().getScaledInstance(200, 200, Image.SCALE_DEFAULT));
+        
         imagePlanetLabel = new JLabel(imagePlanet);
         
         myPanel1.add(imagePlanetLabel);

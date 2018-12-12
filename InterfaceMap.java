@@ -4,11 +4,10 @@ import java.awt.event.*;
 import javax.swing.ImageIcon;
 
 /**
- * Interface MAP. Permet l'affichage de la map avec l'évolution du joueur au
- * de l'interface de jeu.
+ * InterfaceMap Allows the display of the map with the evolution of the player to the game interface.
  *
  * @author (Groupe 7)
- * @version (07/)
+ * @version (07/12/2018)
  */
 public class InterfaceMap extends JPanel
 {
@@ -16,7 +15,7 @@ public class InterfaceMap extends JPanel
     private JPanel panelMap;
 
     /**
-     * Constructeur d'objets de classe Interface_Map
+     * Constructor for objects of class Interface_Map
      */
     public InterfaceMap(Game newGame)
     {
@@ -29,6 +28,9 @@ public class InterfaceMap extends JPanel
         return panelMap; 
     }
     
+    /**
+     * The method update InterfaceMap allows you to update the map.
+     */
     public void updateInterfaceMap (Game game){
         //Clear the actual map panel to delete the precedent map
         panelMap.removeAll();
@@ -42,7 +44,5 @@ public class InterfaceMap extends JPanel
         //Reload the map panel
         panelMap.revalidate();
         panelMap.repaint();       
-        
-};
-
+    };
 }
