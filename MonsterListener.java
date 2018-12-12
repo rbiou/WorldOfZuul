@@ -30,7 +30,7 @@ public class MonsterListener implements ActionListener
          if (e.getSource()== interMonster.getButtonReponse()){
             reponse = interMonster.getLabelReponse().getText();
             reponseMin = reponse.toLowerCase();
-            interMonster.getMonster().checkAnswer(reponseMin, myGame.getPlayer());
+            
             if (interMonster.getMonster().checkAnswer(reponseMin, myGame.getPlayer()))
                 {
                 interMonster.getPanel1().setVisible(false);
