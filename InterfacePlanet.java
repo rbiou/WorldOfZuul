@@ -20,7 +20,7 @@ public class InterfacePlanet extends JPanel implements ActionListener
     //private Planet planet;
     private Timer room_timer;
     private Game game;
-    
+
     /**
      * Constructeur d'objets de classe Planet
      */
@@ -73,7 +73,7 @@ public class InterfacePlanet extends JPanel implements ActionListener
         descriptionLabel = new JLabel("Description: " + game.getPlayer().getCurrentRoom().getPlanet().descriptionDisplayPlanet(), JLabel.CENTER);
 
         timeLabel = new JLabel("Time: " + game.getPlayer().getCurrentRoom().getPlanet().getTime(), JLabel.CENTER);
-        
+
         // myPanel2.add(planetLabel);
         // myPanel2.add(descriptionLabel);
         // myPanel2.add(timeLabel);
@@ -97,8 +97,6 @@ public class InterfacePlanet extends JPanel implements ActionListener
 
     class TimerTasks extends TimerTask {
         int countdown;
-        InterfacePlanet interfacePlanet;
-
         public TimerTasks(int time)
         {
             countdown = time;
@@ -108,9 +106,9 @@ public class InterfacePlanet extends JPanel implements ActionListener
             countdown = countdown - 1;
             if (countdown == 0) {
                 room_timer.cancel();
+                //kill the player
             }
             timeLabel.setText("Time: "+Integer.toString(countdown));
-            //kill the player
         }
 
     }

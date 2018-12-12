@@ -17,13 +17,18 @@ public class MoveListener extends JPanel implements ActionListener
     //private Room myRoom; //The actual room of the player
     private JButton myRoomButton;
     private JLabel myMap, roomLabel, playerLabel, moneyLabel, weightLabel; //Modified labels
-
+    private static Planet last_visited_planet;
+    
     /**
      * Constructeur d'objets de classe MoveListener
      */
     public MoveListener(Game theGame)
     {
         myGame = theGame;
+        if (last_visited_planet == null)
+        {
+            last_visited_planet = theGame.getPlayer().getCurrentRoom().getPlanet();
+        }
     }
 
     /**
@@ -52,8 +57,11 @@ public class MoveListener extends JPanel implements ActionListener
         myGame.getInterfaceGame().getInterfaceMap().updateInterfaceMap(myGame);
         
         //ON INTERFACE PLANET PANEL
-        myGame.getInterfaceGame().getInterfacePlanet().updateInterfacePlanet(myGame);
-
+        if (last_visited_planet != myGame.getPlayer().getCurrentRoom().getPlanet()){
+            last_visited_planet = myGame.getPlayer().getCurrentRoom().getPlanet();
+            myGame.getInterfaceGame().getInterfacePlanet().updateInterfacePlanet(myGame);
+        }
+        
         //ON INTERFACE PLAYER PANEL
         myGame.getInterfaceGame().getInterfacePlayer().updateInterfaceRoom(myGame);
     }
