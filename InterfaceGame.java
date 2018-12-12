@@ -184,9 +184,5 @@ public class InterfaceGame extends JFrame implements ActionListener
             gamebis.resetGame();
         }
     }
-    
- public JFrame getGameFrame(){
-        return gameFrame;
-    }
 }
 
