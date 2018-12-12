@@ -30,7 +30,6 @@ public class InterfacePlayer extends JPanel implements ActionListener
         panelFinalPlayer = new JPanel();
         this.game = game;
         updateInterfacePlayer(game);
-
     }
 
     public void updateInterfacePlayer(Game game){  
@@ -60,7 +59,7 @@ public class InterfacePlayer extends JPanel implements ActionListener
             lifeBar.setForeground(Color.red);
         }
         //
-        Icon imageAvatar = new ImageIcon("avatar/avatar.jpg");
+        Icon imageAvatar = new ImageIcon(new ImageIcon("avatar/"+game.getPlayerSexe()+".png").getImage().getScaledInstance(200, 200, Image.SCALE_DEFAULT));
         picture = new JLabel(imageAvatar, JLabel.CENTER);
         //
         panel1 = new JPanel(); 

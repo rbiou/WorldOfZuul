@@ -1,3 +1,6 @@
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
 
 /**
  * Décrivez votre classe startGameInterface ici.
@@ -12,39 +15,48 @@ public class startGameInterface
      */
     public startGameInterface()
     {
-        // JFrame playerForm = new JFrame();
+        JFrame playerForm = new JFrame();
+        
+        //Le nom
+        JPanel panNom = new JPanel();
+        panNom.setBackground(Color.white);
+        panNom.setPreferredSize(new Dimension(250, 60));
+        JTextField nom = new JTextField();
+        nom.setPreferredSize(new Dimension(100, 25));
+        panNom.setBorder(BorderFactory.createTitledBorder("Nom du personnage"));
+        JLabel nomLabel = new JLabel("Saisir un nom :");
+        panNom.add(nomLabel);
+        panNom.add(nom);
 
-        // //Le nom
-        // JPanel panNom = new JPanel();
-        // panNom.setBackground(Color.white);
-        // panNom.setPreferredSize(new Dimension(250, 60));
-        // JTextField nom = new JTextField();
-        // nom.setPreferredSize(new Dimension(100, 25));
-        // panNom.setBorder(BorderFactory.createTitledBorder("Nom du personnage"));
-        // JLabel nomLabel = new JLabel("Saisir un nom :");
-        // panNom.add(nomLabel);
-        // panNom.add(nom);
+        //Le sexe
+        JPanel panSexe = new JPanel();
+        panSexe.setBackground(Color.white);
+        panSexe.setPreferredSize(new Dimension(220, 60));
+        panSexe.setBorder(BorderFactory.createTitledBorder("Sexe du personnage"));
+        JComboBox sexe = new JComboBox();
+        sexe.addItem("Masculin");
+        sexe.addItem("Féminin");
+        JLabel sexeLabel = new JLabel("Sexe : ");
+        panSexe.add(sexeLabel);
+        panSexe.add(sexe);
 
-        // //Le sexe
-        // JPanel panSexe = new JPanel();
-        // panSexe.setBackground(Color.white);
-        // panSexe.setPreferredSize(new Dimension(220, 60));
-        // panSexe.setBorder(BorderFactory.createTitledBorder("Sexe du personnage"));
-        // JComboBox sexe = new JComboBox();
-        // sexe.addItem("Masculin");
-        // sexe.addItem("Féminin");
-        // JLabel sexeLabel = new JLabel("Sexe : ");
-        // panSexe.add(sexeLabel);
-        // panSexe.add(sexe);
+        //OK
+        JPanel control = new JPanel();
+        JButton okBouton = new JButton("OK");
 
-        // //OK
-        // JPanel control = new JPanel();
-        // JButton okBouton = new JButton("OK");
+        okBouton.addActionListener(new ActionListener(){
 
-        // okBouton.addActionListener(new ActionListener(){
-
-                // public void actionPerformed(ActionEvent arg0) {
-                    
+                public void actionPerformed(ActionEvent arg0) {
+                    playerForm.setVisible(false);
+                    Game game = new Game(nom.getText(), (String)sexe.getSelectedItem());
+                }});
+        
+        playerForm.setLayout(new GridLayout (3,1));
+        playerForm.add(panNom);
+        playerForm.add(panSexe);
+        playerForm.add(okBouton);
+        playerForm.pack();
+        playerForm.setVisible(true);
     }
-
+    
 }
