@@ -34,12 +34,12 @@ public class InterfacePlanet extends JPanel implements ActionListener
         Icon imagePlanet = new ImageIcon("planet.jpg");
         JLabel imageplanetLabel = new JLabel(imagePlanet);
 
-        updateTimer(game.getPlayer().getCurrentRoom().getPlanet().getTime());
-
         planetLabel = new JLabel("Nom: " + game.getPlayer().getCurrentRoom().getPlanet().getPlanetName(), JLabel.CENTER);
         descriptionLabel = new JLabel("Description: " + game.getPlayer().getCurrentRoom().getPlanet().descriptionDisplayPlanet(), JLabel.CENTER);
         timeLabel = new JLabel("Time: " + game.getPlayer().getCurrentRoom().getPlanet().getTime(), JLabel.CENTER);
-
+        
+        updateTimer(game.getPlayer().getCurrentRoom().getPlanet().getTime());
+        
         myPanel1 = new JPanel();
         myPanel1.add(planetLabel);
 
@@ -66,14 +66,14 @@ public class InterfacePlanet extends JPanel implements ActionListener
     public void updateInterfacePlanet(Game game){
         myPanel2.removeAll();
 
-        updateTimer(game.getPlayer().getCurrentRoom().getPlanet().getTime());
-
         planetLabel = new JLabel("Nom: " + game.getPlayer().getCurrentRoom().getPlanet().getPlanetName(), JLabel.CENTER);
 
         descriptionLabel = new JLabel("Description: " + game.getPlayer().getCurrentRoom().getPlanet().descriptionDisplayPlanet(), JLabel.CENTER);
 
         timeLabel = new JLabel("Time: " + game.getPlayer().getCurrentRoom().getPlanet().getTime(), JLabel.CENTER);
-
+        
+        updateTimer(game.getPlayer().getCurrentRoom().getPlanet().getTime());
+        
         // myPanel2.add(planetLabel);
         // myPanel2.add(descriptionLabel);
         // myPanel2.add(timeLabel);
@@ -107,6 +107,7 @@ public class InterfacePlanet extends JPanel implements ActionListener
             if (countdown == 0) {
                 room_timer.cancel();
                 //kill the player
+                JOptionPane.showMessageDialog(null,"*blurp* *blurp* \n I'M SUFFOCATINGGGGGGG \n GAME OVER \n (et là on est censé retourner au départ mais ça sera relou pour developper le jeu)");
             }
             timeLabel.setText("Time: "+Integer.toString(countdown));
         }
