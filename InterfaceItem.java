@@ -4,6 +4,9 @@ import javax.swing.*;
 import java.awt.event.*;
 import javax.swing.ImageIcon;
 import javax.swing.JComboBox;
+import java.awt.Dimension;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
 /**
  * Write a description of class InterfaceItem here.
  *
@@ -14,7 +17,7 @@ public class InterfaceItem extends JPanel implements ActionListener
 {
     private JLabel labelImage,labelDescription;
     private ImageIcon imageItem;
-    private JPanel panel1, panel2,panel3,panelFinal;
+    private JPanel panel1, panel2,panelFinal;
     private JComboBox itemBox;
     private ArrayList<Item> itemList;
     private Item selectedItem;
@@ -31,14 +34,22 @@ public class InterfaceItem extends JPanel implements ActionListener
         String name = "Item";
         Icon imageItem = new ImageIcon(name+".png");
         buttonBuy = new JButton("Buy");
-        buttonBuy.setSize(2,400);
+        buttonBuy.setBackground(Color.YELLOW);
+        buttonBuy.setPreferredSize(new Dimension(60,40));
         buttonSell = new JButton("Sell");
+        buttonBuy.setPreferredSize(new Dimension(60,40));
         buttonBuy.setEnabled(false);
         buttonSell.setEnabled(false);
+        
+        buttonBuy.addActionListener(this);
+        buttonSell.addActionListener(this);
+        
+        
         
         // Creation List
         itemBox = new JComboBox();
         itemBox.addActionListener(this);
+        
         //Création du LabelItem
         
         labelImage = new JLabel(imageItem);
@@ -49,13 +60,25 @@ public class InterfaceItem extends JPanel implements ActionListener
         panel1.setLayout(new GridLayout (1,2));
         panel1.add(itemBox);
         panel1.add(labelDescription);
+        
         //panel 2 
         panel2 = new JPanel();
-        panel2.setLayout(new GridLayout (1,2));
-        panel2.add(buttonSell);
-        panel2.add(buttonBuy);
+        panel2.setLayout(new GridBagLayout ());
+        
+        GridBagConstraints gbc= new GridBagConstraints();
+        
+        gbc.gridx = 0;
+        gbc.gridy=0;
+        
+        gbc.gridheight=1;
+        gbc.gridwidth=1;
+        panel2.add(buttonSell, gbc);
+        
+        gbc.gridx = 1;
+        panel2.add(buttonBuy, gbc);
+        
        
-        panel3 = new JPanel();
+        
        
         //Creation panel Final
         panelFinal = new JPanel();
@@ -63,7 +86,7 @@ public class InterfaceItem extends JPanel implements ActionListener
         panelFinal.add(labelImage);
         panelFinal.add(panel1);
         panelFinal.add(panel2);
-        panelFinal.add(panel3);
+        
     }
     
     

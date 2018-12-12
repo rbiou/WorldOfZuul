@@ -108,13 +108,17 @@ public class InterfaceChar extends JFrame
         if (myGame.getPlayer().getCurrentRoom().getSeller() != null) {
             if (myGame.getPlayer().getMoney()>0) //check if the player has money to buy somthing
                 sellerButtonBuy.setEnabled(true);
+                myGame.getInterfaceGame().getInterfaceItem().getBuyButton().setEnabled(true);
 
             if (myGame.getPlayer().getListItems().size() > 0) //check if the player has items to sell
-                sellerButtonSell.setEnabled(true);                        
+                sellerButtonSell.setEnabled(true);  
+                myGame.getInterfaceGame().getInterfaceItem().getSellButton().setEnabled(true);
         }
         else {
             sellerButtonBuy.setEnabled(false);
             sellerButtonSell.setEnabled(false);
+            myGame.getInterfaceGame().getInterfaceItem().getSellButton().setEnabled(false);
+            myGame.getInterfaceGame().getInterfaceItem().getBuyButton().setEnabled(false);
         }
 
         //check if there is a pet in the room

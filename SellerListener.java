@@ -35,6 +35,8 @@ public class SellerListener implements ActionListener
             Player player = game.getPlayer();
             Seller seller = player.getCurrentRoom().getSeller();
             InterfaceItem interfaceItem = game.getInterfaceGame().getInterfaceItem();
+            interfaceItem.getBuyButton().setEnabled(false);
+            interfaceItem.getSellButton().setEnabled(true);
             interfaceItem.showList(player.getListItems());
             game.getInterfaceGame().getInterfaceDescription().updatePanelDescription(interfaceItem.getPanel());
         }
@@ -44,6 +46,8 @@ public class SellerListener implements ActionListener
             Player player = game.getPlayer();
             Seller seller = player.getCurrentRoom().getSeller();
             InterfaceItem interfaceItem = game.getInterfaceGame().getInterfaceItem();
+            interfaceItem.getBuyButton().setEnabled(true);
+            interfaceItem.getSellButton().setEnabled(false);
             interfaceItem.showList(seller.getListItems());
             game.getInterfaceGame().getInterfaceDescription().updatePanelDescription(interfaceItem.getPanel());
         }     
