@@ -26,10 +26,6 @@ public class InterfacePlanet extends JPanel implements ActionListener
      */
     public InterfacePlanet(Game game)
     {
-        // initialisation des variables d'instance
-        //myFrame = new JFrame("Planet");
-        //myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        //myFrame.setLayout(new GridLayout(0,2));
         game = game;
           
         updateTimer(game.getPlayer().getCurrentRoom().getPlanet().getTime());
