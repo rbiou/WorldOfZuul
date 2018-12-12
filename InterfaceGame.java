@@ -98,6 +98,7 @@ public class InterfaceGame extends JFrame implements ActionListener
             gamebis.resetGame();
         }
         if (e.getSource() ==  gamebis.getInterfaceGame().getQuitMenuItem()){
+            gamebis.getInterfaceGame().getInterfacePlanet().getRoomTimer().cancel();
             System.exit(0);
         }
     }
