@@ -13,6 +13,7 @@ public class GameListener extends JPanel implements ActionListener
     private Game myGame;
     private InterfacePets panelOfPets;
     private InterfaceMonster panelOfMonster;
+    private String reponse;
     /**
      * Constructor for objects of class CharListener
      */
@@ -71,5 +72,21 @@ public class GameListener extends JPanel implements ActionListener
             itemListPanel.getBuyButton().setEnabled(true);
             myGame.getInterfaceGame().getInterfaceDescription().updatePanelDescription(myGame.getInterfaceGame().getInterfaceItem());
         }
+        
+        //check answer monster
+        else if (e.getSource()==panelOfMonster.getButtonReponse()){
+            reponse = panelOfMonster.getLabelReponse().getText();
+            panelOfMonster.getMonster().checkAnswer(reponse, myGame.getPlayer());
+            if (panelOfMonster.getMonster().checkAnswer(reponse, myGame.getPlayer()))
+                {
+                panelOfMonster.getPanel1().setVisible(false);
+                myGame.getInterfaceGame().getInterfaceDescription().updatePanelDescription(panelOfMonster.setPanelWin());
+            }
+            else {
+                panelOfMonster.getPanel1().setVisible(false);
+                myGame.getInterfaceGame().getInterfaceDescription().updatePanelDescription(panelOfMonster.setPanelLoose());}
+
+        }
+
     }
 }
