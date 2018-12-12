@@ -56,7 +56,7 @@ public class InterfacePlayer extends JPanel implements ActionListener
         panel1.add(roomLabel);
         panel1.add(moneyLabel);
         panel1.add(weightLabel);
-        
+        panel1.add(bagButton);
         //
         panel2 = new JPanel();
         panel2.setLayout(new GridLayout (1,1));
