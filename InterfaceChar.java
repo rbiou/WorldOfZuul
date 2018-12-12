@@ -95,7 +95,8 @@ public class InterfaceChar extends JFrame
         
         //check if there is a Monster in the room    
         if (myGame.getPlayer().getCurrentRoom().getMonster() != null) {
-            monsterButton.setEnabled(true);
+            if (!myGame.getPlayer().getCurrentRoom().getMonster().getIsResolved())
+                monsterButton.setEnabled(true);
         }
         else {
             monsterButton.setEnabled(false);
@@ -124,6 +125,7 @@ public class InterfaceChar extends JFrame
 
         //check if there is a chest in the room
         if (myGame.getPlayer().getCurrentRoom().getChest() != null) {
+            if (!myGame.getPlayer().getCurrentRoom().getChest().getIsOpened())
             chestButton.setEnabled(true);
         }
         else {

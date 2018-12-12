@@ -48,6 +48,8 @@ public class InterfaceRoom extends JPanel
             //Add the button to the list of buttons
             myRoomButtons.add(btn);
             //Link the button with all the actions performed where he moved to perform them for next player moove
+            btn.setBackground(Color.gray);
+            btn.setForeground(Color.white);
             btn.addActionListener(new MoveListener(myGame));
         }
         //Reload the room buttons panel
