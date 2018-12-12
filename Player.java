@@ -1,4 +1,5 @@
 import java.util.*;
+
 /**
  * The sub-class Player : this is a class that define the characteristics     
  * of the player. The player a life point. At the beggining, the player 
@@ -12,7 +13,7 @@ import java.util.*;
 public class Player extends Character
 {
     private int lifePoints;
-
+    
     /**
      * Constructor
      **/
@@ -20,7 +21,6 @@ public class Player extends Character
     {
         super(newName, 0, newWeight, newRoom);
         lifePoints = 100;
-
     }
     
     /**
@@ -185,7 +185,7 @@ public class Player extends Character
     {
         return lifePoints;
     }
-
+    
     /**
      * Interract with the no player character
      * @param 

@@ -2,6 +2,9 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.ImageIcon;
+import java.util.Timer;
+import java.util.TimerTask;
+
 /**
  * Décrivez votre classe Planet ici.
  *
@@ -15,6 +18,9 @@ public class InterfacePlanet extends JPanel implements ActionListener
     private JPanel myPanel2,myPanel1, panelPlanet;
     private JLabel planetLabel, temperatureLabel, descriptionLabel, timeLabel, updatePlanetLabel;
     //private Planet planet;
+    private Timer room_timer;
+    private Game game;
+    
     /**
      * Constructeur d'objets de classe Planet
      */
@@ -24,68 +30,97 @@ public class InterfacePlanet extends JPanel implements ActionListener
         //myFrame = new JFrame("Planet");
         //myFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         //myFrame.setLayout(new GridLayout(0,2));
-        
+        game = game;
         Icon imagePlanet = new ImageIcon("planet.jpg");
         JLabel imageplanetLabel = new JLabel(imagePlanet);
-        
-        
+
+        updateTimer(game.getPlayer().getCurrentRoom().getPlanet().getTime());
+
         planetLabel = new JLabel("Nom: " + game.getPlayer().getCurrentRoom().getPlanet().getPlanetName(), JLabel.CENTER);
         descriptionLabel = new JLabel("Description: " + game.getPlayer().getCurrentRoom().getPlanet().descriptionDisplayPlanet(), JLabel.CENTER);
         timeLabel = new JLabel("Time: " + game.getPlayer().getCurrentRoom().getPlanet().getTime(), JLabel.CENTER);
-        
+
         myPanel1 = new JPanel();
         myPanel1.add(planetLabel);
-        
-        
+
         myPanel2 = new JPanel();
         myPanel2.setLayout(new GridLayout(3,1));
         // myPanel2.add(planetLabel);
         // myPanel2.add(descriptionLabel);
         // myPanel2.add(timeLabel);
-        
+
         panelPlanet = new JPanel();
         panelPlanet.setLayout(new GridLayout (1,3));
         panelPlanet.add(myPanel1);
         panelPlanet.add(myPanel2);
-        
+
         updateInterfacePlanet(game);
-        
+
         //myFrame.add(myPanel1);
         //myFrame.add(myPanel2);
-        
+
         //myFrame.pack();
         //myFrame.setVisible(true);
     }
-    
+
     public void updateInterfacePlanet(Game game){
         myPanel2.removeAll();
-        
+
+        updateTimer(game.getPlayer().getCurrentRoom().getPlanet().getTime());
+
         planetLabel = new JLabel("Nom: " + game.getPlayer().getCurrentRoom().getPlanet().getPlanetName(), JLabel.CENTER);
-        
+
         descriptionLabel = new JLabel("Description: " + game.getPlayer().getCurrentRoom().getPlanet().descriptionDisplayPlanet(), JLabel.CENTER);
-        
+
         timeLabel = new JLabel("Time: " + game.getPlayer().getCurrentRoom().getPlanet().getTime(), JLabel.CENTER);
         
         // myPanel2.add(planetLabel);
         // myPanel2.add(descriptionLabel);
         // myPanel2.add(timeLabel);
-        
+
         myPanel2.add(planetLabel);
         myPanel2.add(descriptionLabel);
         myPanel2.add(timeLabel);
         myPanel2.revalidate();
         myPanel2.repaint(); 
- 
-    
+
     }
-    
-    
+
+    public void updateTimer(int time)
+    {
+        if (room_timer != null){
+            room_timer.cancel();
+        }
+        room_timer = new Timer();
+        room_timer.schedule(new TimerTasks(time), 0, 1000);
+    }
+
+    class TimerTasks extends TimerTask {
+        int countdown;
+        InterfacePlanet interfacePlanet;
+
+        public TimerTasks(int time)
+        {
+            countdown = time;
+        }
+
+        public void run() {
+            countdown = countdown - 1;
+            if (countdown == 0) {
+                room_timer.cancel();
+            }
+            timeLabel.setText("Time: "+Integer.toString(countdown));
+            //kill the player
+        }
+
+    }
+
     public void actionPerformed(ActionEvent e)
     {
     }
-    
+
     public JPanel getPanelPlanet()
     {
-       return panelPlanet;
+        return panelPlanet;
     }
 }
