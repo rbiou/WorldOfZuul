@@ -27,18 +27,8 @@ public class InterfacePlanet extends JPanel implements ActionListener
     public InterfacePlanet(Game game)
     {
         game = game;
-          
-        updateTimer(game.getPlayer().getCurrentRoom().getPlanet().getTime());
-        
-        myPanel1 = new JPanel();
-        myPanel1.add(planetLabel);
-
-        myPanel2 = new JPanel();
-        myPanel2.setLayout(new GridLayout(3,1));
-        
 
         panelPlanet = new JPanel();
-        panelPlanet.setLayout(new GridLayout (1,3));
         
 
         updateInterfacePlanet(game);
@@ -47,9 +37,17 @@ public class InterfacePlanet extends JPanel implements ActionListener
     }
 
     public void updateInterfacePlanet(Game game){
-        myPanel2.removeAll();
-
+        panelPlanet.removeAll();
+        
+        panelPlanet.setLayout(new GridLayout (1,3));
+        
         planetLabel = new JLabel("Nom: " + game.getPlayer().getCurrentRoom().getPlanet().getPlanetName(), JLabel.CENTER);
+        
+        myPanel1 = new JPanel();
+        myPanel1.add(planetLabel);
+
+        myPanel2 = new JPanel();
+        myPanel2.setLayout(new GridLayout(3,1));
 
         descriptionLabel = new JLabel("Description: " + game.getPlayer().getCurrentRoom().getPlanet().descriptionDisplayPlanet(), JLabel.CENTER);
 
@@ -64,17 +62,17 @@ public class InterfacePlanet extends JPanel implements ActionListener
         myPanel2.revalidate();
         myPanel2.repaint(); 
         
-        myPanel1.removeAll();
         Icon imagePlanet = new ImageIcon(new ImageIcon("planet/planet_"+game.getPlayer().getCurrentRoom().getPlanet().getPlanetName()+
         ".png").getImage().getScaledInstance(200, 200, Image.SCALE_DEFAULT));
         imagePlanetLabel = new JLabel(imagePlanet);
-        myPanel1.add(imagePlanetLabel);
         
-        myPanel1.revalidate();
-        myPanel1.repaint();
+        myPanel1.add(imagePlanetLabel);
+       
         panelPlanet.add(myPanel1);
         panelPlanet.add(myPanel2);
-
+        
+        panelPlanet.revalidate();
+        panelPlanet.repaint();
     }
 
     public void updateTimer(int time)
