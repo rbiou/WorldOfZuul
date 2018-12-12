@@ -11,7 +11,7 @@ public class MonsterListener implements ActionListener
 {
     // variables d'instance 
     private InterfaceMonster interMonster;
-    private String reponse;
+    private String reponse, reponseMin;
     private Game myGame; 
     /**
      * Constructeur d'objets de classe Listener
@@ -29,8 +29,9 @@ public class MonsterListener implements ActionListener
         //check answer monster
          if (e.getSource()== interMonster.getButtonReponse()){
             reponse = interMonster.getLabelReponse().getText();
-            interMonster.getMonster().checkAnswer(reponse, myGame.getPlayer());
-            if (interMonster.getMonster().checkAnswer(reponse, myGame.getPlayer()))
+            reponseMin = reponse.toLowerCase();
+            interMonster.getMonster().checkAnswer(reponseMin, myGame.getPlayer());
+            if (interMonster.getMonster().checkAnswer(reponseMin, myGame.getPlayer()))
                 {
                 interMonster.getPanel1().setVisible(false);
                 myGame.getInterfaceGame().getInterfaceDescription().updatePanelDescription(interMonster.setPanelWin());
