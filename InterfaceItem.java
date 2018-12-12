@@ -7,12 +7,12 @@ import javax.swing.JComboBox;
 /**
  * Write a description of class InterfaceItem here.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Group7
+ * @version 12/12/18
  */
 public class InterfaceItem extends JPanel implements ActionListener
 {
-    private JLabel labelImage,labelDescription, labelItem;;
+    private JLabel labelImage,labelDescription, labelItem;
     private ImageIcon imageItem;
     private JPanel panel1, panel2,panelFinal;
     private JComboBox itemBox;
@@ -26,17 +26,19 @@ public class InterfaceItem extends JPanel implements ActionListener
     public InterfaceItem(Game game)
     {
 
-        // Label avec image
+        //instanciation of the objects of the InterfaceItem
         this.game = game;
         String name = "Item";
         Icon imageItem = new ImageIcon(name+".png");
         buttonBuy = new JButton("Buy");
+        buttonBuy.setSize(2,400);
         buttonSell = new JButton("Sell");
         buttonBuy.setEnabled(false);
         buttonSell.setEnabled(false);
         
-         // Cration List
+        // Creation List
         itemBox = new JComboBox();
+        
         //Création du LabelItem
         labelItem = new JLabel ("List of item on your bag");
         labelItem.setHorizontalAlignment(JLabel.CENTER);
@@ -49,8 +51,6 @@ public class InterfaceItem extends JPanel implements ActionListener
      
         labelDescription = new JLabel();
         labelDescription.setBorder(BorderFactory.createLineBorder(Color.BLACK));  // Border
-     
-
      
         
         labelImage = new JLabel(imageItem);
@@ -74,6 +74,8 @@ public class InterfaceItem extends JPanel implements ActionListener
         panelFinal.add(panel1);
         panelFinal.add(panel2);
     }
+    
+    
     
     public void actionPerformed(ActionEvent e){
         // Get event origin
