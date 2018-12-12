@@ -11,7 +11,7 @@ public class Keys extends Item
     private String shape; //The shape of the key, string that can take any word
     
     /**
-     * Constructeur d'objets de classe Keys
+     * Constructor for objects of class Keys
      */
     public Keys(String newName, int newValue, int newWeight, String newDescription, String newShape)
     {
