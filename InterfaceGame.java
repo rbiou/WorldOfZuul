@@ -41,7 +41,7 @@ public class InterfaceGame extends JFrame implements ActionListener
         panelOfDescription = new InterfaceDescription(game);
 
         gameFrame = new JFrame ("GAME");
-        gameFrame.setDefaultCloseOperation(gameFrame.EXIT_ON_CLOSE);
+        gameFrame.setDefaultCloseOperation(gameFrame.DISPOSE_ON_CLOSE);
         menuBar = new JMenuBar(); 
 
         this.setJMenuBar(menuBar); 
@@ -94,7 +94,7 @@ public class InterfaceGame extends JFrame implements ActionListener
 
     public void actionPerformed(ActionEvent e){
         if (e.getSource() ==  gamebis.getInterfaceGame().getRestartMenuItem()){ 
-            gameFrame.dispose();
+            gamebis.getInterfaceGame().dispose();
             gamebis.resetGame();
         }
         if (e.getSource() ==  gamebis.getInterfaceGame().getQuitMenuItem()){
@@ -162,6 +162,9 @@ public class InterfaceGame extends JFrame implements ActionListener
     public JMenuItem getQuitMenuItem(){
         return menu2; 
     }
-
+    
+    public JFrame getGameFrame(){
+        return gameFrame;
+    }
 }
 
