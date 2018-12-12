@@ -63,6 +63,9 @@ public class InterfaceRoom extends JPanel
             //Link the button with all the actions performed where he moved to perform them for next player moove
             btn.setForeground(Color.gray);
             btn.setBackground(Color.white);
+            if (myGame.getPlayer().getCurrentRoom().exit.get(btn.getText()).getIfLocked()){
+                 btn.setEnabled(false);
+                }
             btn.addActionListener(new MoveListener(myGame));
         }
         //Reload the room buttons panel
