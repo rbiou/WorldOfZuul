@@ -41,7 +41,7 @@ public class InterfacePlayer extends JPanel implements ActionListener
         weightLabel = new JLabel ("Weight available in your bag : "+game.getPlayer().getTotalWeight(), JLabel.CENTER);
         //
         
-        lifeBar  = new JProgressBar(0, game.getPlayer().getLP());
+        lifeBar  = new JProgressBar(0, 100);
         lifeBar.setValue(game.getPlayer().getLP()); 
         lifeBar.setStringPainted(true); 
         lifeBar.setForeground(Color.red);
@@ -56,7 +56,7 @@ public class InterfacePlayer extends JPanel implements ActionListener
         panel1.add(roomLabel);
         panel1.add(moneyLabel);
         panel1.add(weightLabel);
-        
+        panel1.add(bagButton);
         //
         panel2 = new JPanel();
         panel2.setLayout(new GridLayout (1,1));
