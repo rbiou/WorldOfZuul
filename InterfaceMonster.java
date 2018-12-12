@@ -13,10 +13,10 @@ import java.util.*;
 public class InterfaceMonster extends JPanel
 {
     // variables d'instance - remplacez l'exemple qui suit par le vôtre
-     private JPanel panel1, panelDroite, panelSouth, panelCenter, panelWin, panelLoose ;
-     private JLabel labelImage ,labelText, labelEnigme ;
+     private JPanel panel1, panelDroite, panelSouth, panelCenter, panelWin, panelWinSouth, panelLoose, panelLooseSouth ;
+     private JLabel labelImage ,labelText, labelEnigme, labelImageWin, labelImageLoose ;
      private JLabel labelLoose, labelWin;
-     private JButton buttonReponse;
+     private JButton buttonReponse, buttonValidWin, buttonValidLoose;
      private ImageIcon monsterImage; 
      private Monster monster;
      
@@ -32,7 +32,7 @@ public class InterfaceMonster extends JPanel
        game=gameT; 
        monster=monsterT;
        labelText = new JLabel("",JLabel.CENTER);
-       labelText.setText("<html><center> <br><br>I AM " +monster.getName() 
+       labelText.setText("<html><center> <br>I AM " +monster.getName() 
        + " !!!!! <br>  YOU ARE VERY COURAGEOUS !!!! <br> GIVE THE CORRECT ANSWER OR YOU WILL LOSE HP !!! </center></html>");
        labelEnigme = new JLabel(monster.getQuestion());
        Icon imageMonster = new ImageIcon(new ImageIcon("monster/"+monster.getName()+".jpg").getImage().getScaledInstance(240, 270, Image.SCALE_DEFAULT));
@@ -76,8 +76,18 @@ public class InterfaceMonster extends JPanel
         panelWin.setLayout(new BorderLayout());
         labelWin = new JLabel("",JLabel.CENTER);
         labelWin.setText("<html><center> CORRECT ANSWER !!! <br>  HERE 300 GOLDS AS A REWARD !!!<br> GOOD LUCK IN YOUR JOURNEY !!!!!! </center></html>");
-        panelWin.add(labelImage, BorderLayout.CENTER);
-        panelWin.add(labelWin,BorderLayout.SOUTH); 
+        Icon imageMonster = new ImageIcon(new ImageIcon("monster/"+monster.getName()+".jpg").getImage().getScaledInstance(240, 230, Image.SCALE_DEFAULT));
+        labelImageWin = new JLabel(imageMonster,JLabel.CENTER);
+        panelWin.add(labelImageWin, BorderLayout.CENTER);
+        
+        buttonValidWin = new JButton ("Thank you bro");
+        buttonValidWin.addActionListener(new MonsterListener(this, game));
+        panelWinSouth = new JPanel();
+        panelWinSouth.setLayout(new GridLayout(2,1));
+        
+        panelWinSouth.add(labelWin);
+        panelWinSouth.add(buttonValidWin);
+        panelWin.add(panelWinSouth,BorderLayout.SOUTH); 
         
         panelWin.setVisible(true);
         return panelWin;
@@ -92,8 +102,17 @@ public class InterfaceMonster extends JPanel
         panelLoose.setLayout(new BorderLayout());
         labelLoose = new JLabel("",JLabel.CENTER);
         labelLoose.setText("<html><center> WRONG ANSWER !!! <br>  AS A PUNISHEMENT I'M REMOVING YOU 50HP !!!<br> GOOD LUCK FOR THE NEXT TIME !!!!!! </center></html>");
-        panelLoose.add(labelImage, BorderLayout.CENTER);
-        panelLoose.add(labelLoose,BorderLayout.SOUTH); 
+        Icon imageMonster = new ImageIcon(new ImageIcon("monster/"+monster.getName()+".jpg").getImage().getScaledInstance(240, 230, Image.SCALE_DEFAULT));
+        labelImageLoose = new JLabel(imageMonster,JLabel.CENTER);
+        panelLoose.add(labelImageLoose, BorderLayout.CENTER);
+        
+        buttonValidLoose = new JButton ("I WILL BEAT YOU NEXT TIME !");
+        buttonValidLoose.addActionListener(new MonsterListener(this, game));
+        panelLooseSouth = new JPanel();
+        panelLooseSouth.setLayout(new GridLayout(2,1));
+        panelLooseSouth.add(labelLoose);
+        panelLooseSouth.add(buttonValidLoose);
+        panelLoose.add(panelLooseSouth,BorderLayout.SOUTH); 
        
         panelLoose.setVisible(true);
         return panelLoose;
@@ -125,6 +144,14 @@ public class InterfaceMonster extends JPanel
     
     public JPanel getPanel1() {
         return panel1;
+    }
+    
+    public JButton getButtonValidLoose() {
+        return buttonValidLoose;
+    }
+    
+    public JButton getButtonValidWin() {
+        return buttonValidWin;
     }
 }
 

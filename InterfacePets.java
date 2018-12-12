@@ -43,6 +43,7 @@ public class InterfacePets
 
         label2 = new JLabel(imagePets,JLabel.CENTER);
         button1 = new JButton("GOOD LUCK"); 
+        button1.addActionListener(new PetListener(this, game));
         panel1.setLayout(new BorderLayout());
 
         Font f = new Font("Serif", Font.PLAIN, 12); 

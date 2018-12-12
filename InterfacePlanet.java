@@ -111,4 +111,9 @@ public class InterfacePlanet extends JPanel implements ActionListener
     {
         return panelPlanet;
     }
+    
+    public Timer getRoomTimer()
+    {
+        return room_timer;
+    }
 }

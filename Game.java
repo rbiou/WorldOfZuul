@@ -40,7 +40,6 @@ public class Game
     private Player player;
     private InterfaceGame interfaceGame;
     private Item engine, propellant, windows, wheel;
-    private long time_less;
 
     /**
      * Constructeur d'objets de classe Game
@@ -71,6 +70,8 @@ public class Game
      */
     public void resetGame()
     {
+        getInterfaceGame().dispose();
+        getInterfaceGame().getInterfacePlanet().getRoomTimer().cancel();
         listPlanet = new ArrayList<Planet>(); 
         createWorld();
        interfaceGame = new InterfaceGame(this);

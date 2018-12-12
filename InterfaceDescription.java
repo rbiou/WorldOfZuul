@@ -10,15 +10,18 @@ import java.util.*;
  */
 public class InterfaceDescription extends JPanel 
 {
-    private Game myGame; 
+    private Game myGame;
+    
     /**
      * Constructor for objects of class InterfaceDescription
      */
     public InterfaceDescription(Game game)
     {
         myGame = game; 
+        
     }
 
+    
     public void updatePanelDescription(JPanel panel){
         myGame.getInterfaceGame().getPanelDescription().removeAll();
         myGame.getInterfaceGame().getPanelDescription().add(panel); 

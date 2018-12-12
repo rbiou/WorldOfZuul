@@ -42,7 +42,7 @@ public class InterfaceGame extends JFrame implements ActionListener
         panelOfDescription = new InterfaceDescription(game);
 
         gameFrame = new JFrame ("GAME");
-        gameFrame.setDefaultCloseOperation(gameFrame.EXIT_ON_CLOSE);
+        gameFrame.setDefaultCloseOperation(gameFrame.DISPOSE_ON_CLOSE);
         menuBar = new JMenuBar(); 
 
         this.setJMenuBar(menuBar); 
@@ -57,7 +57,7 @@ public class InterfaceGame extends JFrame implements ActionListener
 
         panelDoor = new JPanel();
         panelDoor.setLayout(new GridLayout (1,1));
-        panelDoor.add(panelOfRoom.getPanelRoom());
+        panelDoor.add(panelOfRoom.getPanelFinal());
 
         panelMap = new JPanel();
         panelMap.setLayout(new GridLayout (1,1));
@@ -95,7 +95,6 @@ public class InterfaceGame extends JFrame implements ActionListener
 
     public void actionPerformed(ActionEvent e){
         if (e.getSource() ==  gamebis.getInterfaceGame().getRestartMenuItem()){ 
-            gameFrame.dispose();
             gamebis.resetGame();
         }
         if (e.getSource() ==  gamebis.getInterfaceGame().getQuitMenuItem()){
@@ -164,6 +163,7 @@ public class InterfaceGame extends JFrame implements ActionListener
         return menu2; 
     }
 
+<<<<<<< HEAD
     public void popUpWin(){
         JOptionPane win = new JOptionPane();      
         option = win.showConfirmDialog(null, 
@@ -186,3 +186,10 @@ public class InterfaceGame extends JFrame implements ActionListener
         }
     }
 }
+=======
+    public JFrame getGameFrame(){
+        return gameFrame;
+    }
+}
+
+>>>>>>> 5e1560730f0d9ef0b7fe7104f67df0c824dd192e

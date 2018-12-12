@@ -15,8 +15,9 @@ public class InterfaceRoom extends JPanel
     private Game myGame;                      //The game
     private Room myRoom;                      //The actual room of the player
     private Player myPlayer;                  //The actual player
-    private JPanel myRoomPanel;               //The JPanel for the Room interface 
+    private JPanel myRoomPanel, myRoomPanelFinal;               //The JPanel for the Room interface 
     private ArrayList<JButton> myRoomButtons; //The list of possible directions buttons which correspond to all exits possible of
+    private JTextArea descriptionLabel;                  //Label to give an explication about the exits
     //the current room of the player.
 
     /**
@@ -25,8 +26,19 @@ public class InterfaceRoom extends JPanel
     public InterfaceRoom(Game newGame)
     {
         myRoomPanel = new JPanel();
+        myRoomPanelFinal = new JPanel();
+        myRoomPanelFinal.setLayout(new BorderLayout());
+        descriptionLabel = new JTextArea ("Here the different exits possible for the current room : ");
+        Font f = new Font("Apple Chancery", Font.PLAIN, 24);
+        descriptionLabel.setFont(f);
+        descriptionLabel.setLineWrap(true);
+        descriptionLabel.setWrapStyleWord(true);
+        descriptionLabel.setBackground(Color.gray);
+        descriptionLabel.setForeground(Color.white);
         myRoomButtons = new ArrayList <JButton>();
         updateInterfaceRoom(newGame);
+        myRoomPanelFinal.add(descriptionLabel, BorderLayout.NORTH);
+        myRoomPanelFinal.add(myRoomPanel, BorderLayout.CENTER);
     }
 
     
@@ -65,5 +77,10 @@ public class InterfaceRoom extends JPanel
     public ArrayList<JButton> getButtonsList()
     { 
         return myRoomButtons;
+    }
+    
+    public JPanel getPanelFinal()
+    {
+        return myRoomPanelFinal;
     }
 };
