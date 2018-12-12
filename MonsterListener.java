@@ -12,12 +12,14 @@ public class MonsterListener implements ActionListener
     // variables d'instance 
     private InterfaceMonster interMonster;
     private String reponse;
+    private Game myGame; 
     /**
      * Constructeur d'objets de classe Listener
      */
-    public MonsterListener(InterfaceMonster i)
+    public MonsterListener(InterfaceMonster i, Game game)
     {
         interMonster = i;
+        myGame = game;
     }
     
     /**
@@ -30,12 +32,12 @@ public class MonsterListener implements ActionListener
             interMonster.getMonster().checkAnswer(reponse, myGame.getPlayer());
             if (interMonster.getMonster().checkAnswer(reponse, myGame.getPlayer()))
                 {
-                panelOfMonster.getPanel1().setVisible(false);
-                myGame.getInterfaceGame().getInterfaceDescription().updatePanelDescription(panelOfMonster.setPanelWin());
+                interMonster.getPanel1().setVisible(false);
+                myGame.getInterfaceGame().getInterfaceDescription().updatePanelDescription(interMonster.setPanelWin());
             }
             else {
-                panelOfMonster.getPanel1().setVisible(false);
-                myGame.getInterfaceGame().getInterfaceDescription().updatePanelDescription(panelOfMonster.setPanelLoose());}
+                interMonster.getPanel1().setVisible(false);
+                myGame.getInterfaceGame().getInterfaceDescription().updatePanelDescription(interMonster.setPanelLoose());}
 
         }
 }
