@@ -3,10 +3,11 @@ import java.awt.*;
 import java.awt.event.*;
 
 /**
- * Décrivez votre classe startGameInterface ici.
+ *This class allows us to start the game by asking the player his name and sex to be able to assign an avatar. When the 
+ *information are good the game starts.
  *
- * @author (votre nom)
- * @version (un numéro de version ou une date)
+ * @author Group7
+ * @version 13/12/18
  */
 public class startGameInterface
 {
@@ -21,31 +22,30 @@ public class startGameInterface
         JLabel panLogo = new JLabel(gameLogo, JLabel.CENTER);
         //Le nom
         JPanel panNom = new JPanel();
-        panNom.setBackground(Color.white);
-        panNom.setPreferredSize(new Dimension(250, 60));
-        JTextField nom = new JTextField();
-        nom.setPreferredSize(new Dimension(100, 25));
-        panNom.setBorder(BorderFactory.createTitledBorder("Nom du personnage"));
-        JLabel nomLabel = new JLabel("Saisir un nom :", JLabel.CENTER);
+        panNom.setBackground(Color.white); // color of the panNom
+        panNom.setPreferredSize(new Dimension(250, 60)); // panNom dimensions
+        JTextField nom = new JTextField(); // writing area for the player
+        nom.setPreferredSize(new Dimension(100, 25)); // dimensions to the textField
+        panNom.setBorder(BorderFactory.createTitledBorder("Nom du personnage")); // the title is placed as border
+        JLabel nomLabel = new JLabel("Saisir un nom :", JLabel.CENTER); // label where the player will give his name
         panNom.add(nomLabel);
         panNom.add(nom);
 
         //Le sexe
-        JPanel panSexe = new JPanel();
-        panSexe.setBackground(Color.white);
-        panSexe.setPreferredSize(new Dimension(220, 60));
+        JPanel panSexe = new JPanel(); 
+        panSexe.setBackground(Color.white); // color if the panSexe
+        panSexe.setPreferredSize(new Dimension(220, 60)); // dimension of the panSexe
         panSexe.setBorder(BorderFactory.createTitledBorder("Sexe du personnage"));
-        JComboBox sexe = new JComboBox();
+        JComboBox sexe = new JComboBox(); // to give the player the choice between féminin or masculin
         sexe.addItem("Masculin");
         sexe.addItem("Féminin");
-        JLabel sexeLabel = new JLabel("Sexe : ",JLabel.CENTER);
+        JLabel sexeLabel = new JLabel("Sexe : ",JLabel.CENTER); // Label where the player give his sex
         panSexe.add(sexeLabel);
         panSexe.add(sexe);
 
-        //OK
+        // If the information are good 
         JPanel control = new JPanel();
         JButton okBouton = new JButton("JOUER");
-
         okBouton.addActionListener(new ActionListener(){
 
                 public void actionPerformed(ActionEvent arg0) {

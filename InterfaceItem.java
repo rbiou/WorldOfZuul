@@ -9,7 +9,7 @@ import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 /**
  * Class Interface Item shows the bag of the player and the seller when they interact. There are image og the item, listof item
- * with her description
+ * with her description.
  *
  * @author Group7
  * @version 12/12/18
@@ -18,7 +18,7 @@ public class InterfaceItem extends JPanel implements ActionListener
 {
     private JLabel labelImage,labelDescription; // JLabel for images and descriptions of the items. 
     private ImageIcon imageItem; // Image of items
-    private JPanel panel1, panel2,panelFinal; // Panel of the InterfaceItem
+    private JPanel panelb, panels, panel1, panel2,panelFinal; // Panel of the InterfaceItem
     private JComboBox itemBox; // Box where is the list of items.
     private ArrayList<Item> itemList; // List of items
     private Item selectedItem; // when the player selects item
@@ -29,17 +29,16 @@ public class InterfaceItem extends JPanel implements ActionListener
      */
     public InterfaceItem(Game game)
     {
-
         //instanciation of the objects of the InterfaceItem
         this.game = game;
         String name = "Item"; // name of the item, it is associated with the name of the image
         Icon imageItem = new ImageIcon(name+".png");
         buttonBuy = new JButton("Buy"); // Creation of the buy button
-        buttonBuy.setBackground(Color.YELLOW); // Color of the button
-        buttonBuy.setPreferredSize(new Dimension(1000,40)); // size of the button
+
+
         buttonSell = new JButton("Sell"); // Creation of the sell button
-        buttonSell.setBackground(Color.BLUE); // Color of the button
-        buttonSell.setPreferredSize(new Dimension(1000,40)); // size of the button
+
+
         //buttonBuy.setEnabled(false); // The button is accessible or not.
         //buttonSell.setEnabled(false);
 
@@ -55,32 +54,19 @@ public class InterfaceItem extends JPanel implements ActionListener
 
         labelImage = new JLabel(imageItem);
         labelDescription = new JLabel();
-
+    
         // panel 1 South panel
         panel1 = new JPanel();
         panel1.setLayout(new GridLayout (1,2));
         panel1.add(itemBox);
         panel1.add(labelDescription);
-
+        
         //panel 2 with buttons
         panel2 = new JPanel();
-        panel2.setLayout(new GridBagLayout ());
-
-        GridBagConstraints gbc= new GridBagConstraints();
-
-        gbc.gridx = 0;
-        gbc.gridy=0;
-        gbc.insets= new Insets(10,10,0,0);
-        gbc.ipadx=10;
-
-        gbc.gridheight=2;
-        gbc.gridwidth=1;
-
-        panel2.add(buttonSell, gbc);
-
-        gbc.gridx = 1;
-        panel2.add(buttonBuy, gbc);
-
+        panel2.setLayout(new GridLayout (1,2));
+        panel2.add(buttonBuy);
+        panel2.add(buttonSell);
+        
         //Creation panel Final
         panelFinal = new JPanel();
         panelFinal.setLayout(new GridLayout(3, 1));
