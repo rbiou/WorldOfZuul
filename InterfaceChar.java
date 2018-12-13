@@ -38,9 +38,9 @@ public class InterfaceChar extends JFrame
         monsterButton = new JButton("Monster");
         labelSeller = new JLabel ("Interact with a seller : ", labelSeller.CENTER);
         sellerButtonBuy = new JButton("Buy something");
-        sellerButtonBuy.addActionListener(new SellerListener(game));
+        sellerButtonBuy.addActionListener(new GameListener(game));
         sellerButtonSell = new JButton("Sell something");
-        sellerButtonSell.addActionListener(new SellerListener(game));
+        sellerButtonSell.addActionListener(new GameListener(game));
         petButton = new JButton("Pet");
         chestButton = new JButton("Chest"); 
 
@@ -157,8 +157,8 @@ public class InterfaceChar extends JFrame
             myGame.getInterfaceGame().getInterfaceItem().getSellButton().setEnabled(true);
         }
         else {
-            sellerButtonBuy.setVisible(false);
-            sellerButtonSell.setVisible(false);
+            sellerButtonBuy.setEnabled(false);
+            sellerButtonSell.setEnabled(false);
             myGame.getInterfaceGame().getInterfaceItem().getSellButton().setEnabled(false);
             myGame.getInterfaceGame().getInterfaceItem().getBuyButton().setEnabled(false);
         }
