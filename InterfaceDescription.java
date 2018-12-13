@@ -3,25 +3,30 @@ import javax.swing.*;
 import java.awt.event.*;
 import java.util.*; 
 /**
- * Write a description of class InterfaceDescription here.
+ * 
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author (Group7)
+ * @version (13/12/2018)
  */
 public class InterfaceDescription extends JPanel 
 {
+    //declaration of variables
     private Game myGame;
-    
+
     /**
      * Constructor for objects of class InterfaceDescription
      */
     public InterfaceDescription(Game game)
     {
         myGame = game; 
-        
+
     }
 
-    
+    /**
+     * update the panel description to display a new information
+     * 
+     * @param  JPanel : panel
+     */
     public void updatePanelDescription(JPanel panel){
         myGame.getInterfaceGame().getPanelDescription().removeAll();
         myGame.getInterfaceGame().getPanelDescription().add(panel); 
