@@ -40,14 +40,17 @@ public class Game
     private Player player;
     private InterfaceGame interfaceGame;
     private Item engine, propellant, windows, wheel;
+    private String playerName, playerSexe;
 
     /**
      * Constructeur d'objets de classe Game
      */
-    public Game()
+    public Game(String name, String sexe)
     {
-        listPlanet = new ArrayList<Planet>(); 
-        createWorld();
+        listPlanet = new ArrayList<Planet>();
+        playerName = name;
+        playerSexe = sexe;
+        createWorld(playerName);
         interfaceGame = new InterfaceGame(this);
     }
 
@@ -73,7 +76,7 @@ public class Game
         getInterfaceGame().dispose();
         getInterfaceGame().getInterfacePlanet().getRoomTimer().cancel();
         listPlanet = new ArrayList<Planet>(); 
-        createWorld();
+        createWorld(playerName);
        interfaceGame = new InterfaceGame(this);
     }
     
@@ -92,7 +95,7 @@ public class Game
     /**
      * the method allows you to create the World of our game
      */
-    public void createWorld()
+    public void createWorld(String name)
     {   
         //creation of the planets
         startP = new Planet("Start", "Hic incipit adventum tuum.", 10, 30); 
@@ -113,7 +116,7 @@ public class Game
         start = new Room("start", startP);
 
         // creation of the player
-        player = new Player("Tintin",200,start); 
+        player = new Player(name,200,start); 
         start.addCharacter(player);
 
         alpha.addRoom(alpha1 = new Room("alpha1", alpha)); 
@@ -277,6 +280,16 @@ public class Game
     public List<Planet> getListPlanet()
     {
         return this.listPlanet; 
+    }
+    
+        /**
+     * Getter to return the name of the room
+     * 
+     * @return      String
+     */
+    public String getPlayerSexe()
+    {
+        return this.playerSexe; 
     }
 }    
 

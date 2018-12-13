@@ -20,8 +20,7 @@ public class InterfaceMap extends JPanel
     public InterfaceMap(Game newGame)
     {
         panelMap = new JPanel();
-        updateInterfaceMap(newGame); 
-        
+        updateInterfaceMap(newGame);       
     }
 
     public JPanel getPanelMap(){

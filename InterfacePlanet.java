@@ -25,7 +25,7 @@ public class InterfacePlanet extends JPanel implements ActionListener
 
 
     /**
-     * Constructor for objects of class PlanetInterface d'objets de classe Planet
+     * Constructor for objects of class PlanetInterface 
      */
     public InterfacePlanet(Game mygame)
     {
@@ -36,9 +36,9 @@ public class InterfacePlanet extends JPanel implements ActionListener
     }
 
     /**
-     * this method update the interface Planet : update the descritpion and the 
+     * this method updates the interface Planet : update the descritpion and the 
      * the picture of the planet
-     * @parameter game 
+     * @parameter  Game : game 
      */
     public void updateInterfacePlanet(Game game){
         //remove the former panelPlanet
@@ -69,7 +69,7 @@ public class InterfacePlanet extends JPanel implements ActionListener
         myPanel2.revalidate();
         myPanel2.repaint(); 
         
-        // the image of planet
+        // the image of the planet
         Icon imagePlanet = new ImageIcon(new ImageIcon("planet/planet_"+game.getPlayer().getCurrentRoom().getPlanet().getPlanetName()+
         ".png").getImage().getScaledInstance(200, 200, Image.SCALE_DEFAULT));
 
