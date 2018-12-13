@@ -3,7 +3,7 @@ import javax.swing.*;
 import java.awt.event.*;
 import java.util.*; 
 /**
- * 
+ * The InterfaceDescription is used to update the panel description
  *
  * @author (Group7)
  * @version (13/12/2018)
