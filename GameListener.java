@@ -3,13 +3,17 @@ import javax.swing.*;
 import java.awt.event.*;
 import java.util.*;
 /**
- * Write a description of class CharListener here.
+ * The gameListener class is used to applicate event when the user clicks on
+ * button from the 'InterfaceChar class'.
+ * The different events are displayed in the panel 
+ * description (in InterfaceClass)
  *
  * @author (group7)
  * @version (11/12/18)
  */
 public class GameListener extends JPanel implements ActionListener
 {
+    //declaration of the variables
     private Game myGame;
     private InterfacePets panelOfPets;
     private InterfaceMonster panelOfMonster;
@@ -21,14 +25,23 @@ public class GameListener extends JPanel implements ActionListener
     public GameListener(Game theGame)
     {
         myGame = theGame;
-        JOptionPane jop1 ; 
     }
 
     /**
+     * Here there are the different events : 
+     *      when the user clicks on PetButton
+     *      when the user clicks on MonsterButton
+     *      when the user clicks on ChestButton
+     *      when the user clicks on SellerButtonBuy
+     *      when the user clicks on SellerButtonSell
+     * All these buttons are instantiated in the InterfaceChar class.
      * 
+     * The method 'updatePanelDescription()' (describes in Interface description)
+     * allows us to update the panel description to display information.
      */
     public void actionPerformed (ActionEvent e)
     {
+        //pet button
         if (e.getSource() ==  myGame.getInterfaceGame().getInterfaceChar().getPetButton()){
             Pet recupPet = myGame.getPlayer().getCurrentRoom().getPet();
             panelOfPets = new InterfacePets(myGame, recupPet);
@@ -36,7 +49,7 @@ public class GameListener extends JPanel implements ActionListener
             myGame.getInterfaceGame().getInterfaceDescription().updatePanelDescription(panelOfPets.getPanelPet());
             myGame.getInterfaceGame().getInterfacePlayer().updateInterfacePlayer(myGame);
         }
-
+        //Monster button
         else if (e.getSource() ==  myGame.getInterfaceGame().getInterfaceChar().getMonsterButton()){
             Monster recupMonster = myGame.getPlayer().getCurrentRoom().getMonster();
             panelOfMonster = new InterfaceMonster(myGame, recupMonster);
@@ -45,7 +58,7 @@ public class GameListener extends JPanel implements ActionListener
             
             myGame.getInterfaceGame().getInterfaceRoom().getPanelFinal().setVisible(false);
         }
-
+        //chest button
         else if (e.getSource() ==  myGame.getInterfaceGame().getInterfaceChar().getChestButton()){
             Chest chestRecup = myGame.getPlayer().getCurrentRoom().getChest();
             myGame.getPlayer().grabContent(chestRecup);
@@ -58,7 +71,7 @@ public class GameListener extends JPanel implements ActionListener
             myGame.getInterfaceGame().getInterfaceChar().getChestButton().setEnabled(false);
             myGame.endGame();
         }
-
+        //sell button
         else if (e.getSource() == myGame.getInterfaceGame().getInterfaceChar().getSellerButtonSell())
         {
             Player player =  myGame.getPlayer();
@@ -67,7 +80,7 @@ public class GameListener extends JPanel implements ActionListener
             itemListPanel.getSellButton().setEnabled(true);
             myGame.getInterfaceGame().getInterfaceDescription().updatePanelDescription(myGame.getInterfaceGame().getInterfaceItem());
         }
-        
+        //buy button
         else if (e.getSource() == myGame.getInterfaceGame().getInterfaceChar().getSellerButtonBuy())
         {
             Seller seller = myGame.getPlayer().getCurrentRoom().getSeller();
