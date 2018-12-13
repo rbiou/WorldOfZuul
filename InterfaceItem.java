@@ -36,9 +36,10 @@ public class InterfaceItem extends JPanel implements ActionListener
         Icon imageItem = new ImageIcon(name+".png");
         buttonBuy = new JButton("Buy"); // Creation of the buy button
         buttonBuy.setBackground(Color.YELLOW); // Color of the button
-        buttonBuy.setPreferredSize(new Dimension(60,40)); // size of the button
+        buttonBuy.setPreferredSize(new Dimension(1000,40)); // size of the button
         buttonSell = new JButton("Sell"); // Creation of the sell button
-        buttonSell.setPreferredSize(new Dimension(60,40)); // size of the button
+        buttonSell.setBackground(Color.BLUE); // Color of the button
+        buttonSell.setPreferredSize(new Dimension(1000,40)); // size of the button
         buttonBuy.setEnabled(false); // The button is accessible or not.
         buttonSell.setEnabled(false);
         
@@ -52,18 +53,18 @@ public class InterfaceItem extends JPanel implements ActionListener
         itemBox = new JComboBox();
         itemBox.addActionListener(this);
         
-        //Création du LabelItem
+        //Création of LabelItem
         
         labelImage = new JLabel(imageItem);
         labelDescription = new JLabel();
         
-        // panel 1 en bas
+        // panel 1 South panel
         panel1 = new JPanel();
         panel1.setLayout(new GridLayout (1,2));
         panel1.add(itemBox);
         panel1.add(labelDescription);
         
-        //panel 2 
+        //panel 2 with buttons
         panel2 = new JPanel();
         panel2.setLayout(new GridBagLayout ());
         
@@ -71,10 +72,10 @@ public class InterfaceItem extends JPanel implements ActionListener
         
         gbc.gridx = 0;
         gbc.gridy=0;
-        
+        gbc.insets= new Insets(10,10,0,0);
         gbc.ipadx=10;
         
-        gbc.gridheight=1;
+        gbc.gridheight=2;
         gbc.gridwidth=1;
         
         panel2.add(buttonSell, gbc);
