@@ -42,65 +42,60 @@ public class InterfaceItem extends JPanel implements ActionListener
         buttonSell.setPreferredSize(new Dimension(1000,40)); // size of the button
         buttonBuy.setEnabled(false); // The button is accessible or not.
         buttonSell.setEnabled(false);
-        
+
         // Link of the interface button and his action
         buttonBuy.addActionListener(this); 
         buttonSell.addActionListener(this); 
-        
-        
+
         
         // Creation List
         itemBox = new JComboBox();
         itemBox.addActionListener(this);
-        
+
         //Création of LabelItem
-        
+
         labelImage = new JLabel(imageItem);
         labelDescription = new JLabel();
-        
+
         // panel 1 South panel
         panel1 = new JPanel();
         panel1.setLayout(new GridLayout (1,2));
         panel1.add(itemBox);
         panel1.add(labelDescription);
-        
+
         //panel 2 with buttons
         panel2 = new JPanel();
         panel2.setLayout(new GridBagLayout ());
-        
+
         GridBagConstraints gbc= new GridBagConstraints();
-        
+
         gbc.gridx = 0;
         gbc.gridy=0;
         gbc.insets= new Insets(10,10,0,0);
         gbc.ipadx=10;
-        
+
         gbc.gridheight=2;
         gbc.gridwidth=1;
-        
+
         panel2.add(buttonSell, gbc);
-        
+
         gbc.gridx = 1;
         panel2.add(buttonBuy, gbc);
+
         
-       
-        
-       
         //Creation panel Final
         panelFinal = new JPanel();
         panelFinal.setLayout(new GridLayout(3, 1));
         panelFinal.add(labelImage);
         panelFinal.add(panel1);
         panelFinal.add(panel2);
-        
+
     }
-    
-    
+
     
     public void actionPerformed(ActionEvent e){
         // Get event origin
         Object source = e.getSource();
-
 
         if (source == itemBox)
         {
@@ -121,15 +116,24 @@ public class InterfaceItem extends JPanel implements ActionListener
             {
                 JOptionPane jop1 = new JOptionPane();
                 jop1.showMessageDialog(null, "Cheers, bro", "Information", JOptionPane.INFORMATION_MESSAGE);
+                game.getInterfaceGame().getInterfacePlayer().updateInterfacePlayer(game);
             } else {
                 JOptionPane jop1 = new JOptionPane();
-                jop1.showMessageDialog(null, "Come back when you'll be wealthy enough for that boy.", "Information", JOptionPane.INFORMATION_MESSAGE);
+                jop1.showMessageDialog(null, "Come back when you'll be wealthy enough for that boy.", "Information", JOptionPane.INFORMATION_MESSAGE);   
             }
         }
         else if (source == buttonSell)
-        {
-            JOptionPane jop1 = new JOptionPane();
-            jop1.showMessageDialog(null, "Cheers, bro", "Information", JOptionPane.INFORMATION_MESSAGE);
+        {   
+            if (player.sellItem(seller, selectedItem))
+            {
+                JOptionPane jop1 = new JOptionPane();
+                jop1.showMessageDialog(null, "Cheers, bro", "Information", JOptionPane.INFORMATION_MESSAGE);
+                game.getInterfaceGame().getInterfacePlayer().updateInterfacePlayer(game);
+            }
+            else {
+                JOptionPane jop1 = new JOptionPane();
+                jop1.showMessageDialog(null, "Come back when you'll be enough items for that boy.", "Information", JOptionPane.INFORMATION_MESSAGE);
+            }
         }
     }
 
@@ -151,7 +155,7 @@ public class InterfaceItem extends JPanel implements ActionListener
     public Item getSelectedItem(){
         return selectedItem;
     }
-    
+
     public JButton getBuyButton(){
         return buttonBuy;
     }

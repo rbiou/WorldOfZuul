@@ -157,8 +157,8 @@ public class InterfaceChar extends JFrame
             myGame.getInterfaceGame().getInterfaceItem().getSellButton().setEnabled(true);
         }
         else {
-            sellerButtonBuy.setEnabled(false);
-            sellerButtonSell.setEnabled(false);
+            sellerButtonBuy.setVisible(false);
+            sellerButtonSell.setVisible(false);
             myGame.getInterfaceGame().getInterfaceItem().getSellButton().setEnabled(false);
             myGame.getInterfaceGame().getInterfaceItem().getBuyButton().setEnabled(false);
         }

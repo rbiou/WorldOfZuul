@@ -3,7 +3,8 @@ import javax.swing.*;
 import java.awt.event.*;
 import java.util.*;
 /**
- * This class desribe the actions when the user click on seller's button (sell and buy)
+ * This class desribe the actions when the user click on 
+ * seller's button (sell and buy)
  *
  * @author group7
  * @version 13/12/2018
