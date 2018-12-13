@@ -3,15 +3,14 @@ import javax.swing.*;
 import java.awt.event.*;
 import java.util.*;
 /**
- * Write a description of class SellerListener here.
+ * This class desribe the actions when the user click on seller's button (sell and buy)
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author group7
+ * @version 13/12/2018
  */
 public class SellerListener implements ActionListener
 {
-    // instance variables - replace the example below with your own
-    private int x;
+    
     Game game;
 
     /**
@@ -23,10 +22,7 @@ public class SellerListener implements ActionListener
     }
 
     /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
+     * This method describes the grpahic events when the player interacts with de seller. 
      */
     public void actionPerformed(ActionEvent e)
     {

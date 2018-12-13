@@ -8,21 +8,22 @@ import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 /**
- * Write a description of class InterfaceItem here.
+ * Class Interface Item shows the bag of the player and the seller when they interact. There are image og the item, listof item
+ * with her description
  *
  * @author Group7
  * @version 12/12/18
  */
 public class InterfaceItem extends JPanel implements ActionListener
 {
-    private JLabel labelImage,labelDescription;
-    private ImageIcon imageItem;
-    private JPanel panel1, panel2,panelFinal;
-    private JComboBox itemBox;
-    private ArrayList<Item> itemList;
-    private Item selectedItem;
-    private JButton buttonBuy, buttonSell;
-    private Game game;
+    private JLabel labelImage,labelDescription; // JLabel for images and descriptions of the items. 
+    private ImageIcon imageItem; // Image of items
+    private JPanel panel1, panel2,panelFinal; // Panel of the InterfaceItem
+    private JComboBox itemBox; // Box where is the list of items.
+    private ArrayList<Item> itemList; // List of items
+    private Item selectedItem; // when the player selects item
+    private JButton buttonBuy, buttonSell; // The buttons to sell and to buy
+    private Game game; 
     /**
      * Constructor for objects of class InterfaceItem
      */
@@ -31,18 +32,19 @@ public class InterfaceItem extends JPanel implements ActionListener
 
         //instanciation of the objects of the InterfaceItem
         this.game = game;
-        String name = "Item";
+        String name = "Item"; // name of the item, it is associated with the name of the image
         Icon imageItem = new ImageIcon(name+".png");
-        buttonBuy = new JButton("Buy");
-        buttonBuy.setBackground(Color.YELLOW);
-        buttonBuy.setPreferredSize(new Dimension(60,40));
-        buttonSell = new JButton("Sell");
-        buttonBuy.setPreferredSize(new Dimension(60,40));
-        buttonBuy.setEnabled(false);
+        buttonBuy = new JButton("Buy"); // Creation of the buy button
+        buttonBuy.setBackground(Color.YELLOW); // Color of the button
+        buttonBuy.setPreferredSize(new Dimension(60,40)); // size of the button
+        buttonSell = new JButton("Sell"); // Creation of the sell button
+        buttonSell.setPreferredSize(new Dimension(60,40)); // size of the button
+        buttonBuy.setEnabled(false); // The button is accessible or not.
         buttonSell.setEnabled(false);
         
-        buttonBuy.addActionListener(this);
-        buttonSell.addActionListener(this);
+        // Link of the interface button and his action
+        buttonBuy.addActionListener(this); 
+        buttonSell.addActionListener(this); 
         
         
         
@@ -70,8 +72,11 @@ public class InterfaceItem extends JPanel implements ActionListener
         gbc.gridx = 0;
         gbc.gridy=0;
         
+        gbc.ipadx=10;
+        
         gbc.gridheight=1;
         gbc.gridwidth=1;
+        
         panel2.add(buttonSell, gbc);
         
         gbc.gridx = 1;
