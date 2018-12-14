@@ -31,7 +31,8 @@ public class MonsterListener implements ActionListener
          if (e.getSource()== interMonster.getButtonReponse()){
             reponse = interMonster.getLabelReponse().getText();
             reponseMin = reponse.toLowerCase();
-            
+            // if the player give the good answer, we replace the actual panel
+            // by the panel rewarding the player, and we update the money in the panel player
             if (interMonster.getMonster().checkAnswer(reponseMin, myGame.getPlayer()))
                 {
                 interMonster.getPanel1().setVisible(false);
@@ -39,6 +40,8 @@ public class MonsterListener implements ActionListener
                 myGame.getInterfaceGame().getInterfacePlayer().updateInterfacePlayer(myGame);
                 
             }
+            // if the player give the wrong answer, we replace the actual panel
+            // by the panel bad answer, and we update the life in the panel player
             else {
                 interMonster.getPanel1().setVisible(false);
                 myGame.getInterfaceGame().getInterfaceDescription().updatePanelDescription(interMonster.setPanelLoose());
@@ -47,6 +50,7 @@ public class MonsterListener implements ActionListener
             }
             
         }
+        //after the player saw if he has given the good answer, he has to validate before keep moving in another room
         else if(e.getSource()== interMonster.getButtonValidLoose())
         {
             myGame.getInterfaceGame().getInterfaceChar().getMonsterButton().setEnabled(true);
