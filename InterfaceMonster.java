@@ -7,12 +7,12 @@ import java.util.*;
 /**
  * Décrivez votre classe Listener ici.
  *
- * @MARLIAT Julien
- * @5/12/2018
+ * @MARLIAT Julien / LAGRANGE Romain
+ * @13/12/2018
  */
 public class InterfaceMonster extends JPanel
 {
-    // variables d'instance - remplacez l'exemple qui suit par le vôtre
+    // all attributes used in the class to construct the different labels and panels
      private JPanel panel1, panelDroite, panelSouth, panelCenter, panelWin, panelWinSouth, panelLoose, panelLooseSouth ;
      private JLabel labelImage ,labelText, labelEnigme, labelImageWin, labelImageLoose ;
      private JLabel labelLoose, labelWin;
@@ -23,10 +23,14 @@ public class InterfaceMonster extends JPanel
      private JTextField labelReponse;
      private Game game ;
     /**
-     * Constructeur d'objets de classe Listener
+     * Constructeur d'objets de classe MonsterListener
+     * Creation of the first panel that display the monster picture, the enigma and put a textfield
+     * to allow to the player to give an answer. Also add a button to validate the answer.
+     * @param : game and monster of the room
      */
     public InterfaceMonster(Game gameT, Monster monsterT)
     {
+        
        panel1 = new JPanel(); 
        panel1.setLayout(new GridLayout(1,2));
        game=gameT; 
@@ -70,7 +74,9 @@ public class InterfaceMonster extends JPanel
        panel1.setVisible(true);
        
     }
-    
+    /**
+     * Creation of the win panel when the player give the good answer of the enigma
+     */
     public JPanel setPanelWin() {
         panelWin = new JPanel();
         panelWin.setLayout(new BorderLayout());
@@ -93,10 +99,16 @@ public class InterfaceMonster extends JPanel
         return panelWin;
     }
     
+     /**
+     * Getter of the panelWin
+     * @return: panelWin
+     */
     public JPanel getPanelWin() {
         return panelWin;
     }
-    
+     /**
+     * Creation of the loose panel when the player give the wrong answer of the enigma
+     */
     public JPanel setPanelLoose() {
         panelLoose = new JPanel();
         panelLoose.setLayout(new BorderLayout());
@@ -117,39 +129,60 @@ public class InterfaceMonster extends JPanel
         panelLoose.setVisible(true);
         return panelLoose;
     }
-    
+    /**
+     * Getter of the panelLoose
+     * @return: panelLoose
+     */
     public JPanel getPanelLoose() {
         return panelLoose;
     }
-
-    public JPanel getPanelPet(){
-        return panel1; 
-    }
-    
+   
+    /**
+     * Getter of the ButtonReponse
+     * @return: buttonReponse
+     */
     public JButton getButtonReponse() {
         return buttonReponse;
     }
-    
+    /**
+     * Getter of the LabelReponse
+     * @return: labelReponse
+     */
     public JTextField getLabelReponse() {
         return labelReponse;
     }
-    
+    /**
+     * Getter of the Monster
+     * @return: monster
+     */
     public Monster getMonster() {
         return monster;
     }
-    
+    /**
+     * Getter of the Player
+     * @return: game.getPlayer()
+     */
     public Player getPlayer(){
         return game.getPlayer();
     }
-    
+    /**
+     * Getter of the Panel1
+     * @return: panel1
+     */
     public JPanel getPanel1() {
         return panel1;
     }
-    
+    /**
+     * Getter of the ButtonValid for the loose panel
+     * @return: buttonValidLoose
+     */
     public JButton getButtonValidLoose() {
         return buttonValidLoose;
     }
-    
+     /**
+     * Getter of the ButtonValid for the win panel
+     * @return: buttonValidWin
+     */
     public JButton getButtonValidWin() {
         return buttonValidWin;
     }
