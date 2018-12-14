@@ -23,7 +23,9 @@ public class InterfaceRoom extends JPanel
      */
     public InterfaceRoom(Game newGame)
     {
+        //Our game variable
         myGame=newGame;
+        
         //A JTextArea to explain that we display the possible exits
         descriptionLabel = new JTextArea ("Here the different exits possible for the current room : ");
         Font f = new Font("Apple Chancery", Font.PLAIN, 24);
@@ -108,7 +110,7 @@ public class InterfaceRoom extends JPanel
 
     /**
      * getButtonsList : this method is a getter for the myRoomButtons variable.
-     * @return : JPanel myRoomPanel
+     * @return : ArrayList<JButton>  myRoomButtons
      */
     public ArrayList<JButton> getButtonsList()
     { 
@@ -117,6 +119,7 @@ public class InterfaceRoom extends JPanel
 
     /**
      * getPanelFinal : this method is a getter for the myRoomPanelFinal variable.
+     * @return : JPanel myRoomPanelFinal
      */
     public JPanel getPanelFinal()
     {
@@ -134,6 +137,10 @@ public class InterfaceRoom extends JPanel
             myButton = btn;
         }
 
+        /**
+         * mouseEntered : perform all the actions for this listener, when the mouse of the user fly over the button.
+         * @param : MouseEvent evt : the MouseEvent for this listener class.
+         */
         public void mouseEntered(MouseEvent evt){
             //Event occured when we fly over the button
             if (evt.getSource()== myButton){

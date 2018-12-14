@@ -17,10 +17,10 @@ import java.util.TimerTask;
  * @author (Group 7)
  * @version (11/12/2018)
  */
-public class InterfacePlanet extends JPanel implements ActionListener
+public class InterfacePlanet extends JPanel
 {
     private JPanel myPanel2,myPanel1, panelPlanet; //The JPanel for the planet Interface
-    private JLabel planetLabel,imagePlanetLabel, descriptionLabel, timeLabel; // The JLabel of the planet: images, description 
+    private JLabel planetLabel,imagePlanetLabel, timeLabel; // The JLabel of the planet: images, description 
     //and time
     private Timer room_timer; // The room_timer 
     private Game game; // The Game
@@ -50,7 +50,7 @@ public class InterfacePlanet extends JPanel implements ActionListener
         panelPlanet.setLayout(new GridLayout (1,3));
 
         // Get the name of the planet when the player after his move
-        planetLabel = new JLabel("Nom: " + game.getPlayer().getCurrentRoom().getPlanet().getPlanetName(), JLabel.CENTER);
+        planetLabel = new JLabel(game.getPlayer().getCurrentRoom().getPlanet().getPlanetName(), JLabel.CENTER);
 
         myPanel1 = new JPanel();
         myPanel1.add(planetLabel);
@@ -59,7 +59,11 @@ public class InterfacePlanet extends JPanel implements ActionListener
         myPanel2.setLayout(new GridLayout(3,1));
         
         // Get the description of the planet when the player after his move
-        descriptionLabel = new JLabel("Description: " + game.getPlayer().getCurrentRoom().getPlanet().descriptionDisplayPlanet(), JLabel.CENTER);
+        JTextArea descriptionText = new JTextArea (game.getPlayer().getCurrentRoom().getPlanet().descriptionDisplayPlanet());
+        descriptionText.setLineWrap(true);
+        descriptionText.setOpaque(false);
+        descriptionText.setEditable(false);
+        descriptionText.setWrapStyleWord(true);
         
         // Get The time of the planet that we have left 
         timeLabel = new JLabel("Time: " + game.getPlayer().getCurrentRoom().getPlanet().getTime(), JLabel.CENTER);
@@ -68,7 +72,7 @@ public class InterfacePlanet extends JPanel implements ActionListener
         updateTimer(game.getPlayer().getCurrentRoom().getPlanet().getTime());
         // Panel for the characteristics of the planet
         myPanel2.add(planetLabel);
-        myPanel2.add(descriptionLabel);
+        myPanel2.add(descriptionText);
         myPanel2.add(timeLabel);
         myPanel2.revalidate();
         myPanel2.repaint(); 
@@ -122,10 +126,6 @@ public class InterfacePlanet extends JPanel implements ActionListener
             timeLabel.setText("Time: "+Integer.toString(countdown));
         }
 
-    }
-
-    public void actionPerformed(ActionEvent e)
-    {
     }
     
     /**
