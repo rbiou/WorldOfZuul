@@ -81,10 +81,16 @@ public class Monster extends NonPlayerCharacter
             }
     }
     
+    /**
+     * Getter to know if the player have already gived the good answer to the monster
+     */
     public boolean getIsResolved(){
         return isResolved; 
     }
     
+    /**
+     * Getter to enigma of the monster
+     */
     public String getQuestion()
     {
     return question;
