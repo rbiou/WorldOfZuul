@@ -263,9 +263,9 @@ public class Game
 
         //Add items to the sellers
         sellerDelta2.addItem(keyDelta2 = new Keys("Yellow key",300,20,"I am a key, I can open the door Sloppy Smurf", "circle"));
-        sellerBeta2.addItem(magicBall1 = new Item ("flackball",100,30,"I am a diamond, you can buy me"));
-        sellerBeta2.addItem(diamond1 = new Item ("little diamond",250,30,"I am a diamond, you can buy me"));
-        sellerGamma3.addItem(knief2 = new Item("sharp knife", 50, 5,"I am a sharp knief, you can buy me"));
+        sellerBeta2.addItem(magicBall1 = new Item ("Flatball",100,30,"I am a diamond, you can buy me"));
+        sellerBeta2.addItem(diamond1 = new Item ("Little diamond",250,30,"I am a diamond, you can buy me"));
+        sellerGamma3.addItem(knief2 = new Item("Sharp knife", 50, 5,"I am a sharp knief, you can buy me"));
         sellerGamma3.addItem(fork2 = new Item("Small knife", 3, 5,"I am a small fork, you can buy me"));
         sellerGamma3.addItem(keyGamma4 = new Keys("Blue key", 300, 20,"I am a key, I can open the door Lazy Smurf", "rectangle"));
         sellerDelta2.addItem(diamond3 = new Item("Special diamond", 250, 30, "I am a special diamond, you can buy me to see why I am special"));
