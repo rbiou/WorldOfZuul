@@ -6,11 +6,13 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 /**
- * The InterfacePlanet class: this class defines update the descritpion and the picture of the planet 
- * in the game World of Zuul. Allows you to do a countdowm when the player is in the planet.
+ * InterfacePlanet class is used to display the panel of the planet.
+ * This panel is composed of :
+ *  - The nom of the planet where the player is located
+ *  - The description of the planet where he is
+ *  - The time he has left in the planet
+ *  - The image of the planet where the player is located
  * In the game there are 4 planets. 
- * They contain rooms (different number according to the planet)
- *
  *
  * @author (Group 7)
  * @version (11/12/2018)
@@ -32,13 +34,15 @@ public class InterfacePlanet extends JPanel implements ActionListener
         game = mygame;
         //create a new panelPlanet
         panelPlanet = new JPanel();
-        updateInterfacePlanet(game);       
+        updateInterfacePlanet(game); //method to add elements in the panel     
     }
 
     /**
-     * this method updates the interface Planet : update the descritpion and the 
-     * the picture of the planet
-     * @parameter  Game : game 
+     * Construction of the panel with all elements
+     * This method is used to update the panel when the player changes 
+     * planet. Thus we have the update of the name, description, time 
+     * and image of the changing planet.
+     * @parameter  Game : game
      */
     public void updateInterfacePlanet(Game game){
         //remove the former panelPlanet
@@ -123,12 +127,20 @@ public class InterfacePlanet extends JPanel implements ActionListener
     public void actionPerformed(ActionEvent e)
     {
     }
-
+    
+    /**
+     * getter of the panel planet
+     * @return   JPanel -> panelPlanet;
+     */
     public JPanel getPanelPlanet()
     {
         return panelPlanet;
     }
     
+    /**
+     * getter of the planet's room timer
+     * @return   Timer -> room_timer;
+     */
     public Timer getRoomTimer()
     {
         return room_timer;
