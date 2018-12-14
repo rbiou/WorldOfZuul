@@ -7,8 +7,8 @@ import java.util.*;
 /**
  * Décrivez votre classe Listener ici.
  *
- * @MARLIAT Julien / LAGRANGE Romain
- * @13/12/2018
+ * @author(Group7)
+ * @date(13/12/2018)
  */
 public class InterfaceMonster extends JPanel
 {
