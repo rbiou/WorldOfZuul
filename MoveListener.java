@@ -13,11 +13,7 @@ public class MoveListener extends JPanel implements ActionListener
 {
     private JPanel myRoomPanel, myMapPanel, myPlayerPanel; //All the interface panels which change 
     private Game myGame; //Our game
-    //private ArrayList<JButton> myRoomButtons; //List of buttons which indicate all the possible directions in the room panel
-    //private Room myRoom; //The actual room of the player
-    private JButton myRoomButton;
-    private JLabel myMap, roomLabel, playerLabel, moneyLabel, weightLabel; //Modified labels
-    private static Planet last_visited_planet;
+    private static Planet last_visited_planet; //The planet where is the player after his last move
     
     /**
      * Constructeur d'objets de classe MoveListener
@@ -25,6 +21,7 @@ public class MoveListener extends JPanel implements ActionListener
     public MoveListener(Game theGame)
     {
         myGame = theGame;
+        //When the player move for the first time, we assign to last_visited_planet variable the planet where he starts. 
         if (last_visited_planet == null)
         {
             last_visited_planet = theGame.getPlayer().getCurrentRoom().getPlanet();
@@ -42,23 +39,30 @@ public class MoveListener extends JPanel implements ActionListener
         //ON ROOM PANEL
         //Iterate over all the actual directions buttons to know which button was pressed
         for (int i=0; i < myGame.getInterfaceGame().getInterfaceRoom().getButtonsList().size(); i++) {
-            myRoomButton = myGame.getInterfaceGame().getInterfaceRoom().getButtonsList().get(i);
+            //Get the JButton in a variable which correspond to one of the button of the list to check if he was pressed
+            JButton myRoomButton = myGame.getInterfaceGame().getInterfaceRoom().getButtonsList().get(i);
             if ((JButton)e.getSource() ==  myRoomButton) {
                 //Move the player to the direction indicates on the pressed button
                 myGame.getPlayer().moveRoom(myGame.getPlayer().getCurrentRoom().exit.get(myRoomButton.getText()));
+                //Update the InterfaceRoom panel where is the list of exits buttons, to display the exits of the new room
                 myGame.getInterfaceGame().getInterfaceRoom().updateInterfaceRoom(myGame);
             };
         };
         
         //ON INTERFACE CHARACTER PANEL
+        //Update the "actual room" label in the InterfacePlayer panel
         myGame.getInterfaceGame().getInterfaceChar().modButton();
         
         //ON INTERFACE MAP PANEL
+        //Update the InterfaceMap panel to display the map with the new position of the player
         myGame.getInterfaceGame().getInterfaceMap().updateInterfaceMap(myGame);
         
         //ON INTERFACE PLANET PANEL
+        //Check if the current planet of the player is different with the planet after his last move.
         if (last_visited_planet != myGame.getPlayer().getCurrentRoom().getPlanet()){
+            //The current planet of the player is changed.
             last_visited_planet = myGame.getPlayer().getCurrentRoom().getPlanet();
+            //Update the InterfacePanel with all the informations about the planet and launch a new timer.
             myGame.getInterfaceGame().getInterfacePlanet().updateInterfacePlanet(myGame);
         }
         
