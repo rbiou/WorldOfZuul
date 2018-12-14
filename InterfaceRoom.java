@@ -13,7 +13,6 @@ import java.util.*;
 public class InterfaceRoom extends JPanel
 {
     private Game myGame;                            //The game
-    private Room myRoom;                            //The actual room of the player
     private JPanel myRoomPanel, myRoomPanelFinal;   //JPanel of the interface.
     private ArrayList<JButton> myRoomButtons;       //List of buttons which correspond to all exits for the player current room.
     private JTextArea descriptionLabel;             //Label to give a description of what is displayed in this interface.
@@ -63,7 +62,7 @@ public class InterfaceRoom extends JPanel
         //Clear all exit buttons from the precedent room
         myRoomButtons.clear();
         //Iterate over all exits possible for this new room where the player is now after he moved
-        for (int y=0; y < myRoom.getNameDoor().size(); y++)
+        for (int y=0; y < myGame.getPlayer().getCurrentRoom().getNameDoor().size(); y++)
         {
             //Create the button for each new exit
             JButton btn = new JButton(myGame.getPlayer().getCurrentRoom().getNameDoor().get(y));
