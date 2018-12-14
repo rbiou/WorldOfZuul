@@ -22,12 +22,12 @@ public class InterfacePlayer extends JPanel implements ActionListener
 
 {
     //declaration of the variables
-    private Game game; 
-    private JLabel descriptionLabel, roomLabel, moneyLabel, weightLabel, playerLabel, picture;
-    private JButton bagButton;
-    private JPanel panel1, panel2, panelFinalPlayer, panel3, panelRoom; 
+    private Game game; //The Game
+    private JLabel descriptionLabel, roomLabel, moneyLabel, weightLabel, playerLabel, picture; //JLanel of the interface. 
+    private JButton bagButton; // The Button bag
+    private JPanel panel1, panel2, panelFinalPlayer, panel3, panelRoom; //JPanel of the interface 
     private JProgressBar lifeBar, updateLifeBar; 
-    private ImageIcon image;
+    private ImageIcon image; // The image of the player (avatar)
     private int playerLP;
 
     /**
