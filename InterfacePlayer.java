@@ -22,7 +22,7 @@ public class InterfacePlayer extends JPanel implements ActionListener
 
 {
     //declaration of the variables
-    private Game game;
+    private Game game; 
     private JLabel descriptionLabel, roomLabel, moneyLabel, weightLabel, playerLabel, picture;
     private JButton bagButton;
     private JPanel panel1, panel2, panelFinalPlayer, panel3, panelRoom; 

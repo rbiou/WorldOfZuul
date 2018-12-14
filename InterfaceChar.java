@@ -24,6 +24,7 @@ import javax.swing.ImageIcon;
  */
 public class InterfaceChar extends JFrame 
 {
+    //declaration of the variables
     private JButton monsterButton, petButton, sellerButtonBuy, sellerButtonSell, chestButton; 
     private JPanel panelChar, panelSeller; 
     private JLabel labelSeller;
@@ -34,7 +35,8 @@ public class InterfaceChar extends JFrame
      */
     public InterfaceChar(Game game)
     {
-        myGame = game; 
+        myGame = game;
+        //elements in the panel
         monsterButton = new JButton("Monster");
         labelSeller = new JLabel ("Interact with a seller : ", labelSeller.CENTER);
         sellerButtonBuy = new JButton("Buy something");
@@ -42,8 +44,8 @@ public class InterfaceChar extends JFrame
         sellerButtonSell = new JButton("Sell something");
         sellerButtonSell.addActionListener(new GameListener(game));
         petButton = new JButton("Pet");
-        chestButton = new JButton("Chest"); 
-
+        chestButton = new JButton("Chest");
+        //The button
         monsterButton.setBackground(Color.gray);
         monsterButton.setForeground(Color.white);
         monsterButton.setEnabled(false);
