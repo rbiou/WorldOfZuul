@@ -6,7 +6,7 @@ import org.junit.Test;
 /**
  * The test class PetTest.
  *
- * @author  (Romain)
+ * @author  (Group7)
  * @version (21/11/2018)
  */
 public class PetTest

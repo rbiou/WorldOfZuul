@@ -6,7 +6,7 @@ import org.junit.Test;
 /**
  * The test class KeysTest.
  *
- * @author (Romain)
+ * @author (Groupe 7)
  * @version (21/11/2018)
  */
 public class KeysTest

@@ -83,6 +83,7 @@ public class Monster extends NonPlayerCharacter
     
     /**
      * Getter to know if the player have already gived the good answer to the monster
+     * @return : isResolved
      */
     public boolean getIsResolved(){
         return isResolved; 
@@ -90,6 +91,7 @@ public class Monster extends NonPlayerCharacter
     
     /**
      * Getter to enigma of the monster
+     * @return: question
      */
     public String getQuestion()
     {

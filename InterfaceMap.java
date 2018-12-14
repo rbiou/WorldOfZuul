@@ -12,7 +12,7 @@ import javax.swing.ImageIcon;
  */
 public class InterfaceMap extends JPanel
 {
-    private JLabel myMap;
+    private JLabel myMap; //The JLabel of the map
     private JPanel panelMap; //The panel for the Map interface
 
     /**
