@@ -35,8 +35,7 @@ public class Pet extends NonPlayerCharacter
     }
     
     /**
-     * When a player speak to a pet, it give the description of the planet
-     * he is standing in.
+     * When a player speak to a pet, it give the description of the planet he is standing in.
      * @return the description of the room as a string
      */
     public String giveMessage()
@@ -49,8 +48,7 @@ public class Pet extends NonPlayerCharacter
     }
     
     /**
-     * When a player speak to a pet, it print the description of the planet
-     * he is standing in.
+     * When a player speak to a pet, it print the description of the planethe is standing in.
      */
     public void speak()
     {
