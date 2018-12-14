@@ -46,7 +46,7 @@ public class InterfaceChar extends JFrame
         petButton = new JButton("Pet");
         chestButton = new JButton("Chest");
         
-        //The button of the monster
+        // //Set the design of the button of the monster
         monsterButton.setBackground(Color.gray);
         monsterButton.setForeground(Color.white);
         monsterButton.setEnabled(false);
@@ -64,13 +64,13 @@ public class InterfaceChar extends JFrame
         sellerButtonSell.setEnabled(false);
         sellerButtonSell.addActionListener(new GameListener(myGame));        
 
-        //The button pet
+        //Set the design of the button pet
         petButton.setBackground(Color.gray);
         petButton.setForeground(Color.white);
         petButton.setEnabled(false);
         petButton.addActionListener(new GameListener(myGame));        
         
-        //The button chest
+        //Set the design of the button chest.
         chestButton.setBackground(Color.gray);
         chestButton.setForeground(Color.white);
         chestButton.setEnabled(false); 

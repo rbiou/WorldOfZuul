@@ -19,6 +19,9 @@ public class Door
         nextRoom = newNextRoom;
     }
     
+    /**
+     * Return the next room where he's going to go 
+     */
     public Room getNextRoom()
     {
         return nextRoom;
