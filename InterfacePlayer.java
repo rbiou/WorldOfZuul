@@ -104,10 +104,7 @@ public class InterfacePlayer extends JPanel implements ActionListener
 
     public void actionPerformed(ActionEvent e){
         System.out.println ("ok");
-        InterfaceItem interfaceItem = game.getInterfaceGame().getInterfaceItem();
-        interfaceItem.showList(
-            game.getPlayer().getListItems()
-        );
+        InterfaceItem interfaceItem = new InterfaceItem(game, game.getPlayer().getListItems());
         game.getInterfaceGame().getInterfaceItem();
         game.getInterfaceGame().getInterfaceDescription().updatePanelDescription(interfaceItem.getPanel());
     }
