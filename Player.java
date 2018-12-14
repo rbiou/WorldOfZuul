@@ -167,13 +167,8 @@ public class Player extends Character
             if (getListItems().get(i).getShape()== doorExit.ShapeKeyDescription())
             {
                 rightKey = true;
-                moveRoom(doorExit);
                 doorExit.openLocked();
             }
-        }
-        if (!rightKey)
-        {
-            System.out.println("You do not have the right key please pass your way");
         }
 
         return rightKey; 
