@@ -2,20 +2,21 @@ import java.awt.event.*;
 import javax.swing.*;
 
 /**
- * Décrivez votre classe Listener ici.
+ * PetListener class : this class group all the action performed when 
+ * the player presses pet
  *
- * @author (Lagrange Romain)
+ * @author (Group7)
  * @version (5/12/2018)
  */
 public class PetListener implements ActionListener
 {
-    // variables d'instance 
+    //declaration of the variables
     private InterfacePets interPet;
-    private Game myGame; 
+    private Game myGame; //The Game
     
     
     /**
-     * Constructeur d'objets de classe Listener
+     * Constructor for objects of class Listener
      */
     public PetListener(InterfacePets i, Game game)
     {
