@@ -3,7 +3,7 @@
  * to open a locked door. The key have a specific shape that can only interact
  * with the door that have the excat same shape
  *
- * @author Group 7 (Leyla)
+ * @author (Group 7)
  * @version 14/11/2018
  */
 public class Keys extends Item
