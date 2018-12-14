@@ -2,6 +2,9 @@ import java.awt.*;
 import java.util.*;
 import javax.swing.*;
 import java.awt.event.*;
+import java.awt.image.*;
+import javax.imageio.*;
+import java.io.*;
 import javax.swing.ImageIcon;
 import javax.swing.JComboBox;
 import java.awt.Dimension;
@@ -18,7 +21,7 @@ public class InterfaceItem extends JPanel implements ActionListener
 {
     private JLabel labelImage,labelDescription; // JLabel for images and descriptions of the items. 
     private ImageIcon imageItem; // Image of items
-    private JPanel panelb, panels, panel1, panel2,panelFinal; // Panel of the InterfaceItem
+    private JPanel panelb, panels, panel1, panel2, panelImage, panelFinal; // Panel of the InterfaceItem
     private JComboBox itemBox; // Box where is the list of items.
     private ArrayList<Item> itemList; // List of items
     private Item selectedItem; // when the player selects item
@@ -27,32 +30,40 @@ public class InterfaceItem extends JPanel implements ActionListener
     /**
      * Constructor for objects of class InterfaceItem
      */
-    public InterfaceItem(Game game)
+    public InterfaceItem(Game game, ArrayList<Item> items)
     {
         //instanciation of the objects of the InterfaceItem
         this.game = game;
-        String name = "Item"; // name of the item, it is associated with the name of the image
-        Icon imageItem = new ImageIcon(name+".png");
+        Icon imageItem = new ImageIcon("items/Red key.png");
         buttonBuy = new JButton("Buy"); // Creation of the buy button
-
+        buttonBuy.setEnabled(false);
 
         buttonSell = new JButton("Sell"); // Creation of the sell button
-
+        buttonSell.setEnabled(false);
 
         //buttonBuy.setEnabled(false); // The button is accessible or not.
         //buttonSell.setEnabled(false);
 
         // Link of the interface button and his action
-        buttonBuy.addActionListener(this); 
-        buttonSell.addActionListener(this); 
+        buttonBuy.addActionListener(this);
+        buttonSell.addActionListener(this);
 
         // Creation List
+        itemList = items;
         itemBox = new JComboBox();
-        itemBox.addActionListener(this);
+        if (itemList != null){
+            for (Item item: itemList){
+                System.out.println(item.getName());
+                itemBox.addItem(item.getName());
+            }
+            itemBox.addActionListener(this);
+        }
 
         //Création of LabelItem
-
-        labelImage = new JLabel(imageItem);
+        labelImage = new JLabel();
+        panelImage = new JPanel();
+        panelImage.add(labelImage);
+        
         labelDescription = new JLabel();
     
         // panel 1 South panel
@@ -70,10 +81,9 @@ public class InterfaceItem extends JPanel implements ActionListener
         //Creation panel Final
         panelFinal = new JPanel();
         panelFinal.setLayout(new GridLayout(3, 1));
-        panelFinal.add(labelImage);
+        panelFinal.add(panelImage);
         panelFinal.add(panel1);
         panelFinal.add(panel2);
-
     }
 
     public void actionPerformed(ActionEvent e){
@@ -84,8 +94,12 @@ public class InterfaceItem extends JPanel implements ActionListener
         {
             int itemNumber = itemBox.getSelectedIndex();
             selectedItem = itemList.get(itemNumber);
-            imageItem = new ImageIcon(selectedItem.getName()+".png");
+            labelImage.setIcon(new ImageIcon("items/" + selectedItem.getName()+".png"));
+            labelImage.repaint();
+
+            System.out.println(selectedItem.getName());
             labelDescription.setText(selectedItem.getDescription());
+
             return;
         }
 
@@ -95,46 +109,37 @@ public class InterfaceItem extends JPanel implements ActionListener
 
         if (source == buttonBuy)
         {
-            if (player.buyItem(seller, selectedItem))
-            {
-                JOptionPane jop1 = new JOptionPane();
-                jop1.showMessageDialog(null, "Cheers, bro", "Information", JOptionPane.INFORMATION_MESSAGE);
-                game.getInterfaceGame().getInterfacePlayer().updateInterfacePlayer(game);
-                game.getInterfaceGame().getInterfaceDescription().updatePanelDescription(game.getInterfaceGame().getInterfaceItem().getPanel());
-            } else {
-                JOptionPane jop1 = new JOptionPane();
-                jop1.showMessageDialog(null, "Come back when you'll be wealthy enough for that boy.", "Information", JOptionPane.INFORMATION_MESSAGE);   
-            }
+                if (player.buyItem(seller, selectedItem))
+                {
+                    System.out.println("Achat");
+                    JOptionPane jop1 = new JOptionPane();
+                    jop1.showMessageDialog(null, "Cheers, bro", "Information", JOptionPane.INFORMATION_MESSAGE);
+                    game.getInterfaceGame().getInterfacePlayer().updateInterfacePlayer(game);
+                    game.getInterfaceGame().getInterfaceDescription().updatePanelDescription(this.getPanel());
+                } else {
+                    JOptionPane jop1 = new JOptionPane();
+                    jop1.showMessageDialog(null, "Come back when you'll be wealthy enough for that boy.", "Information", JOptionPane.INFORMATION_MESSAGE);   
+                }
         }
         else if (source == buttonSell)
-        {   
-            if (player.sellItem(seller, selectedItem))
-            {
-                JOptionPane jop1 = new JOptionPane();
-                jop1.showMessageDialog(null, "Cheers, bro", "Information", JOptionPane.INFORMATION_MESSAGE);
-                game.getInterfaceGame().getInterfacePlayer().updateInterfacePlayer(game);
-                game.getInterfaceGame().getInterfaceDescription().updatePanelDescription(game.getInterfaceGame().getInterfaceItem().getPanel());
-            }
-            else {
-                JOptionPane jop1 = new JOptionPane();
-                jop1.showMessageDialog(null, "Come back when you'll be enough items for that boy.", "Information", JOptionPane.INFORMATION_MESSAGE);
-            }
+        {
+                if (player.sellItem(seller, selectedItem))
+                {
+                    System.out.println("Vente");
+                    JOptionPane jop1 = new JOptionPane();
+                    jop1.showMessageDialog(null, "Cheers, bro", "Information", JOptionPane.INFORMATION_MESSAGE);
+                    game.getInterfaceGame().getInterfacePlayer().updateInterfacePlayer(game);
+                    game.getInterfaceGame().getInterfaceDescription().updatePanelDescription(this.getPanel());
+                }
+                else {
+                    JOptionPane jop1 = new JOptionPane();
+                    jop1.showMessageDialog(null, "Come back when you'll be enough items for that boy.", "Information", JOptionPane.INFORMATION_MESSAGE);
+                }
         }
     }
 
     public JPanel getPanel(){
         return panelFinal;
-    }
-
-    public void showList(ArrayList<Item> items){
-        itemList = items;
-        int n = itemBox.getItemCount();
-        System.out.println(n);
-        itemBox.removeAllItems();
-        for (Item item: items){
-            System.out.println(item.getName());
-            itemBox.addItem(item.getName());
-        }
     }
 
     public Item getSelectedItem(){
