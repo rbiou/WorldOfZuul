@@ -4,7 +4,8 @@ import java.awt.event.*;
 import javax.swing.ImageIcon;
 
 /**
- * InterfaceMap Allows the display of the map with the evolution of the player to the game interface.
+ * InterfaceMap Allows the display of the map with the evolution of the 
+ * player to the game interface.
  *
  * @author (Groupe 7)
  * @version (07/12/2018)
@@ -12,17 +13,21 @@ import javax.swing.ImageIcon;
 public class InterfaceMap extends JPanel
 {
     private JLabel myMap;
-    private JPanel panelMap;
+    private JPanel panelMap; //The panel for the Map interface
 
     /**
      * Constructor for objects of class Interface_Map
      */
     public InterfaceMap(Game newGame)
     {
-        panelMap = new JPanel();
-        updateInterfaceMap(newGame);       
+        panelMap = new JPanel(); //create a new panelMap
+        updateInterfaceMap(newGame); //method to add elements in the panel      
     }
-
+    
+    /**
+     * getter of the panel map
+     * @return   JPanel -> panelMap;
+     */
     public JPanel getPanelMap(){
         return panelMap; 
     }
