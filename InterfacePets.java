@@ -19,6 +19,8 @@ public class InterfacePets
 
     /**
      * Constructor for objects of class InterfacePets
+     * The panel display a text to the player, show a picture of the pet and then a button for the player to go to the next 
+     * step
      */
     public InterfacePets(Game game,Pet petroom)
     {
@@ -27,16 +29,18 @@ public class InterfacePets
         pet= petroom;
 
         label1 = new JLabel("",JLabel.CENTER);
+        //If the pet is Timon, it not give a description
         if (pet.getName().equals("Timon")){
-            label1.setText("Are you lost? It's the dwarves fault.");
+            label1.setText("Are you lost? It's the smurfs fault.");
         }
+        //Else, the pet give a description of the planet
         else 
         {
             label1.setText("<html><center>***Welcome on the planet "+
                 game.getPlayer().getCurrentRoom().getPlanet().getPlanetName()+
                 "*** <br> I am " +pet.getName()+"."+
                 "The current temperature is " +game.getPlayer().getCurrentRoom().getPlanet().getTemperature()+" °c."+
-                " Warning you have " +game.getPlayer().getCurrentRoom().getPlanet().getTime()+ "  minutes to succeed." + "<br>"+
+                " Warning you have " +game.getPlayer().getCurrentRoom().getPlanet().getTime()+ "  seconds to succeed." + "<br>"+
                 " Here is a small reward to start the quest on this planet</center></html>");
         }
         Icon imagePets = new ImageIcon("pets/"+pet.getName()+".jpg");
@@ -47,11 +51,12 @@ public class InterfacePets
         panel1.setLayout(new BorderLayout());
 
         Font f = new Font("Serif", Font.PLAIN, 12); 
-
+        //Add the first text to the panel
         label1.setFont(f);
         panel1.add(label1,BorderLayout.NORTH);
-        
+        //Add the picture
         panel1.add(label2,BorderLayout.CENTER);
+        //Add the button
         panel1.add(button1,BorderLayout.SOUTH);
 
     }
