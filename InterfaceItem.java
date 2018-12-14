@@ -19,7 +19,8 @@ import java.awt.GridBagLayout;
  */
 public class InterfaceItem extends JPanel implements ActionListener
 {
-    private JLabel labelImage,labelDescription; // JLabel for images and descriptions of the items. 
+    private JLabel labelImage; // JLabel for images and descriptions of the items. 
+    private JTextArea labelDescription;
     private ImageIcon imageItem; // Image of items
     private JPanel panelb, panels, panel1, panel2, panelImage, panelFinal; // Panel of the InterfaceItem
     private JComboBox itemBox; // Box where is the list of items.
@@ -60,11 +61,15 @@ public class InterfaceItem extends JPanel implements ActionListener
         }
 
         //Création of LabelItem
-        labelImage = new JLabel();
-        panelImage = new JPanel();
-        panelImage.add(labelImage);
+        labelDescription = new JTextArea();
+        labelDescription.setLineWrap(true); 
+        labelDescription.setWrapStyleWord(true); 
+        labelDescription.setOpaque(false); 
+        labelDescription.setEditable(false); 
         
-        labelDescription = new JLabel();
+        panelImage = new JPanel();
+        labelImage = new JLabel();
+        panelImage.add(labelImage);
     
         // panel 1 South panel
         panel1 = new JPanel();
@@ -94,11 +99,12 @@ public class InterfaceItem extends JPanel implements ActionListener
         {
             int itemNumber = itemBox.getSelectedIndex();
             selectedItem = itemList.get(itemNumber);
+            
             labelImage.setIcon(new ImageIcon("items/" + selectedItem.getName()+".png"));
             labelImage.repaint();
 
             System.out.println(selectedItem.getName());
-            labelDescription.setText(selectedItem.getDescription());
+            labelDescription.setText(selectedItem.getDescription()+ "\n Price : " +selectedItem.getValue());
 
             return;
         }
