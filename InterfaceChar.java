@@ -24,17 +24,19 @@ import javax.swing.ImageIcon;
  */
 public class InterfaceChar extends JFrame 
 {
-    private JButton monsterButton, petButton, sellerButtonBuy, sellerButtonSell, chestButton; 
-    private JPanel panelChar, panelSeller; 
-    private JLabel labelSeller;
-    private Game myGame; 
+    //declaration of the variables
+    private JButton monsterButton, petButton, sellerButtonBuy, sellerButtonSell, chestButton; // The different buttons
+    private JPanel panelChar, panelSeller; // The panel of the char interface
+    private JLabel labelSeller; // The JLabel of the char interface
+    private Game myGame; // The game
     /**
      * Constructor for objects of class InterfaceChar
      * Construction of the panel
      */
     public InterfaceChar(Game game)
     {
-        myGame = game; 
+        myGame = game;
+        //elements in the panel
         monsterButton = new JButton("Monster");
         labelSeller = new JLabel ("Interact with a seller : ", labelSeller.CENTER);
         sellerButtonBuy = new JButton("Buy something");
@@ -42,8 +44,9 @@ public class InterfaceChar extends JFrame
         sellerButtonSell = new JButton("Sell something");
         sellerButtonSell.addActionListener(new GameListener(game));
         petButton = new JButton("Pet");
-        chestButton = new JButton("Chest"); 
-
+        chestButton = new JButton("Chest");
+        
+        //The button of the monster
         monsterButton.setBackground(Color.gray);
         monsterButton.setForeground(Color.white);
         monsterButton.setEnabled(false);
@@ -63,18 +66,20 @@ public class InterfaceChar extends JFrame
         petButton.setForeground(Color.white);
         petButton.setEnabled(false);
         petButton.addActionListener(new GameListener(myGame));        
-
+        
         chestButton.setBackground(Color.gray);
         chestButton.setForeground(Color.white);
         chestButton.setEnabled(false); 
         chestButton.addActionListener(new GameListener(myGame));
-
+        
+        //The panel seller contains the buttons buy and sell
         panelSeller = new JPanel();
         panelSeller.setLayout(new GridLayout(1,3));
         panelSeller.add(labelSeller); 
         panelSeller.add(sellerButtonBuy); 
         panelSeller.add(sellerButtonSell); 
-
+        
+        //panel character = contains all the previous panel
         panelChar = new JPanel();
         panelChar.setLayout(new GridLayout(4,1));
         panelChar.add(monsterButton); 

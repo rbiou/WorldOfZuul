@@ -2,17 +2,18 @@ import java.awt.event.*;
 import javax.swing.*;
 
 /**
- * Décrivez votre classe Listener ici.
+ * MonsterListener class : this class group all the action performed 
+ * when the player is interacting with the monster
  *
- * @author (Lagrange Romain)
+ * @author (Group7)
  * @version (5/12/2018)
  */
 public class MonsterListener implements ActionListener
 {
-    // variables d'instance 
+    //declaration of the different variables
     private InterfaceMonster interMonster;
     private String reponse, reponseMin;
-    private Game myGame; 
+    private Game myGame; //The game
     /**
      * Constructeur d'objets de classe Listener
      */

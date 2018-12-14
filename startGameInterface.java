@@ -3,27 +3,29 @@ import java.awt.*;
 import java.awt.event.*;
 
 /**
- *This class allows us to start the game by asking the player his name and sex to be able to assign an avatar. When the 
- *information are good the game starts.
- *
+ * This class allows us to start the game by asking the player his name 
+ * and sex to be able to assign an avatar. When the information are good
+ * the game starts.
  * @author Group7
  * @version 13/12/18
  */
 public class startGameInterface
 {
     /**
-     * Constructeur d'objets de classe startGameInterface
+     * Constructor for objects of class startGameInterface
      */
     public startGameInterface()
     {
+
         //Final Window
         JFrame finalPanel = new JFrame();
         //Left part
         JPanel playerForm = new JPanel();
-        //Le logo
+        //The logo
+
         Icon gameLogo = new ImageIcon(new ImageIcon("logo/gameLogo.png").getImage().getScaledInstance(500, 500, Image.SCALE_DEFAULT));
         JLabel panLogo = new JLabel(gameLogo, JLabel.CENTER);
-        //Le nom
+        //The name
         JPanel panNom = new JPanel();
         panNom.setBackground(Color.white); // color of the panNom
         panNom.setPreferredSize(new Dimension(250, 60)); // panNom dimensions
@@ -34,7 +36,7 @@ public class startGameInterface
         panNom.add(nomLabel);
         panNom.add(nom);
 
-        //Le sexe
+        //The sexe
         JPanel panSexe = new JPanel(); 
         panSexe.setBackground(Color.white); // color if the panSexe
         panSexe.setPreferredSize(new Dimension(220, 60)); // dimension of the panSexe
