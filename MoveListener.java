@@ -9,14 +9,15 @@ import java.util.*;
  * @author  (Groupe 7)
  * @version (07/12/2018)
  */
-public class MoveListener extends JPanel implements ActionListener
+public class MoveListener implements ActionListener
 {
     private JPanel myRoomPanel, myMapPanel, myPlayerPanel; //All the interface panels which change 
-    private Game myGame; //Our game
-    private static Planet last_visited_planet; //The planet where is the player after his last move
+    private Game myGame;                                   //Our game
+    private static Planet last_visited_planet;             //The planet where is the player after his last move
     
     /**
      * Constructeur d'objets de classe MoveListener
+     * @param : Game theGame : the game where we want to implement this listener.
      */
     public MoveListener(Game theGame)
     {
@@ -30,7 +31,7 @@ public class MoveListener extends JPanel implements ActionListener
 
     /**
      * actionPerformed : perform all the actions for this listener, when the player decided to move.
-     *
+     * @param : ActionEvent e : the ActionEvent for this listener class.
      */
     public void actionPerformed (ActionEvent e)
     {
