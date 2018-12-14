@@ -30,13 +30,17 @@ public class Seller extends NonPlayerCharacter
     {
         // put your code here
     }
-
+    
+    
+    /**
+     * This method allows the seller interact with the player to ask for to buy or shell
+     */
     public void speak (Player player)
     {
         System.out.println("Would you like to buy or sell something ?");
         Scanner reader = new Scanner (System.in);
         String answer = reader.next();
-        
+        //The player wants to buy
         if (answer == "buy"){
 
             Item item = selectItemFromList(this.getListItems());
@@ -48,7 +52,7 @@ public class Seller extends NonPlayerCharacter
                     System.out.println("You don't have enough money.");
             }
         }
-
+        //The player wants to sell
         if (answer == "sell"){
 
             Item item = selectItemFromList(this.getListItems());
@@ -62,7 +66,11 @@ public class Seller extends NonPlayerCharacter
             }
         }
     }
-
+    
+    /**
+     * This method allows to select item from list
+     * @return item Index
+     */
     public Item selectItemFromList(ArrayList<Item> items)
     {
         Scanner reader = new Scanner (System.in);
