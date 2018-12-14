@@ -22,6 +22,7 @@ public class InterfacePets
      */
     public InterfacePets(Game game,Pet petroom)
     {
+        //create a new panel
         panel1 = new JPanel(); 
         pet= petroom;
 
@@ -54,11 +55,19 @@ public class InterfacePets
         panel1.add(button1,BorderLayout.SOUTH);
 
     }
-
+    
+    /**
+     * Getter of the panelPet
+     * @return JPanel : panel1;
+     */  
     public JPanel getPanelPet(){
         return panel1; 
     }
-
+    
+    /**
+     * Getter of the ButtonPet
+     * @return JButton : button1;
+     */  
     public JButton getButtonPet(){
         return button1;
     }
