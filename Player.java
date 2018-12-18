@@ -45,11 +45,15 @@ public class Player extends Character
 
         this.addMoney(chest.getMoney());
         chest.removeMoneyChest();
-
+        System.out.println(chest.getListItems());
+        System.out.println(this.getListItems());
         for(int i = 0; i < chest.getListItems().size(); i++){
-            if (this.addItem(chest.getListItems().get(i)))
-                chest.removeItem(chest.getListItems().get(i));
+            System.out.println(chest.getListItems().get(i).getName()); 
+            this.addItem(chest.getListItems().get(i));
+            //chest.removeItem(chest.getListItems().get(i));
         }
+        System.out.println(chest.getListItems());
+        System.out.println(this.getListItems());
     }
 
     /**

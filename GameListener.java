@@ -61,6 +61,8 @@ public class GameListener extends JPanel implements ActionListener
         //chest button
         else if (e.getSource() ==  myGame.getInterfaceGame().getInterfaceChar().getChestButton()){
             Chest chestRecup = myGame.getPlayer().getCurrentRoom().getChest();
+            InterfaceChest interfaceChest = new InterfaceChest(myGame, chestRecup.getListItems());
+            myGame.getInterfaceGame().getInterfaceDescription().updatePanelDescription(interfaceChest.getPanelItem());
             myGame.getPlayer().grabContent(chestRecup);
             myGame.getInterfaceGame().getInterfacePlayer().updateInterfacePlayer(myGame);
             if ( chestRecup.getIsTrap()){
@@ -81,12 +83,6 @@ public class GameListener extends JPanel implements ActionListener
             interfaceItem.getSellButton().setEnabled(true);
             myGame.getInterfaceGame().getInterfaceDescription().updatePanelDescription(interfaceItem.getPanel());
             
-            
-            //Player player =  myGame.getPlayer();
-            //InterfaceItem itemListPanel = myGame.getInterfaceGame().getInterfaceItem();
-            //itemListPanel.showList(player.getListItems());
-            //itemListPanel.getSellButton().setEnabled(true);
-            //myGame.getInterfaceGame().getInterfaceDescription().updatePanelDescription(myGame.getInterfaceGame().getInterfaceItem());
         }
         //buy button
         else if (e.getSource() == myGame.getInterfaceGame().getInterfaceChar().getSellerButtonBuy())
@@ -97,14 +93,6 @@ public class GameListener extends JPanel implements ActionListener
             interfaceItem.getBuyButton().setEnabled(true);
             interfaceItem.getSellButton().setEnabled(false);
             myGame.getInterfaceGame().getInterfaceDescription().updatePanelDescription(interfaceItem.getPanel());
-                  
-            
-            
-            //Seller seller = myGame.getPlayer().getCurrentRoom().getSeller();
-            //InterfaceItem itemListPanel = myGame.getInterfaceGame().getInterfaceItem();
-            //itemListPanel.showList(seller.getListItems());
-            //itemListPanel.getBuyButton().setEnabled(true);
-            //myGame.getInterfaceGame().getInterfaceDescription().updatePanelDescription(myGame.getInterfaceGame().getInterfaceItem());
         }
        
 

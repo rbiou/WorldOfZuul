@@ -114,7 +114,8 @@ public class InterfaceItem extends JPanel implements ActionListener
         Player player = game.getPlayer();
 
         if (source == buttonBuy)
-        {
+        {       
+                if (selectedItem!=null){
                 if (player.buyItem(seller, selectedItem))
                 {
                     System.out.println("Achat");
@@ -126,9 +127,11 @@ public class InterfaceItem extends JPanel implements ActionListener
                     JOptionPane jop1 = new JOptionPane();
                     jop1.showMessageDialog(null, "Come back when you'll be wealthy enough for that boy.", "Information", JOptionPane.INFORMATION_MESSAGE);   
                 }
+            }
         }
         else if (source == buttonSell)
-        {
+        {       
+                if (selectedItem!=null){
                 if (player.sellItem(seller, selectedItem))
                 {
                     System.out.println("Vente");
@@ -141,6 +144,7 @@ public class InterfaceItem extends JPanel implements ActionListener
                     JOptionPane jop1 = new JOptionPane();
                     jop1.showMessageDialog(null, "Come back when you'll be enough items for that boy.", "Information", JOptionPane.INFORMATION_MESSAGE);
                 }
+            }
         }
     }
 

@@ -44,13 +44,14 @@ public class Chest extends Item
      *@param : item to remove 
      *
      */
-    public boolean removeItem(Item item)
+    public void removeItem(Item item)
     {        
-        if (this.rewarding.contains(item)){
-            this.rewarding.remove(item);
-            return true;}
-        else {
-            return false;}
+        if (this.rewarding.contains(item))
+            rewarding.remove(item);
+            //return true;}
+        //else {
+          //  return false;
+        //}
     }
     
      /**
@@ -58,13 +59,15 @@ public class Chest extends Item
       * @param item : the item to add to the chest
       * @return true if operation is successful
      */
-    public boolean addItem(Item item)
+    public void addItem(Item item)
+
     {
-        if (this.rewarding.contains(item)){
-            return false; }
-        else {
-            this.rewarding.add(item);
-            return true;}
+        //if (this.rewarding.contains(item)){
+          //  return false; }
+        //else {
+            rewarding.add(item);
+          //  return true;
+        //}
     }
 
     /**

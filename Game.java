@@ -116,7 +116,7 @@ public class Game
         start = new Room("start", startP);
 
         // creation of the player
-        player = new Player(name,200,start); 
+        player = new Player(name,1000,start); 
         start.addCharacter(player);
 
         alpha.addRoom(alpha1 = new Room("alpha1", alpha)); 
@@ -216,29 +216,29 @@ public class Game
         //Declaration 
         Item knief1, magicBall1, magicBall2, diamond1;
         Item fork1, diamond2, knief2, fork2, diamond3, fork3; //Declaration of the item
-        Chest chest1alpha3, chest2delta1, chest3delta4, chest4beta1, chest5beta5, chestGamma1, chestGamma1bis, chestGamma2; 
+        Chest chestAlpha3, chest2delta1, chest3delta4, chest4beta1, chest5beta5, chestGamma1, chestGamma1bis, chestGamma2; 
         Chest chestGamma5, chestGamma4, chestGamma6, chestAlpha1;//declaration of the chest
         Keys keyAlpha3, keyDelta2, keyBeta4, keyGamma2, keyGamma4; // declaration of the key to open the door
         Pet petAlpha1, petDelta1, petGamma1, petBeta1, petBeta4 ;// pets in the first room of the planet
         Seller sellerDelta2, sellerBeta2, sellerGamma3; //declaration of the sellers
 
         //Add the chests in the rooms
-        alpha1.addChest(chestAlpha1 = new Chest("Bill",0,50, "Hello my name is Bob and you lose 50 HP",0,true));
-        alpha3.addChest(chest1alpha3 = new Chest("Bob",0,50,"Hello my name is Bob",50,false));
-        delta1.addChest(chest2delta1 = new Chest("Sully",0,50,"Hello my name is Sully",0,false));
-        delta4.addChest(chest3delta4 = new Chest ("Titi",0,50,"Hello my name is Titi ",50,false));
-        beta1.addChest(chest4beta1 = new Chest("Kiwi",0,50,"Hello my name is Kiwi",0,true));
-        beta5.addChest(chest5beta5= new Chest ("Cramberry",0,50,"Hello my name is Fraise",50,false));
-        gamma1.addChest(chestGamma1 = new Chest ("Grosminet",0,50,"Hello my name is Grosminet",0,false));
+        alpha1.addChest(chestAlpha1 = new Chest("Bill",0,1000, "Hello my name is Bob and you lose 50 HP",0,true));
+        alpha3.addChest(chestAlpha3 = new Chest("Bob",0,1000,"Hello my name is Bob",50,false));
+        delta1.addChest(chest2delta1 = new Chest("Sully",0,1000,"Hello my name is Sully",0,false));
+        delta4.addChest(chest3delta4 = new Chest ("Titi",0,1000,"Hello my name is Titi ",50,false));
+        beta1.addChest(chest4beta1 = new Chest("Kiwi",0,1000,"Hello my name is Kiwi",0,true));
+        beta5.addChest(chest5beta5= new Chest ("Cramberry",0,1000,"Hello my name is Fraise",50,false));
+        gamma1.addChest(chestGamma1 = new Chest ("Grosminet",0,1000,"Hello my name is Grosminet",0,false));
         //gamma1.addChest(chestGamma1bis = new Chest ("Shield",0,50,"Hello my name is Shield",50,false));
-        gamma2.addChest(chestGamma2 = new Chest ("Banana",0,50,"Hello my name is Banane",0,true)); 
-        gamma5.addChest(chestGamma5 = new Chest ("The best",0,50,"Hello my name is the best",50,false));
-        gamma4.addChest(chestGamma4 = new Chest ("Magic",0,50,"Hello my name is magic",0,false)); 
-        gamma6.addChest(chestGamma6 = new Chest ("Free",0,50,"Hello my name is free",50,false)); 
+        gamma2.addChest(chestGamma2 = new Chest ("Banana",0,1000,"Hello my name is Banane",0,true)); 
+        gamma5.addChest(chestGamma5 = new Chest ("The best",0,1000,"Hello my name is the best",50,false));
+        gamma4.addChest(chestGamma4 = new Chest ("Magic",0,1000,"Hello my name is magic",0,false)); 
+        gamma6.addChest(chestGamma6 = new Chest ("Free",0,1000,"Hello my name is free",50,false)); 
 
         //Add items in the chests
-        chest1alpha3.addItem(knief1=new Item("Knieffy",50,5,"I am a knief, you can sell me to the sellers "));
-        chest1alpha3.addItem(magicBall2=new Item("MiniBall",100,10,"I am a MagicBall, you can sell me to the sellers "));
+        chestAlpha3.addItem(knief1=new Item("Knieffy",50,5,"I am a knief, you can sell me to the sellers "));
+        chestAlpha3.addItem(magicBall2=new Item("MiniBall",100,10,"I am a MagicBall, you can sell me to the sellers "));
         chest2delta1.addItem(keyAlpha3 = new Keys("Red key",300,20,"I am a key, I can open the door Vanity Smurf", "square"));
         chest3delta4.addItem(wheel=new Item("Wheely",500,50,"I am the wheel of your vessel"));
         chest4beta1.addItem(keyBeta4 = new Keys("Grey key",300,20,"I am a key, I can open the door Architect Smurf", "triangle"));
