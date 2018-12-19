@@ -122,11 +122,12 @@ public class InterfaceItem extends JPanel implements ActionListener
                     JOptionPane jop1 = new JOptionPane();
                     jop1.showMessageDialog(null, "Cheers, bro", "Information", JOptionPane.INFORMATION_MESSAGE);
                     game.getInterfaceGame().getInterfacePlayer().updateInterfacePlayer(game);
-                    game.getInterfaceGame().getInterfaceDescription().updatePanelDescription(panelFinal);
+
+                    InterfaceItem interfaceItem = new InterfaceItem(game, game.getPlayer().getCurrentRoom().getSeller().getListItems());
+                    game.getInterfaceGame().getInterfaceDescription().updatePanelDescription(interfaceItem.getPanel());
                 } else {
                     JOptionPane jop1 = new JOptionPane();
                     jop1.showMessageDialog(null, "Come back when you'll be wealthy enough for that boy.", "Information", JOptionPane.INFORMATION_MESSAGE);   
-
                 }
             }
         }
@@ -140,6 +141,11 @@ public class InterfaceItem extends JPanel implements ActionListener
                     jop1.showMessageDialog(null, "Cheers, bro", "Information", JOptionPane.INFORMATION_MESSAGE);
                     game.getInterfaceGame().getInterfacePlayer().updateInterfacePlayer(game);
                     game.getInterfaceGame().getInterfaceDescription().updatePanelDescription(panelFinal);
+
+                    InterfaceItem interfaceItem = new InterfaceItem(game, game.getPlayer().getListItems());
+                    interfaceItem.getBuyButton().setEnabled(false);
+                    interfaceItem.getSellButton().setEnabled(true);
+                    game.getInterfaceGame().getInterfaceDescription().updatePanelDescription(interfaceItem.getPanel());
                 }
                 else {
                     JOptionPane jop1 = new JOptionPane();
