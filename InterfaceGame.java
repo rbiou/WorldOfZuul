@@ -241,7 +241,7 @@ public class InterfaceGame extends JFrame implements ActionListener
         return panelPlayer;
     }
 
-     /**
+    /**
      * Display a window when the user wins the game
      * Ask if he wants to start again
      *        Answer = YES -> reset the game
@@ -257,7 +257,7 @@ public class InterfaceGame extends JFrame implements ActionListener
             JOptionPane.YES_NO_OPTION, 
             JOptionPane.QUESTION_MESSAGE, icon);
         //events
-            if (option == JOptionPane.OK_OPTION){ //when the user clicks on YES
+        if (option == JOptionPane.OK_OPTION){ //when the user clicks on YES
             gamebis.resetGame();
         }
         else if (option == JOptionPane.NO_OPTION){ //when the user clicks on NO
@@ -266,7 +266,7 @@ public class InterfaceGame extends JFrame implements ActionListener
         }
     }
 
-     /**
+    /**
      * Display a window when the user loses the game
      * Ask if he wants to start again
      *        Answer = YES -> reset the game
@@ -284,7 +284,7 @@ public class InterfaceGame extends JFrame implements ActionListener
             JOptionPane.YES_NO_OPTION, 
             JOptionPane.QUESTION_MESSAGE, icon);
         //events
-            if (option == JOptionPane.OK_OPTION){ //when the user clicks on YES
+        if (option == JOptionPane.OK_OPTION){ //when the user clicks on YES
             gamebis.resetGame();
         }
         else if (option == JOptionPane.NO_OPTION){ //when the user clicks on NO

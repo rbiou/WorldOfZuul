@@ -61,7 +61,7 @@ public class GameListener extends JPanel implements ActionListener
         //chest button
         else if (e.getSource() ==  myGame.getInterfaceGame().getInterfaceChar().getChestButton()){
             Chest chestRecup = myGame.getPlayer().getCurrentRoom().getChest();
-            InterfaceChest interfaceChest = new InterfaceChest(myGame, chestRecup.getListItems());
+            InterfaceChest interfaceChest = new InterfaceChest(chestRecup.getListItems());
             myGame.getInterfaceGame().getInterfaceDescription().updatePanelDescription(interfaceChest.getPanelItem());
             myGame.getPlayer().grabContent(chestRecup);
             myGame.getInterfaceGame().getInterfacePlayer().updateInterfacePlayer(myGame);

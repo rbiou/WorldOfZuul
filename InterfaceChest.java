@@ -4,32 +4,35 @@ import java.awt.event.*;
 import javax.swing.ImageIcon;
 import java.util.*;
 /**
- * Write a description of class InterfaceChest here.
+ * This class allows us to display items' name.
+ * These items are those which are present in the 
+ * chest that the player opened.
+ * The player wins these items.
  *
  * @author (Group7)
  * @version (18/12/18)
  */
 public class InterfaceChest extends JPanel
 {
-    private Game myGame; 
+    //declarations
     private JPanel panelChest; 
     private JTextArea displayItems;
-    private JLabel labelItem, labelPres, labelImage, labelend; 
+    private JLabel labelItem, labelPres, labelend; 
     /**
      * Constructor for objects of class InterfaceChest
+     * Constructor of the chest Interface -> a chestPanel
      */
-    public InterfaceChest(Game game, ArrayList<Item> items)
-    {
+    public InterfaceChest(ArrayList<Item> items)
+    { 
+        boolean ok = false; //use to display a message where there is something in the chest
 
-        myGame = game; 
-        boolean ok = false; 
-        panelChest = new JPanel();
-        panelChest.removeAll();
-        
+        panelChest = new JPanel(); //chest panel
+        panelChest.removeAll(); //remove the panel - allow to update the panel
+
         labelPres = new JLabel("Oh good, you may have win something : ");
-        //labelItem = new JLabel("Oh no sorry, there is nothing in this chest :( ! ");
         panelChest.add(labelPres);
-        //panelChest.add(labelItem);
+
+        //display in the panel, the name of each item presents in the chest
         if (items != null){
             for (int i = 0; i<items.size(); i++){
                 labelItem = new JLabel();
@@ -38,15 +41,20 @@ public class InterfaceChest extends JPanel
                 ok = true; 
             }
         }
-        
+        //if there is something in the chest -> display a specific message
         if (ok) {
-          labelend = new JLabel("Go in your bag to see what are this(these) specific object(s) !");
-          panelChest.add(labelend);
+            labelend = new JLabel("Go in your bag to see what are this(these) specific object(s) !");
+            panelChest.add(labelend);
+        }
+        //update the panel
+        panelChest.revalidate(); 
+        panelChest.repaint();
     }
-    panelChest.revalidate(); 
-    panelChest.repaint();
-}
-
+    
+    /**
+     * getter of the chest panel
+     * @return  JPanel  panelChest
+     */
     public JPanel getPanelItem(){
         return panelChest; 
     }

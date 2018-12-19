@@ -66,23 +66,23 @@ public class InterfaceItem extends JPanel implements ActionListener
         labelDescription.setWrapStyleWord(true); 
         labelDescription.setOpaque(false); 
         labelDescription.setEditable(false); 
-        
+
         panelImage = new JPanel();
         labelImage = new JLabel();
         panelImage.add(labelImage);
-    
+
         // panel 1 South panel
         panel1 = new JPanel();
         panel1.setLayout(new GridLayout (1,2));
         panel1.add(itemBox);
         panel1.add(labelDescription);
-        
+
         //panel 2 with buttons
         panel2 = new JPanel();
         panel2.setLayout(new GridLayout (1,2));
         panel2.add(buttonBuy);
         panel2.add(buttonSell);
-        
+
         //Creation panel Final
         panelFinal = new JPanel();
         panelFinal.setLayout(new GridLayout(3, 1));
@@ -99,7 +99,7 @@ public class InterfaceItem extends JPanel implements ActionListener
         {
             int itemNumber = itemBox.getSelectedIndex();
             selectedItem = itemList.get(itemNumber);
-            
+
             labelImage.setIcon(new ImageIcon("items/" + selectedItem.getName()+".png"));
             labelImage.repaint();
 
@@ -115,30 +115,31 @@ public class InterfaceItem extends JPanel implements ActionListener
 
         if (source == buttonBuy)
         {       
-                if (selectedItem!=null){
+            if (selectedItem!=null){
                 if (player.buyItem(seller, selectedItem))
                 {
                     System.out.println("Achat");
                     JOptionPane jop1 = new JOptionPane();
                     jop1.showMessageDialog(null, "Cheers, bro", "Information", JOptionPane.INFORMATION_MESSAGE);
                     game.getInterfaceGame().getInterfacePlayer().updateInterfacePlayer(game);
-                    game.getInterfaceGame().getInterfaceDescription().updatePanelDescription(this.getPanel());
+                    game.getInterfaceGame().getInterfaceDescription().updatePanelDescription(panelFinal);
                 } else {
                     JOptionPane jop1 = new JOptionPane();
                     jop1.showMessageDialog(null, "Come back when you'll be wealthy enough for that boy.", "Information", JOptionPane.INFORMATION_MESSAGE);   
+
                 }
             }
         }
         else if (source == buttonSell)
         {       
-                if (selectedItem!=null){
+            if (selectedItem!=null){
                 if (player.sellItem(seller, selectedItem))
                 {
                     System.out.println("Vente");
                     JOptionPane jop1 = new JOptionPane();
                     jop1.showMessageDialog(null, "Cheers, bro", "Information", JOptionPane.INFORMATION_MESSAGE);
                     game.getInterfaceGame().getInterfacePlayer().updateInterfacePlayer(game);
-                    game.getInterfaceGame().getInterfaceDescription().updatePanelDescription(this.getPanel());
+                    game.getInterfaceGame().getInterfaceDescription().updatePanelDescription(panelFinal);
                 }
                 else {
                     JOptionPane jop1 = new JOptionPane();
