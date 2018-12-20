@@ -42,18 +42,14 @@ public class Player extends Character
             this.lifePoints = newLP;
             }
         }; 
-
+        
+        //add the money of the chest to the player and remove the money of the chest
         this.addMoney(chest.getMoney());
         chest.removeMoneyChest();
-        //System.out.println(chest.getListItems());
-        //System.out.println(this.getListItems());
-        for(int i = 0; i < chest.getListItems().size(); i++){
-            //System.out.println(chest.getListItems().get(i).getName()); 
-            this.addItem(chest.getListItems().get(i));
-            //chest.removeItem(chest.getListItems().get(i));
-        }
-        //System.out.println(chest.getListItems());
-        //System.out.println(this.getListItems());
+        
+        //add all the items in the player's bag and remove them of the chest
+        this.getListItems().addAll(chest.getListItems());
+        chest.getListItems().clear(); 
     }
 
     /**
