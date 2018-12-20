@@ -20,7 +20,7 @@ import javax.swing.ImageIcon;
  * seller in the room. 
  * 
  * @author (Group 7)
- * @version (04/12/18)
+ * @version (20/12/18)
  */
 public class InterfaceChar extends JFrame 
 {

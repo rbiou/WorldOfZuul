@@ -19,7 +19,6 @@ public class InterfaceDescription extends JPanel
     public InterfaceDescription(Game game)
     {
         myGame = game; 
-
     }
 
     /**

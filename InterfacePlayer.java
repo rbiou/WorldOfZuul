@@ -16,7 +16,7 @@ import java.awt.Color;
  *      - The weight in his bag 
  * 
  * @author (Group7)
- * @version (11/12/18)
+ * @version (20/12/18)
  */
 public class InterfacePlayer extends JPanel implements ActionListener
 
