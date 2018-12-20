@@ -26,7 +26,7 @@ public class InterfaceChest extends JPanel
     { 
         updateChest(items);
     }
-    
+
     /**
      * getter of the chest panel
      * @return  JPanel  panelChest
@@ -34,9 +34,13 @@ public class InterfaceChest extends JPanel
     public JPanel getPanelItem(){
         return panelChest; 
     }
-    
+
+    /**
+     * This fonction is used to update the panelChest
+     * @param  ArrayList<Item>  items
+     */
     public void updateChest(ArrayList<Item> items){
-    boolean ok = false; //use to display a message where there is something in the chest
+        boolean ok = false; //use to display a message where there is something in the chest
 
         panelChest = new JPanel(); //chest panel
         panelChest.removeAll(); //remove the panel - allow to update the panel
@@ -61,6 +65,6 @@ public class InterfaceChest extends JPanel
         //update the panel
         panelChest.revalidate(); 
         panelChest.repaint();
-        
+
     }
 }
