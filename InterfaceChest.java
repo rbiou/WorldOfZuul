@@ -44,7 +44,7 @@ public class InterfaceChest extends JPanel
 
         panelChest = new JPanel(); //chest panel
         panelChest.removeAll(); //remove the panel - allow to update the panel
-
+        
         labelPres = new JLabel("Oh good, you may have win something : ");
         panelChest.add(labelPres);
 

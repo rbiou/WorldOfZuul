@@ -32,10 +32,9 @@ public class Chest extends Item
      *The chest contains 50 or 0 piece(s). 
      *If they contain money, the player earns it
      */
-    public boolean removeMoneyChest()
+    public void removeMoneyChest()
     {
-        money=0; 
-        return true; 
+        money=0;          
     }
 
     /**
