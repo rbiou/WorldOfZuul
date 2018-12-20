@@ -134,6 +134,7 @@ public class InterfaceItem extends JPanel implements ActionListener
                     InterfaceItem interfaceItem = new InterfaceItem(game, seller.getListItems());
                     interfaceItem.getBuyButton().setEnabled(true);
                     interfaceItem.getSellButton().setEnabled(false);
+                    game.getInterfaceGame().getInterfaceRoom().updateInterfaceRoom(game);
                     game.getInterfaceGame().getInterfaceDescription().updatePanelDescription(interfaceItem.getPanel());
                 } else { //inform the user that he can not buy this item
                     JOptionPane jop1 = new JOptionPane();
