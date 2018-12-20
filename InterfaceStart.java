@@ -83,7 +83,7 @@ public class InterfaceStart
         JTextArea labelRules = new JTextArea (text);
         labelRules.setLineWrap(true);
         labelRules.setWrapStyleWord(true);
-        Font f = new Font("Times New Roman", Font.PLAIN, 18);
+        Font f = new Font("Times New Roman", Font.PLAIN, 20);
         labelRules.setFont(f);
         
         finalPanel.add(playerForm);
