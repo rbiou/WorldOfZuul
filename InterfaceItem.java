@@ -105,15 +105,13 @@ public class InterfaceItem extends JPanel implements ActionListener
             selectedItem = itemList.get(itemNumber); //get the selected item
 
 
-            //labelImage.setIcon(new ImageIcon("items/" + selectedItem.getName()+".png"));
-            Icon imageItem = new ImageIcon(new ImageIcon("items/"+ selectedItem.getName()+".png").getImage().getScaledInstance(150, 100, Image.SCALE_DEFAULT));
             //display the image of the selectedItem
+            Icon imageItem = new ImageIcon(new ImageIcon("items/"+ selectedItem.getName()+".png").getImage().getScaledInstance(150, 100, Image.SCALE_DEFAULT));
+            
             labelImage = new JLabel(imageItem);
           
             panel1.add(labelImage);
-                       
-
-            
+                                   
             labelImage.repaint();
 
             System.out.println(selectedItem.getName());
