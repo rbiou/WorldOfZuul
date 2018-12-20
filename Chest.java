@@ -111,4 +111,17 @@ public class Chest extends Item
     {
         return isOpen; 
     }
+
+        /**
+     * set the boolean isOpen to indicate when the chest is opened
+     *
+     * @return     int poids
+     */
+    public int getTotWeight(){
+        int poids = 0; 
+        for (int i=0; i< this.rewarding.size(); i++){
+            poids = poids + this.rewarding.get(i).getWeight(); 
+        }
+        return(poids); 
+    }
 }

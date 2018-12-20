@@ -13,7 +13,7 @@ import java.util.*;
 public class Player extends Character
 {
     private int lifePoints;
-    
+
     /**
      * Constructor
      **/
@@ -22,7 +22,7 @@ public class Player extends Character
         super(newName, 0, newWeight, newRoom);
         lifePoints = 100;
     }
-    
+
     /**
      * The player grabs the content of the chest
      * He loses 25 LP when the chest is trapped
@@ -38,25 +38,28 @@ public class Player extends Character
             newLP = this.lifePoints - 25; 
             this.lifePoints = newLP; 
             if (newLP < 0){
-            this.lifePoints=0;
-            this.lifePoints = newLP;
+                this.lifePoints=0;
+                this.lifePoints = newLP;
             }
         }; 
-        
+
         //add the money of the chest to the player and remove the money of the chest
         this.addMoney(chest.getMoney());
         chest.removeMoneyChest();
-        
+
         //add all the items in the player's bag and remove them of the chest
-        this.getListItems().addAll(chest.getListItems());
-        chest.getListItems().clear(); 
+        if (chest.getTotWeight() <= (this.getMaxWeight()-this.getTotalWeight())){
+            this.getListItems().addAll(chest.getListItems());
+            chest.getListItems().clear(); 
+            
+        }
     }
 
     /**
      * The player loses LP 
      * The life points can not be negative
      * @param    number of HP that should be removed from player's LP
-    **/
+     **/
     public void looseHP(int HP)
     {
         if (HP > 0){
@@ -71,9 +74,9 @@ public class Player extends Character
      * This method checks the time when the player enters in a room
      * He can stay on the planet only during a specific time (definied in each
      * planet)
-    **/
+     **/
     public boolean checkTime() //no create yet
-     {
+    {
         return false;
     }
 
@@ -81,7 +84,7 @@ public class Player extends Character
      * This method returns true if the player is dead. 
      * In this case, his life points are egals to 0
      * @param    number of HP that should be removed from player's LP
-    **/
+     **/
     public boolean isDead()
     {
         return (lifePoints <= 0);
@@ -111,9 +114,9 @@ public class Player extends Character
         {
             System.out.println(exits.get(i));
         }
-        
+
         while (test==false){
-            
+
             System.out.println("Choose a valide exit | 'stop' to stop moving");
             Scanner reader = new Scanner (System.in);
             String nameDoor="";
@@ -132,7 +135,7 @@ public class Player extends Character
                     moveRoom(doorExit);
                 }
             }
-            
+
             if (nameDoor.equals("stop"))
             {
                 test=true;
@@ -181,7 +184,7 @@ public class Player extends Character
     {
         return lifePoints;
     }
-    
+
     /**
      * Interract with the no player character
      * @param 
@@ -225,5 +228,4 @@ public class Player extends Character
         return false;
     }
 }
-
 

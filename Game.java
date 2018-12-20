@@ -116,7 +116,7 @@ public class Game
         start = new Room("start", startP);
 
         // creation of the player
-        player = new Player(name,250,start); 
+        player = new Player(name,50,start); 
         start.addCharacter(player);
 
         alpha.addRoom(alpha1 = new Room("alpha1", alpha)); 

@@ -55,33 +55,41 @@ public class GameListener extends JPanel implements ActionListener
             panelOfMonster = new InterfaceMonster(myGame, recupMonster);
             myGame.getInterfaceGame().getInterfaceDescription().updatePanelDescription(panelOfMonster.getPanel1());
             myGame.getInterfaceGame().getInterfaceChar().getMonsterButton().setEnabled(false);
-            
+
             myGame.getInterfaceGame().getInterfaceRoom().getPanelFinal().setVisible(false);
         }
         //chest button
         else if (e.getSource() ==  myGame.getInterfaceGame().getInterfaceChar().getChestButton()){
             Chest chestRecup = myGame.getPlayer().getCurrentRoom().getChest();
-            InterfaceChest interfaceChest = new InterfaceChest(chestRecup.getListItems());
-            myGame.getInterfaceGame().getInterfaceDescription().updatePanelDescription(interfaceChest.getPanelItem());
-            myGame.getPlayer().grabContent(chestRecup);
-            myGame.getInterfaceGame().getInterfacePlayer().updateInterfacePlayer(myGame);
-            if ( chestRecup.getIsTrap()){
-                jop1 = new JOptionPane();
-                ImageIcon img = new ImageIcon(new ImageIcon("trap/chest.png").getImage().getScaledInstance(100, 100, Image.SCALE_DEFAULT));
-                jop1.showMessageDialog(null, "IT WAS A TRAP !! YOU LOSE 25 HP", "chest", JOptionPane.INFORMATION_MESSAGE,img);
-            }       
-            myGame.getInterfaceGame().getInterfaceChar().getChestButton().setEnabled(false);
+            int poidsPlayer = myGame.getPlayer().getTotalWeight();  
+
+            if ((myGame.getPlayer().getMaxWeight() - myGame.getPlayer().getTotalWeight()) < chestRecup.getTotWeight())
+                JOptionPane.showMessageDialog(null, "Sorry, you have not enough place in you bag to grab the items of the chest");
+            else {
+                InterfaceChest interfaceChest = new InterfaceChest(chestRecup.getListItems());
+                myGame.getInterfaceGame().getInterfaceDescription().updatePanelDescription(interfaceChest.getPanelItem());
+                myGame.getPlayer().grabContent(chestRecup);    
+                myGame.getInterfaceGame().getInterfaceChar().getChestButton().setEnabled(false);
+
+                myGame.getInterfaceGame().getInterfacePlayer().updateInterfacePlayer(myGame);
+                if ( chestRecup.getIsTrap()){
+                    jop1 = new JOptionPane();
+                    ImageIcon img = new ImageIcon(new ImageIcon("trap/chest.png").getImage().getScaledInstance(100, 100, Image.SCALE_DEFAULT));
+                    jop1.showMessageDialog(null, "IT WAS A TRAP !! YOU LOSE 25 HP", "chest", JOptionPane.INFORMATION_MESSAGE,img);
+                }   
+            }    
+
             myGame.endGame();
         }
         //sell button
         else if (e.getSource() == myGame.getInterfaceGame().getInterfaceChar().getSellerButtonSell())
         {
-            Player player = myGame.getPlayer();
-            Seller seller = player.getCurrentRoom().getSeller();
-            InterfaceItem interfaceItem = new InterfaceItem(myGame, player.getListItems());
-            interfaceItem.getBuyButton().setEnabled(false);
-            interfaceItem.getSellButton().setEnabled(true);
-            myGame.getInterfaceGame().getInterfaceDescription().updatePanelDescription(interfaceItem.getPanel());
+                Player player = myGame.getPlayer();
+                Seller seller = player.getCurrentRoom().getSeller();
+                InterfaceItem interfaceItem = new InterfaceItem(myGame, player.getListItems());
+                interfaceItem.getBuyButton().setEnabled(false);
+                interfaceItem.getSellButton().setEnabled(true);
+                myGame.getInterfaceGame().getInterfaceDescription().updatePanelDescription(interfaceItem.getPanel());
             
         }
         //buy button
@@ -94,7 +102,6 @@ public class GameListener extends JPanel implements ActionListener
             interfaceItem.getSellButton().setEnabled(false);
             myGame.getInterfaceGame().getInterfaceDescription().updatePanelDescription(interfaceItem.getPanel());
         }
-       
 
     }
 }

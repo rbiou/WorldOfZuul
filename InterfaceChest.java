@@ -47,7 +47,7 @@ public class InterfaceChest extends JPanel
 
         labelPres = new JLabel("Oh good, you may have win something : ");
         panelChest.add(labelPres);
-
+        
         //display in the panel, the name of each item presents in the chest
         if (items != null){
             for (int i = 0; i<items.size(); i++){
