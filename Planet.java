@@ -15,8 +15,6 @@ public class Planet
     private int time; // Limit of time (in seconds) available for the player in one planet
     private ArrayList<Room> listRoom; // Rooms that are in the planet
 
- 
-    
     /**
      * Planet Constructor
      * In the game there are 4 planets. 
