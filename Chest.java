@@ -18,7 +18,6 @@ public class Chest extends Item
      */
     public Chest(String newName, int newValue, int newWeight, String newDescription, int newMoney, boolean isTrapped)
     {
-        //List<Item> item, int newMoney
         super(newName, newValue, newWeight, newDescription); 
         rewarding = new ArrayList<Item>(); // creation of the list of Item
         money = newMoney;
@@ -27,44 +26,40 @@ public class Chest extends Item
         }
         isTrap = isTrapped;
     }
-    
+
     /**
      *The player removes the money from the chest. 
      *The chest contains 50 or 0 piece(s). 
      *If they contain money, the player earns it
      */
     public boolean removeMoneyChest()
-       {
-            money=0; 
-            return true; 
-       }
-       
-     /**
+    {
+        money=0; 
+        return true; 
+    }
+
+    /**
      *The player removes the item from the chest
      *@param : item to remove 
      *
      */
-    public boolean removeItem(Item item)
+    public void removeItem(Item item)
     {        
-        if (this.rewarding.contains(item)){
+        if (this.rewarding.contains(item))
             this.rewarding.remove(item);
-            return true;}
-        else {
-            return false;}
     }
-    
-     /**
-      * Adds an item to the rewarding of the chest
-      * @param item : the item to add to the chest
-      * @return true if operation is successful
+
+    /**
+     * Adds an item to the rewarding of the chest
+     * @param item : the item to add to the chest
+     * @return true if operation is successful
      */
-    public boolean addItem(Item item)
+    public void addItem(Item item)
+
     {
-        if (this.rewarding.contains(item)){
-            return false; }
-        else {
+        if (!this.rewarding.contains(item)){
             this.rewarding.add(item);
-            return true;}
+        }
     }
 
     /**
@@ -86,7 +81,7 @@ public class Chest extends Item
     {
         return money;
     }
-    
+
     /**
      * Returns the chest is trapped or not
      *
@@ -96,8 +91,8 @@ public class Chest extends Item
     {
         return isTrap;
     }
-    
-     /**
+
+    /**
      * set the boolean isOpen to indicate when the chest is opened
      *
      * @param     boolean open
@@ -106,8 +101,8 @@ public class Chest extends Item
     {
         isOpen = open; 
     }
-    
-         /**
+
+    /**
      * set the boolean isOpen to indicate when the chest is opened
      *
      * @param     boolean open

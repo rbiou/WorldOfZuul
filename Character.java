@@ -72,19 +72,19 @@ public class Character{
      * @param  item add in a list
      * @return boolean
     **/
-    public boolean addItem(Item item)
+    public void addItem(Item item)
     {
-        int newWeight = itemsTotalWeight + item.getWeight();
-        if ((newWeight) > getMaxWeight() || this.items.contains(item))
-        {
-            return false;
-        }
-        else 
-        {
+         int newWeight = itemsTotalWeight + item.getWeight();
+         if ((newWeight) < getMaxWeight() || !this.items.contains(item))
+        // {
+            // return false;
+        // }
+        // else 
+        // {
             items.add(item);
             itemsTotalWeight = newWeight;
-            return true;
-        }
+            // return true;
+        // }
     }
     
     /**
@@ -95,6 +95,7 @@ public class Character{
     public boolean removeItem(Item item)
     {
         if (items.remove(item)){
+            items.remove(item);
             itemsTotalWeight -= item.getWeight();
             return true;
         }

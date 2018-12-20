@@ -10,7 +10,8 @@ AUTEURS : Group7 - Gphy2020
 ------------------------------------------------------------------------
 INSTRUCTIONS A L'USAGER :
 After a difficult party, your vessel crashed into a planet. It's not smart from your part, but you can repare it.
-This planet is part of a planet group once upon explored by smurfs. They are linked together by temporal spatial gates. So this looks like a labyrinth as the different exits have smurf name ...
+This planet is part of a planet group once upon explored by smurfs. They are linked together by temporal spatial gates. 
+So this looks like a labyrinth as the different exits have smurf name ...
 In the game, some gates are blocked. To open those doors, you must find the right key. Anyway, if you do not possede the key, you cannot click on the gate.
 The aim of the game is to move between rooms to find the four replacement pieces.
 In some rooms, you can interact with pets, monsters or sellers. You can only click on them if they are present in the room.
