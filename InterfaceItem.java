@@ -115,7 +115,6 @@ public class InterfaceItem extends JPanel implements ActionListener
         // Get player and seller
         Seller seller = game.getPlayer().getCurrentRoom().getSeller();
         Player player = game.getPlayer();
-
         if (source == buttonBuy)
         {       
             if (selectedItem!=null){
@@ -131,7 +130,7 @@ public class InterfaceItem extends JPanel implements ActionListener
                     game.getInterfaceGame().getInterfaceDescription().updatePanelDescription(interfaceItem.getPanel());
                 } else { //inform the user that he can not buy this item
                     JOptionPane jop1 = new JOptionPane();
-                    jop1.showMessageDialog(null, "Come back when you'll be wealthy enough for that boy.", "Information", JOptionPane.INFORMATION_MESSAGE);   
+                    jop1.showMessageDialog(null, "It seems that you are not able to buy this object. Remember to check if you have enough space in your bag and if you have enough money!", "Information", JOptionPane.INFORMATION_MESSAGE);   
                 }
             }
         }
