@@ -249,7 +249,7 @@ public class InterfaceGame extends JFrame implements ActionListener
      */
     public void popUpWin(){
         //image added in the window
-        ImageIcon icon = new ImageIcon("items/win.jpg");
+        Icon icon = new ImageIcon(new ImageIcon("items/win.jpg").getImage().getScaledInstance(300, 300, Image.SCALE_DEFAULT));
         //creation of the window with a specific message
         JOptionPane win = new JOptionPane();      
         option = win.showConfirmDialog(null, 
