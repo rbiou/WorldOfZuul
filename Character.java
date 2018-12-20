@@ -84,14 +84,12 @@ public class Character{
      * @param  item : item remove to a list
      * @return boolean
      **/
-    public boolean removeItem(Item item)
+    public void removeItem(Item item)
     {
         if (items.remove(item)){
             items.remove(item);
             itemsTotalWeight -= item.getWeight();
-            return true;
         }
-        return false;
     }
 
     /**
@@ -99,13 +97,11 @@ public class Character{
      * @param  amount    The amount of money that character gains
      * @return boolean
      **/
-    public boolean addMoney (int amount)
+    public void addMoney (int amount)
     {
         if (this.money>=0){
             this.money = money+amount; 
-            return true;}
-        else 
-            return false; 
+        }
     }
 
     /**
@@ -113,7 +109,7 @@ public class Character{
      * @param  amount  The amount of money that character loses
      * @return boolean
      **/
-    public boolean removeMoney(int amount)
+    public void removeMoney(int amount)
     {
         int newValueMoney; 
         if (this.money>=0){
@@ -123,9 +119,7 @@ public class Character{
             }
             else 
                 this.money = newValueMoney; 
-            return true;}
-        else 
-            return false;
+        }
     }
 
     /**

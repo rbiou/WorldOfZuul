@@ -71,16 +71,6 @@ public class Player extends Character
     }
 
     /**
-     * This method checks the time when the player enters in a room
-     * He can stay on the planet only during a specific time (definied in each
-     * planet)
-     **/
-    public boolean checkTime() //no create yet
-    {
-        return false;
-    }
-
-    /**
      * This method returns true if the player is dead. 
      * In this case, his life points are egals to 0
      * @param    number of HP that should be removed from player's LP
@@ -99,49 +89,6 @@ public class Player extends Character
     {
         pet.removeMoney(1);
         this.addMoney(1);
-    }
-
-    /**
-     * When the player choose to move room, the game displayed the current rooms where the player is.
-     * Then the player has to choose one and is moved to it.
-     **/
-    public void move()
-    {
-        boolean test = false;
-        System.out.println("Here the list of the different possible exits : ");
-        ArrayList<String> exits = getCurrentRoom().getNameDoor();
-        for(int i=0;i<exits.size();i++)
-        {
-            System.out.println(exits.get(i));
-        }
-
-        while (test==false){
-
-            System.out.println("Choose a valide exit | 'stop' to stop moving");
-            Scanner reader = new Scanner (System.in);
-            String nameDoor="";
-            nameDoor = reader.next();
-            if (getCurrentRoom().getNameDoor().contains(nameDoor.toString()))
-            {
-                test=true;
-                Door doorExit = getCurrentRoom().getSpecificExit(nameDoor);
-
-                if (doorExit.getIfLocked())
-                {
-                    moveLockedDoor(doorExit);
-                }
-                else
-                {
-                    moveRoom(doorExit);
-                }
-            }
-
-            if (nameDoor.equals("stop"))
-            {
-                test=true;
-            }
-        }
-
     }
 
     /**

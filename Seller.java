@@ -16,86 +16,8 @@ public class Seller extends NonPlayerCharacter
     public Seller(String newName, int newMoney, int newWeight, Room newRoom)
     {
         super(newName, newMoney, newWeight, newRoom);
-    }
-
-
-    /**
-     * this method allows the player to display the different items in
-     * the shop
-     *
-     * @param  
-     * @return all the items in the shop
-     */
-    public void displayShop()
-    {
-        // put your code here
-    }
+    }    
     
-    
-    /**
-     * This method allows the seller interact with the player to ask for to buy or shell
-     */
-    public void speak (Player player)
-    {
-        System.out.println("Would you like to buy or sell something ?");
-        Scanner reader = new Scanner (System.in);
-        String answer = reader.next();
-        //The player wants to buy
-        if (answer == "buy"){
-
-            Item item = selectItemFromList(this.getListItems());
-            if (item == null) {
-                boolean success = player.buyItem(this, item);
-                if (success)
-                    System.out.println("Thanks.");
-                else
-                    System.out.println("You don't have enough money.");
-            }
-        }
-        //The player wants to sell
-        if (answer == "sell"){
-
-            Item item = selectItemFromList(this.getListItems());
-            if (item == null) {
-                boolean success = player.sellItem(this, item);
-                if (success)
-                    System.out.println("Cheers.");
-                else
-                    System.out.println("You can't sell this.");
-
-            }
-        }
-    }
-    
-    /**
-     * This method allows to select item from list
-     * @return item Index
-     */
-    public Item selectItemFromList(ArrayList<Item> items)
-    {
-        Scanner reader = new Scanner (System.in);
-        while(true){
-            System.out.println("Select an item");
-            for (int i = 0; i < items.size(); i++)
-            {
-                System.out.println(i + " : " + items.get(i).getName());
-            }
-            System.out.println("exit : CANCEL");
-
-            String answer = reader.next();
-            if (answer == "exit"){
-                return null;
-            }
-            
-            int itemIndex = Integer.valueOf(answer);
-            if (itemIndex < 0 || itemIndex >= items.size() - 1){
-                System.out.println("Wrong item selected");
-                continue;
-            }
-
-            return items.get(itemIndex);
-        }
-    }
 }
 
 
