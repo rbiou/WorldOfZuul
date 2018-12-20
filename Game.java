@@ -77,17 +77,29 @@ public class Game
         getInterfaceGame().getInterfacePlanet().getRoomTimer().cancel();
         listPlanet = new ArrayList<Planet>(); 
         createWorld(playerName);
-       interfaceGame = new InterfaceGame(this);
+        interfaceGame = new InterfaceGame(this);
     }
-    
+
+    /**
+     * getter of the listPlanet
+     * return  ArrayList<Planet>  listPlanet
+     */
     public ArrayList<Planet> getPlanet() {
         return listPlanet; 
     }
 
+    /**
+     * getter of the player
+     * return  Player  player
+     */
     public Player getPlayer() {
         return player;
     }
 
+    /**
+     * getter of the interfaceGame
+     * return  InterfaceGame  interfaceGame
+     */
     public InterfaceGame getInterfaceGame() {
         return interfaceGame;
     }
@@ -281,8 +293,8 @@ public class Game
     {
         return this.listPlanet; 
     }
-    
-        /**
+
+    /**
      * Getter to return the name of the room
      * 
      * @return      String
@@ -292,6 +304,5 @@ public class Game
         return this.playerSexe; 
     }
 }    
-
 
 
