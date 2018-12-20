@@ -122,8 +122,10 @@ public class InterfaceItem extends JPanel implements ActionListener
                     JOptionPane jop1 = new JOptionPane();
                     jop1.showMessageDialog(null, "Cheers, bro", "Information", JOptionPane.INFORMATION_MESSAGE);
                     game.getInterfaceGame().getInterfacePlayer().updateInterfacePlayer(game);
-
+                    
                     InterfaceItem interfaceItem = new InterfaceItem(game, game.getPlayer().getCurrentRoom().getSeller().getListItems());
+                    interfaceItem.getBuyButton().setEnabled(true);
+                    interfaceItem.getSellButton().setEnabled(false);
                     game.getInterfaceGame().getInterfaceDescription().updatePanelDescription(interfaceItem.getPanel());
                 } else {
                     JOptionPane jop1 = new JOptionPane();
