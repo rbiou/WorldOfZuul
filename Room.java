@@ -37,7 +37,7 @@ public class Room
         currentPlanet = newPlanet ;
     }
 
-     /**
+    /**
      * Getter to return the name of the room
      * 
      * @return      String
@@ -46,8 +46,8 @@ public class Room
     {
         return name; 
     }
-    
-     /**
+
+    /**
      * Getter to return the planet of the room
      * 
      * @return      Planet
@@ -56,93 +56,76 @@ public class Room
     {
         return currentPlanet; 
     }
-    
+
     /**
      * Getter to return the list of the character
      * 
      * @return      ArrayList<Character>
-    **/
+     **/
     public ArrayList<Character> getListCharacter()
     {
         return listCharacters;
     }
-    
+
     /**
      * Getter to return the list of the chest
      * 
      * @return       ArrayList<Chest>
-    **/
+     **/
     public ArrayList<Chest> getListChest()
     {
         return listChest;
     }
-    
+
     /**
      * Add a new character in the room
      *
      * @param      a character
-     * 
-     * @return     boolean : true when we add the character
-     *                       false when the character is not added 
      */
-    public boolean addCharacter(Character newChar)
+    public void addCharacter(Character newChar)
     {
-        if (this.listCharacters.contains(newChar)){
-            return false; }
-        else {
+        if (!this.listCharacters.contains(newChar)){
             this.listCharacters.add(newChar);
-            return true;}
+        }
     }
-    
+
     /**
      * Add a chest in the room
      *
      * @param       a chest
-     * @return      boolean : true when we add the chest
-     *                       false when the chest is not added
      */
-    public boolean addChest(Chest newChest)
+    public void addChest(Chest newChest)
     {
-        if (this.listChest.contains(newChest)){
-            return false; }
-        else {
+        if (!this.listChest.contains(newChest)){
             this.listChest.add(newChest);
-            return true;}
+        }
     }
-    
+
     /**
      * Remove a character from the room
      *
      * @param      a character
-     * @return     boolean : true when we remove the character
-     *                       false when the character is not removed
      */
-    public boolean removeCharacter(Character oldChar)
+    public void removeCharacter(Character oldChar)
     {
         if (this.listCharacters.contains(oldChar)){
             this.listCharacters.remove(oldChar);
-            return true; }
-        else {
-            return false;}
+        }
     }
-    
+
     /**
      * Remove a chest from the room
      *
      * @param      a chest
-     * @return     boolean : true when we remove the chest
-     *                       false when the chest is not removed
+
      */
-    public boolean removeChest (Chest oldChest)
+    public void removeChest (Chest oldChest)
     {
         if (this.listChest.contains(oldChest)){
             this.listChest.remove(oldChest);
-            return true; }
-        else {
-            return false;}
+        }
     }
-    
-    
+
     /**
      * Define the exit of this room. 
      * Each door leads to another room. 
@@ -155,40 +138,21 @@ public class Room
     {
         exit.put(exitName, arrivalDoor);
     }
-    
-    /**
-     * This method displays all the different exits of the room
-     * Name of the door + Name of the room where it leads
-    **/
-    public void displayExit()
-    {
-        Iterator<Map.Entry<String,Door>> itr = exit.entrySet().iterator();
-        while(itr.hasNext())
-        {
-            Map.Entry<String,Door>entry = itr.next();
-            String key = entry.getKey();
-            Door value = entry.getValue();
-            System.out.println("name of the door : " + key);
-            System.out.println("exit room : " +
-            value.getNextRoom().getName());
-            
-        }
-    }
-    
+
     /**
      * With this method you give in parameter the name of the door, and it returns the door
      * where it leads.
      * @return the door that correspond to the given name
-    **/
+     **/
     public Door getSpecificExit(String nomPorte)
     {
         return exit.get(nomPorte);
     }
-    
-     /**
+
+    /**
      * This method returns a list of the name of the different doors of the room.
      * @return the name of the different doors
-    **/
+     **/
     public ArrayList<String> getNameDoor()
     {
         ArrayList<String> list = new ArrayList<String>() ;
@@ -201,7 +165,7 @@ public class Room
         }
         return list;
     }
-    
+
     /**
      * Return a specific monster present in a room
      * Only one monster is present in a room
@@ -217,12 +181,12 @@ public class Room
         }
         return null; 
     }
-    
-     /**
+
+    /**
      * Return a specific seller present in a room
      * Only one seller is present in a room
      */
-        public Seller getSeller() {
+    public Seller getSeller() {
         for (int i = 0; i< this.listCharacters.size(); i++)
         {
             if (this.listCharacters.get(i)!=null){
@@ -233,12 +197,12 @@ public class Room
         }
         return null; 
     }
-    
-     /**
+
+    /**
      * Return a specific pet present in a room
      * Only one pet is present in a room
      */
-        public Pet getPet() {
+    public Pet getPet() {
         for (int i = 0; i< this.listCharacters.size(); i++)
         {
             if (this.listCharacters.get(i)!=null){
@@ -250,12 +214,12 @@ public class Room
         }
         return null; 
     }
-    
+
     /**
      * Return a specific chest present in a room
      * Only one chest is present in a room
      */
-        public Chest getChest() {
+    public Chest getChest() {
         for (int i = 0; i< listChest.size(); i++)
         {
             if (listChest.get(i)!=null){
@@ -271,9 +235,4 @@ public class Room
         return null; 
     }
 }
-    
-
-
-
-
 
