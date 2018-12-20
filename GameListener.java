@@ -100,6 +100,7 @@ public class GameListener extends JPanel implements ActionListener
             InterfaceItem interfaceItem = new InterfaceItem(myGame, seller.getListItems());
             interfaceItem.getBuyButton().setEnabled(true);
             interfaceItem.getSellButton().setEnabled(false);
+            myGame.getInterfaceGame().getInterfaceRoom().updateInterfaceRoom(myGame);
             myGame.getInterfaceGame().getInterfaceDescription().updatePanelDescription(interfaceItem.getPanel());
         }
 
