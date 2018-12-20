@@ -98,11 +98,11 @@ public class Game
     public void createWorld(String name)
     {   
         //creation of the planets
-        startP = new Planet("Start", "Hic incipit adventum tuum.", 10, 500); 
-        alpha = new Planet("Alpha", "Ikke kast bort tiden din her, det er ingen nøkkel eller del av skipet.", 30, 500); 
-        beta = new Planet("Beta", "Θα βρείτε ένα κλειδί στο δωμάτιο ένα και ένα δωμάτιο του πλοίου στην αίθουσα πέντε.", -5, 500); 
+        startP = new Planet("Start", "Hic incipit adventum tuum.", 10, 230); 
+        alpha = new Planet("Alpha", "Ikke kast bort tiden din her, det er ingen nøkkel eller del av skipet.", 30, 20); 
+        beta = new Planet("Beta", "Θα βρείτε ένα κλειδί στο δωμάτιο ένα και ένα δωμάτιο του πλοίου στην αίθουσα πέντε.", -5, 300); 
         gamma = new Planet("Gamma", "您將在第一和第三房間找到鑰匙，以及第五和第六房間的船隻。", 24, 500); 
-        delta = new Planet("Delta", "Вы найдете ключи в номерах один и два, а также комнату в комнате четыре.", 50, 500);
+        delta = new Planet("Delta", "Вы найдете ключи в номерах один и два, а также комнату в комнате четыре.", 50, 260);
         listPlanet.add(alpha);
         listPlanet.add(beta);
         listPlanet.add(gamma);
@@ -116,7 +116,7 @@ public class Game
         start = new Room("start", startP);
 
         // creation of the player
-        player = new Player(name,50,start); 
+        player = new Player(name,320,start); 
         start.addCharacter(player);
 
         alpha.addRoom(alpha1 = new Room("alpha1", alpha)); 
