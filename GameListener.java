@@ -64,7 +64,7 @@ public class GameListener extends JPanel implements ActionListener
             int poidsPlayer = myGame.getPlayer().getTotalWeight();  
 
             if ((myGame.getPlayer().getMaxWeight() - myGame.getPlayer().getTotalWeight()) < chestRecup.getTotWeight())
-                JOptionPane.showMessageDialog(null, "Sorry, you have not enough place in you bag to grab the items of the chest");
+                JOptionPane.showMessageDialog(null, "Sorry, you have not enough place in your bag to grab the items of the chest");
             else {
                 InterfaceChest interfaceChest = new InterfaceChest(chestRecup.getListItems());
                 myGame.getInterfaceGame().getInterfaceDescription().updatePanelDescription(interfaceChest.getPanelItem());
