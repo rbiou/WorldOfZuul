@@ -61,7 +61,7 @@ public class StartGameInterface
                     } 
                     else 
                     {
-                        JOptionPane.showMessageDialog(null, "Le nom ne peut pas etre vide !");
+                        JOptionPane.showMessageDialog(null, "Your name can't be empty !");
                     }
                 }});
         
