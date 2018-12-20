@@ -11,7 +11,8 @@ import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 /**
- * Class Interface Item shows the bag of the player and the seller when they interact. There are image og the item, listof item
+ * Class Interface Item shows the bag of the player and the seller when they interact. 
+ * There are images of the item, list of items
  * with her description.
  *
  * @author Group7
@@ -30,6 +31,8 @@ public class InterfaceItem extends JPanel implements ActionListener
     private Game game; 
     /**
      * Constructor for objects of class InterfaceItem
+     * @param  Game  game
+     * @param  ArrayList<Item>  items
      */
     public InterfaceItem(Game game, ArrayList<Item> items)
     {
@@ -41,9 +44,6 @@ public class InterfaceItem extends JPanel implements ActionListener
 
         buttonSell = new JButton("Sell"); // Creation of the sell button
         buttonSell.setEnabled(false);
-
-        //buttonBuy.setEnabled(false); // The button is accessible or not.
-        //buttonSell.setEnabled(false);
 
         // Link of the interface button and his action
         buttonBuy.addActionListener(this);
@@ -91,16 +91,19 @@ public class InterfaceItem extends JPanel implements ActionListener
         panelFinal.add(panel2);
     }
 
+    /**
+     * Event associated to the JComboBox, buttonBuy and buttonSell
+     */
     public void actionPerformed(ActionEvent e){
         // Get event origin
         Object source = e.getSource();
 
-        if (source == itemBox)
+        if (source == itemBox) //select an item in the list
         {
             int itemNumber = itemBox.getSelectedIndex();
-            selectedItem = itemList.get(itemNumber);
+            selectedItem = itemList.get(itemNumber); //get the selected item
 
-            labelImage.setIcon(new ImageIcon("items/" + selectedItem.getName()+".png"));
+            labelImage.setIcon(new ImageIcon("items/" + selectedItem.getName()+".png")); //display the image of the selectedItem
             labelImage.repaint();
 
             System.out.println(selectedItem.getName());
@@ -118,16 +121,15 @@ public class InterfaceItem extends JPanel implements ActionListener
             if (selectedItem!=null){
                 if (player.buyItem(seller, selectedItem))
                 {
-                    System.out.println("Achat");
                     JOptionPane jop1 = new JOptionPane();
                     jop1.showMessageDialog(null, "Cheers, bro", "Information", JOptionPane.INFORMATION_MESSAGE);
                     game.getInterfaceGame().getInterfacePlayer().updateInterfacePlayer(game);
-                    
-                    InterfaceItem interfaceItem = new InterfaceItem(game, game.getPlayer().getCurrentRoom().getSeller().getListItems());
+                    //update the panelDescription -> update the JComboBox
+                    InterfaceItem interfaceItem = new InterfaceItem(game, seller.getListItems());
                     interfaceItem.getBuyButton().setEnabled(true);
                     interfaceItem.getSellButton().setEnabled(false);
                     game.getInterfaceGame().getInterfaceDescription().updatePanelDescription(interfaceItem.getPanel());
-                } else {
+                } else { //inform the user that he can not buy this item
                     JOptionPane jop1 = new JOptionPane();
                     jop1.showMessageDialog(null, "Come back when you'll be wealthy enough for that boy.", "Information", JOptionPane.INFORMATION_MESSAGE);   
                 }
@@ -138,37 +140,52 @@ public class InterfaceItem extends JPanel implements ActionListener
             if (selectedItem!=null){
                 if (player.sellItem(seller, selectedItem))
                 {
-                    System.out.println("Vente");
                     JOptionPane jop1 = new JOptionPane();
                     jop1.showMessageDialog(null, "Cheers, bro", "Information", JOptionPane.INFORMATION_MESSAGE);
                     game.getInterfaceGame().getInterfacePlayer().updateInterfacePlayer(game);
                     game.getInterfaceGame().getInterfaceDescription().updatePanelDescription(panelFinal);
-
-                    InterfaceItem interfaceItem = new InterfaceItem(game, game.getPlayer().getListItems());
+                    //update the panelDescription -> update the JComboBox
+                    InterfaceItem interfaceItem = new InterfaceItem(game, player.getListItems());
                     interfaceItem.getBuyButton().setEnabled(false);
                     interfaceItem.getSellButton().setEnabled(true);
                     game.getInterfaceGame().getInterfaceDescription().updatePanelDescription(interfaceItem.getPanel());
                 }
-                else {
+                else { //inform the user that he can not sell this item
                     JOptionPane jop1 = new JOptionPane();
                     jop1.showMessageDialog(null, "Come back when you'll be enough items for that boy.", "Information", JOptionPane.INFORMATION_MESSAGE);
                 }
             }
         }
     }
-
+    
+    /**
+     * getter of the panelFinal
+     * @return JPanel panelFinal
+     */
     public JPanel getPanel(){
         return panelFinal;
     }
 
+     /**
+     * getter of the selectedItem
+     * @return Item selectedItem
+     */
     public Item getSelectedItem(){
         return selectedItem;
     }
 
+         /**
+     * getter of the buttonBuy
+     * @return JButton buttonBuy
+     */
     public JButton getBuyButton(){
         return buttonBuy;
     }
 
+             /**
+     * getter of the buttonSell
+     * @return JButton buttonSell
+     */
     public JButton getSellButton(){
         return buttonSell;
     }
