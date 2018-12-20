@@ -274,8 +274,7 @@ public class InterfaceGame extends JFrame implements ActionListener
      */
     public void popUpLose(){
         //image added in the window
-        //ImageIcon icon = new ImageIcon("items/lose.jpg");
-        Icon icon = new ImageIcon(new ImageIcon("items/win.png").getImage().getScaledInstance(800, 800, Image.SCALE_DEFAULT));
+        ImageIcon icon = new ImageIcon("items/lose.jpg");
         //creation of the window with a specific message
         JOptionPane win = new JOptionPane();
         Font f = new Font("Serif", Font.PLAIN, 20);         

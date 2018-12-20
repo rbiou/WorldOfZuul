@@ -109,7 +109,8 @@ public class InterfaceItem extends JPanel implements ActionListener
             Icon imageItem = new ImageIcon(new ImageIcon("items/"+ selectedItem.getName()+".png").getImage().getScaledInstance(150, 100, Image.SCALE_DEFAULT));
             
             labelImage = new JLabel(imageItem);
-          
+            
+            //add the image in the panel
             panel1.add(labelImage);
 
             labelImage.repaint();
@@ -181,7 +182,7 @@ public class InterfaceItem extends JPanel implements ActionListener
         return selectedItem;
     }
 
-         /**
+    /**
      * getter of the buttonBuy
      * @return JButton buttonBuy
      */
@@ -189,7 +190,7 @@ public class InterfaceItem extends JPanel implements ActionListener
         return buttonBuy;
     }
 
-             /**
+    /**
      * getter of the buttonSell
      * @return JButton buttonSell
      */
