@@ -114,8 +114,6 @@ public class InterfaceItem extends JPanel implements ActionListener
             
             // reloade the labelImage
             labelImage.repaint();
-
-            System.out.println(selectedItem.getName());
             labelDescription.setText(selectedItem.getDescription()+ "\n Price : " +selectedItem.getValue());
 
             return;
