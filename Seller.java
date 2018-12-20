@@ -7,7 +7,7 @@ import java.util.*;
  * @author Group 7
  * @version 14/11/2018
  */
-public class Seller extends NonPlayerCharacter
+public class Seller extends Character
 {
 
     /**

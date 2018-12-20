@@ -133,15 +133,6 @@ public class Player extends Character
     }
 
     /**
-     * Interract with the no player character
-     * @param 
-     */
-    public void interractWith(NonPlayerCharacter character)
-    {
-        character.speak(this);
-    }
-
-    /**
      * this method allows the player to sell an item to the seller
      *
      * @param item

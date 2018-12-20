@@ -8,7 +8,7 @@
  * @author Group 7
  * @version 14/11/2018
  */
-public class Pet extends NonPlayerCharacter
+public class Pet extends Character
 {
     // instance variables -
     private String species; // the species of the pets, can be any String

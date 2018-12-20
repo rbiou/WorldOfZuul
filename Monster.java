@@ -8,7 +8,7 @@ import java.util.*;
  * @author Group 7
  * @version 14/11/2018
  */
-public class Monster extends NonPlayerCharacter
+public class Monster extends Character
 {
     // instance variables
     String question; //the question of the monster

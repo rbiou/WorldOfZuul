@@ -131,7 +131,6 @@ public class PlayerTest
      */   
     @Test
     public void testMonsterSpeakRightAnswer(){
-        player.interractWith(monster);
         assertEquals(true,monster.checkAnswer("Gphy",player));
         assertEquals(300,player.getMoney());
     }
@@ -142,7 +141,6 @@ public class PlayerTest
     */   
    @Test
    public void testMonsterSpeakWrongAnswer(){
-       player.interractWith(monster);
        assertEquals(false,monster.checkAnswer("Gcell",player));
        assertEquals(50,player.getLP());
    }
