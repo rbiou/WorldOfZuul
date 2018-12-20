@@ -157,54 +157,54 @@ public class Game
         LockedDoor gamma2South, gamma4North; 
 
         //creation of the door and they are added to the room for the alpha planet
-        start.setExit("Smurfette",startSouth = new Door(alpha1)); 
-        alpha1.setExit("Papa Smurf", alpha1North = new Door(start));
-        alpha1.setExit("Hefty Smurf", alpha1East = new Door(alpha2));
-        alpha1.setExit("Brainy Smurf", alpha1South = new Door(alpha3));
-        alpha2.setExit("Grouchy Smurf", alpha2West = new Door(alpha1));
-        alpha2.setExit("Clumsy Smurf", alpha2South = new Door(alpha3));
-        alpha3.setExit("Greedy Smurf", alpha3North = new Door(alpha2));
-        alpha3.setExit("Jokey Smurf", alpha3West = new Door(alpha1));
-        alpha3.setExit("Chef Smurf", alpha3South = new Door(delta1));
-        alpha3.setExit("Vanity Smurf", alpha3East = new LockedDoor(beta1, "square"));
+        start.setExit("Alpha portal",startSouth = new Door(alpha1)); 
+        alpha1.setExit("Start portal", alpha1North = new Door(start));
+        alpha1.setExit("Alpha 2 door", alpha1East = new Door(alpha2));
+        alpha1.setExit("Alpha 3 door", alpha1South = new Door(alpha3));
+        alpha2.setExit("Alpha 1 door", alpha2West = new Door(alpha1));
+        alpha2.setExit("Alpha 3 door", alpha2South = new Door(alpha3));
+        alpha3.setExit("Alpha 2 door", alpha3North = new Door(alpha2));
+        alpha3.setExit("Alpha 1 door", alpha3West = new Door(alpha1));
+        alpha3.setExit("Delta portal", alpha3South = new Door(delta1));
+        alpha3.setExit("Beta portal", alpha3East = new LockedDoor(beta1, "square"));
 
         //creation of the door and they are added to the room for the delta planet
-        delta1.setExit("Handy Smurf", delta1North = new Door(alpha3));
-        delta1.setExit("Scaredy Smurf", delta1South = new Door(delta2));
-        delta2.setExit("Tracker Smurf", delta2North = new Door(delta1));       
-        delta2.setExit("Sloppy Smurf", delta2East = new LockedDoor(delta3, "circle"));
-        delta3.setExit("Harmony Smurf", delta3West = new Door(delta2));    
-        delta3.setExit("Painter Smurf", delta3South = new Door(delta4));       
-        delta4.setExit("Poet Smurf", delta4North = new Door(delta3));    
+        delta1.setExit("Alpha portal", delta1North = new Door(alpha3));
+        delta1.setExit("Delta 2 door", delta1South = new Door(delta2));
+        delta2.setExit("Delta 1 door", delta2North = new Door(delta1));       
+        delta2.setExit("Delta 3 door", delta2East = new LockedDoor(delta3, "circle"));
+        delta3.setExit("Delta 2 door", delta3West = new Door(delta2));    
+        delta3.setExit("Delta 4 door", delta3South = new Door(delta4));       
+        delta4.setExit("Delta 3 door", delta4North = new Door(delta3));    
 
         //creation of the door and they are added to the room for the beta planet
-        beta1.setExit("Farmer Smurf", beta1West = new Door(alpha3));
-        beta1.setExit("Natural Smurf", beta1South = new Door(beta3));
-        beta1.setExit("Snappy Smurfling", beta1East = new Door( beta2));      
-        beta2.setExit("Slouchy Smurfling", beta2West = new Door(beta1));      
-        beta2.setExit("Grandpa Smurf", beta2South = new Door(beta4));            
-        beta3.setExit("Baby Smurf", beta3North = new Door(beta1)); 
-        beta3.setExit("Sassette Smurfling", beta3East = new Door(beta4));   
-        beta4.setExit("Alchemist Smurf", beta4North = new Door(beta2)); 
-        beta4.setExit("Timid Smurf", beta4West = new Door(beta3));
-        beta4.setExit("Architect Smurf", beta4South = new LockedDoor(beta5, "triangle"));
-        beta5.setExit("Baker Smurf", beta5North = new Door(beta4));
-        beta5.setExit("Clockwork Smurf", beta5South = new Door(gamma1));
+        beta1.setExit("Alpha portal", beta1West = new Door(alpha3));
+        beta1.setExit("Beta 3 door", beta1South = new Door(beta3));
+        beta1.setExit("Beta 2 door", beta1East = new Door( beta2));      
+        beta2.setExit("Beta 1 door", beta2West = new Door(beta1));      
+        beta2.setExit("Beta 4 door", beta2South = new Door(beta4));            
+        beta3.setExit("Beta 1 door", beta3North = new Door(beta1)); 
+        beta3.setExit("Beta 4 door", beta3East = new Door(beta4));   
+        beta4.setExit("Beta 2 door", beta4North = new Door(beta2)); 
+        beta4.setExit("Beta 3 door", beta4West = new Door(beta3));
+        beta4.setExit("Beta 5 door", beta4South = new LockedDoor(beta5, "triangle"));
+        beta5.setExit("Beta 4 door", beta5North = new Door(beta4));
+        beta5.setExit("Gamma portal", beta5South = new Door(gamma1));
 
         //creation of the door and they are added to the room for the gamma planet
-        gamma1.setExit("Dabbler Smurf", gamma1North = new Door(beta5));
-        gamma1.setExit("Doctor Smurf", gamma1South = new Door(gamma2));
-        gamma2.setExit("Dopey Smurf", gamma2North = new Door(gamma1));
-        gamma2.setExit("Enamored Smurf", gamma2South = new LockedDoor(gamma3, "star"));
-        gamma3.setExit("Finance Smurf", gamma3North = new Door(gamma2));
-        gamma3.setExit("Flying Smurf", gamma3South = new Door(gamma5));
-        gamma3.setExit("King Smurf", gamma3East = new Door(gamma4));
-        gamma4.setExit("Lazy Smurf", gamma4North = new LockedDoor(gamma6, "rectangle"));
-        gamma4.setExit("Miner Smurf", gamma4West = new Door(gamma3));
-        gamma4.setExit("Nanny Smurf", gamma4South = new Door(gamma5));
-        gamma5.setExit("Nosey Smurf", gamma5North = new Door(gamma4));
-        gamma5.setExit("Editor Smurf", gamma5West = new Door(gamma3));
-        gamma6.setExit("Reflection Smurf", gamma6South = new Door( gamma4));
+        gamma1.setExit("Beta portal", gamma1North = new Door(beta5));
+        gamma1.setExit("Gamma 2 door", gamma1South = new Door(gamma2));
+        gamma2.setExit("Gamma 1 door", gamma2North = new Door(gamma1));
+        gamma2.setExit("Gamma 3 door", gamma2South = new LockedDoor(gamma3, "star"));
+        gamma3.setExit("Gamma 2 door", gamma3North = new Door(gamma2));
+        gamma3.setExit("Gamma 5 door", gamma3South = new Door(gamma5));
+        gamma3.setExit("Gamma 4 door", gamma3East = new Door(gamma4));
+        gamma4.setExit("Gamma 6 door", gamma4North = new LockedDoor(gamma6, "rectangle"));
+        gamma4.setExit("Gamma 3 door", gamma4West = new Door(gamma3));
+        gamma4.setExit("Gamma 5 door", gamma4South = new Door(gamma5));
+        gamma5.setExit("Gamma 4 door", gamma5North = new Door(gamma4));
+        gamma5.setExit("Gamma 3 door", gamma5West = new Door(gamma3));
+        gamma6.setExit("Gamma 4 door", gamma6South = new Door( gamma4));
 
         //Add the monster in the rooms
         Monster monster1, monster2, monster3, monster4; //declaration of the monsters
