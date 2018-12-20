@@ -73,7 +73,7 @@ public class Character{
     public void addItem(Item item)
     {
         int newWeight = itemsTotalWeight + item.getWeight();
-        if ((newWeight) < getMaxWeight() || !this.items.contains(item)){
+        if ((newWeight) < getMaxWeight() && !this.items.contains(item)){
             items.add(item);
             itemsTotalWeight = newWeight;
         }

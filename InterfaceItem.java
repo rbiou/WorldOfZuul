@@ -54,7 +54,6 @@ public class InterfaceItem extends JPanel implements ActionListener
         itemBox = new JComboBox();
         if (itemList != null){
             for (Item item: itemList){
-                System.out.println(item.getName());
                 itemBox.addItem(item.getName());
             }
             itemBox.addActionListener(this);
