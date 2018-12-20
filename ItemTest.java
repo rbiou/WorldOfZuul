@@ -69,19 +69,18 @@ public class ItemTest
         assertEquals("I'm a banana",item.getDescription());
     }
     
-    // /**
-    // * method testRemoveNonExistingItem : test if it is possible to remove a non existing item in the character bag
-    // *
-    // * @Return Character.removeItem(Item)= false;
-    // * @correction the test return a message "this item does not exist in your bag"
-    // */
-    // @Test
-    // public void testRemoveNonExistingItem ()
-    // {
-        // character.removeItem(item);
-        // assertEquals(false,character.getListItems().contains(item));
-        // assertEquals(false, character.removeItem(item));
-    // }
+    /**
+    * method testRemoveNonExistingItem : test if it is possible to remove a non existing item in the character bag
+    *
+    * @Return Character.removeItem(Item)= false;
+    * @correction the test return a message "this item does not exist in your bag"
+    */
+    @Test
+    public void testRemoveNonExistingItem ()
+    {
+        character.removeItem(item);
+        assertEquals(false,character.getListItems().contains(item));
+    }
     
     /**
     * method testRemoveExistingItem : test if it is possible to remove an existing item in the chacter bag
