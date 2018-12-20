@@ -38,7 +38,7 @@ public class InterfaceItem extends JPanel implements ActionListener
     {
         //instanciation of the objects of the InterfaceItem
         this.game = game;
-        Icon imageItem = new ImageIcon("items/Red key.png");
+        
         buttonBuy = new JButton("Buy"); // Creation of the buy button
         buttonBuy.setEnabled(false);
 
