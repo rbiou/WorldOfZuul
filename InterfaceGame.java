@@ -3,6 +3,8 @@ import javax.swing.*;
 import java.awt.event.*;
 import java.util.*; 
 import javax.swing.ImageIcon;
+import java.awt.Color;
+
 /**
  * The InterfaceGame class contains the Frame of the game.
  * The frame is composed of 6 panels : 
