@@ -59,10 +59,7 @@ public class PetTest
     @Test
     public void testSpeak()
     {
-        System.out.println("You are in the "+petTest.getCurrentRoom().getName()+" of the planet "+petTest.getCurrentRoom().getPlanet().getPlanetName()
-        +". The temperature is "+petTest.getCurrentRoom().getPlanet().getTemperature()+"°C. To survive, you have a limited time of "
-        +petTest.getCurrentRoom().getPlanet().getTime()+" seconds to explore the planet.");
-        assertEquals("You are in the Room1 of the planet Alpha. The temperature is 10°C. To survive, you have a limited time of 10 seconds to explore the planet. People of this planet left me a message for you : Welcome on the planet alpha",
+        assertEquals("<html><center>***Welcome on the planet Alpha*** <br> I am Tom.The current temperature is 10°c. Warning you have 10 seconds to succeed.<br> Here is a small reward to start the quest on this planet</center></html>",
         petTest.giveMessage());
     }
     

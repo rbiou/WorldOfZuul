@@ -36,12 +36,7 @@ public class InterfacePets
         //Else, the pet give a description of the planet
         else 
         {
-            label1.setText("<html><center>***Welcome on the planet "+
-                game.getPlayer().getCurrentRoom().getPlanet().getPlanetName()+
-                "*** <br> I am " +pet.getName()+"."+
-                "The current temperature is " +game.getPlayer().getCurrentRoom().getPlanet().getTemperature()+" °c."+
-                " Warning you have " +game.getPlayer().getCurrentRoom().getPlanet().getTime()+ "  seconds to succeed." + "<br>"+
-                " Here is a small reward to start the quest on this planet</center></html>");
+            label1.setText(pet.giveMessage());
         }
         Icon imagePets = new ImageIcon("pets/"+pet.getName()+".jpg");
         

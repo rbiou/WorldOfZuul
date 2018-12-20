@@ -40,11 +40,12 @@ public class Pet extends NonPlayerCharacter
      */
     public String giveMessage()
     {
-        return ("You are in the "+this.getCurrentRoom().getName()+" of the planet "+this.getCurrentRoom().getPlanet().getPlanetName()
-        +". The temperature is "+this.getCurrentRoom().getPlanet().getTemperature()+"°C. To survive, you have a limited time of "
-        +this.getCurrentRoom().getPlanet().getTime()
-        +" seconds to explore the planet. People of this planet left me a message for you : ")
-        +this.getCurrentRoom().getPlanet().descriptionDisplayPlanet();
+        return ("<html><center>***Welcome on the planet "+
+                getCurrentRoom().getPlanet().getPlanetName()+
+                "*** <br> I am " +getName()+"."+
+                "The current temperature is " +getCurrentRoom().getPlanet().getTemperature()+"°c."+
+                " Warning you have " +getCurrentRoom().getPlanet().getTime()+ " seconds to succeed." + "<br>"+
+                " Here is a small reward to start the quest on this planet</center></html>");
     }
     
     /**
