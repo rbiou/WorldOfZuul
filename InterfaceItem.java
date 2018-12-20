@@ -111,9 +111,7 @@ public class InterfaceItem extends JPanel implements ActionListener
             labelImage = new JLabel(imageItem);
           
             panel1.add(labelImage);
-                       
 
-            
             labelImage.repaint();
 
             System.out.println(selectedItem.getName());
