@@ -19,8 +19,8 @@ import java.util.TimerTask;
  */
 public class InterfacePlanet extends JPanel
 {
-    private JPanel myPanel2,myPanel1, panelPlanet; //The JPanel for the planet Interface
-    private JLabel planetLabel,imagePlanetLabel, timeLabel; // The JLabel of the planet: images, description 
+    private JPanel myPanel2,myPanel1, panelPlanet, timePanel; //The JPanel for the planet Interface
+    private JLabel planetLabel,imagePlanetLabel, timeLabel, timerLabel; // The JLabel of the planet: images, description 
     //and time
     private Timer room_timer; // The room_timer 
     private Game game; // The Game
@@ -65,15 +65,23 @@ public class InterfacePlanet extends JPanel
         descriptionText.setEditable(false);
         descriptionText.setWrapStyleWord(true);
         
-        // Get The time of the planet that we have left 
-        timeLabel = new JLabel("Time: " + game.getPlayer().getCurrentRoom().getPlanet().getTime(), JLabel.CENTER);
+        // Get The time of the planet that we have left
+        timePanel= new JPanel();
+        timePanel.setLayout(new GridLayout(1,2));
+        timeLabel = new JLabel(" "+game.getPlayer().getCurrentRoom().getPlanet().getTime(), JLabel.CENTER);
+        Font f = new Font("Serif", Font.PLAIN, 25); 
+        timeLabel.setFont(f);
+        Icon timerLogo = new ImageIcon(new ImageIcon("logo/stopwatch.png").getImage().getScaledInstance(50, 50, Image.SCALE_DEFAULT));
+        timerLabel = new JLabel(timerLogo);
+        timePanel.add(timerLabel);
+        timePanel.add(timeLabel);
         
         // get the updaterTimer 
         updateTimer(game.getPlayer().getCurrentRoom().getPlanet().getTime());
         // Panel for the characteristics of the planet
         myPanel2.add(planetLabel);
         myPanel2.add(descriptionText);
-        myPanel2.add(timeLabel);
+        myPanel2.add(timePanel);
         myPanel2.revalidate();
         myPanel2.repaint(); 
         
@@ -121,9 +129,8 @@ public class InterfacePlanet extends JPanel
                 room_timer.cancel();
                 //kill the player
                 game.getInterfaceGame().popUpLose();
-                //JOptionPane.showMessageDialog(null,"*blurp* *blurp* \n I'M SUFFOCATINGGGGGGG \n GAME OVER \n (et là on est censé retourner au départ mais ça sera relou pour developper le jeu)");
             }
-            timeLabel.setText("Time: "+Integer.toString(countdown));
+            timeLabel.setText(" "+Integer.toString(countdown));
         }
 
     }

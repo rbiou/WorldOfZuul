@@ -31,6 +31,7 @@ public class InterfaceRoom extends JPanel
         Font f = new Font("Apple Chancery", Font.PLAIN, 24);
         descriptionLabel.setFont(f);
         descriptionLabel.setLineWrap(true);
+        descriptionLabel.setEditable(false);
         descriptionLabel.setWrapStyleWord(true);
         descriptionLabel.setBackground(Color.gray);
         descriptionLabel.setForeground(Color.white);
