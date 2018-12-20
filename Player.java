@@ -51,7 +51,7 @@ public class Player extends Character
         if (chest.getTotWeight() <= (this.getMaxWeight()-this.getTotalWeight())){
             this.getListItems().addAll(chest.getListItems());
             chest.getListItems().clear(); 
-            
+
         }
     }
 
@@ -212,20 +212,23 @@ public class Player extends Character
     /**
      * this method allows the player to buy an item from the seller
      *
-     * @param amount of money
-     * @return return the new item get by the player
+     * @param Seller seller
+     * @param Item item
+     * @return true if the player can buy a new item
      */
     public boolean buyItem(Seller seller, Item item)
     {
         int price = item.getValue();
-        if (price <= this.getMoney())
-        {
-            this.removeMoney(price);
-            this.addItem(item);
-            seller.removeItem(item);
-            return true;
+        if (item.getWeight() <= (this.getMaxWeight() - this.getTotalWeight())){
+            if (price <= this.getMoney())
+            {
+                this.removeMoney(price);
+                this.addItem(item);
+                seller.removeItem(item);
+                return true;
+            }
         }
         return false;
+
     }
 }
-
