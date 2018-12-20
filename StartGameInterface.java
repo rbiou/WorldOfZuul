@@ -9,12 +9,12 @@ import java.awt.event.*;
  * @author Group7
  * @version 13/12/18
  */
-public class startGameInterface
+public class StartGameInterface
 {
     /**
      * Constructor for objects of class startGameInterface
      */
-    public startGameInterface()
+    public StartGameInterface()
     {
 
         //Final Window
@@ -54,14 +54,14 @@ public class startGameInterface
         JButton okBouton = new JButton("PLAY");
         okBouton.addActionListener(new ActionListener(){
                 public void actionPerformed(ActionEvent arg0) {
-                    if (panNom.getText() != null)
+                    if (nom.getText().length() != 0)
                     {
                         finalPanel.setVisible(false);
                         Game game = new Game(nom.getText(), (String)sexe.getSelectedItem());
                     } 
                     else 
                     {
-                        JOptionPane.showMessageDialog(null, "Le");
+                        JOptionPane.showMessageDialog(null, "Le nom ne peut pas etre vide !");
                     }
                 }});
         
