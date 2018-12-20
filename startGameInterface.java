@@ -25,6 +25,7 @@ public class startGameInterface
 
         Icon gameLogo = new ImageIcon(new ImageIcon("logo/gameLogo.png").getImage().getScaledInstance(500, 500, Image.SCALE_DEFAULT));
         JLabel panLogo = new JLabel(gameLogo, JLabel.CENTER);
+        
         //The name
         JPanel panNom = new JPanel();
         panNom.setBackground(Color.white); // color of the panNom
@@ -52,10 +53,16 @@ public class startGameInterface
         JPanel control = new JPanel();
         JButton okBouton = new JButton("PLAY");
         okBouton.addActionListener(new ActionListener(){
-
                 public void actionPerformed(ActionEvent arg0) {
-                    finalPanel.setVisible(false);
-                    Game game = new Game(nom.getText(), (String)sexe.getSelectedItem());
+                    if (panNom.getText() != null)
+                    {
+                        finalPanel.setVisible(false);
+                        Game game = new Game(nom.getText(), (String)sexe.getSelectedItem());
+                    } 
+                    else 
+                    {
+                        JOptionPane.showMessageDialog(null, "Le");
+                    }
                 }});
         
         JPanel playerPanel = new JPanel(); 
@@ -70,8 +77,6 @@ public class startGameInterface
         playerForm.add(panLogo);
         playerForm.add(playerPanel);
        
-        
-        
         finalPanel.setLayout(new GridLayout(1,2));
         //Add the rules and explination of the game
         String text = "After a difficult party, your vessel crashed into a planet. It's not smart from your part, but you can repare it. This planet is part of a planet group once upon explored by smurfs. They are linked together by temporal spatial gates. So this looks like a labyrinth as the different exits have a smurf name.\nIn the game, some gates are blocked. To open those doors, you must find the right key. Anyway, if you do not possede the key, you cannot click on the gate.\nThe aim is to move between rooms to find 4 replacement pieces.\nIn a room, you can interact with pets, monsters and sellers. You can click only on them if they are present in the room.\nWhen you pet a pet, it gives you 1 gold as a reward. It also gives you the description of the planet.\nMonsters are here to challenging you with an enigma. If you give the right answer, the monster rewards you with 300 golds. Otherwise, you loose 50HP. So be carreful before challenging it !\nDifferent sellers are present all the game. You can sell them items you have found during your journey, or buy items like keys for example.\nYou have a bag where you can store objects but be careful : your bag has a limit of weight !\nAlso, planets have a limited time, depending on their atmosphere ! So do not stay too long on the same planet !\nAt the beginning of the game you have 100 life points but some traps are present in the game.You must be careful :)\nGood luck and have fun ! :)\n\nPS: When you have finished the game, use the quit button in the menu, do not click on the cross !!! ";
