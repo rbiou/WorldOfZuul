@@ -38,26 +38,11 @@ public class PlanetTest
     {
         planet1 = new Planet("Alpha","Welcome on the planet alpha",10,10);
         room1 = new Room("Room1", planet1);
-        character= new Character("Joe", 50, 40, room1);
+        character= new Player("Joe", 50, room1);
         room1.addCharacter(character);
         planet1.addRoom(room1);
     }
-    // this method is not coded yet
-    // /**
-     // * Test if a player can not live on a planet more than her time limit.
-     // */
-    // @Test
-    // public void testTimeLimit()
-    // {
-        // long original = System.currentTimeMillis();
-        // while (true) {
-            // if (System.currentTimeMillis() - original >= (planet1.getTime()*1000)+1000) {
-                // break;
-            // }
-        // }
-        // assertEquals(0, planet1.getListRoom().get(0).getListCharacter().size());
-    // }
-    
+
      /**
      * Test to add the same room twice in the planet
      * We can not add the same room twice

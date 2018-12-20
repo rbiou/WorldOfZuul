@@ -7,7 +7,7 @@ import java.lang.*;
  * a character has a name, some money, a maximum weight of items that he can grab, and the current room where he is.
  */
 
-public class Character{
+public abstract class Character{
     private String name;           // Name of character
     private int money;             // Money owned by character
     private ArrayList<Item> items; // Items owned by character

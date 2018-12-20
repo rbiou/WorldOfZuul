@@ -54,7 +54,7 @@ public class ItemTest
         room1 = new Room("Room1", planet1);
         item = new Item("banana",1,1,"I'm a banana");
         bigItem = new Item("apple",1,40,"I'm a big apple");
-        character= new Character("Joe", 50, 40, room1);
+        character= new Player("Joe", 50, room1);
     }
 
     /**
