@@ -69,5 +69,9 @@ public class MoveListener implements ActionListener
         
         //ON INTERFACE PLAYER PANEL
         myGame.getInterfaceGame().getInterfacePlayer().updateInterfacePlayer(myGame);
+        
+        //ON DESCRIPTION PANEL
+        JPanel emptyPanel = new JPanel();
+        myGame.getInterfaceGame().getInterfaceDescription().updatePanelDescription(emptyPanel);
     }
 }
