@@ -4,6 +4,7 @@ import java.awt.event.*;
 import javax.swing.ImageIcon;
 import java.util.Timer;
 import java.util.TimerTask;
+import java.awt.Color;
 
 /**
  * InterfacePlanet class is used to display the panel of the planet.
@@ -71,7 +72,7 @@ public class InterfacePlanet extends JPanel
         timeLabel = new JLabel(" "+game.getPlayer().getCurrentRoom().getPlanet().getTime(), JLabel.CENTER);
         Font f = new Font("Serif", Font.PLAIN, 25); 
         timeLabel.setFont(f);
-        Icon timerLogo = new ImageIcon(new ImageIcon("logo/stopwatch.png").getImage().getScaledInstance(50, 50, Image.SCALE_DEFAULT));
+        Icon timerLogo = new ImageIcon(new ImageIcon("logo/stopwatch.gif").getImage().getScaledInstance(150, 150, Image.SCALE_DEFAULT));
         timerLabel = new JLabel(timerLogo);
         timePanel.add(timerLabel);
         timePanel.add(timeLabel);
@@ -130,7 +131,11 @@ public class InterfacePlanet extends JPanel
                 //kill the player
                 game.getInterfaceGame().popUpLose();
             }
-            timeLabel.setText(" "+Integer.toString(countdown));
+            if (countdown < 31){  
+                timeLabel.setText(" "+Integer.toString(countdown));
+                timeLabel.setForeground(Color.red);}
+            else{
+                timeLabel.setText(" "+Integer.toString(countdown));}
         }
 
     }

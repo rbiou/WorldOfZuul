@@ -9,12 +9,12 @@ import java.awt.event.*;
  * @author Group7
  * @version 13/12/18
  */
-public class StartGameInterface
+public class InterfaceStart
 {
     /**
      * Constructor for objects of class startGameInterface
      */
-    public StartGameInterface()
+    public InterfaceStart()
     {
 
         //Final Window
