@@ -251,11 +251,11 @@ public class Game
         //Add items in the chests
         chestAlpha3.addItem(knief1=new Item("Knieffy",50,5,"I am a knief, you can sell me to the sellers "));
         chestAlpha3.addItem(magicBall2=new Item("MiniBall",100,10,"I am a MagicBall, you can sell me to the sellers "));
-        chest2delta1.addItem(keyAlpha3 = new Keys("Red key",300,20,"I am a key, I can open the door Vanity Smurf", "square"));
+        chest2delta1.addItem(keyAlpha3 = new Keys("Red key",300,20,"I am a key, I can open the beta portal", "square"));
         chest3delta4.addItem(wheel=new Item("Wheely",500,50,"I am the wheel of your vessel"));
-        chest4beta1.addItem(keyBeta4 = new Keys("Grey key",300,20,"I am a key, I can open the door Architect Smurf", "triangle"));
+        chest4beta1.addItem(keyBeta4 = new Keys("Grey key",300,20,"I am a key, I can open the beta 5 door", "triangle"));
         chest5beta5.addItem(windows = new Item("Window",500,50,"I am the window of your vessel")); 
-        chestGamma1.addItem(keyGamma2 = new Keys("Green key",300,20,"I am a key, I can open the door Enamored Smurf", "star"));
+        chestGamma1.addItem(keyGamma2 = new Keys("Green key",300,20,"I am a key, I can open the gamma 3 door", "star"));
         chestGamma1.addItem(fork1 = new Item("Big fork",3,5,"I am the fork that you need because I can fly"));
         chestGamma5.addItem(propellant = new Item("Propellant", 500, 50, "I am a the propellant of your vessel"));
         chestGamma4.addItem(diamond2 = new Item("Wonderful diamond", 250, 30, "I am a wonderful brillant diamond"));
@@ -274,12 +274,12 @@ public class Game
         gamma3.addCharacter(sellerGamma3 = new Seller("Harry Potter", 15000, 500, gamma3));
 
         //Add items to the sellers
-        sellerDelta2.addItem(keyDelta2 = new Keys("Yellow key",300,20,"I am a key, I can open the door Sloppy Smurf", "circle"));
+        sellerDelta2.addItem(keyDelta2 = new Keys("Yellow key",300,20,"I am a key, I can open the delta 3 door ", "circle"));
         sellerBeta2.addItem(magicBall1 = new Item ("Flatball",100,30,"I am a diamond, you can buy me"));
         sellerBeta2.addItem(diamond1 = new Item ("Little diamond",250,30,"I am a diamond, you can buy me"));
         sellerGamma3.addItem(knief2 = new Item("Sharp knife", 50, 5,"I am a sharp knief, you can buy me"));
         sellerGamma3.addItem(fork2 = new Item("Small knife", 3, 5,"I am a small fork, you can buy me"));
-        sellerGamma3.addItem(keyGamma4 = new Keys("Blue key", 300, 20,"I am a key, I can open the door Lazy Smurf", "rectangle"));
+        sellerGamma3.addItem(keyGamma4 = new Keys("Blue key", 300, 20,"I am a key, I can open the gamma 6 door", "rectangle"));
         sellerDelta2.addItem(diamond3 = new Item("Special diamond", 250, 30, "I am a special diamond, you can buy me to see why I am special"));
         sellerDelta2.addItem(fork3 = new Item("Special fork", 3, 5, "I am a special fork, you can buy me to see why I am special"));
     }
